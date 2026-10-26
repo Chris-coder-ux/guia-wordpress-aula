@@ -1,0 +1,1521 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Monta tu web en el ordenador · XAMPP y WordPress paso a paso</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b6b52'/%3E%3Cpath d='M16 36V22l14 8 14-8v14' fill='none' stroke='%23e5f1ec' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --ground:#eef2f1;
+    --panel:#ffffff;
+    --ink:#0f1f1e;
+    --ink-2:#47595a;
+    --rule:#ccd6d4;
+    --rule-soft:#e2e9e7;
+    --signal:#0b6b52;
+    --signal-soft:#e5f1ec;
+    --alert:#a8321f;
+    --alert-soft:#faece8;
+    --warn:#8a5a00;
+    --warn-soft:#fdf4e3;
+    --radius:12px;
+    --shadow:0 1px 1px rgba(15,31,30,.05), 0 10px 24px -16px rgba(15,31,30,.35);
+    --font:"Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    --mono:"Cascadia Mono", Consolas, "SF Mono", Menlo, monospace;
+    --measure:66ch;
+  }
+
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth; scroll-padding-top:5.5rem}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+  body{
+    margin:0; background:var(--ground); color:var(--ink);
+    font-family:var(--font); font-size:1.0625rem; line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  ::selection{background:#bfe3d6; color:var(--ink)}
+  :focus-visible{outline:3px solid var(--signal); outline-offset:2px; border-radius:4px}
+  a{color:var(--signal); text-underline-offset:3px; text-decoration-thickness:1.5px}
+  a:hover{text-decoration-thickness:2.5px}
+  p{margin:0 0 1em}
+  ul,ol{margin:0 0 1em; padding-left:1.4em}
+  li{margin:.35em 0}
+  strong{font-weight:650}
+  code,.mono{font-family:var(--mono); font-size:.94em}
+  code{background:#fff; border:1px solid var(--rule); border-radius:6px; padding:.1em .38em; white-space:normal; overflow-wrap:anywhere}
+  hr{border:0; border-top:1px solid var(--rule); margin:2.5rem 0}
+
+  .skip{position:absolute; left:-9999px; top:0; background:var(--ink); color:#fff; padding:.8rem 1.2rem; z-index:100; border-radius:0 0 8px 0}
+  .skip:focus{left:0}
+
+  /* ---------- top bar ---------- */
+  .topbar{
+    position:sticky; top:0; z-index:50;
+    background:var(--panel); border-bottom:1px solid var(--rule);
+  }
+  .topbar__in{
+    max-width:1180px; margin:0 auto; padding:.55rem 1.25rem;
+    display:flex; align-items:center; gap:1rem; flex-wrap:wrap;
+  }
+  .brand{display:flex; align-items:center; gap:.6rem; font-weight:700; letter-spacing:-.01em; margin-right:auto; min-width:0}
+  .brand svg{flex:none}
+  .brand span{white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+  .meter{display:flex; align-items:center; gap:.6rem; font-variant-numeric:tabular-nums; font-size:.9rem; color:var(--ink-2)}
+  .meter__track{width:min(30vw,180px); height:8px; background:var(--rule-soft); border-radius:99px; overflow:hidden; border:1px solid var(--rule)}
+  .meter__fill{height:100%; width:0%; background:var(--signal); transition:width .35s cubic-bezier(.2,.8,.2,1)}
+  .meter b{color:var(--ink); font-weight:700}
+  .tools{display:flex; align-items:center; gap:.4rem}
+  .btn{
+    font:inherit; font-size:.9rem; font-weight:600; color:var(--ink);
+    background:var(--panel); border:1px solid var(--rule); border-radius:99px;
+    padding:.42rem .8rem; cursor:pointer; display:inline-flex; align-items:center; gap:.4rem;
+    min-height:38px;
+    transition:background .18s, border-color .18s, transform .18s;
+  }
+  .btn:hover{background:var(--signal-soft); border-color:var(--signal)}
+  .btn:active{transform:translateY(1px)}
+  .btn--solid{background:var(--signal); border-color:var(--signal); color:#fff}
+  .btn--solid:hover{background:#085641; border-color:#085641; color:#fff}
+  .btn--quiet{border-color:transparent; color:var(--ink-2)}
+  .btn--quiet:hover{color:var(--ink)}
+
+  /* ---------- shell ---------- */
+  .shell{
+    width:90%; margin:0 auto; padding:2.5rem 1.25rem 7rem;
+    display:grid; grid-template-columns:250px minmax(0,1fr) 270px; gap:3rem;
+    align-items:start;
+  }
+  main{min-width:0}
+  .aside{
+    position:sticky; top:4.6rem; align-self:start;
+    background:var(--panel); border:1px solid var(--rule); border-radius:var(--radius);
+    padding:1.25rem; font-size:.92rem; line-height:1.55; color:var(--ink-2);
+    box-shadow:var(--shadow);
+  }
+  .aside h3{margin:0 0 .6rem; font-size:1rem; color:var(--ink); letter-spacing:-.01em}
+  .aside ol{margin:.6rem 0 0; padding-left:1.2em}
+  .aside li{margin:.4rem 0}
+
+  /* ---------- rail ---------- */
+  .rail{position:sticky; top:4.6rem; align-self:start; font-size:.9rem}
+  .rail h2{
+    font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-2);
+    margin:0 0 .9rem; font-weight:700;
+  }
+  .rail ol{list-style:none; margin:0; padding:0 0 0 1.55rem; position:relative}
+  .rail ol::before{
+    content:""; position:absolute; left:.45rem; top:.45rem; bottom:.45rem; width:2px; background:var(--rule-soft); border-radius:2px;
+  }
+  .rail__fill{position:absolute; left:.45rem; top:.45rem; width:2px; background:var(--signal); border-radius:2px; height:0; transition:height .35s cubic-bezier(.2,.8,.2,1)}
+  .rail li{position:relative; margin:0}
+  .rail a{
+    display:flex; gap:.55rem; align-items:baseline; padding:.3rem .2rem;
+    color:var(--ink-2); text-decoration:none; border-radius:6px;
+  }
+  .rail a:hover{color:var(--ink); background:#fff}
+  .rail a::before{
+    content:""; position:absolute; left:-1.55rem; top:.62rem; width:.9rem; height:.9rem; border-radius:50%;
+    background:var(--ground); border:2px solid var(--rule); box-sizing:border-box;
+  }
+  .rail a.is-done::before{background:var(--signal); border-color:var(--signal)}
+  .rail a.is-current{color:var(--ink); font-weight:650}
+  .rail a.is-current::before{border-color:var(--signal); box-shadow:0 0 0 3px var(--signal-soft)}
+  .rail .n{font-variant-numeric:tabular-nums; color:var(--ink-2); font-size:.8rem; min-width:1.1em}
+  .rail a.is-done .n{color:var(--signal)}
+
+  /* rail mobile dropdown */
+  .rail-mobile{display:block}
+  .rail-mobile summary{
+    font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-2);
+    margin:0 0 .9rem; font-weight:700; list-style:none; cursor:default;
+  }
+  .rail-mobile summary::-webkit-details-marker{display:none}
+  .rail-mobile ol{margin:0; padding:0 0 0 1.55rem; position:relative}
+  .rail-mobile ol::before{
+    content:""; position:absolute; left:.45rem; top:.45rem; bottom:.45rem; width:2px; background:var(--rule-soft); border-radius:2px;
+  }
+  .rail-mobile a::before{
+    content:""; position:absolute; left:-1.55rem; top:.62rem; width:.9rem; height:.9rem; border-radius:50%;
+    background:var(--ground); border:2px solid var(--rule); box-sizing:border-box;
+  }
+  .rail-mobile a{padding:.3rem .2rem}
+  .rail-mobile a:hover{color:var(--ink); background:#fff}
+
+  /* ---------- hero ---------- */
+  .hero{margin-bottom:3rem}
+  h1{
+    font-size:clamp(2.1rem, 5.2vw, 3.35rem); line-height:1.06; letter-spacing:-.035em;
+    margin:0 0 1rem; font-weight:750; text-wrap:balance; max-width:20ch;
+  }
+  .lead{font-size:1.2rem; color:var(--ink-2); max-width:52ch; margin-bottom:1.5rem; text-wrap:pretty}
+  .meta{display:flex; flex-wrap:wrap; gap:.5rem; margin:0 0 1.9rem; padding:0; list-style:none}
+  .meta li{
+    font-size:.82rem; font-weight:600; letter-spacing:.01em;
+    background:var(--panel); border:1px solid var(--rule); color:var(--ink-2);
+    padding:.34rem .7rem; border-radius:99px;
+  }
+  .meta li[data-state]{color:var(--signal); border-color:#b9d9cd; background:var(--signal-soft)}
+
+  /* ---------- blocks ---------- */
+  .block{
+    background:var(--panel); border:1px solid var(--rule); border-radius:var(--radius);
+    padding:1.6rem; margin:0 0 1.5rem; box-shadow:var(--shadow);
+  }
+  .block h2{font-size:1.3rem; letter-spacing:-.02em; margin:0 0 .8rem; text-wrap:balance}
+  .block h3{font-size:1.05rem; margin:1.6rem 0 .5rem}
+  .block > :last-child{margin-bottom:0}
+
+  .notice{border-radius:var(--radius); padding:1.1rem 1.25rem; margin:0 0 1.5rem}
+  .notice svg{flex:none; margin-top:.15rem}
+  .notice p{margin:0}
+  .notice--warn{background:var(--warn-soft); border:1px solid #e6cf9e}
+  .notice--info{display:flex; background:var(--signal-soft); border:1px solid #b9d9cd}
+  .hero > .notice--warn{row-gap:.5rem; align-items:start}
+  .hero > .notice--warn svg{grid-column:1; grid-row:1 / -1; margin-top:.15rem}
+  .hero > .notice--warn p{grid-column:2; margin:0}
+
+  /* pre-flight */
+  .preflight{list-style:none; padding:0; margin:0; display:grid; gap:.55rem}
+  .preflight li{display:flex; gap:.7rem; align-items:flex-start; margin:0}
+  .preflight input{width:1.15rem; height:1.15rem; margin:.25rem 0 0; accent-color:var(--signal); flex:none}
+  .preflight label{font-size:1rem}
+  .preflight small{display:block; color:var(--ink-2); font-size:.86rem}
+
+  /* ---------- parts ---------- */
+  .part{margin:4rem 0 1.5rem; display:flex; align-items:baseline; gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.6rem}
+  .part__k{font-size:.75rem; letter-spacing:.14em; text-transform:uppercase; font-weight:750; color:var(--signal); white-space:nowrap}
+  .part h2{font-size:clamp(1.4rem,3vw,1.9rem); letter-spacing:-.03em; margin:0; text-wrap:balance}
+  .part__time{margin-left:auto; font-size:.85rem; color:var(--ink-2); white-space:nowrap}
+
+  /* ---------- steps ---------- */
+  .step{
+    background:var(--panel); border:1px solid var(--rule); border-radius:var(--radius);
+    padding:1.5rem 1.6rem; margin:0 0 1.25rem; box-shadow:var(--shadow);
+    scroll-margin-top:5.5rem; position:relative;
+    transition:border-color .25s, box-shadow .25s;
+  }
+  .step.is-done{border-color:#b9d9cd; box-shadow:0 0 0 1px #b9d9cd, var(--shadow)}
+  .step__head{display:flex; align-items:center; gap:.9rem; margin-bottom:.9rem; flex-wrap:wrap}
+  .step__num{
+    flex:none; width:2.5rem; height:2.5rem; border-radius:10px;
+    display:grid; place-items:center; font-weight:750; font-size:1.15rem;
+    background:var(--ink); color:#fff; font-variant-numeric:tabular-nums;
+  }
+  .step.is-done .step__num{background:var(--signal)}
+  .step__title{font-size:1.2rem; letter-spacing:-.02em; margin:0; font-weight:700; flex:1 1 auto; text-wrap:balance}
+  .tick{
+    display:inline-flex; align-items:center; gap:.45rem; font-size:.85rem; font-weight:650;
+    border:1px solid var(--rule); border-radius:99px; padding:.32rem .7rem .32rem .5rem;
+    cursor:pointer; color:var(--ink-2); background:var(--panel); flex:none;
+  }
+  .tick:hover{border-color:var(--signal); color:var(--ink)}
+  .tick input{width:1.05rem; height:1.05rem; accent-color:var(--signal); margin:0}
+  .step.is-done .tick{background:var(--signal-soft); border-color:#b9d9cd; color:var(--signal)}
+  .step__grid{display:grid; grid-template-columns:1fr; gap:1.4rem}
+  @media (min-width:900px){
+    .step--split .step__grid{grid-template-columns:1.05fr .95fr; align-items:start}
+  }
+  .actions{counter-reset:a; list-style:none; padding:0; margin:0 0 1rem}
+  .actions li{position:relative; padding-left:2.1rem; margin:.55rem 0; text-wrap:pretty}
+  .actions li::before{
+    counter-increment:a; content:counter(a);
+    position:absolute; left:0; top:.12rem; width:1.45rem; height:1.45rem; border-radius:50%;
+    display:grid; place-items:center; font-size:.78rem; font-weight:700;
+    background:var(--rule-soft); color:var(--ink-2);
+  }
+
+  .check{
+    display:flex; gap:.7rem; align-items:flex-start; padding:.85rem 1rem;
+    background:var(--signal-soft); border:1px solid #b9d9cd; border-radius:10px; margin:1rem 0 0;
+    -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  }
+  .check svg{flex:none; margin-top:.2rem}
+  .check p{margin:0; font-size:.97rem}
+  .check strong{color:var(--signal)}
+
+  .trouble{margin:1rem 0 0; border:1px solid var(--rule); border-radius:10px; background:#fcfdfd}
+  .trouble summary{
+    cursor:pointer; padding:.65rem .9rem; font-weight:650; font-size:.94rem; color:var(--ink-2);
+    display:flex; align-items:center; gap:.5rem; list-style:none;
+  }
+  .trouble summary::-webkit-details-marker{display:none}
+  .trouble summary::before{content:"+"; font-family:var(--mono); font-weight:700; width:1rem; color:var(--alert)}
+  .trouble[open] summary::before{content:"–"}
+  .trouble summary:hover{color:var(--ink)}
+  .trouble__body{padding:0 .9rem .9rem; font-size:.94rem; color:var(--ink-2)}
+  .trouble__body :last-child{margin-bottom:0}
+
+  /* figures */
+  figure.fig{margin:0}
+  figure.fig svg{width:auto; height:auto; display:flex; border:none; background:none; min-width:550px}
+  .svgpad{display:inline-block; padding:.75rem .9rem; border:1px solid var(--rule); border-radius:10px; background:#fbfcfc; overflow-x:auto}
+  figcaption{font-size:.82rem; color:var(--ink-2); margin-top:.5rem; line-height:1.45}
+  figcaption b{color:var(--ink)}
+
+  /* copy chips */
+  .chip{
+    display:inline-flex; align-items:center; gap:.45rem; font-family:var(--mono); font-size:.86rem;
+    background:#fff; border:1px solid var(--rule); border-radius:8px; padding:.5rem .7rem;
+    cursor:pointer; color:var(--ink); text-align:left; max-width:100%; min-height:40px;
+  }
+  .chip:hover{border-color:var(--signal); background:var(--signal-soft)}
+  .chip svg{flex:none; opacity:.6}
+  .chip span{overflow-wrap:anywhere}
+  .chip.copied{border-color:var(--signal); background:var(--signal-soft); color:var(--signal); font-weight:650}
+  .chiprow{display:flex; flex-wrap:wrap; gap:.5rem; margin:.4rem 0 1rem}
+
+  /* table */
+  .tbl{width:100%; border-collapse:collapse; font-size:.95rem; margin:.8rem 0 1.2rem}
+  .tbl th,.tbl td{text-align:left; padding:.6rem .7rem; border-bottom:1px solid var(--rule-soft); vertical-align:top}
+  .tbl th{font-size:.78rem; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-2); border-bottom:1px solid var(--rule)}
+  .tbl tr:last-child td{border-bottom:0}
+  .tbl code{white-space:normal; overflow-wrap:anywhere}
+  .tbl td,.tbl th{overflow-wrap:anywhere}
+
+  /* quiz */
+  .quiz{margin:1.2rem 0 0; padding:1.1rem; border:1px dashed var(--rule); border-radius:10px; background:#fbfcfc}
+  .quiz__q{margin:0 0 .8rem; font-weight:650; font-size:.98rem}
+  .quiz__opts{display:flex; flex-wrap:wrap; gap:.5rem}
+  .opt{
+    font:inherit; font-size:.92rem; cursor:pointer; text-align:left;
+    background:var(--panel); border:1px solid var(--rule); border-radius:8px; padding:.5rem .8rem; color:var(--ink);
+  }
+  .opt:hover:not(:disabled){border-color:var(--signal); background:var(--signal-soft)}
+  .opt--right{border-color:var(--signal); background:var(--signal-soft); font-weight:650}
+  .opt--wrong{border-color:var(--alert); background:var(--alert-soft)}
+  .opt:disabled{cursor:default}
+  .quiz__fb{margin:.7rem 0 0; font-size:.9rem; min-height:1.2em}
+  .quiz__fb.is-ok{color:var(--signal); font-weight:650}
+  .quiz__fb.is-no{color:var(--alert); font-weight:650}
+
+  /* fields */
+  .fields{display:grid; gap:.9rem; margin:1rem 0}
+  .field{display:grid; gap:.2rem}
+  .field label{font-size:.85rem; font-weight:650; color:var(--ink-2)}
+  .field input{
+    font:inherit; font-size:1rem; padding:.5rem .6rem; border:1px solid var(--rule); border-radius:8px;
+    background:#fff; width:100%;
+  }
+  .field input:focus{border-color:var(--signal)}
+
+  /* dictionary */
+  dl.dict{display:grid; grid-template-columns:auto 1fr; gap:.5rem 1.2rem; margin:0; font-size:.95rem}
+  dl.dict dt{font-weight:700; white-space:nowrap}
+  dl.dict dd{margin:0; color:var(--ink-2)}
+  @media (max-width:560px){
+    dl.dict{grid-template-columns:1fr; gap:.15rem}
+    dl.dict dd{margin-bottom:.7rem}
+  }
+
+  /* final */
+  .final{
+    margin-top:2rem; border-radius:var(--radius); padding:1.5rem;
+    background:var(--ink); color:#e9efed;
+  }
+  .final h2{color:#fff; margin-top:0}
+  .final p{color:#c9d6d2}
+  .final .chip{background:#1b302d; border-color:#334d48; color:#e9efed}
+  .final .chip:hover{background:#22403a}
+  .all-done .final{background:var(--signal)}
+  .all-done .final p{color:#dff0e9}
+
+  footer.end{
+    border-top:1px solid var(--rule); margin-top:3rem; padding-top:1.2rem;
+    font-size:.85rem; color:var(--ink-2);
+  }
+
+  /* ---------- print ---------- */
+  @media print{
+    @page{margin:14mm 14mm 16mm}
+    body{background:#fff; font-size:10.5pt; line-height:1.45}
+    .topbar,.rail,.rail-mobile,.skip,.noprint{display:none !important}
+    .shell{display:block; max-width:none; padding:0}
+    h1{font-size:24pt}
+    .lead{font-size:12pt}
+    .block,.step{box-shadow:none; border:1px solid #9aa; break-inside:avoid; margin-bottom:9mm; padding:5mm}
+    .part{break-before:page; margin-top:0}
+    .part:first-of-type{break-before:auto}
+    .step__num{background:#111 !important; color:#fff !important}
+    .check{background:#eef7f2 !important}
+    .trouble{border:1px solid #bbb}
+    .trouble summary{color:#333}
+    .trouble__body{display:block !important}
+    .tick{display:none}
+    .quiz{border-style:solid}
+    a{color:#111; text-decoration:none}
+    a[href^="http"]::after{content:" (" attr(href) ")"; font-size:8pt; color:#444; overflow-wrap:anywhere}
+    figure.fig svg{max-height:80mm; width:auto; max-width:100%; margin:0 auto}
+    .final{background:#fff !important; color:#111 !important; border:2px solid #111}
+    .final h2,.final p{color:#111 !important}
+  }
+
+  /* ---------- small screens ---------- */
+  .toc-mobile{display:none; margin:0 0 2rem}
+  @media (max-width:1080px){
+    .shell{grid-template-columns:minmax(0,1fr); gap:2rem; padding-top:1.75rem}
+    .rail{display:none}
+    .aside{display:none}
+    .rail-mobile summary{
+      font-size:1rem; letter-spacing:normal; text-transform:none; color:var(--ink);
+      margin:0; padding:.8rem 1rem; background:var(--panel);
+      border:1px solid var(--rule); border-radius:10px; cursor:pointer;
+    }
+    .rail-mobile summary::before{content:"+"; font-family:var(--mono); font-weight:700; width:1rem; color:var(--signal); margin-right:.5rem}
+    .rail-mobile[open] summary::before{content:"–"}
+    .rail-mobile ol{margin:.8rem 0 0; padding-left:1.2rem; position:static}
+    .rail-mobile ol::before{display:none}
+    .rail-mobile a::before{display:none}
+    .rail-mobile a{padding:.4rem .2rem}
+    .rail-mobile a:hover{background:var(--signal-soft)}
+    .rail-mobile{margin-bottom:2rem}
+    .toc-mobile{display:block}
+  }
+  .toc-mobile summary{
+    cursor:pointer; font-weight:700; padding:.8rem 1rem; background:var(--panel);
+    border:1px solid var(--rule); border-radius:10px;
+  }
+  .toc-mobile ol{columns:2; column-gap:1.5rem; font-size:.9rem; margin:.8rem 0 0; padding-left:1.2rem}
+  @media (max-width:520px){ .toc-mobile ol{columns:1} }
+  @media (max-width:560px){
+    .topbar__in{padding:.5rem .9rem}
+    .brand span{display:none}
+    .meter__track{width:26vw}
+    .shell{padding-left:.9rem; padding-right:.9rem}
+    .step{padding:1.15rem 1rem}
+    .step__num{width:2.2rem; height:2.2rem; font-size:1rem}
+    .step__title{font-size:1.08rem}
+    .block{padding:1.2rem 1rem}
+    .part__time{display:none}
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
+<header class="topbar">
+  <div class="topbar__in">
+    <div class="brand">
+      <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true">
+        <rect x="1" y="1" width="24" height="24" rx="7" fill="#0f1f1e"/>
+        <path d="M7 16.5V9.5l6 3.5 6-3.5v7" fill="none" stroke="#e5f1ec" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>Monta tu web · XAMPP + WordPress</span>
+    </div>
+
+    <div class="meter" role="group" aria-label="Progreso de la práctica">
+      <div class="meter__track" aria-hidden="true"><div class="meter__fill" id="bar"></div></div>
+      <span><b id="count">0</b> de <span id="total">14</span> pasos</span>
+    </div>
+
+    <div class="tools">
+      <button class="btn btn--quiet noprint" type="button" id="font-minus" aria-label="Reducir el tamaño de la letra">A−</button>
+      <button class="btn btn--quiet noprint" type="button" id="font-plus" aria-label="Aumentar el tamaño de la letra">A+</button>
+      <button class="btn" type="button" id="print-btn">
+        <svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V3h12v6"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8" rx="1"/></svg>
+        Imprimir
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="shell">
+
+  <nav class="rail noprint" aria-label="Índice de pasos">
+    <details class="rail-mobile" open>
+      <summary>Los 14 pasos</summary>
+      <ol id="rail-list">
+        <div class="rail__fill" id="rail-fill" aria-hidden="true"></div>
+        <li><a href="#paso-1" data-target="1"><span class="n">1</span> Descargar XAMPP</a></li>
+        <li><a href="#paso-2" data-target="2"><span class="n">2</span> Abrir el instalador</a></li>
+        <li><a href="#paso-3" data-target="3"><span class="n">3</span> Instalar</a></li>
+        <li><a href="#paso-4" data-target="4"><span class="n">4</span> Encender servicios</a></li>
+        <li><a href="#paso-5" data-target="5"><span class="n">5</span> Comprobar</a></li>
+        <li><a href="#paso-6" data-target="6"><span class="n">6</span> Descargar WordPress</a></li>
+        <li><a href="#paso-7" data-target="7"><span class="n">7</span> Crear la carpeta</a></li>
+        <li><a href="#paso-8" data-target="8"><span class="n">8</span> Descomprimir</a></li>
+        <li><a href="#paso-9" data-target="9"><span class="n">9</span> Crear base de datos</a></li>
+        <li><a href="#paso-10" data-target="10"><span class="n">10</span> Abrir instalador</a></li>
+        <li><a href="#paso-11" data-target="11"><span class="n">11</span> Datos de conexión</a></li>
+        <li><a href="#paso-12" data-target="12"><span class="n">12</span> Tu usuario</a></li>
+        <li><a href="#paso-13" data-target="13"><span class="n">13</span> Entrar</a></li>
+        <li><a href="#paso-14" data-target="14"><span class="n">14</span> Ver tu web</a></li>
+      </ol>
+      <p style="margin-top:1.2rem; font-size:.8rem; color:var(--ink-2)">
+        <button class="btn btn--quiet" type="button" id="reset" style="font-size:.8rem; padding:.25rem .5rem">Borrar mi progreso</button>
+      </p>
+    </details>
+  </nav>
+
+  <main id="contenido">
+
+    <section class="hero">
+      <h1>Monta tu web en tu ordenador</h1>
+      <p class="lead">Vas a instalar XAMPP y WordPress y a ver tu propia página en el navegador. <strong>No hace falta saber informática.</strong> Cada paso termina con una comprobación.</p>
+      <ul class="meta">
+        <li data-state>14 pasos</li>
+        <li>3 sesiones de 60 minutos</li>
+        <li>Windows o macOS</li>
+        <li>Funciona sin internet</li>
+      </ul>
+
+      <details class="toc-mobile">
+        <summary>Ver el índice de los 14 pasos</summary>
+        <ol>
+          <li><a href="#paso-1">Descargar XAMPP</a></li>
+          <li><a href="#paso-2">Abrir el instalador</a></li>
+          <li><a href="#paso-3">Instalar</a></li>
+          <li><a href="#paso-4">Encender servicios</a></li>
+          <li><a href="#paso-5">Comprobar</a></li>
+          <li><a href="#paso-6">Descargar WordPress</a></li>
+          <li><a href="#paso-7">Crear la carpeta</a></li>
+          <li><a href="#paso-8">Descomprimir</a></li>
+          <li><a href="#paso-9">Crear base de datos</a></li>
+          <li><a href="#paso-10">Abrir instalador</a></li>
+          <li><a href="#paso-11">Datos de conexión</a></li>
+          <li><a href="#paso-12">Tu usuario</a></li>
+          <li><a href="#paso-13">Entrar</a></li>
+          <li><a href="#paso-14">Ver tu web</a></li>
+        </ol>
+      </details>
+
+      <div class="notice notice--warn">
+        <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#8a5a00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2.5 20h19L12 3Z"/><path d="M12 9v5"/><circle cx="12" cy="17.2" r=".9" fill="#8a5a00" stroke="none"/></svg>
+        <p><strong>¿Nunca has usado un ordenador?</strong> Antes de esta práctica, haz la <a href="../01_sesion-0/sesion-0-interactiva.html">Sesión 0 · Primeros pasos</a>. Allí se aprende el ratón, el teclado y las carpetas y también puedes consultar la <a href="practica-web-gutenberg.html">práctica web con Gutenberg</a>.</p>
+      </div>
+
+      <div class="block">
+        <h2>Estas 5 cosas tienen que ser verdad</h2>
+        <p>Márcalas antes de empezar. Si alguna no la puedes marcar, avisa al profesor.</p>
+        <ul class="preflight">
+          <li><input type="checkbox" id="pf1"><label for="pf1">Estoy en un <strong>ordenador con Windows</strong> <small>En Mac se hace casi igual; el profesor te indica los cambios.</small></label></li>
+          <li><input type="checkbox" id="pf2"><label for="pf2">Sé hacer <strong>doble clic</strong> con el botón izquierdo <small>Pulsar dos veces rápido, sin mover el ratón.</small></label></li>
+          <li><input type="checkbox" id="pf3"><label for="pf3">Tengo <strong>internet</strong> <small>Solo para las descargas. Después ya no hace falta.</small></label></li>
+          <li><input type="checkbox" id="pf4"><label for="pf4">Quedan <strong>2 GB libres</strong> en el disco <small>Es poco más que una película.</small></label></li>
+          <li><input type="checkbox" id="pf5"><label for="pf5">Puedo <strong>instalar programas</strong> <small>Si el ordenador es del centro, hace falta permiso.</small></label></li>
+        </ul>
+      </div>
+
+      <div class="block">
+        <h2>Las partes de la pantalla que vamos a nombrar</h2>
+        <figure class="fig">
+          <div class="svgpad"><svg viewBox="0 0 520 300" role="img" aria-labelledby="dsk-t dsk-d">
+            <title id="dsk-t">Esquema de un escritorio de Windows</title>
+            <desc id="dsk-d">Pantalla con cuatro iconos arriba a la izquierda, la papelera abajo a la derecha y una barra de tareas abajo con el botón Inicio, tres programas abiertos y el reloj.</desc>
+            <rect x="10" y="10" width="500" height="268" rx="10" fill="#ffffff" stroke="#47595a" stroke-width="2"/>
+            <g fill="#e5f1ec" stroke="#0b6b52" stroke-width="1.6">
+              <rect x="34" y="34" width="34" height="30" rx="4"/>
+              <rect x="34" y="88" width="34" height="30" rx="4"/>
+              <rect x="34" y="142" width="34" height="30" rx="4"/>
+              <rect x="34" y="196" width="34" height="30" rx="4"/>
+            </g>
+            <g fill="#0f1f1e" font-size="10" font-family="Segoe UI, sans-serif">
+              <text x="51" y="78" text-anchor="middle">Equipo</text>
+              <text x="51" y="132" text-anchor="middle">Papelera</text>
+              <text x="51" y="186" text-anchor="middle">Word</text>
+              <text x="51" y="240" text-anchor="middle">Carpeta</text>
+            </g>
+            <rect x="10" y="240" width="500" height="38" fill="#f1f5f4" stroke="#47595a" stroke-width="2"/>
+            <rect x="22" y="248" width="26" height="22" rx="4" fill="#0b6b52"/>
+            <path d="M28 253h14M28 259h14M28 265h14" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/>
+            <g fill="#ccd6d4" stroke="#47595a" stroke-width="1.4">
+              <rect x="60" y="249" width="22" height="20" rx="3"/>
+              <rect x="90" y="249" width="22" height="20" rx="3"/>
+              <rect x="120" y="249" width="22" height="20" rx="3"/>
+            </g>
+            <text x="492" y="263" text-anchor="end" font-size="10" fill="#47595a" font-family="Segoe UI, sans-serif">12:30</text>
+            <g stroke="#0b6b52" stroke-width="1.6" fill="none" stroke-linecap="round">
+              <path d="M78 34v-8h-8"/><path d="M132 124h8v-8" />
+            </g>
+            <text x="88" y="20" font-size="11" fill="#0b6b52" font-weight="700" font-family="Segoe UI, sans-serif">Iconos</text>
+            <text x="146" y="128" font-size="11" fill="#0b6b52" font-weight="700" font-family="Segoe UI, sans-serif">Barra de tareas</text>
+            <text x="146" y="146" font-size="10" fill="#47595a" font-family="Segoe UI, sans-serif">Menú Inicio (⊞) · programas abiertos · reloj</text>
+          </svg></div>
+          <figcaption><b>Los iconos</b> se abren con doble clic. <b>La barra de tareas</b> está siempre abajo: ahí vive el menú Inicio, que es donde están todos los programas.</figcaption>
+        </figure>
+      </div>
+
+      <div class="block">
+        <h2>Cuatro símbolos del teclado que vas a escribir</h2>
+        <figure class="fig">
+          <div class="svgpad"><svg viewBox="0 0 560 150" role="img" aria-labelledby="key-t key-d">
+            <title id="key-t">Teclas necesarias para escribir una dirección web</title>
+            <desc id="key-d">Se muestran las teclas dos puntos, barra inclinada, punto y arroba, con la combinación que hay que pulsar en cada una.</desc>
+            <g font-family="Segoe UI, sans-serif">
+              <g>
+                <rect x="14" y="30" width="120" height="56" rx="8" fill="#fff" stroke="#0f1f1e" stroke-width="2"/>
+                <text x="74" y="66" font-size="22" text-anchor="middle" fill="#0f1f1e">:</text>
+                <text x="74" y="115" font-size="10" text-anchor="middle" fill="#47595a">Shift + ;</text>
+              </g>
+              <g>
+                <rect x="150" y="30" width="120" height="56" rx="8" fill="#fff" stroke="#0f1f1e" stroke-width="2"/>
+                <text x="210" y="66" font-size="22" text-anchor="middle" fill="#0f1f1e">/</text>
+                <text x="210" y="115" font-size="10" text-anchor="middle" fill="#47595a">tecla junto a Shift derecho</text>
+              </g>
+              <g>
+                <rect x="286" y="30" width="120" height="56" rx="8" fill="#fff" stroke="#0f1f1e" stroke-width="2"/>
+                <text x="346" y="66" font-size="22" text-anchor="middle" fill="#0f1f1e">.</text>
+                <text x="346" y="115" font-size="10" text-anchor="middle" fill="#47595a">tecla a la derecha de la Ñ</text>
+              </g>
+              <g>
+                <rect x="422" y="30" width="120" height="56" rx="8" fill="#e5f1ec" stroke="#0b6b52" stroke-width="2"/>
+                <text x="482" y="66" font-size="22" text-anchor="middle" fill="#0b6b52">@</text>
+                <text x="482" y="115" font-size="10" text-anchor="middle" fill="#0b6b52" font-weight="700">AltGr + 2</text>
+              </g>
+            </g>
+          </svg></div>
+          <figcaption>Escribir <code>http://localhost/miwordpress/</code> parece difícil y solo son cuatro símbolos. Practícalos antes de empezar.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ PARTE A ============ -->
+    <section class="part" id="parte-a">
+      <span class="part__k">Parte A</span>
+      <h2>Instalar XAMPP</h2>
+      <span class="part__time">≈ 45 min</span>
+    </section>
+
+    <article class="step step--split" id="paso-1" data-step="1">
+      <header class="step__head">
+        <span class="step__num" aria-hidden="true">1</span>
+        <h3 class="step__title">Descargar XAMPP</h3>
+        <label class="tick"><input type="checkbox" data-done="1"><span>Hecho</span></label>
+      </header>
+      <div class="step__grid">
+        <div>
+          <ol class="actions">
+            <li>Abre el navegador (Chrome, Edge o Firefox).</li>
+            <li>Haz <strong>un clic</strong> en la barra de direcciones, la franja blanca de arriba.</li>
+            <li>Escribe la dirección de abajo y pulsa <strong>Enter</strong>.</li>
+            <li>Baja un poco con la rueda hasta ver el botón <strong>XAMPP for Windows</strong> y púlsalo.</li>
+            <li>Espera: la descarga empieza sola.</li>
+          </ol>
+          <div class="chiprow">
+            <button class="chip" type="button" data-copy="https://www.apachefriends.org/es/index.html">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+              <span>https://www.apachefriends.org/es/index.html</span>
+            </button>
+          </div>
+          <div class="check">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            <p><strong>Comprueba:</strong> en la carpeta <strong>Descargas</strong> hay un archivo que empieza por <code>xampp-windows</code> y termina en <code>.exe</code>.</p>
+          </div>
+        </div>
+        <div>
+          <figure class="fig">
+            <div class="svgpad"><svg viewBox="0 0 420 260" role="img" aria-labelledby="ab-t ab-d">
+              <title id="ab-t">Barra de direcciones frente a buscador</title>
+              <desc id="ab-d">Arriba, una ventana con la dirección escrita en la barra superior. Abajo, una página de buscador con un cuadro en el centro. Solo la barra de arriba lleva directamente a la web.</desc>
+              <g font-family="Segoe UI, sans-serif">
+                <rect x="8" y="8" width="404" height="104" rx="8" fill="#fff" stroke="#0b6b52" stroke-width="2.5"/>
+                <rect x="18" y="18" width="384" height="30" rx="15" fill="#e5f1ec" stroke="#0b6b52" stroke-width="1.6"/>
+                <text x="34" y="38" font-size="11.5" fill="#0b6b52" font-weight="700">apachefriends.org/es/index.html</text>
+                <text x="18" y="72" font-size="11" fill="#47595a">Aquí escribes la dirección exacta →</text>
+                <text x="18" y="94" font-size="11" fill="#0b6b52" font-weight="700">va directo a la web. Correcto.</text>
+                <rect x="8" y="132" width="404" height="118" rx="8" fill="#fff" stroke="#47595a" stroke-width="2" stroke-dasharray="5 4"/>
+                <rect x="88" y="160" width="244" height="30" rx="15" fill="#f1f5f4" stroke="#47595a" stroke-width="1.6"/>
+                <circle cx="106" cy="175" r="6" fill="none" stroke="#47595a" stroke-width="2"/>
+                <path d="M111 180l6 6" stroke="#47595a" stroke-width="2" stroke-linecap="round"/>
+                <text x="122" y="179" font-size="11" fill="#47595a">buscar…</text>
+                <text x="18" y="212" font-size="11" fill="#47595a">El buscador adivina. Los primeros resultados</text>
+                <text x="18" y="230" font-size="11" fill="#47595a">suelen ser anuncios, no la web oficial.</text>
+              </g>
+            </svg></div>
+            <figcaption><b>Arriba:</b> barra de direcciones. <b>Abajo:</b> buscador. Si sabes la dirección, escríbela siempre arriba.</figcaption>
+          </figure>
+
+          <div class="quiz" data-quiz data-okmsg="La barra de direcciones lleva directo a la web." data-errmsg="Casi. El buscador adivina y enseña anuncios; la barra de direcciones va directa.">
+            <p class="quiz__q">¿Dónde escribirías <code>apachefriends.org</code>?</p>
+            <div class="quiz__opts">
+              <button class="opt" type="button" data-ok="true">En la barra de direcciones</button>
+              <button class="opt" type="button" data-ok="false">En el buscador</button>
+            </div>
+            <p class="quiz__fb" role="status"></p>
+          </div>
+        </div>
+      </div>
+      <details class="trouble">
+        <summary>Si algo no sale</summary>
+        <div class="trouble__body">
+          <p><strong>No encuentro el botón de descarga:</strong> la página cambia a menudo. Busca la palabra "Download" o "Descargar" en grande.</p>
+          <p><strong>Se ha abierto una página rara:</strong> has pulsado un anuncio. Cierra la pestaña y vuelve a escribir la dirección a mano.</p>
+        </div>
+      </details>
+    </article>
+
+    <article class="step step--split" id="paso-2" data-step="2">
+      <header class="step__head">
+        <span class="step__num" aria-hidden="true">2</span>
+        <h3 class="step__title">Abrir el instalador</h3>
+        <label class="tick"><input type="checkbox" data-done="2"><span>Hecho</span></label>
+      </header>
+      <div class="step__grid">
+        <div>
+          <ol class="actions">
+            <li>Abre la carpeta <strong>Descargas</strong>.</li>
+            <li>Haz <strong>doble clic</strong> en el archivo <code>xampp-windows…exe</code>.</li>
+            <li>Windows pregunta si permites cambios: pulsa <strong>Sí</strong>.</li>
+            <li>Si el antivirus avisa: <strong>Permitir</strong> o <strong>Ejecutar de todos modos</strong>.</li>
+          </ol>
+          <div class="check">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            <p><strong>Comprueba:</strong> aparece una ventana con el botón <strong>Next</strong>.</p>
+          </div>
+        </div>
+        <div>
+          <figure class="fig">
+            <div class="svgpad"><svg viewBox="0 0 340 220" role="img" aria-labelledby="ms-t ms-d">
+              <title id="ms-t">El ratón: botón izquierdo y derecho</title>
+              <desc id="ms-d">Dibujo de un ratón visto desde arriba. El botón izquierdo se usa para hacer clic y doble clic; el derecho abre un menú de opciones.</desc>
+              <g font-family="Segoe UI, sans-serif">
+                <path d="M170 24c26 0 42 20 42 46v58c0 30-19 50-42 50s-42-20-42-50V70c0-26 16-46 42-46Z" fill="#fff" stroke="#0f1f1e" stroke-width="2.5"/>
+                <path d="M128 84h42V26c-24 1-42 22-42 48Z" fill="#e5f1ec" stroke="#0b6b52" stroke-width="2.5"/>
+                <path d="M212 84h-42V26c24 1 42 22 42 48Z" fill="#faece8" stroke="#a8321f" stroke-width="2.5"/>
+                <path d="M170 46v30" stroke="#0b6b52" stroke-width="2" stroke-dasharray="4 3"/>
+                <text x="96" y="60" text-anchor="end" font-size="12" font-weight="700" fill="#0b6b52">Izquierdo</text>
+                <text x="90" y="78" text-anchor="end" font-size="10.5" fill="#47595a">clic · doble clic</text>
+                <text x="244" y="60" font-size="12" font-weight="700" fill="#a8321f">Derecho</text>
+                <text x="244" y="78" font-size="10.5" fill="#47595a">menú de opciones</text>
+                <path d="M100 64h22" stroke="#0b6b52" stroke-width="1.5"/>
+                <path d="M216 64h22" stroke="#a8321f" stroke-width="1.5"/>
+                <text x="170" y="196" text-anchor="middle" font-size="11" fill="#47595a">Doble clic = dos pulsaciones rápidas,</text>
+                <text x="170" y="211" text-anchor="middle" font-size="11" fill="#47595a">sin mover el ratón entre las dos.</text>
+              </g>
+            </svg></div>
+            <figcaption>Si el doble clic no abre nada, espera un segundo y prueba otra vez. No hace falta pulsar más fuerte.</figcaption>
+          </figure>
+        </div>
+      </div>
+      <details class="trouble">
+        <summary>Si algo no sale</summary>
+        <div class="trouble__body">
+          <p><strong>Windows dice que falta un administrador:</strong> llama al profesor. No intentes saltarte el aviso.</p>
+          <p><strong>No veo el archivo:</strong> en Descargas, ordena por <em>Fecha de modificación</em>: lo último descargado sale arriba.</p>
+        </div>
+      </details>
+    </article>
+
+    <article class="step" id="paso-3" data-step="3">
+      <header class="step__head">
+        <span class="step__num" aria-hidden="true">3</span>
+        <h3 class="step__title">Instalar: casi todo es pulsar «Next»</h3>
+        <label class="tick"><input type="checkbox" data-done="3"><span>Hecho</span></label>
+      </header>
+      <ol class="actions">
+        <li>Primera pantalla: <strong>Next</strong>.</li>
+        <li>Pantalla de componentes: deja marcados <strong>solo</strong> Apache, MySQL y phpMyAdmin. Desmarca lo demás y pulsa <strong>Next</strong>.</li>
+        <li>Carpeta de instalación: déjala como viene (<code>C:\xampp</code>) y pulsa <strong>Next</strong>.</li>
+        <li>Idioma: <strong>English</strong> o <strong>Español</strong>. Pulsa <strong>Next</strong>.</li>
+        <li>Espera a que la barra llegue al final. Deja marcada la casilla de abrir el panel y pulsa <strong>Finish</strong>.</li>
+      </ol>
+      <div class="check">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        <p><strong>Comprueba:</strong> se abre la ventana <strong>XAMPP Control Panel</strong>, con una lista de nombres y botones <strong>Start</strong>.</p>
+      </div>
+      <details class="trouble">
+        <summary>Si algo no sale</summary>
+        <div class="trouble__body">
+          <p><strong>No se abrió el panel:</strong> menú Inicio → escribe <code>xampp</code> → <strong>XAMPP Control Panel</strong>.</p>
+          <p><strong>Ha terminado pero no veo nada:</strong> mira en la barra de tareas, abajo; puede estar minimizado.</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- ============ PARTE B ============ -->
+    <section class="part" id="parte-b">
+      <span class="part__k">Parte B</span>
+      <h2>Encender el servidor</h2>
+      <span class="part__time">≈ 15 min</span>
+    </section>
+
+    <article class="step step--split" id="paso-4" data-step="4">
+      <header class="step__head">
+        <span class="step__num" aria-hidden="true">4</span>
+        <h3 class="step__title">Encender Apache y MySQL</h3>
+        <label class="tick"><input type="checkbox" data-done="4"><span>Hecho</span></label>
+      </header>
+      <div class="step__grid">
+        <div>
+          <ol class="actions">
+            <li>En la fila <strong>Apache</strong>, pulsa <strong>Start</strong>.</li>
+            <li>En la fila <strong>MySQL</strong>, pulsa <strong>Start</strong>.</li>
+            <li>Espera unos segundos.</li>
+          </ol>
+          <div class="check">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            <p><strong>Comprueba:</strong> los dos botones ahora dicen <strong>Stop</strong> y los nombres se ponen <strong>en verde</strong>. Aparecen los números <strong>80</strong> y <strong>3306</strong>.</p>
+          </div>
+        </div>
+        <div>
+          <figure class="fig">
+            <div class="svgpad"><svg viewBox="0 0 420 200" role="img" aria-labelledby="xm-t xm-d">
+              <title id="xm-t">Panel de control de XAMPP con los dos servicios en verde</title>
+              <desc id="xm-d">Tabla con dos filas, Apache y MySQL. Cada fila tiene un botón que dice Stop y una etiqueta verde de funcionando, con el número de puerto 80 y 3306.</desc>
+              <g font-family="Segoe UI, sans-serif">
+                <rect x="6" y="6" width="408" height="188" rx="8" fill="#fff" stroke="#47595a" stroke-width="2"/>
+                <rect x="6" y="6" width="408" height="28" rx="8" fill="#f1f5f4" stroke="#47595a" stroke-width="2"/>
+                <text x="18" y="25" font-size="11" font-weight="700" fill="#0f1f1e">XAMPP Control Panel v3.3.0</text>
+                <g font-size="11.5" fill="#0f1f1e">
+                  <text x="26" y="76" font-weight="700">Apache</text>
+                  <text x="26" y="136" font-weight="700">MySQL</text>
+                </g>
+                <g>
+                  <rect x="112" y="56" width="70" height="28" rx="5" fill="#fff" stroke="#0b6b52" stroke-width="2"/>
+                  <text x="147" y="75" text-anchor="middle" font-size="11.5" font-weight="700" fill="#0b6b52">Stop</text>
+                  <rect x="112" y="116" width="70" height="28" rx="5" fill="#fff" stroke="#0b6b52" stroke-width="2"/>
+                  <text x="147" y="135" text-anchor="middle" font-size="11.5" font-weight="700" fill="#0b6b52">Stop</text>
+                </g>
+                <rect x="204" y="56" width="112" height="28" rx="14" fill="#e5f1ec" stroke="#0b6b52" stroke-width="1.6"/>
+                <circle cx="222" cy="70" r="5" fill="#0b6b52"/>
+                <text x="234" y="75" font-size="11" font-weight="700" fill="#0b6b52">Running : 80</text>
+                <rect x="204" y="116" width="126" height="28" rx="14" fill="#e5f1ec" stroke="#0b6b52" stroke-width="1.6"/>
+                <circle cx="222" cy="130" r="5" fill="#0b6b52"/>
+                <text x="234" y="135" font-size="11" font-weight="700" fill="#0b6b52">Running : 3306</text>
+                <text x="26" y="176" font-size="10.5" fill="#47595a">Verde = encendido. Si está gris, no funciona.</text>
+              </g>
+            </svg></div>
+            <figcaption>El verde es la única señal que importa. Si Apache se apaga solo, avisa al profesor.</figcaption>
+          </figure>
+
+          <div class="quiz" data-quiz data-okmsg="Con Stop se enciende; y al encenderse cambia a Stop." data-errmsg="No. Start enciende el servicio. Stop lo apaga.">
+            <p class="quiz__q">El botón de Apache dice «Stop». ¿Qué significa?</p>
+            <div class="quiz__opts">
+              <button class="opt" type="button" data-ok="true">Que ya está encendido</button>
+              <button class="opt" type="button" data-ok="false">Que está apagado</button>
+            </div>
+            <p class="quiz__fb" role="status"></p>
+          </div>
+        </div>
+      </div>
+      <details class="trouble">
+        <summary>Si algo no sale</summary>
+        <div class="trouble__body">
+          <p><strong>Apache no se pone verde y se apaga:</strong> otro programa ocupa la puerta 80 (Skype, Teams, IIS). No lo toques: avisa al profesor.</p>
+          <p><strong>MySQL no arranca:</strong> la puerta 3306 está ocupada. También lo resuelve el profesor.</p>
+        </div>
+      </details>
+    </article>
+
+    <article class="step" id="paso-5" data-step="5">
+      <header class="step__head">
+        <span class="step__num" aria-hidden="true">5</span>
+        <h3 class="step__title">Comprobar que el servidor responde</h3>
+        <label class="tick"><input type="checkbox" data-done="5"><span>Hecho</span></label>
+      </header>
+      <ol class="actions">
+        <li>Abre el navegador.</li>
+        <li>Escribe <code>http://localhost/</code> en la barra de direcciones y pulsa <strong>Enter</strong>.</li>
+      </ol>
+      <div class="chiprow">
+        <button class="chip" type="button" data-copy="http://localhost/">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+          <span>http://localhost/</span>
+        </button>
+      </div>
+      <div class="check">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        <p><strong>Comprueba:</strong> sale la página de bienvenida de XAMPP. Si sale, <strong>ya tienes un servidor</strong>.</p>
+      </div>
+      <p style="margin-top:1rem"><strong>«localhost» significa «mi propio ordenador»</strong>: es una dirección que solo funciona en tu equipo. No está en internet.</p>
+      <details class="trouble">
+        <summary>Si algo no sale</summary>
+        <div class="trouble__body">
+          <p><strong>La página no carga:</strong> Apache está apagado. Vuelve al panel y pulsa Start.</p>
+          <p><strong>Me lleva a una página de un buscador:</strong> lo has escrito en el buscador y no en la barra de direcciones.</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- ============ PARTE C ============ -->
+    <section class="part" id="parte-c">
+      <span class="part__k">Parte C</span>
+      <h2>WordPress y su despensa</h2>
+      <span class="part__time">≈ 35 min</span>
+    </section>
+
+    <article class="step step--split" id="paso-6" data-step="6">
+      <header class="step__head">
+        <span class="step__num" aria-hidden="true">6</span>
+        <h3 class="step__title">Descargar WordPress</h3>
+        <label class="tick"><input type="checkbox" data-done="6"><span>Hecho</span></label>
+      </header>
+      <div class="step__grid">
+        <div>
+          <ol class="actions">
+            <li>En el navegador, escribe la dirección y pulsa <strong>Enter</strong>.</li>
+            <li>Pulsa el botón <strong>Download WordPress</strong>.</li>
+            <li>Espera a que termine la descarga.</li>
+          </ol>
+          <div class="chiprow">
+            <button class="chip" type="button" data-copy="https://wordpress.org/download/">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+              <span>https://wordpress.org/download/</span>
+            </button>
+          </div>
+          <div class="check">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            <p><strong>Comprueba:</strong> en <strong>Descargas</strong> hay un archivo llamado <code>wordpress</code> que termina en <code>.zip</code>.</p>
+          </div>
+          <p style="margin-top:1rem">Un <code>.zip</code> es <strong>una caja comprimida</strong>: dentro hay muchos archivos y hay que abrirla.</p>
+        </div>
+        <div>
+          <figure class="fig">
+            <div class="svgpad"><svg viewBox="0 0 400 250" role="img" aria-labelledby="dl-t dl-d">
+              <title id="dl-t">La carpeta Descargas con el archivo wordpress.zip</title>
+              <desc id="dl-d">Ventana del explorador de archivos con la carpeta Descargas seleccionada a la izquierda y el archivo comprimido wordpress.zip destacado a la derecha.</desc>
+              <g font-family="Segoe UI, sans-serif">
+                <rect x="6" y="6" width="388" height="238" rx="8" fill="#fff" stroke="#47595a" stroke-width="2"/>
+                <rect x="6" y="6" width="388" height="26" rx="8" fill="#f1f5f4" stroke="#47595a" stroke-width="2"/>
+                <text x="18" y="24" font-size="10.5" fill="#47595a">Explorador de archivos</text>
+                <rect x="6" y="32" width="120" height="212" fill="#fbfcfc" stroke="#ccd6d4"/>
+                <rect x="6" y="52" width="120" height="24" fill="#e5f1ec"/>
+                <text x="40" y="69" font-size="10.5" font-weight="700" fill="#0b6b52">Descargas</text>
+                <path d="M20 60l6 6v6h-12v-6z" fill="none" stroke="#0b6b52" stroke-width="1.6"/>
+                <text x="20" y="98" font-size="10.5" fill="#47595a">Documentos</text>
+                <text x="20" y="120" font-size="10.5" fill="#47595a">Imágenes</text>
+                <text x="20" y="142" font-size="10.5" fill="#47595a">Escritorio</text>
+                <rect x="136" y="52" width="248" height="34" rx="4" fill="#e5f1ec" stroke="#0b6b52" stroke-width="1.6"/>
+                <rect x="146" y="61" width="14" height="16" rx="2" fill="#fff" stroke="#0b6b52" stroke-width="1.4"/>
+                <text x="168" y="73" font-size="10.5" font-weight="700" fill="#0b6b52">wordpress.zip</text>
+                <text x="136" y="112" font-size="10" fill="#47595a">Hoy · 24,8 MB</text>
+                <text x="136" y="150" font-size="10.5" fill="#47595a">Clic derecho → Extraer todo…</text>
+                <path d="M312 74v34" stroke="#0b6b52" stroke-width="1.6" fill="none"/>
+                <path d="M306 102l6 8 6-8" fill="#0b6b52"/>
+              </g>
+            </svg></div>
+            <figcaption>Todo lo que descargas aparece en <b>Descargas</b>, no en el escritorio. Búscalo ahí primero.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </article>
+
+    <article class="step" id="paso-7" data-step="7">
+      <header class="step__head">
+        <span class="step__num" aria-hidden="true">7</span>
+        <h3 class="step__title">Crear la carpeta de tu web</h3>
+        <label class="tick"><input type="checkbox" data-done="7"><span>Hecho</span></label>
+      </header>
+      <ol class="actions">
+        <li>Abre <strong>Explorador de archivos</strong>.</li>
+        <li>Entra en la unidad <strong>C:</strong> → carpeta <strong>xampp</strong> → carpeta <strong>htdocs</strong>.</li>
+        <li>Dentro de <strong>htdocs</strong>, haz clic derecho en un espacio vacío → <strong>Nuevo</strong> → <strong>Carpeta</strong>.</li>
+        <li>Escribe <code>miwordpress</code> y pulsa <strong>Enter</strong>.</li>
+      </ol>
+      <div class="chiprow">
+        <button class="chip" type="button" data-copy="C:\xampp\htdocs">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+          <span>C:\xampp\htdocs</span>
+        </button>
+      </div>
+      <div class="check">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        <p><strong>Comprueba:</strong> existe <code>C:\xampp\htdocs\miwordpress</code> y está vacía.</p>
+      </div>
+      <p style="margin-top:1rem"><code>htdocs</code> es la carpeta donde el servidor busca las webs. <strong>Todo lo que pongas dentro se verá en el navegador.</strong></p>
+      <details class="trouble">
+        <summary>Si algo no sale</summary>
+        <div class="trouble__body">
+          <p><strong>El nombre se queda mal escrito:</strong> clic derecho → Cambiar nombre. Sin espacios, sin tildes y todo en minúsculas.</p>
+          <p><strong>No encuentro la unidad C:</strong> abre <em>Este equipo</em> en la columna de la izquierda.</p>
+        </div>
+      </details>
+    </article>
+
+    <article class="step step--split" id="paso-8" data-step="8">
+      <header class="step__head">
+        <span class="step__num" aria-hidden="true">8</span>
+        <h3 class="step__title">Descomprimir dentro de la carpeta</h3>
+        <label class="tick"><input type="checkbox" data-done="8"><span>Hecho</span></label>
+      </header>
+      <div class="step__grid">
+        <div>
+          <ol class="actions">
+            <li>Abre <strong>Descargas</strong>.</li>
+            <li>Clic derecho en <code>wordpress.zip</code> → <strong>Extraer todo…</strong></li>
+            <li>Pulsa <strong>Examinar</strong> y elige <code>C:\xampp\htdocs\miwordpress</code>. <strong>No</strong> elijas <code>htdocs</code>.</li>
+            <li>Pulsa <strong>Extraer</strong>.</li>
+          </ol>
+          <div class="check">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            <p><strong>Comprueba:</strong> dentro de <code>miwordpress</code> ves directamente <code>wp-admin</code>, <code>wp-content</code>, <code>wp-includes</code>, <code>index.php</code> y <code>wp-config-sample.php</code>.</p>
+          </div>
+        </div>
+        <div>
+          <figure class="fig">
+            <div class="svgpad"><svg viewBox="0 0 460 250" role="img" aria-labelledby="fd-t fd-d">
+              <title id="fd-t">Estructura de carpetas correcta e incorrecta</title>
+              <desc id="fd-d">A la izquierda, la estructura correcta: dentro de miwordpress están wp-admin, wp-content, wp-includes e index.php. A la derecha, el error frecuente: una carpeta wordpress de más dentro de miwordpress.</desc>
+              <g font-family="Consolas, monospace" font-size="10.5">
+                <rect x="4" y="4" width="216" height="242" rx="8" fill="#e5f1ec" stroke="#0b6b52" stroke-width="2"/>
+                <text x="16" y="24" font-family="Segoe UI, sans-serif" font-size="10.5" font-weight="700" fill="#0b6b52">CORRECTO</text>
+                <text x="16" y="48" fill="#0f1f1e">miwordpress\</text>
+                <text x="28" y="68" fill="#0f1f1e">├ wp-admin\</text>
+                <text x="28" y="86" fill="#0f1f1e">├ wp-content\</text>
+                <text x="28" y="104" fill="#0f1f1e">├ wp-includes\</text>
+                <text x="28" y="122" fill="#0f1f1e">├ index.php</text>
+                <text x="28" y="140" fill="#0f1f1e">└ wp-config-sample.php</text>
+                <circle cx="192" cy="196" r="18" fill="#0b6b52"/>
+                <path d="M184 196l6 6 11-12" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+                <rect x="240" y="4" width="216" height="242" rx="8" fill="#faece8" stroke="#a8321f" stroke-width="2"/>
+                <text x="252" y="24" font-family="Segoe UI, sans-serif" font-size="10.5" font-weight="700" fill="#a8321f">MAL</text>
+                <text x="252" y="48" fill="#0f1f1e">miwordpress\</text>
+                <text x="264" y="68" fill="#a8321f" font-weight="700">└ wordpress\</text>
+                <text x="276" y="88" fill="#47595a">├ wp-admin\</text>
+                <text x="276" y="106" fill="#47595a">├ wp-content\</text>
+                <text x="276" y="124" fill="#47595a">└ index.php</text>
+                <text x="252" y="156" font-family="Segoe UI, sans-serif" font-size="10" fill="#a8321f">Una carpeta de más: la web no carga.</text>
+                <circle cx="428" cy="196" r="18" fill="#a8321f"/>
+                <path d="M421 189l14 14M435 189l-14 14" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>
+              </g>
+            </svg></div>
+            <figcaption><b>Este es el error más frecuente de la práctica.</b> Si ves la carpeta intermedia <code>wordpress</code>, corta su contenido y pégalo un nivel arriba.</figcaption>
+          </figure>
+
+          <div class="quiz" data-quiz data-okmsg="Los archivos de WordPress deben verse nada más abrir miwordpress." data-errmsg="Fíjate en el dibujo: sobra una carpeta llamada wordpress dentro de miwordpress.">
+            <p class="quiz__q">Dentro de <code>miwordpress</code> solo veo otra carpeta llamada <code>wordpress</code>. ¿Está bien?</p>
+            <div class="quiz__opts">
+              <button class="opt" type="button" data-ok="false">Sí, es lo normal</button>
+              <button class="opt" type="button" data-ok="true">No, sobra una carpeta</button>
+            </div>
+            <p class="quiz__fb" role="status"></p>
+          </div>
+        </div>
+      </div>
+      <details class="trouble">
+        <summary>Cómo arreglar la carpeta de más</summary>
+        <div class="trouble__body">
+          <ol>
+            <li>Entra en la carpeta <code>wordpress</code> que sobra.</li>
+            <li>Selecciona todo con <kbd>Ctrl</kbd> + <kbd>E</kbd> y corta con <kbd>Ctrl</kbd> + <kbd>X</kbd>.</li>
+            <li>Vuelve a <code>miwordpress</code> y pega con <kbd>Ctrl</kbd> + <kbd>V</kbd>.</li>
+            <li>Borra la carpeta <code>wordpress</code>, que ya está vacía.</li>
+          </ol>
+          <p>Si no te aclaras, llama al profesor <strong>antes</strong> de seguir: con esto mal, nada funcionará después.</p>
+        </div>
+      </details>
+    </article>
+
+    <article class="step step--split" id="paso-9" data-step="9">
+      <header class="step__head">
+        <span class="step__num" aria-hidden="true">9</span>
+        <h3 class="step__title">Crear la despensa: la base de datos</h3>
+        <label class="tick"><input type="checkbox" data-done="9"><span>Hecho</span></label>
+      </header>
+      <div class="step__grid">
+        <div>
+          <ol class="actions">
+            <li>En el navegador, abre <code>http://localhost/phpmyadmin/</code>.</li>
+            <li>Pulsa la pestaña <strong>Bases de datos</strong>.</li>
+            <li>En <strong>Nombre de la base de datos</strong> escribe <code>wordpress_db</code>.</li>
+            <li>Pulsa <strong>Crear</strong>. No crees ninguna tabla: WordPress las crea solo.</li>
+          </ol>
+          <div class="check">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            <p><strong>Comprueba:</strong> en la lista de la izquierda aparece <code>wordpress_db</code>.</p>
+          </div>
+        </div>
+        <div>
+          <figure class="fig">
+            <div class="svgpad"><svg viewBox="0 0 400 200" role="img" aria-labelledby="pm-t pm-d">
+              <title id="pm-t">Crear una base de datos en phpMyAdmin</title>
+              <desc id="pm-d">Formulario con una pestaña Bases de datos, un campo de texto con wordpress_db escrito y un botón verde que dice Crear.</desc>
+              <g font-family="Segoe UI, sans-serif">
+                <rect x="6" y="6" width="388" height="188" rx="8" fill="#fff" stroke="#47595a" stroke-width="2"/>
+                <text x="20" y="30" font-size="10.5" font-weight="700" fill="#47595a">phpMyAdmin</text>
+                <rect x="20" y="42" width="86" height="24" rx="4" fill="#e5f1ec" stroke="#0b6b52" stroke-width="1.6"/>
+                <text x="63" y="58" text-anchor="middle" font-size="10.5" font-weight="700" fill="#0b6b52">Bases de datos</text>
+                <text x="20" y="92" font-size="10.5" fill="#0f1f1e">Nombre de la base de datos</text>
+                <rect x="20" y="100" width="196" height="30" rx="5" fill="#fff" stroke="#0b6b52" stroke-width="2"/>
+                <text x="32" y="120" font-family="Consolas, monospace" font-size="11.5" fill="#0f1f1e">wordpress_db</text>
+                <rect x="228" y="100" width="76" height="30" rx="5" fill="#0b6b52"/>
+                <text x="266" y="120" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">Crear</text>
+                <text x="20" y="156" font-size="10" fill="#47595a">Cotejamiento: utf8mb4_general_ci (déjalo como está)</text>
+                <text x="20" y="176" font-size="10" fill="#47595a">No hace falta crear tablas.</text>
+              </g>
+            </svg></div>
+            <figcaption>La «despensa» donde WordPress guardará textos, usuarios y ajustes.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </article>
+
+    <!-- ============ PARTE D ============ -->
+    <section class="part" id="parte-d">
+      <span class="part__k">Parte D</span>
+      <h2>Instalar WordPress y entrar</h2>
+      <span class="part__time">≈ 40 min</span>
+    </section>
+
+    <article class="step" id="paso-10" data-step="10">
+      <header class="step__head">
+        <span class="step__num" aria-hidden="true">10</span>
+        <h3 class="step__title">Abrir el instalador de WordPress</h3>
+        <label class="tick"><input type="checkbox" data-done="10"><span>Hecho</span></label>
+      </header>
+      <ol class="actions">
+        <li>En el navegador, abre <code>http://localhost/miwordpress/</code>.</li>
+        <li>Elige <strong>Español</strong> y pulsa <strong>Continuar</strong>.</li>
+        <li>Pulsa <strong>¡Vamos allá!</strong></li>
+      </ol>
+      <div class="check">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        <p><strong>Comprueba:</strong> aparece un formulario que pide datos de la base de datos.</p>
+      </div>
+      <details class="trouble">
+        <summary>Si algo no sale</summary>
+        <div class="trouble__body">
+          <p><strong>Sale «404» o «no encontrado»:</strong> la carpeta no está donde debe. Revisa el paso 7.</p>
+          <p><strong>Sale una lista de archivos:</strong> has descomprimido un nivel de más. Revisa el paso 8.</p>
+        </div>
+      </details>
+    </article>
+
+    <article class="step" id="paso-11" data-step="11">
+      <header class="step__head">
+        <span class="step__num" aria-hidden="true">11</span>
+        <h3 class="step__title">Rellenar los datos de conexión</h3>
+        <label class="tick"><input type="checkbox" data-done="11"><span>Hecho</span></label>
+      </header>
+      <p>Copia estos datos <strong>exactamente</strong>:</p>
+      <table class="tbl">
+        <thead><tr><th>Campo del formulario</th><th>Qué escribir</th></tr></thead>
+        <tbody>
+          <tr><td>Nombre de la base de datos</td><td><code>wordpress_db</code></td></tr>
+          <tr><td>Nombre de usuario</td><td><code>root</code></td></tr>
+          <tr><td>Contraseña</td><td><strong>nada, vacía</strong></td></tr>
+          <tr><td>Servidor de la base de datos</td><td><code>localhost</code></td></tr>
+          <tr><td>Prefijo de tabla</td><td><code>wp_</code> (déjalo como está)</td></tr>
+        </tbody>
+      </table>
+      <ol class="actions">
+        <li>Pulsa <strong>Enviar</strong>.</li>
+        <li>Pulsa <strong>Ejecutar la instalación</strong>.</li>
+      </ol>
+      <div class="check">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        <p><strong>Comprueba:</strong> sale la pantalla que pide el título del sitio, un usuario y una contraseña.</p>
+      </div>
+      <details class="trouble">
+        <summary>Si algo no sale</summary>
+        <div class="trouble__body">
+          <p><strong>Error rojo sobre «conectar con la base de datos»:</strong> revisa que el usuario es <code>root</code>, que la contraseña está vacía y que el servidor es <code>localhost</code>. Es el fallo más común.</p>
+        </div>
+      </details>
+    </article>
+
+    <article class="step" id="paso-12" data-step="12">
+      <header class="step__head">
+        <span class="step__num" aria-hidden="true">12</span>
+        <h3 class="step__title">Crear tu usuario de administrador</h3>
+        <label class="tick"><input type="checkbox" data-done="12"><span>Hecho</span></label>
+      </header>
+      <table class="tbl">
+        <thead><tr><th>Campo</th><th>Qué escribir</th></tr></thead>
+        <tbody>
+          <tr><td>Título del sitio</td><td>El nombre de tu web, por ejemplo <em>La web de Ana</em></td></tr>
+          <tr><td>Nombre de usuario</td><td>Algo tuyo, por ejemplo <code>ana</code>. Evita <code>admin</code></td></tr>
+          <tr><td>Contraseña</td><td>Una que recuerdes. <strong>Apúntala abajo</strong></td></tr>
+          <tr><td>Correo electrónico</td><td>Tu correo, o el que te diga el profesor</td></tr>
+        </tbody>
+      </table>
+      <ol class="actions">
+        <li>Pulsa <strong>Instalar WordPress</strong> y espera.</li>
+      </ol>
+      <div class="check">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        <p><strong>Comprueba:</strong> aparece una pantalla con el botón <strong>Acceder</strong>.</p>
+      </div>
+
+      <div class="fields">
+        <div class="field">
+          <label for="f-user">Mi usuario</label>
+          <input id="f-user" type="text" autocomplete="off" spellcheck="false">
+        </div>
+        <div class="field">
+          <label for="f-pass">Mi contraseña</label>
+          <input id="f-pass" type="text" autocomplete="off" spellcheck="false">
+        </div>
+      </div>
+      <p style="font-size:.85rem; color:var(--ink-2)">Se guarda solo en este navegador y no se envía a ningún sitio.</p>
+    </article>
+
+    <article class="step step--split" id="paso-13" data-step="13">
+      <header class="step__head">
+        <span class="step__num" aria-hidden="true">13</span>
+        <h3 class="step__title">Entrar en tu web</h3>
+        <label class="tick"><input type="checkbox" data-done="13"><span>Hecho</span></label>
+      </header>
+      <div class="step__grid">
+        <div>
+          <ol class="actions">
+            <li>Pulsa <strong>Acceder</strong>.</li>
+            <li>Escribe tu usuario y tu contraseña.</li>
+            <li>Pulsa <strong>Entrar</strong>.</li>
+          </ol>
+          <div class="check">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            <p><strong>Comprueba:</strong> ves el <strong>escritorio</strong> de WordPress, un panel con menús a la izquierda.</p>
+          </div>
+        </div>
+        <div>
+          <figure class="fig">
+            <div class="svgpad"><svg viewBox="0 0 420 150" role="img" aria-labelledby="wp-t wp-d">
+              <title id="wp-t">Barra superior de WordPress con el botón Visitar sitio</title>
+              <desc id="wp-d">Franja oscura superior con el nombre del sitio a la izquierda y, al pasar el ratón, la opción Visitar sitio destacada.</desc>
+              <g font-family="Segoe UI, sans-serif">
+                <rect x="6" y="6" width="408" height="40" rx="4" fill="#0f1f1e"/>
+                <circle cx="30" cy="26" r="8" fill="#e5f1ec"/>
+                <text x="46" y="30" font-size="11" fill="#e9efed">La web de Ana</text>
+                <rect x="156" y="14" width="104" height="24" rx="4" fill="#0b6b52"/>
+                <text x="208" y="30" text-anchor="middle" font-size="10.5" font-weight="700" fill="#fff">Visitar sitio</text>
+                <text x="280" y="30" font-size="10.5" fill="#c9d6d2">Personalizar</text>
+                <text x="356" y="30" font-size="10.5" fill="#c9d6d2">+ Nueva</text>
+                <path d="M208 44v22" stroke="#0b6b52" stroke-width="1.8"/>
+                <path d="M202 60l6 8 6-8" fill="#0b6b52"/>
+                <text x="208" y="92" text-anchor="middle" font-size="10.5" fill="#47595a">Pasa el ratón por el nombre del sitio</text>
+                <text x="208" y="110" text-anchor="middle" font-size="10.5" fill="#47595a">y pulsa «Visitar sitio».</text>
+                <rect x="96" y="122" width="228" height="20" rx="4" fill="#f1f5f4" stroke="#ccd6d4"/>
+                <text x="210" y="136" text-anchor="middle" font-size="10" fill="#47595a">Así se ve tu web como la ve un visitante</text>
+              </g>
+            </svg></div>
+            <figcaption>El escritorio es el «taller». <b>Visitar sitio</b> es el «escaparate».</figcaption>
+          </figure>
+        </div>
+      </div>
+      <details class="trouble">
+        <summary>Si algo no sale</summary>
+        <div class="trouble__body">
+          <p><strong>La contraseña no entra:</strong> revisa mayúsculas y que no haya un espacio al final. Si no, avisa al profesor.</p>
+        </div>
+      </details>
+    </article>
+
+    <article class="step" id="paso-14" data-step="14">
+      <header class="step__head">
+        <span class="step__num" aria-hidden="true">14</span>
+        <h3 class="step__title">Ver tu web publicada</h3>
+        <label class="tick"><input type="checkbox" data-done="14"><span>Hecho</span></label>
+      </header>
+      <ol class="actions">
+        <li>Arriba a la izquierda, pasa el ratón por el nombre de tu web.</li>
+        <li>Pulsa <strong>Visitar sitio</strong>.</li>
+      </ol>
+      <div class="check">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        <p><strong>Comprueba:</strong> ves tu web. <strong>Ya está: tienes una web funcionando.</strong></p>
+      </div>
+    </article>
+
+    <!-- ============ CIERRE ============ -->
+    <section class="part" id="despues">
+      <span class="part__k">Después</span>
+      <h2>Cuando vuelvas otro día</h2>
+    </section>
+
+    <div class="block">
+      <p>El servidor <strong>se apaga</strong> al apagar el ordenador. Para volver a entrar:</p>
+      <ol class="actions">
+        <li>Abre <strong>XAMPP Control Panel</strong>.</li>
+        <li>Pulsa <strong>Start</strong> en Apache y en MySQL.</li>
+        <li>Abre el navegador y ve a <code>http://localhost/miwordpress/wp-admin/</code>.</li>
+      </ol>
+      <div class="notice notice--warn">
+        <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#8a5a00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2.5 20h19L12 3Z"/><path d="M12 9v5"/><circle cx="12" cy="17.2" r=".9" fill="#8a5a00" stroke="none"/></svg>
+        <p><strong>No apagues el ordenador de golpe</strong> mientras Apache y MySQL estén en verde. Pulsa <strong>Stop</strong> en los dos primero.</p>
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Qué tienes que entregar</h2>
+      <ol class="actions">
+        <li><strong>Capturas de pantalla</strong> de: el panel de XAMPP en verde, la carpeta <code>miwordpress</code> abierta, <code>wordpress_db</code> en phpMyAdmin y tu web publicada.</li>
+        <li><strong>Una frase</strong> explicando qué es <code>localhost</code>, con tus palabras.</li>
+        <li><strong>Una incidencia</strong>: algo que salió mal y cómo lo arreglaste.</li>
+      </ol>
+      <figure class="fig" style="margin-top:1.4rem">
+        <div class="svgpad"><svg viewBox="0 0 460 150" role="img" aria-labelledby="ss-t ss-d">
+          <title id="ss-t">Cómo hacer una captura de pantalla en Windows</title>
+          <desc id="ss-d">Tres teclas: Windows, Shift y S. Después se arrastra el ratón para rodear una zona de la pantalla y la imagen queda copiada.</desc>
+          <g font-family="Segoe UI, sans-serif">
+            <g>
+              <rect x="14" y="26" width="76" height="52" rx="8" fill="#fff" stroke="#0f1f1e" stroke-width="2"/>
+              <text x="52" y="59" text-anchor="middle" font-size="16" fill="#0f1f1e">⊞</text>
+              <text x="52" y="98" text-anchor="middle" font-size="10.5" fill="#47595a">Windows</text>
+            </g>
+            <text x="100" y="60" font-size="18" fill="#47595a">+</text>
+            <g>
+              <rect x="118" y="26" width="76" height="52" rx="8" fill="#fff" stroke="#0f1f1e" stroke-width="2"/>
+              <text x="156" y="58" text-anchor="middle" font-size="12" fill="#0f1f1e">Shift</text>
+              <text x="156" y="98" text-anchor="middle" font-size="10.5" fill="#47595a">Mayúsculas</text>
+            </g>
+            <text x="204" y="60" font-size="18" fill="#47595a">+</text>
+            <g>
+              <rect x="222" y="26" width="76" height="52" rx="8" fill="#e5f1ec" stroke="#0b6b52" stroke-width="2"/>
+              <text x="260" y="58" text-anchor="middle" font-size="16" font-weight="700" fill="#0b6b52">S</text>
+              <text x="260" y="98" text-anchor="middle" font-size="10.5" fill="#0b6b52" font-weight="700">la tecla S</text>
+            </g>
+            <rect x="318" y="20" width="128" height="72" rx="4" fill="none" stroke="#0b6b52" stroke-width="2" stroke-dasharray="6 4"/>
+            <text x="382" y="52" text-anchor="middle" font-size="10.5" fill="#0b6b52">arrastra para</text>
+            <text x="382" y="68" text-anchor="middle" font-size="10.5" fill="#0b6b52">rodear la zona</text>
+            <text x="14" y="130" font-size="10.5" fill="#47595a">La foto queda copiada: abre Word y pega con Ctrl + V.</text>
+          </g>
+        </svg></div>
+        <figcaption>En Mac es <b>Cmd + Shift + 4</b> y el archivo se guarda en el escritorio.</figcaption>
+      </figure>
+    </div>
+
+    <div class="block">
+      <h2>Si algo va mal</h2>
+      <table class="tbl">
+        <thead><tr><th>Lo que ves</th><th>Qué haces</th></tr></thead>
+        <tbody>
+          <tr><td>Apache se apaga solo</td><td>Otra «puerta» está ocupada. Avisa al profesor.</td></tr>
+          <tr><td>Error al conectar con la base de datos</td><td>Usuario <code>root</code>, contraseña vacía, servidor <code>localhost</code>.</td></tr>
+          <tr><td>Sale «404» o «no encontrado»</td><td>La carpeta no está en <code>C:\xampp\htdocs\miwordpress</code>.</td></tr>
+          <tr><td>Me pide instalar otra vez</td><td>Se instaló con otro prefijo de tablas. Avisa al profesor.</td></tr>
+          <tr><td>La web se ve sin colores</td><td>Falta algún archivo. Revisa el paso 8.</td></tr>
+        </tbody>
+      </table>
+      <p><strong>Regla de oro:</strong> si algo no sale, <strong>para</strong>. No sigas pulsando cosas. Anota lo que ves y avisa. Cuanto menos toques, más fácil es arreglarlo.</p>
+    </div>
+
+    <div class="block">
+      <h2>Diccionario</h2>
+      <dl class="dict">
+        <dt>Descargar</dt><dd>Traer un archivo de internet a tu ordenador.</dd>
+        <dt>Instalar</dt><dd>Meter un programa en el ordenador para poder usarlo.</dd>
+        <dt>Descomprimir</dt><dd>Abrir una caja <code>.zip</code> para sacar los archivos.</dd>
+        <dt>Ruta</dt><dd>El camino hasta un archivo. Ejemplo: <code>C:\xampp\htdocs</code>.</dd>
+        <dt>Servidor</dt><dd>Programa que guarda una web y la entrega cuando la pides.</dd>
+        <dt>Base de datos</dt><dd>La despensa: donde se guardan textos, usuarios y datos.</dd>
+        <dt>Local</dt><dd>En tu propio ordenador, sin internet.</dd>
+        <dt>Administrador</dt><dd>El usuario con todos los permisos de la web.</dd>
+      </dl>
+    </div>
+
+    <div class="final" id="final">
+      <h2 id="final-title">Chuleta: copia y pega</h2>
+      <p id="final-msg" hidden><strong>¡14 de 14!</strong> Si has llegado hasta aquí, ya tienes tu web funcionando. Estas son las direcciones para volver.</p>
+      <div class="chiprow">
+        <button class="chip" type="button" data-copy="http://localhost/"><span>http://localhost/</span></button>
+        <button class="chip" type="button" data-copy="http://localhost/phpmyadmin/"><span>http://localhost/phpmyadmin/</span></button>
+        <button class="chip" type="button" data-copy="http://localhost/miwordpress/"><span>http://localhost/miwordpress/</span></button>
+        <button class="chip" type="button" data-copy="http://localhost/miwordpress/wp-admin/"><span>http://localhost/miwordpress/wp-admin/</span></button>
+        <button class="chip" type="button" data-copy="C:\xampp\htdocs"><span>C:\xampp\htdocs</span></button>
+      </div>
+      <p style="font-size:.85rem; margin-bottom:0">Pulsa una dirección para copiarla y pégala en la barra del navegador.</p>
+    </div>
+
+    <footer class="end">
+      <p>Elaborado a partir de «INSTALACION DE XAMPP Y WORDPRES EN LOCAL». Versión ampliada: <code>guia-docente-xampp-wordpress.md</code>. Sesión previa interactiva: <a href="../01_sesion-0/sesion-0-interactiva.html">sesion-0-interactiva.html</a>.</p>
+      <p>Esta página funciona sin internet y no envía datos a ningún sitio. Tu progreso se guarda solo en este navegador.</p>
+      <p><span id="live" role="status" aria-live="polite" class="noprint"></span></p>
+    </footer>
+
+  </main>
+
+  <aside class="aside noprint" aria-label="Cómo guardar esta página">
+    <h3>Guardar esta página</h3>
+    <p>Puedes guardar esta práctica para trabajar sin internet o para imprimirla después.</p>
+    <ol>
+      <li><strong>Como PDF</strong> – en el navegador pulsa <kbd>Ctrl + P</kbd> (o <kbd>Cmd + P</kbd> en macOS). En la ventana de impresión elige <strong>Guardar como PDF</strong> y pulsa <strong>Guardar</strong>. La página se imprimirá con formato limpio y sin botones.</li>
+      <li><strong>Como archivo HTML</strong> – en el navegador ve a <strong>Archivo → Guardar como…</strong> y elige <strong>Web completa</strong>. Se guardará un archivo <code>.html</code> y una carpeta con las imágenes. Ábrelo después con tu navegador.</li>
+    </ol>
+    <p><small>No necesitas depender de internet: el código y los dibujos están dentro del mismo archivo.</small></p>
+  </aside>
+</div>
+
+<script>
+(function(){
+  'use strict';
+
+  var KEY = 'ifct0510.progress.v1';
+  var FONTKEY = 'ifct0510.font.v1';
+  var SIZES = ['100%','112.5%','125%','137.5%'];
+
+  var boxes = Array.prototype.slice.call(document.querySelectorAll('[data-done]'));
+  var total = boxes.length;
+  var done = new Set();
+
+  try {
+    var raw = localStorage.getItem(KEY);
+    if (raw) JSON.parse(raw).forEach(function(v){ done.add(String(v)); });
+  } catch (e) {}
+
+  function save(){
+    try { localStorage.setItem(KEY, JSON.stringify(Array.from(done))); } catch (e) {}
+  }
+
+  function announce(msg){
+    var live = document.getElementById('live');
+    if (live) live.textContent = msg;
+  }
+
+  function render(){
+    boxes.forEach(function(b){
+      var id = b.getAttribute('data-done');
+      var on = done.has(id);
+      b.checked = on;
+      var step = b.closest('.step');
+      if (step) step.classList.toggle('is-done', on);
+    });
+
+    var n = done.size;
+    var count = document.getElementById('count');
+    var bar = document.getElementById('bar');
+    if (count) count.textContent = String(n);
+    if (bar) bar.style.width = (total ? (n / total * 100) : 0) + '%';
+
+    var fill = document.getElementById('rail-fill');
+    if (fill) fill.style.height = (total && n > 0) ? ('calc(' + (n / total * 100) + '% - .9rem)') : '0';
+
+    Array.prototype.forEach.call(document.querySelectorAll('.rail a[data-target]'), function(a){
+      a.classList.toggle('is-done', done.has(a.getAttribute('data-target')));
+    });
+
+    document.body.classList.toggle('all-done', n === total && total > 0);
+
+    var msg = document.getElementById('final-msg');
+    if (msg) msg.hidden = (n !== total);
+
+    var title = document.getElementById('final-title');
+    if (title) title.textContent = (n === total) ? '¡Práctica terminada!' : 'Chuleta: copia y pega';
+  }
+
+  boxes.forEach(function(b){
+    b.addEventListener('change', function(){
+      var id = b.getAttribute('data-done');
+      if (b.checked) { done.add(id); announce('Paso ' + id + ' marcado como hecho.'); }
+      else { done.delete(id); announce('Paso ' + id + ' desmarcado.'); }
+      save(); render();
+    });
+  });
+
+  document.getElementById('total').textContent = String(total);
+
+  // ---- reset ----
+  var reset = document.getElementById('reset');
+  if (reset) reset.addEventListener('click', function(){
+    if (!confirm('¿Borrar las marcas de todos los pasos? No se puede deshacer.')) return;
+    done.clear(); save(); render(); announce('Progreso borrado.');
+  });
+
+  // ---- print ----
+  var printBtn = document.getElementById('print-btn');
+  if (printBtn) printBtn.addEventListener('click', function(){ window.print(); });
+
+  window.addEventListener('beforeprint', function(){
+    Array.prototype.forEach.call(document.querySelectorAll('details'), function(d){
+      d.setAttribute('data-was-open', d.open ? '1' : '0');
+      d.open = true;
+    });
+  });
+  window.addEventListener('afterprint', function(){
+    Array.prototype.forEach.call(document.querySelectorAll('details'), function(d){
+      if (d.getAttribute('data-was-open') === '0') d.open = false;
+    });
+  });
+
+  // ---- font size ----
+  var idx = 0;
+  try { idx = parseInt(localStorage.getItem(FONTKEY) || '0', 10) || 0; } catch (e) {}
+  if (idx < 0 || idx >= SIZES.length) idx = 0;
+
+  function applyFont(){
+    document.documentElement.style.fontSize = SIZES[idx];
+    try { localStorage.setItem(FONTKEY, String(idx)); } catch (e) {}
+  }
+  applyFont();
+
+  var fp = document.getElementById('font-plus');
+  var fm = document.getElementById('font-minus');
+  if (fp) fp.addEventListener('click', function(){
+    idx = Math.min(SIZES.length - 1, idx + 1); applyFont(); announce('Letra más grande.');
+  });
+  if (fm) fm.addEventListener('click', function(){
+    idx = Math.max(0, idx - 1); applyFont(); announce('Letra más pequeña.');
+  });
+
+  // ---- copy to clipboard ----
+  function legacyCopy(text){
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly','');
+    ta.style.position = 'fixed';
+    ta.style.top = '-1000px';
+    document.body.appendChild(ta);
+    ta.select();
+    var ok = false;
+    try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+    document.body.removeChild(ta);
+    return ok;
+  }
+
+  document.addEventListener('click', function(ev){
+    var btn = ev.target.closest('[data-copy]');
+    if (!btn) return;
+    var text = btn.getAttribute('data-copy');
+
+    var finish = function(ok){
+      var span = btn.querySelector('span');
+      var previous = span ? span.textContent : btn.textContent;
+      btn.classList.add('copied');
+      if (span) span.textContent = ok ? '¡Copiado!' : previous;
+      else btn.textContent = '¡Copiado!';
+      announce(ok ? 'Dirección copiada al portapapeles.' : 'No se pudo copiar. Selecciona el texto a mano.');
+      window.setTimeout(function(){
+        btn.classList.remove('copied');
+        if (span) span.textContent = previous; else btn.textContent = previous;
+      }, 1800);
+    };
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function(){ finish(true); }, function(){ finish(legacyCopy(text)); });
+    } else {
+      finish(legacyCopy(text));
+    }
+  });
+
+  // ---- quizzes ----
+  Array.prototype.forEach.call(document.querySelectorAll('.quiz'), function(q){
+    var fb = q.querySelector('.quiz__fb');
+    var okMsg = q.getAttribute('data-okmsg') || 'Correcto.';
+    var errMsg = q.getAttribute('data-errmsg') || 'No es esa. Mira otra vez y prueba de nuevo.';
+    Array.prototype.forEach.call(q.querySelectorAll('.opt'), function(opt){
+      opt.addEventListener('click', function(){
+        var ok = opt.getAttribute('data-ok') === 'true';
+        opt.classList.add(ok ? 'opt--right' : 'opt--wrong');
+        fb.textContent = ok ? 'Correcto. ' + okMsg : errMsg;
+        fb.className = 'quiz__fb ' + (ok ? 'is-ok' : 'is-no');
+        if (ok) {
+          Array.prototype.forEach.call(q.querySelectorAll('.opt'), function(o){ o.disabled = true; });
+          announce('Respuesta correcta.');
+        }
+      });
+    });
+  });
+
+  // ---- current step in rail ----
+  if ('IntersectionObserver' in window) {
+    var steps = Array.prototype.slice.call(document.querySelectorAll('.step'));
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (!en.isIntersecting) return;
+        var id = en.target.id;
+        Array.prototype.forEach.call(document.querySelectorAll('.rail a'), function(a){
+          a.classList.toggle('is-current', a.getAttribute('href') === '#' + id);
+        });
+      });
+    }, { rootMargin: '-30% 0px -55% 0px', threshold: 0 });
+    steps.forEach(function(s){ io.observe(s); });
+  }
+
+  render();
+})();
+</script>
+</body>
+</html>

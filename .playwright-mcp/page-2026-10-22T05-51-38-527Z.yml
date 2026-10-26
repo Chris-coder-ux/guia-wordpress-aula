@@ -1,0 +1,38 @@
+- generic [active] [ref=f18e1]:
+  - heading "Acceder" [level=1] [ref=f18e2]
+  - generic [ref=f18e3]:
+    - link "Funciona con WordPress" [ref=f18e4] [cursor=pointer]:
+      - /url: https://es.wordpress.org/
+    - generic [ref=f18e5]:
+      - paragraph [ref=f18e6]:
+        - generic [ref=f18e7]: Nombre de usuario o correo electrónico
+        - textbox "Nombre de usuario o correo electrónico" [ref=f18e8]
+      - generic [ref=f18e9]:
+        - generic [ref=f18e10]: Contraseña
+        - generic [ref=f18e11]:
+          - textbox "Contraseña" [ref=f18e12]
+          - button "Mostrar la contraseña" [ref=f18e13] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f18e14]: 
+      - paragraph [ref=f18e15]:
+        - checkbox "Recuérdame" [ref=f18e16] [cursor=pointer]
+        - generic [ref=f18e17]: Recuérdame
+        - generic [ref=f18e18]:
+          - button "Ayuda" [ref=f18e19] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f18e20]: 
+          - text: 
+      - paragraph:
+        - button "Acceder" [ref=f18e21] [cursor=pointer]
+    - paragraph [ref=f18e22]:
+      - link "¿Has olvidado tu contraseña?" [ref=f18e23] [cursor=pointer]:
+        - /url: http://localhost/cafeteria/wp-login.php?action=lostpassword
+    - paragraph [ref=f18e24]:
+      - link "← Ir a Cafetería La Espiga" [ref=f18e25] [cursor=pointer]:
+        - /url: http://localhost/cafeteria/
+  - generic [ref=f18e27]:
+    - generic [ref=f18e28]:
+      - text: Idioma
+      - generic [aria-hidden] [ref=f18e29]: 
+    - combobox "Idioma" [ref=f18e30] [cursor=pointer]:
+      - option "English (United States)"
+      - option "Español" [selected]
+    - button "Cambiar" [ref=f18e31] [cursor=pointer]

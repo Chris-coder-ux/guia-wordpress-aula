@@ -1,0 +1,125 @@
+- generic [active] [ref=f13e1]:
+  - generic [ref=f13e2]:
+    - banner:
+      - navigation [ref=f13e3]:
+        - generic [ref=f13e4]:
+          - link [ref=f13e7] [cursor=pointer]:
+            - /url: http://localhost/practica/
+            - paragraph [ref=f13e8]: Centro de Formación
+          - list [ref=f13e10]:
+            - listitem [ref=f13e11]:
+              - link "Inicio" [ref=f13e12] [cursor=pointer]:
+                - /url: http://localhost/practica/
+            - listitem [ref=f13e13]:
+              - link "Sobre el centro" [ref=f13e14] [cursor=pointer]:
+                - /url: http://localhost/practica/sobre-el-centro/
+            - listitem [ref=f13e15]:
+              - link "Servicios" [ref=f13e16] [cursor=pointer]:
+                - /url: http://localhost/practica/servicios/
+            - listitem [ref=f13e17]:
+              - link "Contacto" [ref=f13e18] [cursor=pointer]:
+                - /url: http://localhost/practica/contacto/
+            - listitem [ref=f13e19]:
+              - link "Noticias" [ref=f13e20] [cursor=pointer]:
+                - /url: http://localhost/practica/category/noticias/
+            - listitem [ref=f13e21]:
+              - link "Formación" [ref=f13e22] [cursor=pointer]:
+                - /url: http://localhost/practica/category/formacion/
+    - heading "Inicio" [level=1] [ref=f13e27]
+    - article [ref=f13e32]:
+      - generic [ref=f13e34]:
+        - generic [ref=f13e35]:
+          - img "Centro de Formación" [ref=f13e37]
+          - generic [ref=f13e38]:
+            - heading "Centro de Formación" [level=2] [ref=f13e39]
+            - paragraph [ref=f13e40]: Certificados de profesionalidad, cursos de especialización y formación para el empleo
+            - generic [ref=f13e41]:
+              - link "Ver servicios" [ref=f13e43] [cursor=pointer]:
+                - /url: http://localhost/practica/servicios/
+              - link "Contactar" [ref=f13e45] [cursor=pointer]:
+                - /url: http://localhost/practica/contacto/
+        - generic [ref=f13e47]:
+          - heading "Formamos profesionales desde 2005" [level=2] [ref=f13e48]
+          - paragraph [ref=f13e49]: Impartimos certificados de profesionalidad, cursos de especialización y formación para el empleo, con acompañamiento durante todo el proceso. Más de 5.000 alumnos nos han elegido para formarse con nosotros.
+          - heading "Últimas noticias" [level=2] [ref=f13e50]
+          - list [ref=f13e51]:
+            - listitem [ref=f13e52]:
+              - 'link "Resultados: 92 % de empleabilidad en el último ejercicio" [ref=f13e53] [cursor=pointer]':
+                - /url: http://localhost/practica/resultados-empleabilidad/
+            - listitem [ref=f13e54]:
+              - link "Nuevos cursos de especialización en WordPress y e-commerce" [ref=f13e55] [cursor=pointer]:
+                - /url: http://localhost/practica/nuevos-cursos-wordpress-ecommerce/
+            - listitem [ref=f13e56]:
+              - link "Matrícula abierta para el curso 2026" [ref=f13e57] [cursor=pointer]:
+                - /url: http://localhost/practica/matriculacion-abierta-2026/
+    - contentinfo [ref=f13e58]:
+      - generic [ref=f13e59]:
+        - generic [ref=f13e61]:
+          - generic [ref=f13e63]:
+            - heading "Sobre el centro" [level=5] [ref=f13e64]
+            - generic [ref=f13e65]:
+              - paragraph [ref=f13e66]:
+                - text: Centro de
+                - strong [ref=f13e67]: formación profesional autorizado
+                - text: . Formamos en informática y comunicaciones, administración y gestión desde 2005. Más de 5.000 alumnos ya han pasado por nuestras aulas.
+              - paragraph [ref=f13e68]:
+                - link "Conoce el centro" [ref=f13e69] [cursor=pointer]:
+                  - /url: http://localhost/practica/sobre-el-centro/
+          - generic [ref=f13e71]:
+            - heading "Enlaces útiles" [level=5] [ref=f13e72]
+            - list [ref=f13e74]:
+              - listitem [ref=f13e75]:
+                - link "Inicio" [ref=f13e76] [cursor=pointer]:
+                  - /url: http://localhost/practica/
+              - listitem [ref=f13e77]:
+                - link "Sobre el centro" [ref=f13e78] [cursor=pointer]:
+                  - /url: http://localhost/practica/sobre-el-centro/
+              - listitem [ref=f13e79]:
+                - link "Servicios" [ref=f13e80] [cursor=pointer]:
+                  - /url: http://localhost/practica/servicios/
+              - listitem [ref=f13e81]:
+                - link "Contacto" [ref=f13e82] [cursor=pointer]:
+                  - /url: http://localhost/practica/contacto/
+              - listitem [ref=f13e83]:
+                - link "Noticias" [ref=f13e84] [cursor=pointer]:
+                  - /url: http://localhost/practica/category/noticias/
+          - generic [ref=f13e86]:
+            - heading "Contacto" [level=5] [ref=f13e87]
+            - generic [ref=f13e88]:
+              - paragraph [ref=f13e89]:
+                - strong [ref=f13e90]: "Dirección:"
+                - text: Calle Principal, 128001 Madrid
+              - paragraph [ref=f13e91]:
+                - strong [ref=f13e92]: "Teléfono:"
+                - text: 900 000 000
+                - strong [ref=f13e93]: "Correo:"
+                - text: info@centroformacion.local
+              - paragraph [ref=f13e94]:
+                - strong [ref=f13e95]: "Horario:"
+                - text: L-V, de 9:00 a 14:00 y de 16:00 a 19:00
+        - separator [ref=f13e96]
+        - generic:
+          - list [ref=f13e97]:
+            - listitem [ref=f13e98]:
+              - link "Inicio" [ref=f13e99] [cursor=pointer]:
+                - /url: http://localhost/practica/
+            - listitem [ref=f13e100]:
+              - link "Sobre el centro" [ref=f13e101] [cursor=pointer]:
+                - /url: http://localhost/practica/sobre-el-centro/
+            - listitem [ref=f13e102]:
+              - link "Servicios" [ref=f13e103] [cursor=pointer]:
+                - /url: http://localhost/practica/servicios/
+            - listitem [ref=f13e104]:
+              - link "Contacto" [ref=f13e105] [cursor=pointer]:
+                - /url: http://localhost/practica/contacto/
+            - listitem [ref=f13e106]:
+              - link "Noticias" [ref=f13e107] [cursor=pointer]:
+                - /url: http://localhost/practica/category/noticias/
+            - listitem [ref=f13e108]:
+              - link "Formación" [ref=f13e109] [cursor=pointer]:
+                - /url: http://localhost/practica/category/formacion/
+          - generic [ref=f13e110]:
+            - text: Hestia | Desarrollado por
+            - link "ThemeIsle" [ref=f13e111] [cursor=pointer]:
+              - /url: https://themeisle.com
+  - button "Activar hacer scroll al inicio" [ref=f13e112] [cursor=pointer]

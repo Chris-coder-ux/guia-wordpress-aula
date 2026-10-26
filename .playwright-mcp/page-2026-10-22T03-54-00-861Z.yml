@@ -1,0 +1,94 @@
+- generic [active] [ref=f8e1]:
+  - generic [ref=f8e2]:
+    - banner:
+      - navigation [ref=f8e3]:
+        - generic [ref=f8e4]:
+          - link [ref=f8e7] [cursor=pointer]:
+            - /url: http://localhost/practica/
+            - paragraph [ref=f8e8]: Centro de Formación
+          - list [ref=f8e10]:
+            - listitem [ref=f8e11]:
+              - link "Inicio" [ref=f8e12] [cursor=pointer]:
+                - /url: http://localhost/practica/
+            - listitem [ref=f8e13]:
+              - link "Noticias" [ref=f8e14] [cursor=pointer]:
+                - /url: http://localhost/practica/category/noticias/
+            - listitem [ref=f8e15]:
+              - link "Formación" [ref=f8e16] [cursor=pointer]:
+                - /url: http://localhost/practica/category/formacion/
+    - article [ref=f8e20]:
+      - generic [ref=f8e22]:
+        - generic [ref=f8e23]:
+          - img "Centro de Formación" [ref=f8e25]
+          - generic [ref=f8e27]:
+            - heading "Servicios" [level=1] [ref=f8e28]
+            - paragraph [ref=f8e29]: Formación, orientación y empleo para tu futuro profesional.
+        - generic [ref=f8e31]:
+          - heading "Informática y comunicaciones" [level=2] [ref=f8e32]
+          - paragraph [ref=f8e33]: Cursos y certificados en ofimática, programación, redes y sistemas.
+          - heading "Formación para el empleo" [level=2] [ref=f8e34]
+          - paragraph [ref=f8e35]: Certificados de profesionalidad orientados a la inserción laboral.
+          - heading "Servicios a empresas" [level=2] [ref=f8e36]
+          - paragraph [ref=f8e37]: Formación a medida para empresas y colectivos.
+    - contentinfo [ref=f8e38]:
+      - generic [ref=f8e39]:
+        - generic [ref=f8e41]:
+          - generic [ref=f8e43]:
+            - heading "Sobre el centro" [level=5] [ref=f8e44]
+            - generic [ref=f8e45]:
+              - paragraph [ref=f8e46]:
+                - text: Centro de
+                - strong [ref=f8e47]: formación profesional autorizado
+                - text: . Formamos en informática y comunicaciones, administración y gestión desde 2005. Más de 5.000 alumnos ya han pasado por nuestras aulas.
+              - paragraph [ref=f8e48]:
+                - link "Conoce el centro" [ref=f8e49] [cursor=pointer]:
+                  - /url: http://localhost/practica/sobre-el-centro/
+          - generic [ref=f8e51]:
+            - heading "Enlaces útiles" [level=5] [ref=f8e52]
+            - list [ref=f8e54]:
+              - listitem [ref=f8e55]:
+                - link "Inicio" [ref=f8e56] [cursor=pointer]:
+                  - /url: http://localhost/practica/
+              - listitem [ref=f8e57]:
+                - link "Sobre el centro" [ref=f8e58] [cursor=pointer]:
+                  - /url: http://localhost/practica/sobre-el-centro/
+              - listitem [ref=f8e59]:
+                - link "Servicios" [ref=f8e60] [cursor=pointer]:
+                  - /url: http://localhost/practica/servicios/
+              - listitem [ref=f8e61]:
+                - link "Contacto" [ref=f8e62] [cursor=pointer]:
+                  - /url: http://localhost/practica/contacto/
+              - listitem [ref=f8e63]:
+                - link "Noticias" [ref=f8e64] [cursor=pointer]:
+                  - /url: http://localhost/practica/category/noticias/
+          - generic [ref=f8e66]:
+            - heading "Contacto" [level=5] [ref=f8e67]
+            - generic [ref=f8e68]:
+              - paragraph [ref=f8e69]:
+                - strong [ref=f8e70]: "Dirección:"
+                - text: Calle Principal, 128001 Madrid
+              - paragraph [ref=f8e71]:
+                - strong [ref=f8e72]: "Teléfono:"
+                - text: 900 000 000
+                - strong [ref=f8e73]: "Correo:"
+                - text: info@centroformacion.local
+              - paragraph [ref=f8e74]:
+                - strong [ref=f8e75]: "Horario:"
+                - text: L-V, de 9:00 a 14:00 y de 16:00 a 19:00
+        - separator [ref=f8e76]
+        - generic:
+          - list [ref=f8e77]:
+            - listitem [ref=f8e78]:
+              - link "Inicio" [ref=f8e79] [cursor=pointer]:
+                - /url: http://localhost/practica/
+            - listitem [ref=f8e80]:
+              - link "Noticias" [ref=f8e81] [cursor=pointer]:
+                - /url: http://localhost/practica/category/noticias/
+            - listitem [ref=f8e82]:
+              - link "Formación" [ref=f8e83] [cursor=pointer]:
+                - /url: http://localhost/practica/category/formacion/
+          - generic [ref=f8e84]:
+            - text: Hestia | Desarrollado por
+            - link "ThemeIsle" [ref=f8e85] [cursor=pointer]:
+              - /url: https://themeisle.com
+  - button "Activar hacer scroll al inicio" [ref=f8e86] [cursor=pointer]

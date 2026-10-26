@@ -1,0 +1,369 @@
+- generic [ref=f11e2]:
+  - navigation "Menú principal":
+    - link "Saltar al contenido principal" [ref=f11e3] [cursor=pointer]:
+      - /url: "#wpbody-content"
+    - link "Ir a la barra de herramientas" [ref=f11e4] [cursor=pointer]:
+      - /url: "#wp-toolbar"
+    - list [ref=f11e7]:
+      - listitem [ref=f11e8]:
+        - link "Escritorio" [ref=f11e9] [cursor=pointer]:
+          - /url: index.php
+          - generic [aria-hidden] [ref=f11e10]: 
+        - list [ref=f11e12]:
+          - listitem [ref=f11e13]:
+            - link "Inicio" [ref=f11e14] [cursor=pointer]:
+              - /url: index.php
+          - listitem [ref=f11e15]:
+            - link "Actualizaciones 2" [ref=f11e16] [cursor=pointer]:
+              - /url: update-core.php
+              - text: Actualizaciones
+              - generic [ref=f11e17]: "2"
+      - listitem [aria-hidden] [ref=f11e18]
+      - listitem [ref=f11e20]:
+        - link "Entradas" [ref=f11e21] [cursor=pointer]:
+          - /url: edit.php
+          - generic [aria-hidden] [ref=f11e22]: 
+        - list [ref=f11e24]:
+          - listitem [ref=f11e25]:
+            - link "Todas las entradas" [ref=f11e26] [cursor=pointer]:
+              - /url: edit.php
+          - listitem [ref=f11e27]:
+            - link "Añadir entrada" [ref=f11e28] [cursor=pointer]:
+              - /url: post-new.php
+          - listitem [ref=f11e29]:
+            - link "Categorías" [ref=f11e30] [cursor=pointer]:
+              - /url: edit-tags.php?taxonomy=category
+          - listitem [ref=f11e31]:
+            - link "Etiquetas" [ref=f11e32] [cursor=pointer]:
+              - /url: edit-tags.php?taxonomy=post_tag
+      - listitem [ref=f11e33]:
+        - link "Medios" [ref=f11e34] [cursor=pointer]:
+          - /url: upload.php
+          - generic [aria-hidden] [ref=f11e35]: 
+        - list [ref=f11e37]:
+          - listitem [ref=f11e38]:
+            - link "Biblioteca" [ref=f11e39] [cursor=pointer]:
+              - /url: upload.php
+          - listitem [ref=f11e40]:
+            - link "Añadir medios" [ref=f11e41] [cursor=pointer]:
+              - /url: media-new.php
+      - listitem [ref=f11e42]:
+        - link "Páginas" [ref=f11e43] [cursor=pointer]:
+          - /url: edit.php?post_type=page
+          - generic [aria-hidden] [ref=f11e44]: 
+        - list [ref=f11e46]:
+          - listitem [ref=f11e47]:
+            - link "Todas las páginas" [ref=f11e48] [cursor=pointer]:
+              - /url: edit.php?post_type=page
+          - listitem [ref=f11e49]:
+            - link "Añadir página" [ref=f11e50] [cursor=pointer]:
+              - /url: post-new.php?post_type=page
+      - listitem [ref=f11e51]:
+        - link "Comentarios" [ref=f11e52] [cursor=pointer]:
+          - /url: edit-comments.php
+          - generic [aria-hidden] [ref=f11e53]: 
+      - listitem [aria-hidden] [ref=f11e55]
+      - listitem [ref=f11e57]:
+        - link "Apariencia" [ref=f11e58] [cursor=pointer]:
+          - /url: themes.php
+          - generic [aria-hidden] [ref=f11e59]: 
+        - list [ref=f11e61]:
+          - listitem [ref=f11e62]:
+            - link "Temas" [ref=f11e63] [cursor=pointer]:
+              - /url: themes.php
+          - listitem [ref=f11e64]:
+            - link "Editor" [ref=f11e65] [cursor=pointer]:
+              - /url: site-editor.php
+          - listitem [ref=f11e66]:
+            - link "Fuentes" [ref=f11e67] [cursor=pointer]:
+              - /url: font-library.php
+      - listitem [ref=f11e68]:
+        - link "Plugins" [ref=f11e69] [cursor=pointer]:
+          - /url: plugins.php
+          - generic [aria-hidden] [ref=f11e70]: 
+        - list [ref=f11e72]:
+          - listitem [ref=f11e73]:
+            - link "Plugins instalados" [ref=f11e74] [cursor=pointer]:
+              - /url: plugins.php
+          - listitem [ref=f11e75]:
+            - link "Añadir plugin" [ref=f11e76] [cursor=pointer]:
+              - /url: plugin-install.php
+      - listitem [ref=f11e77]:
+        - link "Usuarios" [ref=f11e78] [cursor=pointer]:
+          - /url: users.php
+          - generic [aria-hidden] [ref=f11e79]: 
+        - list [ref=f11e81]:
+          - listitem [ref=f11e82]:
+            - link "Todos los usuarios" [ref=f11e83] [cursor=pointer]:
+              - /url: users.php
+          - listitem [ref=f11e84]:
+            - link "Añadir usuario" [ref=f11e85] [cursor=pointer]:
+              - /url: user-new.php
+          - listitem [ref=f11e86]:
+            - link "Perfil" [ref=f11e87] [cursor=pointer]:
+              - /url: profile.php
+      - listitem [ref=f11e88]:
+        - link "Herramientas" [ref=f11e89] [cursor=pointer]:
+          - /url: tools.php
+          - generic [aria-hidden] [ref=f11e90]: 
+        - list [ref=f11e92]:
+          - listitem [ref=f11e93]:
+            - link "Herramientas disponibles" [ref=f11e94] [cursor=pointer]:
+              - /url: tools.php
+          - listitem [ref=f11e95]:
+            - link "Importar" [ref=f11e96] [cursor=pointer]:
+              - /url: import.php
+          - listitem [ref=f11e97]:
+            - link "Exportar" [ref=f11e98] [cursor=pointer]:
+              - /url: export.php
+          - listitem [ref=f11e99]:
+            - link "Salud del sitio" [ref=f11e100] [cursor=pointer]:
+              - /url: site-health.php
+          - listitem [ref=f11e101]:
+            - link "Exportar los datos personales" [ref=f11e102] [cursor=pointer]:
+              - /url: export-personal-data.php
+          - listitem [ref=f11e103]:
+            - link "Borrar los datos personales" [ref=f11e104] [cursor=pointer]:
+              - /url: erase-personal-data.php
+          - listitem [ref=f11e105]:
+            - link "Editor de archivos de temas" [ref=f11e106] [cursor=pointer]:
+              - /url: theme-editor.php
+          - listitem [ref=f11e107]:
+            - link "Editor de archivos de plugins" [ref=f11e108] [cursor=pointer]:
+              - /url: plugin-editor.php
+      - listitem [ref=f11e109]:
+        - link "Ajustes" [ref=f11e110] [cursor=pointer]:
+          - /url: options-general.php
+          - generic [aria-hidden] [ref=f11e111]: 
+        - list [ref=f11e113]:
+          - listitem [ref=f11e114]:
+            - link "Generales" [ref=f11e115] [cursor=pointer]:
+              - /url: options-general.php
+          - listitem [ref=f11e116]:
+            - link "Conectores" [ref=f11e117] [cursor=pointer]:
+              - /url: options-connectors.php
+          - listitem [ref=f11e118]:
+            - link "Escritura" [ref=f11e119] [cursor=pointer]:
+              - /url: options-writing.php
+          - listitem [ref=f11e120]:
+            - link "Lectura" [ref=f11e121] [cursor=pointer]:
+              - /url: options-reading.php
+          - listitem [ref=f11e122]:
+            - link "Comentarios" [ref=f11e123] [cursor=pointer]:
+              - /url: options-discussion.php
+          - listitem [ref=f11e124]:
+            - link "Medios" [ref=f11e125] [cursor=pointer]:
+              - /url: options-media.php
+          - listitem [ref=f11e126]:
+            - link "Enlaces permanentes" [ref=f11e127] [cursor=pointer]:
+              - /url: options-permalink.php
+          - listitem [ref=f11e128]:
+            - link "Privacidad" [ref=f11e129] [cursor=pointer]:
+              - /url: options-privacy.php
+      - listitem [ref=f11e130]:
+        - button "Contraer el menú principal" [expanded] [ref=f11e131] [cursor=pointer]:
+          - generic [ref=f11e133]: Cerrar menú
+  - generic [ref=f11e134]:
+    - generic [ref=f11e135]:
+      - navigation "Barra de herramientas":
+        - menu:
+          - group [ref=f11e136]:
+            - menuitem "Acerca de WordPress" [ref=f11e137] [cursor=pointer]
+          - group [ref=f11e140]:
+            - menuitem "Cafetería La Espiga" [ref=f11e141] [cursor=pointer]
+          - group [ref=f11e142]:
+            - menuitem "2 actualizaciones disponibles" [ref=f11e143] [cursor=pointer]:
+              - generic [aria-hidden] [ref=f11e145]: "2"
+          - group [ref=f11e147]:
+            - menuitem "Ctrl+K Abrir paleta de comandos" [ref=f11e148] [cursor=pointer]:
+              - generic [ref=f11e150]:
+                - text: Ctrl+K
+                - generic [ref=f11e151]: Abrir paleta de comandos
+          - group [ref=f11e152]:
+            - menuitem "0 comentarios en moderación" [ref=f11e153] [cursor=pointer]:
+              - generic [aria-hidden] [ref=f11e155]: "0"
+          - group [ref=f11e157]:
+            - menuitem "Añadir" [ref=f11e158] [cursor=pointer]
+        - menu [ref=f11e161]:
+          - group [ref=f11e162]:
+            - menuitem "Hola, profesor" [ref=f11e163] [cursor=pointer]
+    - main [ref=f11e164]:
+      - generic [ref=f11e165]:
+        - generic [ref=f11e166]:
+          - button "Opciones de pantalla" [ref=f11e168] [cursor=pointer]
+          - button "Ayuda" [ref=f11e170] [cursor=pointer]
+        - generic [ref=f11e171]:
+          - text: ¡Ya está disponible
+          - link "WordPress 7.1.3" [ref=f11e172] [cursor=pointer]:
+            - /url: https://wordpress.org/documentation/wordpress-version/version-7-1-3/
+          - text: "!"
+          - link "Por favor, actualiza WordPress ahora" [ref=f11e173] [cursor=pointer]:
+            - /url: http://localhost/cafeteria/wp-admin/update-core.php
+            - text: Por favor, actualiza ahora
+          - text: .
+        - generic [ref=f11e174]:
+          - heading "Escritorio" [level=1] [ref=f11e175]
+          - generic [ref=f11e176]:
+            - link "Descartar el panel de bienvenida" [ref=f11e177] [cursor=pointer]:
+              - /url: http://localhost/cafeteria/wp-admin/?welcome=0
+              - text:  Descartar
+            - generic [ref=f11e178]:
+              - generic [ref=f11e180]:
+                - heading "¡Te damos la bienvenida a WordPress!" [level=2] [ref=f11e187]
+                - paragraph [ref=f11e188]:
+                  - link "Aprende más sobre la versión 7.1." [ref=f11e189] [cursor=pointer]:
+                    - /url: http://localhost/cafeteria/wp-admin/about.php
+              - generic [ref=f11e190]:
+                - generic [ref=f11e195]:
+                  - heading "Crea contenido rico con bloques y patrones" [level=3] [ref=f11e196]
+                  - paragraph [ref=f11e197]: Los patrones de bloques son diseños de bloques preconfigurados. Úsalos para inspirarte o crear nuevas páginas en un instante.
+                  - link "Añadir una nueva página" [ref=f11e198] [cursor=pointer]:
+                    - /url: http://localhost/cafeteria/wp-admin/post-new.php?post_type=page
+                - generic [ref=f11e203]:
+                  - heading "Personaliza todo tu sitio con temas de bloques" [level=3] [ref=f11e204]
+                  - paragraph [ref=f11e205]: Diseña todo en tu sitio — Desde la cabecera hasta el pie de página. Todo usando bloques y patrones.
+                  - link "Abrir el editor del sitio" [ref=f11e206] [cursor=pointer]:
+                    - /url: http://localhost/cafeteria/wp-admin/site-editor.php
+                - generic [ref=f11e211]:
+                  - heading "Cambia la apariencia de tu sitio con los estilos" [level=3] [ref=f11e212]
+                  - paragraph [ref=f11e213]: ¡Retoca tu sitio o dale un aspecto completamente nuevo! Sé creativo — ¿Qué tal una nueva paleta de color o una nueva fuente?
+                  - link "Editar los estilos" [ref=f11e214] [cursor=pointer]:
+                    - /url: http://localhost/cafeteria/wp-admin/site-editor.php?p=%2Fstyles
+          - generic [ref=f11e216]:
+            - generic [ref=f11e218]:
+              - region "Estado de salud del sitio" [ref=f11e219]:
+                - generic [ref=f11e220]:
+                  - heading "Estado de salud del sitio" [level=2] [ref=f11e221]
+                  - generic [ref=f11e222]:
+                    - button "Subir" [disabled] [ref=f11e224]
+                    - button "Bajar" [ref=f11e228] [cursor=pointer]
+                    - button "Mostrar u ocultar el panel" [expanded] [ref=f11e232] [cursor=pointer]
+                - generic [ref=f11e236]:
+                  - generic [ref=f11e237]: Aún no hay información...
+                  - paragraph [ref=f11e240]:
+                    - text: Las pruebas de salud del sitio se ejecutarán automáticamente de forma periódica para obtener información sobre tu sitio. También puedes
+                    - link "visitar ahora la pantalla de salud del sitio" [ref=f11e241] [cursor=pointer]:
+                      - /url: http://localhost/cafeteria/wp-admin/site-health.php
+                    - text: para obtener información sobre tu sitio.
+              - region "De un vistazo" [ref=f11e242]:
+                - generic [ref=f11e243]:
+                  - heading "De un vistazo" [level=2] [ref=f11e244]
+                  - generic [ref=f11e245]:
+                    - button "Subir" [ref=f11e247] [cursor=pointer]
+                    - button "Bajar" [ref=f11e251] [cursor=pointer]
+                    - button "Mostrar u ocultar el panel" [expanded] [ref=f11e255] [cursor=pointer]
+                - generic [ref=f11e259]:
+                  - list [ref=f11e260]:
+                    - listitem [ref=f11e261]:
+                      - link "3 entradas publicadas" [ref=f11e262] [cursor=pointer]:
+                        - /url: http://localhost/cafeteria/wp-admin/edit.php?post_status=publish&post_type=post
+                    - listitem [ref=f11e263]:
+                      - link "5 páginas publicadas" [ref=f11e264] [cursor=pointer]:
+                        - /url: http://localhost/cafeteria/wp-admin/edit.php?post_status=publish&post_type=page
+                  - paragraph [ref=f11e265]:
+                    - generic [ref=f11e266]:
+                      - text: WordPress 7.1 está funcionando con el tema
+                      - link "Twenty Twenty-Five" [ref=f11e267] [cursor=pointer]:
+                        - /url: themes.php
+                      - text: .
+                    - link "Actualizar a 7.1.3" [ref=f11e268] [cursor=pointer]:
+                      - /url: http://localhost/cafeteria/wp-admin/update-core.php
+              - region "Actividad" [ref=f11e269]:
+                - generic [ref=f11e270]:
+                  - heading "Actividad" [level=2] [ref=f11e271]
+                  - generic [ref=f11e272]:
+                    - button "Subir" [ref=f11e274] [cursor=pointer]
+                    - button "Bajar" [ref=f11e278] [cursor=pointer]
+                    - button "Mostrar u ocultar el panel" [expanded] [ref=f11e282] [cursor=pointer]
+                - generic [ref=f11e287]:
+                  - heading "Publicaciones recientes" [level=3] [ref=f11e288]
+                  - list [ref=f11e289]:
+                    - listitem [ref=f11e290]:
+                      - generic [ref=f11e291]: Hoy, 06:59
+                      - link "Editar «Ampliamos el horario de desayunos»" [ref=f11e292] [cursor=pointer]:
+                        - /url: http://localhost/cafeteria/wp-admin/post.php?post=17&action=edit
+                        - text: Ampliamos el horario de desayunos
+                    - listitem [ref=f11e293]:
+                      - generic [ref=f11e294]: Hoy, 06:59
+                      - 'link "Editar «Taller de repostería los sábados: reserva tu plaza»" [ref=f11e295] [cursor=pointer]':
+                        - /url: http://localhost/cafeteria/wp-admin/post.php?post=16&action=edit
+                        - text: "Taller de repostería los sábados: reserva tu plaza"
+                    - listitem [ref=f11e296]:
+                      - generic [ref=f11e297]: Hoy, 06:59
+                      - link "Editar «Nueva carta de tés e infusiones de temporada»" [ref=f11e298] [cursor=pointer]:
+                        - /url: http://localhost/cafeteria/wp-admin/post.php?post=15&action=edit
+                        - text: Nueva carta de tés e infusiones de temporada
+            - generic [ref=f11e300]:
+              - region "Borrador rápido Tus borradores recientes" [ref=f11e301]:
+                - generic [ref=f11e302]:
+                  - heading "Borrador rápido" [level=2] [ref=f11e303]
+                  - generic [ref=f11e305]:
+                    - button "Subir" [ref=f11e307] [cursor=pointer]
+                    - button "Bajar" [ref=f11e311] [cursor=pointer]
+                    - button "Mostrar u ocultar el panel" [expanded] [ref=f11e315] [cursor=pointer]
+                - generic [ref=f11e319]:
+                  - generic [ref=f11e320]:
+                    - generic [ref=f11e321]: Título
+                    - textbox "Título" [ref=f11e322]
+                  - generic [ref=f11e323]:
+                    - generic [ref=f11e324]: Contenido
+                    - textbox "Contenido" [ref=f11e325]:
+                      - /placeholder: ¿En qué estás pensando?
+                  - paragraph [ref=f11e326]:
+                    - button "Guardar" [ref=f11e327] [cursor=pointer]
+              - region "Eventos y noticias de WordPress" [ref=f11e328]:
+                - generic [ref=f11e329]:
+                  - heading "Eventos y noticias de WordPress" [level=2] [ref=f11e330]
+                  - generic [ref=f11e331]:
+                    - button "Subir" [ref=f11e333] [cursor=pointer]
+                    - button "Bajar" [disabled] [ref=f11e337]
+                    - button "Mostrar u ocultar el panel" [expanded] [ref=f11e341] [cursor=pointer]
+                - generic [ref=f11e344]:
+                  - text: 
+                  - generic [ref=f11e345]:
+                    - list [ref=f11e347]:
+                      - listitem [ref=f11e348]:
+                        - link "Actualización crítica de seguridad de PHP" [ref=f11e349] [cursor=pointer]:
+                          - /url: https://es.wordpress.org/2026/10/21/actualizacion-critica-de-seguridad-de-php/
+                      - listitem [ref=f11e350]:
+                        - link "Una WordCamp Valencia para empezar, aprender y ayudar a mejorar WordPress" [ref=f11e351] [cursor=pointer]:
+                          - /url: https://es.wordpress.org/2026/10/19/una-wordcamp-valencia-para-empezar-aprender-y-ayudar-a-mejorar-wordpress/
+                    - list [ref=f11e353]:
+                      - listitem [ref=f11e354]:
+                        - 'link "Open Channels FM: Munich Bets on Open Source as Meta Apple and NVIDIA Drive Local AI and Hardware Choices" [ref=f11e355] [cursor=pointer]':
+                          - /url: https://openchannels.fm/munich-bets-on-open-source-as-meta-apple-and-nvidia-drive-local-ai-and-hardware-choices/
+                      - listitem [ref=f11e356]:
+                        - 'link "WordPress.org blog: Critical PHP Security Release" [ref=f11e357] [cursor=pointer]':
+                          - /url: https://wordpress.org/news/2026/10/critical-php-security-release/
+                      - listitem [ref=f11e358]:
+                        - 'link "WPTavern: #238 – Chris Huber on How Static Site Importer Makes Migrating Any Website to WordPress Easier Than Ever" [ref=f11e359] [cursor=pointer]':
+                          - /url: https://wptavern.com/podcast/238-chris-huber-on-how-static-site-importer-makes-migrating-any-website-to-wordpress-easier-than-ever/
+                  - paragraph [ref=f11e360]:
+                    - link "Meetups (abre en una nueva pestaña)" [ref=f11e361] [cursor=pointer]:
+                      - /url: https://make.wordpress.org/community/meetups-landing-page
+                      - text: Meetups
+                      - generic [ref=f11e362]: (abre en una nueva pestaña)
+                      - generic [aria-hidden] [ref=f11e363]: 
+                    - text: "|"
+                    - link "WordCamps (abre en una nueva pestaña)" [ref=f11e364] [cursor=pointer]:
+                      - /url: https://central.wordcamp.org/schedule/
+                      - text: WordCamps
+                      - generic [ref=f11e365]: (abre en una nueva pestaña)
+                      - generic [aria-hidden] [ref=f11e366]: 
+                    - text: "|"
+                    - link "Noticias (abre en una nueva pestaña)" [ref=f11e367] [cursor=pointer]:
+                      - /url: https://es.wordpress.org/news/
+                      - text: Noticias
+                      - generic [ref=f11e368]: (abre en una nueva pestaña)
+                      - generic [aria-hidden] [ref=f11e369]: 
+  - contentinfo [ref=f11e370]:
+    - paragraph [ref=f11e371]:
+      - generic [ref=f11e372]:
+        - text: Gracias por crear con
+        - link "WordPress" [ref=f11e373] [cursor=pointer]:
+          - /url: https://es.wordpress.org/
+        - text: .
+    - paragraph [ref=f11e374]:
+      - strong [ref=f11e375]:
+        - link "Obtener la versión 7.1.3" [ref=f11e376] [cursor=pointer]:
+          - /url: http://localhost/cafeteria/wp-admin/update-core.php

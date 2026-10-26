@@ -1,0 +1,609 @@
+- generic [active] [ref=f3e1]:
+  - link "Saltar al contenido" [ref=f3e2] [cursor=pointer]:
+    - /url: "#contenido"
+  - banner [ref=f3e3]:
+    - generic [ref=f3e4]:
+      - group "Progreso de la sesión" [ref=f3e9]:
+        - generic [ref=f3e12]: 1 de 12 pasos
+      - generic [ref=f3e13]:
+        - button "Reducir el tamaño de la letra" [ref=f3e14] [cursor=pointer]: A−
+        - button "Aumentar el tamaño de la letra" [ref=f3e15] [cursor=pointer]: A+
+        - button "Imprimir" [ref=f3e16] [cursor=pointer]
+  - main [ref=f3e22]:
+    - generic [ref=f3e23]:
+      - heading "Sesión 0 · Primeros pasos con el ordenador" [level=1] [ref=f3e24]
+      - paragraph [ref=f3e25]:
+        - text: "Antes de instalar la web, aprendemos lo básico: encender, usar el ratón, el teclado, el navegador y las carpetas."
+        - strong [ref=f3e26]: No hace falta haber usado un ordenador nunca.
+      - list [ref=f3e27]:
+        - listitem [ref=f3e28]: 12 pasos
+        - listitem [ref=f3e29]: 90 minutos
+        - listitem [ref=f3e30]: Sin requisitos previos
+        - listitem [ref=f3e31]: Funciona sin internet
+      - paragraph [ref=f3e36]:
+        - strong [ref=f3e37]: ¿Ya sabes lo básico?
+        - text: Si marcaste todo el checklist del final, puedes ir directo a la
+        - link "práctica de XAMPP y WordPress" [ref=f3e38] [cursor=pointer]:
+          - /url: practica-web-interactiva.html
+        - text: .
+      - generic [ref=f3e39]:
+        - heading "Estas 5 cosas tienen que ser verdad" [level=2] [ref=f3e40]
+        - paragraph [ref=f3e41]: Márcalas antes de empezar. Si alguna no la puedes marcar, avisa al profesor.
+        - list [ref=f3e42]:
+          - listitem [ref=f3e43]:
+            - checkbox "Estoy en un ordenador del aula con Windows o macOS." [ref=f3e44]
+            - generic [ref=f3e45]:
+              - text: Estoy en un ordenador del aula
+              - generic [ref=f3e46]: con Windows o macOS.
+          - listitem [ref=f3e47]:
+            - checkbox "Puedo pedir ayuda al profesor si algo no entiendo." [ref=f3e48]
+            - generic [ref=f3e49]:
+              - text: Puedo pedir ayuda al profesor
+              - generic [ref=f3e50]: si algo no entiendo.
+          - listitem [ref=f3e51]:
+            - checkbox "No me importa equivocarme aquí nada se rompe de verdad." [ref=f3e52]
+            - generic [ref=f3e53]:
+              - text: No me importa equivocarme
+              - generic [ref=f3e54]: aquí nada se rompe de verdad.
+          - listitem [ref=f3e55]:
+            - checkbox "Tengo 90 minutos con un descanso a medio camino." [ref=f3e56]
+            - generic [ref=f3e57]:
+              - text: Tengo 90 minutos
+              - generic [ref=f3e58]: con un descanso a medio camino.
+          - listitem [ref=f3e59]:
+            - checkbox "Sé que esto es solo el comienzo después viene la práctica de la web." [ref=f3e60]
+            - generic [ref=f3e61]:
+              - text: Sé que esto es solo el comienzo
+              - generic [ref=f3e62]: después viene la práctica de la web.
+      - generic [ref=f3e63]:
+        - generic [ref=f3e64]: Bloque A
+        - heading "Encender y el escritorio" [level=2] [ref=f3e65]
+      - article [ref=f3e66]:
+        - generic [ref=f3e67]:
+          - generic [aria-hidden] [ref=f3e68]: "1"
+          - heading "Encender el ordenador" [level=3] [ref=f3e69]
+          - generic [ref=f3e70] [cursor=pointer]:
+            - checkbox "Hecho" [checked] [ref=f3e71]
+            - generic [ref=f3e72]: Hecho
+        - list [ref=f3e73]:
+          - listitem [ref=f3e74]:
+            - text: Busca el
+            - strong [ref=f3e75]: botón de encendido
+            - text: ": en la torre del PC o en el lateral/teclado del portátil. Tiene el símbolo"
+            - strong [ref=f3e76]: ⏻
+            - text: .
+          - listitem [ref=f3e77]:
+            - text: Púlsalo
+            - strong [ref=f3e78]: una vez
+            - text: "y"
+            - strong [ref=f3e79]: quita la mano
+            - text: .
+          - listitem [ref=f3e80]:
+            - text: Espera. Puede tardar un minuto.
+            - strong [ref=f3e81]: No lo pulses varias veces.
+          - listitem [ref=f3e82]:
+            - text: Si pide contraseña, escríbela y pulsa
+            - strong [ref=f3e83]: Enter
+            - text: .
+        - paragraph [ref=f3e87]:
+          - strong [ref=f3e88]: "Comprueba:"
+          - text: aparece el
+          - strong [ref=f3e89]: escritorio
+          - text: (la pantalla con iconos y la franja de abajo).
+      - article [ref=f3e90]:
+        - generic [ref=f3e91]:
+          - generic [aria-hidden] [ref=f3e92]: "2"
+          - heading "Las 5 zonas del escritorio" [level=3] [ref=f3e93]
+          - generic [ref=f3e94] [cursor=pointer]:
+            - checkbox "Hecho" [ref=f3e95]
+            - generic [ref=f3e96]: Hecho
+        - table [ref=f3e97]:
+          - rowgroup [ref=f3e98]:
+            - row [ref=f3e99]:
+              - columnheader "Zona" [ref=f3e100]
+              - columnheader "Dónde está" [ref=f3e101]
+              - columnheader "Para qué sirve" [ref=f3e102]
+          - rowgroup [ref=f3e103]:
+            - row [ref=f3e104]:
+              - cell [ref=f3e105]:
+                - strong [ref=f3e106]: Iconos
+              - cell "Repartidos por el fondo" [ref=f3e107]
+              - cell [ref=f3e108]:
+                - text: Abren programas o carpetas con
+                - strong [ref=f3e109]: doble clic
+            - row [ref=f3e110]:
+              - cell [ref=f3e111]:
+                - strong [ref=f3e112]: Barra de tareas
+              - cell "Franja de abajo" [ref=f3e113]
+              - cell "Muestra lo que tienes abierto" [ref=f3e114]
+            - row [ref=f3e115]:
+              - cell [ref=f3e116]:
+                - strong [ref=f3e117]: Menú Inicio
+              - cell "Icono de ventana (⊞) abajo a la izquierda" [ref=f3e118]
+              - cell [ref=f3e119]:
+                - text: Aquí están
+                - strong [ref=f3e120]: todos
+                - text: los programas
+            - row [ref=f3e121]:
+              - cell [ref=f3e122]:
+                - strong [ref=f3e123]: Reloj y fecha
+              - cell "Abajo a la derecha" [ref=f3e124]
+              - cell "Hora del ordenador" [ref=f3e125]
+            - row [ref=f3e126]:
+              - cell [ref=f3e127]:
+                - strong [ref=f3e128]: Papelera
+              - cell "Un cubo, en el escritorio" [ref=f3e129]
+              - cell "Lo que borras va aquí" [ref=f3e130]
+        - paragraph [ref=f3e134]:
+          - strong [ref=f3e135]: "Comprueba:"
+          - text: señalas cada zona con el dedo y dices para qué sirve.
+      - article [ref=f3e136]:
+        - generic [ref=f3e137]:
+          - generic [aria-hidden] [ref=f3e138]: "3"
+          - heading "El ratón" [level=3] [ref=f3e139]
+          - generic [ref=f3e140] [cursor=pointer]:
+            - checkbox "Hecho" [ref=f3e141]
+            - generic [ref=f3e142]: Hecho
+        - paragraph [ref=f3e143]:
+          - text: Apoya la mano encima. La palma descansa y los dedos curvados,
+          - strong [ref=f3e144]: como una mano sobre una taza
+          - text: . El dedo índice va en el
+          - strong [ref=f3e145]: botón izquierdo
+          - text: ; el corazón, en el derecho.
+        - paragraph [ref=f3e146]:
+          - text: Es la flechita que se mueve cuando mueves el ratón.
+          - strong [ref=f3e147]: Si no la ves, mueve el ratón
+          - text: y aparecerá.
+        - table [ref=f3e148]:
+          - rowgroup [ref=f3e149]:
+            - row [ref=f3e150]:
+              - columnheader "Movimiento" [ref=f3e151]
+              - columnheader "Cómo se hace" [ref=f3e152]
+              - columnheader "Para qué" [ref=f3e153]
+          - rowgroup [ref=f3e154]:
+            - row [ref=f3e155]:
+              - cell [ref=f3e156]:
+                - strong [ref=f3e157]: Clic
+              - cell "Pulsar y soltar el botón izquierdo una vez" [ref=f3e158]
+              - cell "Elegir algo, pulsar un botón" [ref=f3e159]
+            - row [ref=f3e160]:
+              - cell [ref=f3e161]:
+                - strong [ref=f3e162]: Doble clic
+              - cell "Pulsar dos veces seguidas, rápido, sin mover el ratón" [ref=f3e163]
+              - cell [ref=f3e164]:
+                - strong [ref=f3e165]: Abrir
+                - text: un programa o carpeta
+            - row [ref=f3e166]:
+              - cell [ref=f3e167]:
+                - strong [ref=f3e168]: Clic derecho
+              - cell "Pulsar el botón derecho una vez" [ref=f3e169]
+              - cell "Sale un menú de opciones (copiar, renombrar…)" [ref=f3e170]
+            - row [ref=f3e171]:
+              - cell [ref=f3e172]:
+                - strong [ref=f3e173]: Arrastrar
+              - cell "Mantener pulsado el izquierdo, mover y soltar" [ref=f3e174]
+              - cell "Mover cosas, seleccionar varias" [ref=f3e175]
+        - paragraph [ref=f3e179]:
+          - strong [ref=f3e180]: "Comprueba:"
+          - text: abres y cierras la Calculadora 5 veces con doble clic y la X.
+      - article [ref=f3e181]:
+        - generic [ref=f3e182]:
+          - generic [aria-hidden] [ref=f3e183]: "4"
+          - heading "El teclado" [level=3] [ref=f3e184]
+          - generic [ref=f3e185] [cursor=pointer]:
+            - checkbox "Hecho" [ref=f3e186]
+            - generic [ref=f3e187]: Hecho
+        - paragraph [ref=f3e188]: "Las 8 teclas que vas a usar:"
+        - table [ref=f3e189]:
+          - rowgroup [ref=f3e190]:
+            - row [ref=f3e191]:
+              - columnheader "Tecla" [ref=f3e192]
+              - columnheader "Nombre" [ref=f3e193]
+              - columnheader "Para qué sirve" [ref=f3e194]
+          - rowgroup [ref=f3e195]:
+            - row [ref=f3e196]:
+              - cell [ref=f3e197]:
+                - strong [ref=f3e198]: Enter
+                - text: ⏎
+              - cell "Intro" [ref=f3e199]
+              - cell "Confirmar, aceptar, bajar de línea" [ref=f3e200]
+            - row [ref=f3e201]:
+              - cell [ref=f3e202]:
+                - strong [ref=f3e203]: Esc
+              - cell "Escape" [ref=f3e204]
+              - cell [ref=f3e205]:
+                - strong [ref=f3e206]: Cancelar
+                - text: y salir de un menú
+            - row [ref=f3e207]:
+              - cell [ref=f3e208]:
+                - strong [ref=f3e209]: Retroceso
+                - text: ⌫
+              - cell "Borrar" [ref=f3e210]
+              - cell "Borra lo último que escribiste" [ref=f3e211]
+            - row [ref=f3e212]:
+              - cell [ref=f3e213]:
+                - strong [ref=f3e214]: Barra espaciadora
+              - cell "—" [ref=f3e215]
+              - cell "Poner un espacio entre palabras" [ref=f3e216]
+            - row [ref=f3e217]:
+              - cell [ref=f3e218]:
+                - strong [ref=f3e219]: Shift
+                - text: ⇧
+              - cell "Mayúsculas" [ref=f3e220]
+              - cell [ref=f3e221]:
+                - text: Poner
+                - strong [ref=f3e222]: UNA
+                - text: "mayúscula o el símbolo de arriba (`@`, `:`)"
+            - row [ref=f3e223]:
+              - cell [ref=f3e224]:
+                - strong [ref=f3e225]: Bloq Mayús
+              - cell "—" [ref=f3e226]
+              - cell "Dejar todo en mayúsculas" [ref=f3e227]
+            - row [ref=f3e228]:
+              - cell [ref=f3e229]:
+                - strong [ref=f3e230]: Ctrl
+              - cell "Control" [ref=f3e231]
+              - 'cell "Se usa junto con otra tecla: `Ctrl+C`, `Ctrl+V`…" [ref=f3e232]'
+            - row [ref=f3e233]:
+              - cell [ref=f3e234]:
+                - strong [ref=f3e235]: ⊞ Windows
+              - cell "Tecla Windows" [ref=f3e236]
+              - cell "Abre el menú Inicio" [ref=f3e237]
+        - paragraph [ref=f3e238]: "Símbolos para una dirección web: `:` = `Shift` + `;` · `/` = tecla junto a `Shift` derecho · `.` = tecla junto a la `Ñ` · `@` = `AltGr` + `2`."
+        - paragraph [ref=f3e242]:
+          - strong [ref=f3e243]: "Comprueba:"
+          - text: "escribes `http://localhost/` en el Bloc de notas."
+      - article [ref=f3e244]:
+        - generic [ref=f3e245]:
+          - generic [aria-hidden] [ref=f3e246]: "5"
+          - heading "El navegador" [level=3] [ref=f3e247]
+          - generic [ref=f3e248] [cursor=pointer]:
+            - checkbox "Hecho" [ref=f3e249]
+            - generic [ref=f3e250]: Hecho
+        - paragraph [ref=f3e251]:
+          - text: El
+          - strong [ref=f3e252]: navegador
+          - text: es el programa para ver internet. Los más usados son
+          - strong [ref=f3e253]: Chrome
+          - text: ","
+          - strong [ref=f3e254]: Edge
+          - text: "y"
+          - strong [ref=f3e255]: Firefox
+          - text: .
+        - table [ref=f3e256]:
+          - rowgroup [ref=f3e257]:
+            - row [ref=f3e258]:
+              - columnheader "Zona" [ref=f3e259]
+              - columnheader "Dónde está" [ref=f3e260]
+              - columnheader "Qué pasa si escribes ahí" [ref=f3e261]
+          - rowgroup [ref=f3e262]:
+            - row [ref=f3e263]:
+              - cell [ref=f3e264]:
+                - strong [ref=f3e265]: Barra de direcciones
+              - cell "Arriba del todo" [ref=f3e266]
+              - cell [ref=f3e267]:
+                - text: Va
+                - strong [ref=f3e268]: directo
+                - text: a esa web
+            - row [ref=f3e269]:
+              - cell [ref=f3e270]:
+                - strong [ref=f3e271]: Buscador
+                - text: (Google)
+              - cell "En medio de la página" [ref=f3e272]
+              - cell [ref=f3e273]:
+                - strong [ref=f3e274]: Busca
+                - text: lo que escribas
+        - paragraph [ref=f3e275]:
+          - strong [ref=f3e276]: "Regla de oro:"
+          - text: si sabes la dirección exacta, escríbela
+          - strong [ref=f3e277]: arriba
+          - text: ", en la barra de direcciones."
+        - paragraph [ref=f3e281]:
+          - strong [ref=f3e282]: "Comprueba:"
+          - text: "sabes volver atrás y abrir una pestaña nueva (`Ctrl` + `T`)."
+      - article [ref=f3e283]:
+        - generic [ref=f3e284]:
+          - generic [aria-hidden] [ref=f3e285]: "6"
+          - heading "Descargar un archivo y encontrarlo" [level=3] [ref=f3e286]
+          - generic [ref=f3e287] [cursor=pointer]:
+            - checkbox "Hecho" [ref=f3e288]
+            - generic [ref=f3e289]: Hecho
+        - list [ref=f3e290]:
+          - listitem [ref=f3e291]: Abre el navegador y busca una imagen cualquiera.
+          - listitem [ref=f3e292]:
+            - text: Haz
+            - strong [ref=f3e293]: clic derecho
+            - text: sobre la imagen →
+            - strong [ref=f3e294]: Guardar imagen como…
+          - listitem [ref=f3e295]:
+            - text: Elige la carpeta
+            - strong [ref=f3e296]: Descargas
+            - text: y pulsa
+            - strong [ref=f3e297]: Guardar
+            - text: .
+          - listitem [ref=f3e298]:
+            - text: Abre el
+            - strong [ref=f3e299]: Explorador de archivos
+            - text: y, a la izquierda, pulsa
+            - strong [ref=f3e300]: Descargas
+            - text: .
+        - paragraph [ref=f3e304]:
+          - strong [ref=f3e305]: "Comprueba:"
+          - text: la imagen está en Descargas. Todo lo que descargas va ahí, no al escritorio.
+      - article [ref=f3e306]:
+        - generic [ref=f3e307]:
+          - generic [aria-hidden] [ref=f3e308]: "7"
+          - 'heading "Carpetas: crear, nombrar, mover" [level=3] [ref=f3e309]'
+          - generic [ref=f3e310] [cursor=pointer]:
+            - checkbox "Hecho" [ref=f3e311]
+            - generic [ref=f3e312]: Hecho
+        - list [ref=f3e313]:
+          - listitem [ref=f3e314]:
+            - text: Abre
+            - strong [ref=f3e315]: Explorador de archivos
+            - text: → a la izquierda, pulsa
+            - strong [ref=f3e316]: Documentos
+            - text: .
+          - listitem [ref=f3e317]:
+            - text: Clic derecho en un espacio vacío →
+            - strong [ref=f3e318]: Nuevo
+            - text: →
+            - strong [ref=f3e319]: Carpeta
+            - text: . Escribe tu nombre y pulsa
+            - strong [ref=f3e320]: Enter
+            - text: .
+          - listitem [ref=f3e321]:
+            - text: Ve a
+            - strong [ref=f3e322]: Descargas
+            - text: ", clic derecho sobre un archivo →"
+            - strong [ref=f3e323]: Cortar
+            - text: "(`Ctrl` + `X`). Entra en tu carpeta, clic derecho en vacío →"
+            - strong [ref=f3e324]: Pegar
+            - text: "(`Ctrl` + `V`)."
+        - table [ref=f3e325]:
+          - rowgroup [ref=f3e326]:
+            - row [ref=f3e327]:
+              - columnheader "Atajo" [ref=f3e328]
+              - columnheader "Qué hace" [ref=f3e329]
+          - rowgroup [ref=f3e330]:
+            - row [ref=f3e331]:
+              - cell [ref=f3e332]:
+                - code [ref=f3e333]: Ctrl
+                - text: +
+                - code [ref=f3e334]: C
+              - cell "Copiar" [ref=f3e335]
+            - row [ref=f3e336]:
+              - cell [ref=f3e337]:
+                - code [ref=f3e338]: Ctrl
+                - text: +
+                - code [ref=f3e339]: X
+              - cell "Cortar (mover)" [ref=f3e340]
+            - row [ref=f3e341]:
+              - cell [ref=f3e342]:
+                - code [ref=f3e343]: Ctrl
+                - text: +
+                - code [ref=f3e344]: V
+              - cell "Pegar" [ref=f3e345]
+            - row [ref=f3e346]:
+              - cell [ref=f3e347]:
+                - code [ref=f3e348]: Ctrl
+                - text: +
+                - code [ref=f3e349]: Z
+              - cell [ref=f3e350]:
+                - strong [ref=f3e351]: Deshacer
+                - text: lo último
+        - paragraph [ref=f3e355]:
+          - strong [ref=f3e356]: "Comprueba:"
+          - text: creaste una carpeta en Documentos y moviste un archivo dentro.
+        - paragraph [ref=f3e357]:
+          - strong [ref=f3e358]: "Aviso:"
+          - text: los nombres de carpeta van
+          - strong [ref=f3e359]: todo junto, sin espacios, sin tildes y en minúsculas
+          - text: .
+      - article [ref=f3e360]:
+        - generic [ref=f3e361]:
+          - generic [aria-hidden] [ref=f3e362]: "8"
+          - heading "Hacer una captura de pantalla" [level=3] [ref=f3e363]
+          - generic [ref=f3e364] [cursor=pointer]:
+            - checkbox "Hecho" [ref=f3e365]
+            - generic [ref=f3e366]: Hecho
+        - list [ref=f3e367]:
+          - listitem [ref=f3e368]:
+            - text: Pulsa a la vez
+            - strong [ref=f3e369]: ⊞ Windows
+            - text: +
+            - strong [ref=f3e370]: Shift
+            - text: +
+            - strong [ref=f3e371]: S
+            - text: .
+          - listitem [ref=f3e372]:
+            - text: La pantalla se oscurece. Con el ratón,
+            - strong [ref=f3e373]: arrastra
+            - text: para rodear lo que quieres fotografiar.
+          - listitem [ref=f3e374]:
+            - text: Suelta. La foto
+            - strong [ref=f3e375]: ya está copiada
+            - text: .
+          - listitem [ref=f3e376]:
+            - text: Abre
+            - strong [ref=f3e377]: Word
+            - text: (o
+            - strong [ref=f3e378]: Paint
+            - text: ) y pega con
+            - strong [ref=f3e379]: Ctrl
+            - text: +
+            - strong [ref=f3e380]: V
+            - text: . Guarda con
+            - strong [ref=f3e381]: Ctrl
+            - text: +
+            - strong [ref=f3e382]: G
+            - text: .
+        - paragraph [ref=f3e386]:
+          - strong [ref=f3e387]: "Comprueba:"
+          - text: hiciste una captura, la pegaste en Word y la guardaste.
+      - article [ref=f3e388]:
+        - generic [ref=f3e389]:
+          - generic [aria-hidden] [ref=f3e390]: "9"
+          - heading "Cuando algo se queda colgado" [level=3] [ref=f3e391]
+          - generic [ref=f3e392] [cursor=pointer]:
+            - checkbox "Hecho" [ref=f3e393]
+            - generic [ref=f3e394]: Hecho
+        - table [ref=f3e395]:
+          - rowgroup [ref=f3e396]:
+            - row [ref=f3e397]:
+              - columnheader "Situación" [ref=f3e398]
+              - columnheader "Qué haces" [ref=f3e399]
+          - rowgroup [ref=f3e400]:
+            - row [ref=f3e401]:
+              - cell "Se queda \"pensando\"" [ref=f3e402]
+              - cell [ref=f3e403]:
+                - strong [ref=f3e404]: Espera 10 segundos.
+                - text: No hagas clic muchas veces
+            - row [ref=f3e405]:
+              - cell "Un programa no responde" [ref=f3e406]
+              - cell [ref=f3e407]:
+                - code [ref=f3e408]: Ctrl
+                - text: +
+                - code [ref=f3e409]: Alt
+                - text: +
+                - code [ref=f3e410]: Supr
+                - text: →
+                - strong [ref=f3e411]: Administrador de tareas
+                - text: → elige el programa →
+                - strong [ref=f3e412]: Finalizar tarea
+            - row [ref=f3e413]:
+              - cell "No sabes dónde estás" [ref=f3e414]
+              - cell [ref=f3e415]:
+                - text: Pulsa
+                - strong [ref=f3e416]: Esc
+                - text: para salir, o cierra la ventana con la
+                - strong [ref=f3e417]: X
+            - row [ref=f3e418]:
+              - cell "Nada funciona" [ref=f3e419]
+              - cell [ref=f3e420]:
+                - text: Avisa al profesor.
+                - strong [ref=f3e421]: Nunca desenchufes
+                - text: el ordenador ni quites la batería
+        - paragraph [ref=f3e422]:
+          - strong [ref=f3e423]: "Lo que NO hay que hacer nunca:"
+        - list [ref=f3e424]:
+          - listitem [ref=f3e425]: Instalar programas que aparecen en anuncios o ventanas emergentes.
+          - listitem [ref=f3e426]: Aceptar todo lo que salga sin leerlo.
+          - listitem [ref=f3e427]: Pulsar el botón de encendido para apagarlo.
+          - listitem [ref=f3e428]: Desenchufar el ordenador mientras está encendido.
+        - paragraph [ref=f3e432]:
+          - strong [ref=f3e433]: "Comprueba:"
+          - text: sabes cuándo esperar y cuándo llamar al profesor.
+      - article [ref=f3e434]:
+        - generic [ref=f3e435]:
+          - generic [aria-hidden] [ref=f3e436]: "10"
+          - 'heading "Lista de comprobación: ¿estás listo?" [level=3] [ref=f3e437]'
+          - generic [ref=f3e438] [cursor=pointer]:
+            - checkbox "Hecho" [ref=f3e439]
+            - generic [ref=f3e440]: Hecho
+        - paragraph [ref=f3e441]:
+          - text: Marca todas.
+          - strong [ref=f3e442]: Con 8 de 8, puedes empezar la práctica.
+        - table [ref=f3e443]:
+          - rowgroup [ref=f3e444]:
+            - row [ref=f3e445]:
+              - columnheader "✔" [ref=f3e446]
+              - columnheader "Soy capaz de…" [ref=f3e447]
+          - rowgroup [ref=f3e448]:
+            - row [ref=f3e449]:
+              - cell "☐" [ref=f3e450]
+              - cell "Encender el ordenador y llegar al escritorio" [ref=f3e451]
+            - row [ref=f3e452]:
+              - cell "☐" [ref=f3e453]
+              - cell [ref=f3e454]:
+                - text: Abrir un programa con
+                - strong [ref=f3e455]: doble clic
+                - text: y cerrarlo con la
+                - strong [ref=f3e456]: X
+            - row [ref=f3e457]:
+              - cell "☐" [ref=f3e458]
+              - cell [ref=f3e459]:
+                - text: Hacer
+                - strong [ref=f3e460]: clic derecho
+                - text: y usar el menú que sale
+            - row [ref=f3e461]:
+              - cell "☐" [ref=f3e462]
+              - cell [ref=f3e463]:
+                - text: "Escribir `http://localhost/` en la"
+                - strong [ref=f3e464]: barra de direcciones
+                - text: "(con `:`, `/` y `.`)"
+            - row [ref=f3e465]:
+              - cell "☐" [ref=f3e466]
+              - cell [ref=f3e467]:
+                - text: Volver atrás en el navegador y abrir una
+                - strong [ref=f3e468]: pestaña nueva
+            - row [ref=f3e469]:
+              - cell "☐" [ref=f3e470]
+              - cell [ref=f3e471]:
+                - text: Encontrar en
+                - strong [ref=f3e472]: Descargas
+                - text: un archivo que acabo de descargar
+            - row [ref=f3e473]:
+              - cell "☐" [ref=f3e474]
+              - cell [ref=f3e475]:
+                - text: Crear una carpeta en
+                - strong [ref=f3e476]: Documentos
+                - text: y mover un archivo dentro
+            - row [ref=f3e477]:
+              - cell "☐" [ref=f3e478]
+              - cell [ref=f3e479]:
+                - text: Hacer una
+                - strong [ref=f3e480]: captura de pantalla
+                - text: y pegarla en Word
+        - paragraph [ref=f3e481]:
+          - strong [ref=f3e482]: Si alguna casilla está vacía
+          - text: ", repite el punto correspondiente antes de seguir. No pasa nada por repetir."
+      - article [ref=f3e483]:
+        - generic [ref=f3e484]:
+          - generic [aria-hidden] [ref=f3e485]: "11"
+          - heading "Cuidar el cuerpo" [level=3] [ref=f3e486]
+          - generic [ref=f3e487] [cursor=pointer]:
+            - checkbox "Hecho" [ref=f3e488]
+            - generic [ref=f3e489]: Hecho
+        - list [ref=f3e490]:
+          - listitem [ref=f3e491]:
+            - strong [ref=f3e492]: Pantalla
+            - text: a la altura de los ojos. Si miras hacia abajo, sube el ordenador o baja la silla.
+          - listitem [ref=f3e493]:
+            - strong [ref=f3e494]: Pies
+            - text: apoyados en el suelo o en un reposapiés. Espalda apoyada en el respaldo.
+          - listitem [ref=f3e495]:
+            - strong [ref=f3e496]: Cada 45 minutos
+            - text: ", levanta la vista y mira algo lejano durante 20 segundos. Y mueve las muñecas."
+        - paragraph [ref=f3e500]:
+          - strong [ref=f3e501]: "Comprueba:"
+          - text: estás sentado bien y sabes descansar la vista.
+      - article [ref=f3e502]:
+        - generic [ref=f3e503]:
+          - generic [aria-hidden] [ref=f3e504]: "12"
+          - heading "Notas para el profesorado" [level=3] [ref=f3e505]
+          - generic [ref=f3e506] [cursor=pointer]:
+            - checkbox "Hecho" [ref=f3e507]
+            - generic [ref=f3e508]: Hecho
+        - group [ref=f3e509]:
+          - generic "+ Organización de la sesión (90 min)" [ref=f3e510] [cursor=pointer]
+      - generic [ref=f3e511]:
+        - 'heading "Chuleta: direcciones y atajos" [level=2] [ref=f3e512]'
+        - generic [ref=f3e513]:
+          - button "http://localhost/" [ref=f3e514] [cursor=pointer]
+          - button "http://localhost/miwordpress/" [ref=f3e516] [cursor=pointer]
+          - button "Ctrl + C" [ref=f3e518] [cursor=pointer]
+          - button "Ctrl + V" [ref=f3e520] [cursor=pointer]
+          - button "Ctrl + Z" [ref=f3e522] [cursor=pointer]
+          - button "⊞ + Shift + S" [ref=f3e524] [cursor=pointer]
+      - generic [ref=f3e526]:
+        - paragraph [ref=f3e527]:
+          - text: Sesión previa a la
+          - link "práctica de XAMPP y WordPress" [ref=f3e528] [cursor=pointer]:
+            - /url: practica-web-interactiva.html
+          - text: ". Versión técnica:"
+          - code [ref=f3e529]: guia-docente-xampp-wordpress.md
+          - text: .
+        - paragraph [ref=f3e530]: Esta página funciona sin internet y no envía datos a ningún sitio. Tu progreso se guarda solo en este navegador.
+        - paragraph:
+          - status

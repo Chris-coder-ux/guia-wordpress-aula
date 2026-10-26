@@ -1,0 +1,986 @@
+- generic [active] [ref=f16e1]:
+  - link "Saltar al contenido" [ref=f16e2] [cursor=pointer]:
+    - /url: "#contenido"
+  - banner [ref=f16e3]:
+    - generic [ref=f16e4]:
+      - generic [ref=f16e5]: Monta tu web · XAMPP + WordPress
+      - group "Progreso de la práctica" [ref=f16e10]:
+        - generic [ref=f16e12]: 0 de 14 pasos
+      - generic [ref=f16e13]:
+        - button "Reducir el tamaño de la letra" [ref=f16e14] [cursor=pointer]: A−
+        - button "Aumentar el tamaño de la letra" [ref=f16e15] [cursor=pointer]: A+
+        - button "Imprimir" [ref=f16e16] [cursor=pointer]
+  - generic [ref=f16e21]:
+    - navigation "Índice de pasos" [ref=f16e22]:
+      - group [ref=f16e23]:
+        - generic "–Los 14 pasos" [ref=f16e24] [cursor=pointer]
+        - list [ref=f16e25]:
+          - listitem [ref=f16e26]:
+            - link "1 Descargar XAMPP" [ref=f16e27] [cursor=pointer]:
+              - /url: "#paso-1"
+              - generic [ref=f16e28]: "1"
+              - text: Descargar XAMPP
+          - listitem [ref=f16e29]:
+            - link "2 Abrir el instalador" [ref=f16e30] [cursor=pointer]:
+              - /url: "#paso-2"
+              - generic [ref=f16e31]: "2"
+              - text: Abrir el instalador
+          - listitem [ref=f16e32]:
+            - link "3 Instalar" [ref=f16e33] [cursor=pointer]:
+              - /url: "#paso-3"
+              - generic [ref=f16e34]: "3"
+              - text: Instalar
+          - listitem [ref=f16e35]:
+            - link "4 Encender servicios" [ref=f16e36] [cursor=pointer]:
+              - /url: "#paso-4"
+              - generic [ref=f16e37]: "4"
+              - text: Encender servicios
+          - listitem [ref=f16e38]:
+            - link "5 Comprobar" [ref=f16e39] [cursor=pointer]:
+              - /url: "#paso-5"
+              - generic [ref=f16e40]: "5"
+              - text: Comprobar
+          - listitem [ref=f16e41]:
+            - link "6 Descargar WordPress" [ref=f16e42] [cursor=pointer]:
+              - /url: "#paso-6"
+              - generic [ref=f16e43]: "6"
+              - text: Descargar WordPress
+          - listitem [ref=f16e44]:
+            - link "7 Crear la carpeta" [ref=f16e45] [cursor=pointer]:
+              - /url: "#paso-7"
+              - generic [ref=f16e46]: "7"
+              - text: Crear la carpeta
+          - listitem [ref=f16e47]:
+            - link "8 Descomprimir" [ref=f16e48] [cursor=pointer]:
+              - /url: "#paso-8"
+              - generic [ref=f16e49]: "8"
+              - text: Descomprimir
+          - listitem [ref=f16e50]:
+            - link "9 Crear base de datos" [ref=f16e51] [cursor=pointer]:
+              - /url: "#paso-9"
+              - generic [ref=f16e52]: "9"
+              - text: Crear base de datos
+          - listitem [ref=f16e53]:
+            - link "10 Abrir instalador" [ref=f16e54] [cursor=pointer]:
+              - /url: "#paso-10"
+              - generic [ref=f16e55]: "10"
+              - text: Abrir instalador
+          - listitem [ref=f16e56]:
+            - link "11 Datos de conexión" [ref=f16e57] [cursor=pointer]:
+              - /url: "#paso-11"
+              - generic [ref=f16e58]: "11"
+              - text: Datos de conexión
+          - listitem [ref=f16e59]:
+            - link "12 Tu usuario" [ref=f16e60] [cursor=pointer]:
+              - /url: "#paso-12"
+              - generic [ref=f16e61]: "12"
+              - text: Tu usuario
+          - listitem [ref=f16e62]:
+            - link "13 Entrar" [ref=f16e63] [cursor=pointer]:
+              - /url: "#paso-13"
+              - generic [ref=f16e64]: "13"
+              - text: Entrar
+          - listitem [ref=f16e65]:
+            - link "14 Ver tu web" [ref=f16e66] [cursor=pointer]:
+              - /url: "#paso-14"
+              - generic [ref=f16e67]: "14"
+              - text: Ver tu web
+        - paragraph [ref=f16e68]:
+          - button "Borrar mi progreso" [ref=f16e69] [cursor=pointer]
+    - main [ref=f16e70]:
+      - generic [ref=f16e71]:
+        - heading "Monta tu web en tu ordenador" [level=1] [ref=f16e72]
+        - paragraph [ref=f16e73]:
+          - text: Vas a instalar XAMPP y WordPress y a ver tu propia página en el navegador.
+          - strong [ref=f16e74]: No hace falta saber informática.
+          - text: Cada paso termina con una comprobación.
+        - list [ref=f16e75]:
+          - listitem [ref=f16e76]: 14 pasos
+          - listitem [ref=f16e77]: 3 sesiones de 60 minutos
+          - listitem [ref=f16e78]: Windows o macOS
+          - listitem [ref=f16e79]: Funciona sin internet
+        - group [ref=f16e80]:
+          - generic "Ver el índice de los 14 pasos" [ref=f16e81] [cursor=pointer]
+        - paragraph [ref=f16e86]:
+          - strong [ref=f16e87]: ¿Nunca has usado un ordenador?
+          - text: Antes de esta práctica, haz la
+          - link "Sesión 0 · Primeros pasos" [ref=f16e88] [cursor=pointer]:
+            - /url: sesion-0-interactiva.html
+          - text: . Allí se aprende el ratón, el teclado y las carpetas.
+        - generic [ref=f16e89]:
+          - heading "Estas 5 cosas tienen que ser verdad" [level=2] [ref=f16e90]
+          - paragraph [ref=f16e91]: Márcalas antes de empezar. Si alguna no la puedes marcar, avisa al profesor.
+          - list [ref=f16e92]:
+            - listitem [ref=f16e93]:
+              - checkbox "Estoy en un ordenador con Windows En Mac se hace casi igual; el profesor te indica los cambios." [ref=f16e94]
+              - generic [ref=f16e95]:
+                - text: Estoy en un
+                - strong [ref=f16e96]: ordenador con Windows
+                - generic [ref=f16e97]: En Mac se hace casi igual; el profesor te indica los cambios.
+            - listitem [ref=f16e98]:
+              - checkbox "Sé hacer doble clic con el botón izquierdo Pulsar dos veces rápido, sin mover el ratón." [ref=f16e99]
+              - generic [ref=f16e100]:
+                - text: Sé hacer
+                - strong [ref=f16e101]: doble clic
+                - text: con el botón izquierdo
+                - generic [ref=f16e102]: Pulsar dos veces rápido, sin mover el ratón.
+            - listitem [ref=f16e103]:
+              - checkbox "Tengo internet Solo para las descargas. Después ya no hace falta." [ref=f16e104]
+              - generic [ref=f16e105]:
+                - text: Tengo
+                - strong [ref=f16e106]: internet
+                - generic [ref=f16e107]: Solo para las descargas. Después ya no hace falta.
+            - listitem [ref=f16e108]:
+              - checkbox "Quedan 2 GB libres en el disco Es poco más que una película." [ref=f16e109]
+              - generic [ref=f16e110]:
+                - text: Quedan
+                - strong [ref=f16e111]: 2 GB libres
+                - text: en el disco
+                - generic [ref=f16e112]: Es poco más que una película.
+            - listitem [ref=f16e113]:
+              - checkbox "Puedo instalar programas Si el ordenador es del centro, hace falta permiso." [ref=f16e114]
+              - generic [ref=f16e115]:
+                - text: Puedo
+                - strong [ref=f16e116]: instalar programas
+                - generic [ref=f16e117]: Si el ordenador es del centro, hace falta permiso.
+        - generic [ref=f16e118]:
+          - heading "Las partes de la pantalla que vamos a nombrar" [level=2] [ref=f16e119]
+          - 'figure "Los iconos se abren con doble clic. La barra de tareas está siempre abajo: ahí vive el menú Inicio, que es donde están todos los programas." [ref=f16e120]':
+            - img "Esquema de un escritorio de Windows Pantalla con cuatro iconos arriba a la izquierda, la papelera abajo a la derecha y una barra de tareas abajo con el botón Inicio, tres programas abiertos y el reloj." [ref=f16e122]:
+              - generic [ref=f16e129]:
+                - generic [ref=f16e130]: Equipo
+                - generic [ref=f16e131]: Papelera
+                - generic [ref=f16e132]: Word
+                - generic [ref=f16e133]: Carpeta
+              - generic [ref=f16e141]: 12:30
+              - generic [ref=f16e145]: Iconos
+              - generic [ref=f16e146]: Barra de tareas
+              - generic [ref=f16e147]: Menú Inicio (⊞) · programas abiertos · reloj
+        - generic [ref=f16e149]:
+          - heading "Cuatro símbolos del teclado que vas a escribir" [level=2] [ref=f16e150]
+          - figure [ref=f16e151]:
+            - img "Teclas necesarias para escribir una dirección web Se muestran las teclas dos puntos, barra inclinada, punto y arroba, con la combinación que hay que pulsar en cada una." [ref=f16e153]:
+              - generic [ref=f16e154]:
+                - generic [ref=f16e155]:
+                  - generic [ref=f16e157]: ":"
+                  - generic [ref=f16e158]: Shift + ;
+                - generic [ref=f16e159]:
+                  - generic [ref=f16e161]: /
+                  - generic [ref=f16e162]: tecla junto a Shift derecho
+                - generic [ref=f16e163]:
+                  - generic [ref=f16e165]: .
+                  - generic [ref=f16e166]: tecla a la derecha de la Ñ
+                - generic [ref=f16e167]:
+                  - generic [ref=f16e169]: "@"
+                  - generic [ref=f16e170]: AltGr + 2
+            - generic [ref=f16e171]:
+              - text: Escribir
+              - code [ref=f16e172]: http://localhost/miwordpress/
+              - text: parece difícil y solo son cuatro símbolos. Practícalos antes de empezar.
+      - generic [ref=f16e173]:
+        - generic [ref=f16e174]: Parte A
+        - heading "Instalar XAMPP" [level=2] [ref=f16e175]
+        - generic [ref=f16e176]: ≈ 45 min
+      - article [ref=f16e177]:
+        - generic [ref=f16e178]:
+          - generic [aria-hidden] [ref=f16e179]: "1"
+          - heading "Descargar XAMPP" [level=3] [ref=f16e180]
+          - generic [ref=f16e181] [cursor=pointer]:
+            - checkbox "Hecho" [ref=f16e182]
+            - generic [ref=f16e183]: Hecho
+        - generic [ref=f16e184]:
+          - generic [ref=f16e185]:
+            - list [ref=f16e186]:
+              - listitem [ref=f16e187]: Abre el navegador (Chrome, Edge o Firefox).
+              - listitem [ref=f16e188]:
+                - text: Haz
+                - strong [ref=f16e189]: un clic
+                - text: en la barra de direcciones, la franja blanca de arriba.
+              - listitem [ref=f16e190]:
+                - text: Escribe la dirección de abajo y pulsa
+                - strong [ref=f16e191]: Enter
+                - text: .
+              - listitem [ref=f16e192]:
+                - text: Baja un poco con la rueda hasta ver el botón
+                - strong [ref=f16e193]: XAMPP for Windows
+                - text: y púlsalo.
+              - listitem [ref=f16e194]: "Espera: la descarga empieza sola."
+            - button "https://www.apachefriends.org/es/index.html" [ref=f16e196] [cursor=pointer]
+            - paragraph [ref=f16e204]:
+              - strong [ref=f16e205]: "Comprueba:"
+              - text: en la carpeta
+              - strong [ref=f16e206]: Descargas
+              - text: hay un archivo que empieza por
+              - code [ref=f16e207]: xampp-windows
+              - text: y termina en
+              - code [ref=f16e208]: .exe
+              - text: .
+          - generic [ref=f16e209]:
+            - 'figure "Arriba: barra de direcciones. Abajo: buscador. Si sabes la dirección, escríbela siempre arriba." [ref=f16e210]':
+              - img "Barra de direcciones frente a buscador Arriba, una ventana con la dirección escrita en la barra superior. Abajo, una página de buscador con un cuadro en el centro. Solo la barra de arriba lleva directamente a la web." [ref=f16e212]:
+                - generic [ref=f16e213]:
+                  - generic [ref=f16e216]: apachefriends.org/es/index.html
+                  - generic [ref=f16e217]: Aquí escribes la dirección exacta →
+                  - generic [ref=f16e218]: va directo a la web. Correcto.
+                  - generic [ref=f16e223]: buscar…
+                  - generic [ref=f16e224]: El buscador adivina. Los primeros resultados
+                  - generic [ref=f16e225]: suelen ser anuncios, no la web oficial.
+            - generic [ref=f16e227]:
+              - paragraph [ref=f16e228]:
+                - text: ¿Dónde escribirías
+                - code [ref=f16e229]: apachefriends.org
+                - text: "?"
+              - generic [ref=f16e230]:
+                - button "En la barra de direcciones" [ref=f16e231] [cursor=pointer]
+                - button "En el buscador" [ref=f16e232] [cursor=pointer]
+              - status [ref=f16e233]
+        - group [ref=f16e234]:
+          - generic "+ Si algo no sale" [ref=f16e235] [cursor=pointer]
+      - article [ref=f16e236]:
+        - generic [ref=f16e237]:
+          - generic [aria-hidden] [ref=f16e238]: "2"
+          - heading "Abrir el instalador" [level=3] [ref=f16e239]
+          - generic [ref=f16e240] [cursor=pointer]:
+            - checkbox "Hecho" [ref=f16e241]
+            - generic [ref=f16e242]: Hecho
+        - generic [ref=f16e243]:
+          - generic [ref=f16e244]:
+            - list [ref=f16e245]:
+              - listitem [ref=f16e246]:
+                - text: Abre la carpeta
+                - strong [ref=f16e247]: Descargas
+                - text: .
+              - listitem [ref=f16e248]:
+                - text: Haz
+                - strong [ref=f16e249]: doble clic
+                - text: en el archivo
+                - code [ref=f16e250]: xampp-windows…exe
+                - text: .
+              - listitem [ref=f16e251]:
+                - text: "Windows pregunta si permites cambios: pulsa"
+                - strong [ref=f16e252]: Sí
+                - text: .
+              - listitem [ref=f16e253]:
+                - text: "Si el antivirus avisa:"
+                - strong [ref=f16e254]: Permitir
+                - text: o
+                - strong [ref=f16e255]: Ejecutar de todos modos
+                - text: .
+            - paragraph [ref=f16e259]:
+              - strong [ref=f16e260]: "Comprueba:"
+              - text: aparece una ventana con el botón
+              - strong [ref=f16e261]: Next
+              - text: .
+          - figure "Si el doble clic no abre nada, espera un segundo y prueba otra vez. No hace falta pulsar más fuerte." [ref=f16e263]:
+            - 'img "El ratón: botón izquierdo y derecho Dibujo de un ratón visto desde arriba. El botón izquierdo se usa para hacer clic y doble clic; el derecho abre un menú de opciones." [ref=f16e265]':
+              - generic [ref=f16e266]:
+                - generic [ref=f16e270]: Izquierdo
+                - generic [ref=f16e271]: clic · doble clic
+                - generic [ref=f16e272]: Derecho
+                - generic [ref=f16e273]: menú de opciones
+                - generic [ref=f16e274]: Doble clic = dos pulsaciones rápidas,
+                - generic [ref=f16e275]: sin mover el ratón entre las dos.
+        - group [ref=f16e277]:
+          - generic "+ Si algo no sale" [ref=f16e278] [cursor=pointer]
+      - article [ref=f16e279]:
+        - generic [ref=f16e280]:
+          - generic [aria-hidden] [ref=f16e281]: "3"
+          - 'heading "Instalar: casi todo es pulsar «Next»" [level=3] [ref=f16e282]'
+          - generic [ref=f16e283] [cursor=pointer]:
+            - checkbox "Hecho" [ref=f16e284]
+            - generic [ref=f16e285]: Hecho
+        - list [ref=f16e286]:
+          - listitem [ref=f16e287]:
+            - text: "Primera pantalla:"
+            - strong [ref=f16e288]: Next
+            - text: .
+          - listitem [ref=f16e289]:
+            - text: "Pantalla de componentes: deja marcados"
+            - strong [ref=f16e290]: solo
+            - text: Apache, MySQL y phpMyAdmin. Desmarca lo demás y pulsa
+            - strong [ref=f16e291]: Next
+            - text: .
+          - listitem [ref=f16e292]:
+            - text: "Carpeta de instalación: déjala como viene ("
+            - code [ref=f16e293]: C:\xampp
+            - text: ) y pulsa
+            - strong [ref=f16e294]: Next
+            - text: .
+          - listitem [ref=f16e295]:
+            - text: "Idioma:"
+            - strong [ref=f16e296]: English
+            - text: o
+            - strong [ref=f16e297]: Español
+            - text: . Pulsa
+            - strong [ref=f16e298]: Next
+            - text: .
+          - listitem [ref=f16e299]:
+            - text: Espera a que la barra llegue al final. Deja marcada la casilla de abrir el panel y pulsa
+            - strong [ref=f16e300]: Finish
+            - text: .
+        - paragraph [ref=f16e304]:
+          - strong [ref=f16e305]: "Comprueba:"
+          - text: se abre la ventana
+          - strong [ref=f16e306]: XAMPP Control Panel
+          - text: ", con una lista de nombres y botones"
+          - strong [ref=f16e307]: Start
+          - text: .
+        - group [ref=f16e308]:
+          - generic "+ Si algo no sale" [ref=f16e309] [cursor=pointer]
+      - generic [ref=f16e310]:
+        - generic [ref=f16e311]: Parte B
+        - heading "Encender el servidor" [level=2] [ref=f16e312]
+        - generic [ref=f16e313]: ≈ 15 min
+      - article [ref=f16e314]:
+        - generic [ref=f16e315]:
+          - generic [aria-hidden] [ref=f16e316]: "4"
+          - heading "Encender Apache y MySQL" [level=3] [ref=f16e317]
+          - generic [ref=f16e318] [cursor=pointer]:
+            - checkbox "Hecho" [ref=f16e319]
+            - generic [ref=f16e320]: Hecho
+        - generic [ref=f16e321]:
+          - generic [ref=f16e322]:
+            - list [ref=f16e323]:
+              - listitem [ref=f16e324]:
+                - text: En la fila
+                - strong [ref=f16e325]: Apache
+                - text: ", pulsa"
+                - strong [ref=f16e326]: Start
+                - text: .
+              - listitem [ref=f16e327]:
+                - text: En la fila
+                - strong [ref=f16e328]: MySQL
+                - text: ", pulsa"
+                - strong [ref=f16e329]: Start
+                - text: .
+              - listitem [ref=f16e330]: Espera unos segundos.
+            - paragraph [ref=f16e334]:
+              - strong [ref=f16e335]: "Comprueba:"
+              - text: los dos botones ahora dicen
+              - strong [ref=f16e336]: Stop
+              - text: y los nombres se ponen
+              - strong [ref=f16e337]: en verde
+              - text: . Aparecen los números
+              - strong [ref=f16e338]: "80"
+              - text: "y"
+              - strong [ref=f16e339]: "3306"
+              - text: .
+          - generic [ref=f16e340]:
+            - figure "El verde es la única señal que importa. Si Apache se apaga solo, avisa al profesor." [ref=f16e341]:
+              - img "Panel de control de XAMPP con los dos servicios en verde Tabla con dos filas, Apache y MySQL. Cada fila tiene un botón que dice Stop y una etiqueta verde de funcionando, con el número de puerto 80 y 3306." [ref=f16e343]:
+                - generic [ref=f16e344]:
+                  - generic [ref=f16e347]: XAMPP Control Panel v3.3.0
+                  - generic [ref=f16e348]:
+                    - generic [ref=f16e349]: Apache
+                    - generic [ref=f16e350]: MySQL
+                  - generic [ref=f16e351]:
+                    - generic [ref=f16e353]: Stop
+                    - generic [ref=f16e355]: Stop
+                  - generic [ref=f16e358]: "Running : 80"
+                  - generic [ref=f16e361]: "Running : 3306"
+                  - generic [ref=f16e362]: Verde = encendido. Si está gris, no funciona.
+            - generic [ref=f16e364]:
+              - paragraph [ref=f16e365]: El botón de Apache dice «Stop». ¿Qué significa?
+              - generic [ref=f16e366]:
+                - button "Que ya está encendido" [ref=f16e367] [cursor=pointer]
+                - button "Que está apagado" [ref=f16e368] [cursor=pointer]
+              - status [ref=f16e369]
+        - group [ref=f16e370]:
+          - generic "+ Si algo no sale" [ref=f16e371] [cursor=pointer]
+      - article [ref=f16e372]:
+        - generic [ref=f16e373]:
+          - generic [aria-hidden] [ref=f16e374]: "5"
+          - heading "Comprobar que el servidor responde" [level=3] [ref=f16e375]
+          - generic [ref=f16e376] [cursor=pointer]:
+            - checkbox "Hecho" [ref=f16e377]
+            - generic [ref=f16e378]: Hecho
+        - list [ref=f16e379]:
+          - listitem [ref=f16e380]: Abre el navegador.
+          - listitem [ref=f16e381]:
+            - text: Escribe
+            - code [ref=f16e382]: http://localhost/
+            - text: en la barra de direcciones y pulsa
+            - strong [ref=f16e383]: Enter
+            - text: .
+        - button "http://localhost/" [ref=f16e385] [cursor=pointer]
+        - paragraph [ref=f16e393]:
+          - strong [ref=f16e394]: "Comprueba:"
+          - text: sale la página de bienvenida de XAMPP. Si sale,
+          - strong [ref=f16e395]: ya tienes un servidor
+          - text: .
+        - paragraph [ref=f16e396]:
+          - strong [ref=f16e397]: «localhost» significa «mi propio ordenador»
+          - text: ": es una dirección que solo funciona en tu equipo. No está en internet."
+        - group [ref=f16e398]:
+          - generic "+ Si algo no sale" [ref=f16e399] [cursor=pointer]
+      - generic [ref=f16e400]:
+        - generic [ref=f16e401]: Parte C
+        - heading "WordPress y su despensa" [level=2] [ref=f16e402]
+        - generic [ref=f16e403]: ≈ 35 min
+      - article [ref=f16e404]:
+        - generic [ref=f16e405]:
+          - generic [aria-hidden] [ref=f16e406]: "6"
+          - heading "Descargar WordPress" [level=3] [ref=f16e407]
+          - generic [ref=f16e408] [cursor=pointer]:
+            - checkbox "Hecho" [ref=f16e409]
+            - generic [ref=f16e410]: Hecho
+        - generic [ref=f16e411]:
+          - generic [ref=f16e412]:
+            - list [ref=f16e413]:
+              - listitem [ref=f16e414]:
+                - text: En el navegador, escribe la dirección y pulsa
+                - strong [ref=f16e415]: Enter
+                - text: .
+              - listitem [ref=f16e416]:
+                - text: Pulsa el botón
+                - strong [ref=f16e417]: Download WordPress
+                - text: .
+              - listitem [ref=f16e418]: Espera a que termine la descarga.
+            - button "https://wordpress.org/download/" [ref=f16e420] [cursor=pointer]
+            - paragraph [ref=f16e428]:
+              - strong [ref=f16e429]: "Comprueba:"
+              - text: en
+              - strong [ref=f16e430]: Descargas
+              - text: hay un archivo llamado
+              - code [ref=f16e431]: wordpress
+              - text: que termina en
+              - code [ref=f16e432]: .zip
+              - text: .
+            - paragraph [ref=f16e433]:
+              - text: Un
+              - code [ref=f16e434]: .zip
+              - text: es
+              - strong [ref=f16e435]: una caja comprimida
+              - text: ": dentro hay muchos archivos y hay que abrirla."
+          - figure "Todo lo que descargas aparece en Descargas, no en el escritorio. Búscalo ahí primero." [ref=f16e437]:
+            - img "La carpeta Descargas con el archivo wordpress.zip Ventana del explorador de archivos con la carpeta Descargas seleccionada a la izquierda y el archivo comprimido wordpress.zip destacado a la derecha." [ref=f16e439]:
+              - generic [ref=f16e440]:
+                - generic [ref=f16e443]: Explorador de archivos
+                - generic [ref=f16e446]: Descargas
+                - generic [ref=f16e448]: Documentos
+                - generic [ref=f16e449]: Imágenes
+                - generic [ref=f16e450]: Escritorio
+                - generic [ref=f16e453]: wordpress.zip
+                - generic [ref=f16e454]: Hoy · 24,8 MB
+                - generic [ref=f16e455]: Clic derecho → Extraer todo…
+      - article [ref=f16e458]:
+        - generic [ref=f16e459]:
+          - generic [aria-hidden] [ref=f16e460]: "7"
+          - heading "Crear la carpeta de tu web" [level=3] [ref=f16e461]
+          - generic [ref=f16e462] [cursor=pointer]:
+            - checkbox "Hecho" [ref=f16e463]
+            - generic [ref=f16e464]: Hecho
+        - list [ref=f16e465]:
+          - listitem [ref=f16e466]:
+            - text: Abre
+            - strong [ref=f16e467]: Explorador de archivos
+            - text: .
+          - listitem [ref=f16e468]:
+            - text: Entra en la unidad
+            - strong [ref=f16e469]: "C:"
+            - text: → carpeta
+            - strong [ref=f16e470]: xampp
+            - text: → carpeta
+            - strong [ref=f16e471]: htdocs
+            - text: .
+          - listitem [ref=f16e472]:
+            - text: Dentro de
+            - strong [ref=f16e473]: htdocs
+            - text: ", haz clic derecho en un espacio vacío →"
+            - strong [ref=f16e474]: Nuevo
+            - text: →
+            - strong [ref=f16e475]: Carpeta
+            - text: .
+          - listitem [ref=f16e476]:
+            - text: Escribe
+            - code [ref=f16e477]: miwordpress
+            - text: y pulsa
+            - strong [ref=f16e478]: Enter
+            - text: .
+        - button "C:\\xampp\\htdocs" [ref=f16e480] [cursor=pointer]
+        - paragraph [ref=f16e488]:
+          - strong [ref=f16e489]: "Comprueba:"
+          - text: existe
+          - code [ref=f16e490]: C:\xampp\htdocs\miwordpress
+          - text: y está vacía.
+        - paragraph [ref=f16e491]:
+          - code [ref=f16e492]: htdocs
+          - text: es la carpeta donde el servidor busca las webs.
+          - strong [ref=f16e493]: Todo lo que pongas dentro se verá en el navegador.
+        - group [ref=f16e494]:
+          - generic "+ Si algo no sale" [ref=f16e495] [cursor=pointer]
+      - article [ref=f16e496]:
+        - generic [ref=f16e497]:
+          - generic [aria-hidden] [ref=f16e498]: "8"
+          - heading "Descomprimir dentro de la carpeta" [level=3] [ref=f16e499]
+          - generic [ref=f16e500] [cursor=pointer]:
+            - checkbox "Hecho" [ref=f16e501]
+            - generic [ref=f16e502]: Hecho
+        - generic [ref=f16e503]:
+          - generic [ref=f16e504]:
+            - list [ref=f16e505]:
+              - listitem [ref=f16e506]:
+                - text: Abre
+                - strong [ref=f16e507]: Descargas
+                - text: .
+              - listitem [ref=f16e508]:
+                - text: Clic derecho en
+                - code [ref=f16e509]: wordpress.zip
+                - text: →
+                - strong [ref=f16e510]: Extraer todo…
+              - listitem [ref=f16e511]:
+                - text: Pulsa
+                - strong [ref=f16e512]: Examinar
+                - text: y elige
+                - code [ref=f16e513]: C:\xampp\htdocs\miwordpress
+                - text: .
+                - strong [ref=f16e514]: "No"
+                - text: elijas
+                - code [ref=f16e515]: htdocs
+                - text: .
+              - listitem [ref=f16e516]:
+                - text: Pulsa
+                - strong [ref=f16e517]: Extraer
+                - text: .
+            - paragraph [ref=f16e521]:
+              - strong [ref=f16e522]: "Comprueba:"
+              - text: dentro de
+              - code [ref=f16e523]: miwordpress
+              - text: ves directamente
+              - code [ref=f16e524]: wp-admin
+              - text: ","
+              - code [ref=f16e525]: wp-content
+              - text: ","
+              - code [ref=f16e526]: wp-includes
+              - text: ","
+              - code [ref=f16e527]: index.php
+              - text: "y"
+              - code [ref=f16e528]: wp-config-sample.php
+              - text: .
+          - generic [ref=f16e529]:
+            - figure [ref=f16e530]:
+              - 'img "Estructura de carpetas correcta e incorrecta A la izquierda, la estructura correcta: dentro de miwordpress están wp-admin, wp-content, wp-includes e index.php. A la derecha, el error frecuente: una carpeta wordpress de más dentro de miwordpress." [ref=f16e532]':
+                - generic [ref=f16e533]:
+                  - generic [ref=f16e535]: CORRECTO
+                  - generic [ref=f16e536]: miwordpress\
+                  - generic [ref=f16e537]: ├ wp-admin\
+                  - generic [ref=f16e538]: ├ wp-content\
+                  - generic [ref=f16e539]: ├ wp-includes\
+                  - generic [ref=f16e540]: ├ index.php
+                  - generic [ref=f16e541]: └ wp-config-sample.php
+                  - generic [ref=f16e545]: MAL
+                  - generic [ref=f16e546]: miwordpress\
+                  - generic [ref=f16e547]: └ wordpress\
+                  - generic [ref=f16e548]: ├ wp-admin\
+                  - generic [ref=f16e549]: ├ wp-content\
+                  - generic [ref=f16e550]: └ index.php
+                  - generic [ref=f16e551]: "Una carpeta de más: la web no carga."
+              - generic [ref=f16e554]:
+                - text: Este es el error más frecuente de la práctica. Si ves la carpeta intermedia
+                - code [ref=f16e555]: wordpress
+                - text: ", corta su contenido y pégalo un nivel arriba."
+            - generic [ref=f16e556]:
+              - paragraph [ref=f16e557]:
+                - text: Dentro de
+                - code [ref=f16e558]: miwordpress
+                - text: solo veo otra carpeta llamada
+                - code [ref=f16e559]: wordpress
+                - text: . ¿Está bien?
+              - generic [ref=f16e560]:
+                - button "Sí, es lo normal" [ref=f16e561] [cursor=pointer]
+                - button "No, sobra una carpeta" [ref=f16e562] [cursor=pointer]
+              - status [ref=f16e563]
+        - group [ref=f16e564]:
+          - generic "+ Cómo arreglar la carpeta de más" [ref=f16e565] [cursor=pointer]
+      - article [ref=f16e566]:
+        - generic [ref=f16e567]:
+          - generic [aria-hidden] [ref=f16e568]: "9"
+          - 'heading "Crear la despensa: la base de datos" [level=3] [ref=f16e569]'
+          - generic [ref=f16e570] [cursor=pointer]:
+            - checkbox "Hecho" [ref=f16e571]
+            - generic [ref=f16e572]: Hecho
+        - generic [ref=f16e573]:
+          - generic [ref=f16e574]:
+            - list [ref=f16e575]:
+              - listitem [ref=f16e576]:
+                - text: En el navegador, abre
+                - code [ref=f16e577]: http://localhost/phpmyadmin/
+                - text: .
+              - listitem [ref=f16e578]:
+                - text: Pulsa la pestaña
+                - strong [ref=f16e579]: Bases de datos
+                - text: .
+              - listitem [ref=f16e580]:
+                - text: En
+                - strong [ref=f16e581]: Nombre de la base de datos
+                - text: escribe
+                - code [ref=f16e582]: wordpress_db
+                - text: .
+              - listitem [ref=f16e583]:
+                - text: Pulsa
+                - strong [ref=f16e584]: Crear
+                - text: ". No crees ninguna tabla: WordPress las crea solo."
+            - paragraph [ref=f16e588]:
+              - strong [ref=f16e589]: "Comprueba:"
+              - text: en la lista de la izquierda aparece
+              - code [ref=f16e590]: wordpress_db
+              - text: .
+          - figure "La «despensa» donde WordPress guardará textos, usuarios y ajustes." [ref=f16e592]:
+            - img "Crear una base de datos en phpMyAdmin Formulario con una pestaña Bases de datos, un campo de texto con wordpress_db escrito y un botón verde que dice Crear." [ref=f16e594]:
+              - generic [ref=f16e595]:
+                - generic [ref=f16e597]: phpMyAdmin
+                - generic [ref=f16e599]: Bases de datos
+                - generic [ref=f16e600]: Nombre de la base de datos
+                - generic [ref=f16e602]: wordpress_db
+                - generic [ref=f16e604]: Crear
+                - generic [ref=f16e605]: "Cotejamiento: utf8mb4_general_ci (déjalo como está)"
+                - generic [ref=f16e606]: No hace falta crear tablas.
+      - generic [ref=f16e608]:
+        - generic [ref=f16e609]: Parte D
+        - heading "Instalar WordPress y entrar" [level=2] [ref=f16e610]
+        - generic [ref=f16e611]: ≈ 40 min
+      - article [ref=f16e612]:
+        - generic [ref=f16e613]:
+          - generic [aria-hidden] [ref=f16e614]: "10"
+          - heading "Abrir el instalador de WordPress" [level=3] [ref=f16e615]
+          - generic [ref=f16e616] [cursor=pointer]:
+            - checkbox "Hecho" [ref=f16e617]
+            - generic [ref=f16e618]: Hecho
+        - list [ref=f16e619]:
+          - listitem [ref=f16e620]:
+            - text: En el navegador, abre
+            - code [ref=f16e621]: http://localhost/miwordpress/
+            - text: .
+          - listitem [ref=f16e622]:
+            - text: Elige
+            - strong [ref=f16e623]: Español
+            - text: y pulsa
+            - strong [ref=f16e624]: Continuar
+            - text: .
+          - listitem [ref=f16e625]:
+            - text: Pulsa
+            - strong [ref=f16e626]: ¡Vamos allá!
+        - paragraph [ref=f16e630]:
+          - strong [ref=f16e631]: "Comprueba:"
+          - text: aparece un formulario que pide datos de la base de datos.
+        - group [ref=f16e632]:
+          - generic "+ Si algo no sale" [ref=f16e633] [cursor=pointer]
+      - article [ref=f16e634]:
+        - generic [ref=f16e635]:
+          - generic [aria-hidden] [ref=f16e636]: "11"
+          - heading "Rellenar los datos de conexión" [level=3] [ref=f16e637]
+          - generic [ref=f16e638] [cursor=pointer]:
+            - checkbox "Hecho" [ref=f16e639]
+            - generic [ref=f16e640]: Hecho
+        - paragraph [ref=f16e641]:
+          - text: Copia estos datos
+          - strong [ref=f16e642]: exactamente
+          - text: ":"
+        - table [ref=f16e643]:
+          - rowgroup [ref=f16e644]:
+            - row [ref=f16e645]:
+              - columnheader "Campo del formulario" [ref=f16e646]
+              - columnheader "Qué escribir" [ref=f16e647]
+          - rowgroup [ref=f16e648]:
+            - row [ref=f16e649]:
+              - cell "Nombre de la base de datos" [ref=f16e650]
+              - cell [ref=f16e651]:
+                - code [ref=f16e652]: wordpress_db
+            - row [ref=f16e653]:
+              - cell "Nombre de usuario" [ref=f16e654]
+              - cell [ref=f16e655]:
+                - code [ref=f16e656]: root
+            - row [ref=f16e657]:
+              - cell "Contraseña" [ref=f16e658]
+              - cell [ref=f16e659]:
+                - strong [ref=f16e660]: nada, vacía
+            - row [ref=f16e661]:
+              - cell "Servidor de la base de datos" [ref=f16e662]
+              - cell [ref=f16e663]:
+                - code [ref=f16e664]: localhost
+            - row [ref=f16e665]:
+              - cell "Prefijo de tabla" [ref=f16e666]
+              - cell [ref=f16e667]:
+                - code [ref=f16e668]: wp_
+                - text: (déjalo como está)
+        - list [ref=f16e669]:
+          - listitem [ref=f16e670]:
+            - text: Pulsa
+            - strong [ref=f16e671]: Enviar
+            - text: .
+          - listitem [ref=f16e672]:
+            - text: Pulsa
+            - strong [ref=f16e673]: Ejecutar la instalación
+            - text: .
+        - paragraph [ref=f16e677]:
+          - strong [ref=f16e678]: "Comprueba:"
+          - text: sale la pantalla que pide el título del sitio, un usuario y una contraseña.
+        - group [ref=f16e679]:
+          - generic "+ Si algo no sale" [ref=f16e680] [cursor=pointer]
+      - article [ref=f16e681]:
+        - generic [ref=f16e682]:
+          - generic [aria-hidden] [ref=f16e683]: "12"
+          - heading "Crear tu usuario de administrador" [level=3] [ref=f16e684]
+          - generic [ref=f16e685] [cursor=pointer]:
+            - checkbox "Hecho" [ref=f16e686]
+            - generic [ref=f16e687]: Hecho
+        - table [ref=f16e688]:
+          - rowgroup [ref=f16e689]:
+            - row [ref=f16e690]:
+              - columnheader "Campo" [ref=f16e691]
+              - columnheader "Qué escribir" [ref=f16e692]
+          - rowgroup [ref=f16e693]:
+            - row [ref=f16e694]:
+              - cell "Título del sitio" [ref=f16e695]
+              - cell [ref=f16e696]:
+                - text: El nombre de tu web, por ejemplo
+                - emphasis [ref=f16e697]: La web de Ana
+            - row [ref=f16e698]:
+              - cell "Nombre de usuario" [ref=f16e699]
+              - cell [ref=f16e700]:
+                - text: Algo tuyo, por ejemplo
+                - code [ref=f16e701]: ana
+                - text: . Evita
+                - code [ref=f16e702]: admin
+            - row [ref=f16e703]:
+              - cell "Contraseña" [ref=f16e704]
+              - cell [ref=f16e705]:
+                - text: Una que recuerdes.
+                - strong [ref=f16e706]: Apúntala abajo
+            - row [ref=f16e707]:
+              - cell "Correo electrónico" [ref=f16e708]
+              - cell "Tu correo, o el que te diga el profesor" [ref=f16e709]
+        - list [ref=f16e710]:
+          - listitem [ref=f16e711]:
+            - text: Pulsa
+            - strong [ref=f16e712]: Instalar WordPress
+            - text: y espera.
+        - paragraph [ref=f16e716]:
+          - strong [ref=f16e717]: "Comprueba:"
+          - text: aparece una pantalla con el botón
+          - strong [ref=f16e718]: Acceder
+          - text: .
+        - generic [ref=f16e719]:
+          - generic [ref=f16e720]:
+            - generic [ref=f16e721]: Mi usuario
+            - textbox "Mi usuario" [ref=f16e722]
+          - generic [ref=f16e723]:
+            - generic [ref=f16e724]: Mi contraseña
+            - textbox "Mi contraseña" [ref=f16e725]
+        - paragraph [ref=f16e726]: Se guarda solo en este navegador y no se envía a ningún sitio.
+      - article [ref=f16e727]:
+        - generic [ref=f16e728]:
+          - generic [aria-hidden] [ref=f16e729]: "13"
+          - heading "Entrar en tu web" [level=3] [ref=f16e730]
+          - generic [ref=f16e731] [cursor=pointer]:
+            - checkbox "Hecho" [ref=f16e732]
+            - generic [ref=f16e733]: Hecho
+        - generic [ref=f16e734]:
+          - generic [ref=f16e735]:
+            - list [ref=f16e736]:
+              - listitem [ref=f16e737]:
+                - text: Pulsa
+                - strong [ref=f16e738]: Acceder
+                - text: .
+              - listitem [ref=f16e739]: Escribe tu usuario y tu contraseña.
+              - listitem [ref=f16e740]:
+                - text: Pulsa
+                - strong [ref=f16e741]: Entrar
+                - text: .
+            - paragraph [ref=f16e745]:
+              - strong [ref=f16e746]: "Comprueba:"
+              - text: ves el
+              - strong [ref=f16e747]: escritorio
+              - text: de WordPress, un panel con menús a la izquierda.
+          - figure "El escritorio es el «taller». Visitar sitio es el «escaparate»." [ref=f16e749]:
+            - img "Barra superior de WordPress con el botón Visitar sitio Franja oscura superior con el nombre del sitio a la izquierda y, al pasar el ratón, la opción Visitar sitio destacada." [ref=f16e751]:
+              - generic [ref=f16e752]:
+                - generic [ref=f16e755]: La web de Ana
+                - generic [ref=f16e757]: Visitar sitio
+                - generic [ref=f16e758]: Personalizar
+                - generic [ref=f16e759]: + Nueva
+                - generic [ref=f16e761]: Pasa el ratón por el nombre del sitio
+                - generic [ref=f16e762]: y pulsa «Visitar sitio».
+                - generic [ref=f16e764]: Así se ve tu web como la ve un visitante
+        - group [ref=f16e766]:
+          - generic "+ Si algo no sale" [ref=f16e767] [cursor=pointer]
+      - article [ref=f16e768]:
+        - generic [ref=f16e769]:
+          - generic [aria-hidden] [ref=f16e770]: "14"
+          - heading "Ver tu web publicada" [level=3] [ref=f16e771]
+          - generic [ref=f16e772] [cursor=pointer]:
+            - checkbox "Hecho" [ref=f16e773]
+            - generic [ref=f16e774]: Hecho
+        - list [ref=f16e775]:
+          - listitem [ref=f16e776]: Arriba a la izquierda, pasa el ratón por el nombre de tu web.
+          - listitem [ref=f16e777]:
+            - text: Pulsa
+            - strong [ref=f16e778]: Visitar sitio
+            - text: .
+        - paragraph [ref=f16e782]:
+          - strong [ref=f16e783]: "Comprueba:"
+          - text: ves tu web.
+          - strong [ref=f16e784]: "Ya está: tienes una web funcionando."
+      - generic [ref=f16e785]:
+        - generic [ref=f16e786]: Después
+        - heading "Cuando vuelvas otro día" [level=2] [ref=f16e787]
+      - generic [ref=f16e788]:
+        - paragraph [ref=f16e789]:
+          - text: El servidor
+          - strong [ref=f16e790]: se apaga
+          - text: "al apagar el ordenador. Para volver a entrar:"
+        - list [ref=f16e791]:
+          - listitem [ref=f16e792]:
+            - text: Abre
+            - strong [ref=f16e793]: XAMPP Control Panel
+            - text: .
+          - listitem [ref=f16e794]:
+            - text: Pulsa
+            - strong [ref=f16e795]: Start
+            - text: en Apache y en MySQL.
+          - listitem [ref=f16e796]:
+            - text: Abre el navegador y ve a
+            - code [ref=f16e797]: http://localhost/miwordpress/wp-admin/
+            - text: .
+        - paragraph [ref=f16e802]:
+          - strong [ref=f16e803]: No apagues el ordenador de golpe
+          - text: mientras Apache y MySQL estén en verde. Pulsa
+          - strong [ref=f16e804]: Stop
+          - text: en los dos primero.
+      - generic [ref=f16e805]:
+        - heading "Qué tienes que entregar" [level=2] [ref=f16e806]
+        - list [ref=f16e807]:
+          - listitem [ref=f16e808]:
+            - strong [ref=f16e809]: Capturas de pantalla
+            - text: "de: el panel de XAMPP en verde, la carpeta"
+            - code [ref=f16e810]: miwordpress
+            - text: abierta,
+            - code [ref=f16e811]: wordpress_db
+            - text: en phpMyAdmin y tu web publicada.
+          - listitem [ref=f16e812]:
+            - strong [ref=f16e813]: Una frase
+            - text: explicando qué es
+            - code [ref=f16e814]: localhost
+            - text: ", con tus palabras."
+          - listitem [ref=f16e815]:
+            - strong [ref=f16e816]: Una incidencia
+            - text: ": algo que salió mal y cómo lo arreglaste."
+        - figure "En Mac es Cmd + Shift + 4 y el archivo se guarda en el escritorio." [ref=f16e817]:
+          - 'img "Cómo hacer una captura de pantalla en Windows Tres teclas: Windows, Shift y S. Después se arrastra el ratón para rodear una zona de la pantalla y la imagen queda copiada." [ref=f16e819]':
+            - generic [ref=f16e820]:
+              - generic [ref=f16e821]:
+                - generic [ref=f16e823]: ⊞
+                - generic [ref=f16e824]: Windows
+              - generic [ref=f16e825]: +
+              - generic [ref=f16e826]:
+                - generic [ref=f16e828]: Shift
+                - generic [ref=f16e829]: Mayúsculas
+              - generic [ref=f16e830]: +
+              - generic [ref=f16e831]:
+                - generic [ref=f16e833]: S
+                - generic [ref=f16e834]: la tecla S
+              - generic [ref=f16e836]: arrastra para
+              - generic [ref=f16e837]: rodear la zona
+              - generic [ref=f16e838]: "La foto queda copiada: abre Word y pega con Ctrl + V."
+      - generic [ref=f16e840]:
+        - heading "Si algo va mal" [level=2] [ref=f16e841]
+        - table [ref=f16e842]:
+          - rowgroup [ref=f16e843]:
+            - row [ref=f16e844]:
+              - columnheader "Lo que ves" [ref=f16e845]
+              - columnheader "Qué haces" [ref=f16e846]
+          - rowgroup [ref=f16e847]:
+            - row [ref=f16e848]:
+              - cell "Apache se apaga solo" [ref=f16e849]
+              - cell "Otra «puerta» está ocupada. Avisa al profesor." [ref=f16e850]
+            - row [ref=f16e851]:
+              - cell "Error al conectar con la base de datos" [ref=f16e852]
+              - cell [ref=f16e853]:
+                - text: Usuario
+                - code [ref=f16e854]: root
+                - text: ", contraseña vacía, servidor"
+                - code [ref=f16e855]: localhost
+                - text: .
+            - row [ref=f16e856]:
+              - cell "Sale «404» o «no encontrado»" [ref=f16e857]
+              - cell [ref=f16e858]:
+                - text: La carpeta no está en
+                - code [ref=f16e859]: C:\xampp\htdocs\miwordpress
+                - text: .
+            - row [ref=f16e860]:
+              - cell "Me pide instalar otra vez" [ref=f16e861]
+              - cell "Se instaló con otro prefijo de tablas. Avisa al profesor." [ref=f16e862]
+            - row [ref=f16e863]:
+              - cell "La web se ve sin colores" [ref=f16e864]
+              - cell "Falta algún archivo. Revisa el paso 8." [ref=f16e865]
+        - paragraph [ref=f16e866]:
+          - strong [ref=f16e867]: "Regla de oro:"
+          - text: si algo no sale,
+          - strong [ref=f16e868]: para
+          - text: . No sigas pulsando cosas. Anota lo que ves y avisa. Cuanto menos toques, más fácil es arreglarlo.
+      - generic [ref=f16e869]:
+        - heading "Diccionario" [level=2] [ref=f16e870]
+        - generic [ref=f16e871]:
+          - term [ref=f16e872]: Descargar
+          - definition [ref=f16e873]: Traer un archivo de internet a tu ordenador.
+          - term [ref=f16e874]: Instalar
+          - definition [ref=f16e875]: Meter un programa en el ordenador para poder usarlo.
+          - term [ref=f16e876]: Descomprimir
+          - definition [ref=f16e877]:
+            - text: Abrir una caja
+            - code [ref=f16e878]: .zip
+            - text: para sacar los archivos.
+          - term [ref=f16e879]: Ruta
+          - definition [ref=f16e880]:
+            - text: "El camino hasta un archivo. Ejemplo:"
+            - code [ref=f16e881]: C:\xampp\htdocs
+            - text: .
+          - term [ref=f16e882]: Servidor
+          - definition [ref=f16e883]: Programa que guarda una web y la entrega cuando la pides.
+          - term [ref=f16e884]: Base de datos
+          - definition [ref=f16e885]: "La despensa: donde se guardan textos, usuarios y datos."
+          - term [ref=f16e886]: Local
+          - definition [ref=f16e887]: En tu propio ordenador, sin internet.
+          - term [ref=f16e888]: Administrador
+          - definition [ref=f16e889]: El usuario con todos los permisos de la web.
+      - generic [ref=f16e890]:
+        - 'heading "Chuleta: copia y pega" [level=2] [ref=f16e891]'
+        - generic [ref=f16e892]:
+          - button "http://localhost/" [ref=f16e893] [cursor=pointer]
+          - button "http://localhost/phpmyadmin/" [ref=f16e895] [cursor=pointer]
+          - button "http://localhost/miwordpress/" [ref=f16e897] [cursor=pointer]
+          - button "http://localhost/miwordpress/wp-admin/" [ref=f16e899] [cursor=pointer]
+          - button "C:\\xampp\\htdocs" [ref=f16e901] [cursor=pointer]
+        - paragraph [ref=f16e903]: Pulsa una dirección para copiarla y pégala en la barra del navegador.
+      - generic [ref=f16e904]:
+        - paragraph [ref=f16e905]:
+          - text: "Elaborado a partir de «INSTALACION DE XAMPP Y WORDPRES EN LOCAL». Versión ampliada:"
+          - code [ref=f16e906]: guia-docente-xampp-wordpress.md
+          - text: ". Sesión previa interactiva:"
+          - link "sesion-0-interactiva.html" [ref=f16e907] [cursor=pointer]:
+            - /url: sesion-0-interactiva.html
+          - text: .
+        - paragraph [ref=f16e908]: Esta página funciona sin internet y no envía datos a ningún sitio. Tu progreso se guarda solo en este navegador.
+        - paragraph:
+          - status
+    - complementary "Cómo guardar esta página" [ref=f16e909]:
+      - heading "Guardar esta página" [level=3] [ref=f16e910]
+      - paragraph [ref=f16e911]: Puedes guardar esta práctica para trabajar sin internet o para imprimirla después.
+      - list [ref=f16e912]:
+        - listitem [ref=f16e913]:
+          - strong [ref=f16e914]: Como PDF
+          - text: – en el navegador pulsa Ctrl + P (o Cmd + P en macOS). En la ventana de impresión elige
+          - strong [ref=f16e915]: Guardar como PDF
+          - text: y pulsa
+          - strong [ref=f16e916]: Guardar
+          - text: . La página se imprimirá con formato limpio y sin botones.
+        - listitem [ref=f16e917]:
+          - strong [ref=f16e918]: Como archivo HTML
+          - text: – en el navegador ve a
+          - strong [ref=f16e919]: Archivo → Guardar como…
+          - text: y elige
+          - strong [ref=f16e920]: Web completa
+          - text: . Se guardará un archivo
+          - code [ref=f16e921]: .html
+          - text: y una carpeta con las imágenes. Ábrelo después con tu navegador.
+      - paragraph [ref=f16e922]: "No necesitas depender de internet: el código y los dibujos están dentro del mismo archivo."

@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Crear una web con WordPress y Gutenberg · Paso a paso</title>
+<style>
+  :root{
+    --ground:#eef2f1; --panel:#ffffff; --ink:#0f1f1e; --ink-2:#47595a;
+    --rule:#ccd6d4; --rule-soft:#e2e9e7; --signal:#0b6b52; --signal-soft:#e5f1ec;
+    --alert:#a8321f; --alert-soft:#faece8; --warn:#8a5a00; --warn-soft:#fdf4e3;
+    --radius:12px; --shadow:0 1px 1px rgba(15,31,30,.05), 0 10px 24px -16px rgba(15,31,30,.35);
+    --font:"Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    --mono:"Cascada Mono", Consolas, "SF Mono", Menlo, monospace; --measure:66ch;
+  }
+  *,*,*::before{box-sizing:border-box}
+  html{scroll-behavior:smooth; scroll-padding-top:5.5rem}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+  body{margin:0; background:var(--ground); color:var(--ink); font-family:var(--font); font-size:1.0625rem; line-height:1.6; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility}
+  ::selection{background:#bfe3d6; color:var(--ink)}
+  :focus-visible{outline:3px solid var(--signal); outline-offset:2px; border-radius:4px}
+  a{color:var(--signal); text-underline-offset:3px; text-decoration-thickness:1.5px}
+  a:hover{text-decoration-thickness:2.5px}
+  p{margin:0 0 1em} ul,ol{margin:0 0 1em; padding-left:1.4em} li{margin:.35em 0}
+  strong{font-weight:650} code,.mono{font-family:var(--mono); font-size:.94em}
+  code{background:#fff; border:1px solid var(--rule); border-radius:6px; padding:.1em .38em; white-space:normal; overflow-wrap:anywhere}
+  hr{border:0; border-top:1px solid var(--rule); margin:2.5rem 0}
+  .skip{position:absolute; left:-9999px; top:0; background:var(--ink); color:#fff; padding:.8rem 1.2rem; z-index:100; border-radius:0 0 8px 0}
+  .skip:focus{left:0}
+  /* ---------- top bar ---------- */
+  .topbar{position:sticky; top:0; z-index:50; background:var(--panel); border-bottom:1px solid var(--rule)}
+  .topbar__in{max-width:1180px; margin:0 auto; padding:.55rem 1.25rem; display:flex; align-items:center; gap:1rem; flex-wrap:wrap}
+  .brand{display:flex; align-items:center; gap:.6rem; font-weight:700; letter-spacing:-.01em; margin-right:auto; min-width:0}
+  .brand svg{flex:none} .brand span{white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+  .meter{display:flex; align-items:center; gap:.6rem; font-variant-numeric:tabular-nums; font-size:.9rem; color:var(--ink-2)}
+  .meter__track{width:min(30vw,180px); height:8px; background:var(--rule-soft); border-radius:99px; overflow:hidden; border:1px solid var(--rule)}
+  .meter__fill{height:100%; width:0%; background:var(--signal); transition:width .35s cubic-bezier(.2,.8,.2,1)}
+  .meter b{color:var(--ink); font-weight:700}
+  .tools{display:flex; align-items:center; gap:.4rem}
+  .btn{font:inherit; font-size:.9rem; font-weight:600; color:var(--ink); background:var(--panel); border:1px solid var(--rule); border-radius:99px; padding:.42rem .8rem; cursor:pointer; display:inline-flex; align-items:center; gap:.4rem; transition:background .18s, border-color .18s, transform .18s; min-height:38px}
+  .btn:hover{background:var(--signal-soft); border-color:var(--signal)}
+  .btn:active{transform:translateY(1px)}
+  .btn--solid{background:var(--signal); border-color:var(--signal); color:#fff}
+  .btn--solid:hover{background:#085641; border-color:#085641; color:#fff}
+  .btn--quiet{border-color:transparent; color:var(--ink-2)}
+  .btn--quiet:hover{color:var(--ink)}
+  /* ---------- shell ---------- */
+  .shell{max-width:1180px; margin:0 auto; padding:2.5rem 1.25rem 7rem; display:grid; grid-template-columns:250px minmax(0,1fr); gap:3rem; align-items:start}
+  main{min-width:0}
+  /* ---------- rail ---------- */
+  .rail{position:sticky; top:4.6rem; align-self:start; font-size:.9rem}
+  .rail h2{font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-2); margin:0 0 .9rem; font-weight:700}
+  .rail ol{list-style:none; margin:0; padding:0 0 0 1.55rem; position:relative}
+  .rail ol::before{content:""; position:absolute; left:.45rem; top:.45rem; bottom:.45rem; width:2px; background:var(--rule-soft); border-radius:2px}
+  .rail__fill{position:absolute; left:.45rem; top:.45rem; width:2px; background:var(--signal); border-radius:2px; height:0; transition:height .35s cubic-bezier(.2,.8,.2,1)}
+  .rail li{position:relative; margin:0}
+  .rail a{display:flex; gap:.55rem; align-items:baseline; padding:.3rem .2rem; color:var(--ink-2); text-decoration:none; border-radius:6px}
+  .rail a:hover{color:var(--ink); background:#fff}
+  .rail a::before{content:""; position:absolute; left:-1.55rem; top:.62rem; width:.9rem; height:.9rem; border-radius:50%; background:var(--ground); border:2px solid var(--rule); box-sizing:border-box}
+  .rail a.is-done::before{background:var(--signal); border-color:var(--signal)}
+  .rail a.is-current{color:var(--ink); font-weight:650}
+  .rail .n{font-variant-numeric:tabular-nums; color:var(--ink-2); font-size:.8rem; min-width:1.1em}
+  .rail a.is-done .n{color:var(--signal)}
+  /* ---------- hero ---------- */
+  .hero{margin-bottom:3rem}
+  h1{font-size:clamp(2.1rem, 5.2vw, 3.35rem); line-height:1.06; letter-spacing:-.035em; margin:0 0 1rem; font-weight:750; text-wrap:balance; max-width:20ch}
+  .lead{font-size:1.2rem; color:var(--ink-2); max-width:52ch; margin-bottom:1.5rem; text-wrap:pretty}
+  .meta{display:flex; flex-wrap:wrap; gap:.5rem; margin:0 0 1.9rem; padding:0; list-style:none}
+  .meta li{font-size:.82rem; font-weight:600; letter-spacing:.01em; background:var(--panel); border:1px solid var(--rule); color:var(--ink-2); padding:.34rem .7rem; border-radius:99px}
+  /* ---------- blocks ---------- */
+  .block{background:var(--panel); border:1px solid var(--rule); border-radius:var(--radius); padding:1.6rem; margin:0 0 1.5rem; box-shadow:var(--shadow)}
+  .block h2{font-size:1.3rem; letter-spacing:-.02em; margin:0 0 .8rem; text-wrap:balance}
+  .block h3{font-size:1.05rem; margin:1.6rem 0 .5rem}
+  .block > :last-child{margin-bottom:0}
+  .notice{border-radius:var(--radius); padding:1.1rem 1.25rem; display:flex; gap:.9rem; align-items:flex-start; margin:0 0 1.5rem}
+  .notice svg{flex:none; margin-top:.15rem}
+  .notice p{margin:0}
+  .notice--warn{background:var(--warn-soft); border:1px solid #e6cf9e}
+  .notice--info{background:var(--signal-soft); border:1px solid #b9d9cd}
+  .hero > .notice--warn{display:grid; grid-template-columns:auto minmax(0,1fr); column-gap:.9rem; row-gap:.5rem}
+  .hero > .notice--warn svg{grid-column:1; grid-row:1 / span 2}
+  .hero > .notice--warn p{grid-column:2}
+  /* pre-flight */
+  .preflight{list-style:none; padding:0; margin:0; display:grid; gap:.55rem}
+  .preflight li{display:flex; gap:.7rem; align-items:flex-start; margin:0}
+  .preflight input{width:1.15rem; height:1.15rem; margin:.25rem 0 0; accent-color:var(--signal); flex:none}
+  .preflight label{font-size:1rem} .preflight small{display:block; color:var(--ink-2); font-size:.86rem}
+  /* parts */
+  .part{margin:4rem 0 1.5rem; display:flex; align-items:baseline; gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.6rem}
+  .part__k{font-size:.75rem; letter-spacing:.14em; text-transform:uppercase; font-weight:750; color:var(--signal); white-space:nowrap}
+  .part h2{font-size:clamp(1.4rem,3vw,1.9rem); letter-spacing:-.03em; margin:0; text-wrap:balance}
+  .part__time{margin-left:auto; font-size:.85rem; color:var(--ink-2); white-space:nowrap}
+  /* steps */
+  .step{background:var(--panel); border:1px solid var(--rule); border-radius:var(--radius); padding:1.5rem 1.6rem; margin:0 0 1.25rem; box-shadow:var(--shadow); scroll-margin-top:5.5rem; position:relative; transition:border-color .25s, box-shadow .25s}
+  .step.is-done{border-color:#b9d9cd; box-shadow:0 0 0 1px #b9d9cd, var(--shadow)}
+  .step__head{display:flex; align-items:center; gap:.9rem; margin-bottom:.9rem; flex-wrap:wrap}
+  .step__num{flex:none; width:2.5rem; height:2.5rem; border-radius:10px; display:grid; place-items:center; font-weight:750; font-size:1.15rem; background:var(--ink); color:#fff; font-variant-numeric:tabular-nums}
+  .step.is-done .step__num{background:var(--signal)}
+  .step__title{font-size:1.2rem; letter-spacing:-.02em; margin:0; font-weight:700; flex:1 1 auto; text-wrap:balance}
+  .tick{display:inline-flex; align-items:center; gap:.45rem; font-size:.85rem; font-weight:650; border:1px solid var(--rule); border-radius:99px; padding:.32rem .7rem .32rem .5rem; cursor:pointer; color:var(--ink-2); background:var(--panel); flex:none}
+  .tick:hover{border-color:var(--signal); color:var(--ink)}
+  .tick input{width:1.05rem; height:1.05rem; accent-color:var(--signal); margin:0}
+  .step.is-done .tick{background:var(--signal-soft); border-color:#b9d9cd; color:var(--signal)}
+  .step__grid{display:grid; grid-template-columns:1fr; gap:1.4rem}
+  @media (min-width:900px){ .step--split .step__grid{grid-template-columns:1.05fr .95fr; align-items:start} }
+  .actions{counter-reset:a; list-style:none; padding:0; margin:0 0 1rem}
+  .actions li{position:relative; padding-left:2.1rem; margin:.55rem 0; text-wrap:pretty}
+  .actions li::before{counter-increment:a; content:counter(a); position:absolute; left:0; top:.12rem; width:1.45rem; height:1.45rem; border-radius:50%; display:grid; place-items:center; font-size:.78rem; font-weight:700; background:var(--rule-soft); color:var(--ink-2)}
+  .check{display:flex; gap:.7rem; align-items:flex-start; padding:.85rem 1rem; background:var(--signal-soft); border:1px solid #b9d9cd; border-radius:10px; margin:1rem 0 0; -webkit-print-color-adjust:exact; print-color-adjust:exact}
+  .check svg{flex:none; margin-top:.2rem} .check p{margin:0; font-size:.97rem} .check strong{color:var(--signal)}
+  .trouble{margin:1rem 0 0; border:1px solid var(--rule); border-radius:10px; background:#fcfdfd}
+  .trouble summary{cursor:pointer; padding:.65rem .9rem; font-weight:650; font-size:.94rem; color:var(--ink-2); display:flex; align-items:center; gap:.5rem; list-style:none}
+  .trouble summary::-webkit-details-marker{display:none}
+  .trouble summary::before{content:"+"; font-family:var(--mono); font-weight:700; width:1rem; color:var(--alert)}
+  .trouble[open] summary::before{content:"–"}
+  .trouble summary:hover{color:var(--ink)}
+  .trouble__body{padding:0 .9rem .9rem; font-size:.94rem; color:var(--ink-2)} .trouble__body :last-child{margin-bottom:0}
+  /* figures */
+  figure.fig{margin:0}
+  figure.fig svg{width:100%; height:auto; display:block; border:none; background:none}
+  .svgpad{display:inline-block; padding:.75rem .9rem; border:1px solid var(--rule); border-radius:10px; background:#fbfcfc}
+  figcaption{font-size:.82rem; color:var(--ink-2); margin-top:.5rem; line-height:1.45} figcaption b{color:var(--ink)}
+  /* copy chips */
+  .chip{display:inline-flex; align-items:center; gap:.45rem; font-family:var(--mono); font-size:.86rem; background:#fff; border:1px solid var(--rule); border-radius:8px; padding:.5rem .7rem; cursor:pointer; color:var(--ink); text-align:left; max-width:100%; min-height:40px}
+  .chip:hover{border-color:var(--signal); background:var(--signal-soft)}
+  .chip svg{flex:none; opacity:.6} .chip span{overflow-wrap:anywhere}
+  .chip.copied{border-color:var(--signal); background:var(--signal-soft); color:var(--signal); font-weight:650}
+  .chiprow{display:flex; flex-wrap:wrap; gap:.5rem; margin:.4rem 0 1rem}
+  /* table */
+  .tbl{width:100%; border-collapse:collapse; font-size:.95rem; margin:.8rem 0 1.2rem}
+  .tbl th,.tbl td{text-align:left; padding:.6rem .7rem; border-bottom:1px solid var(--rule-soft); vertical-align:top; overflow-wrap:anywhere}
+  .tbl th{font-size:.78rem; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-2); border-bottom:1px solid var(--rule)}
+  .tbl tr:last-child td{border-bottom:0}
+  .tbl code{white-space:nowrap}
+  /* quiz */
+  .quiz{margin:1.2rem 0 0; padding:1.1rem; border:1px dashed var(--rule); border-radius:10px; background:#fbfcfc}
+  .quiz__q{margin:0 0 .8rem; font-weight:650; font-size:.98rem}
+  .quiz__opts{display:flex; flex-wrap:wrap; gap:.5rem}
+  .opt{font:inherit; font-size:.92rem; cursor:pointer; text-align:left; background:var(--panel); border:1px solid var(--rule); border-radius:8px; padding:.5rem .8rem; color:var(--ink)}
+  .opt:hover:not(:disabled){border-color:var(--signal); background:var(--signal-soft)}
+  .opt--right{border-color:var(--signal); background:var(--signal-soft); font-weight:650}
+  .opt--wrong{border-color:var(--alert); background:var(--alert-soft)}
+  .opt:disabled{cursor:default}
+  .quiz__fb{margin:.7rem 0 0; font-size:.9rem; min-height:1.2em}
+  .quiz__fb.is-ok{color:var(--signal); font-weight:650} .quiz__fb.is-no{color:var(--alert); font-weight:650}
+  /* fields */
+  .fields{display:grid; gap:.9rem; margin:1rem 0}
+  .field{display:grid; gap:.2rem}
+  .field label{font-size:.85rem; font-weight:650; color:var(--ink-2)}
+  .field input{font:inherit; font-size:1rem; padding:.5rem .6rem; border:1px solid var(--rule); border-radius:8px; background:#fff; width:100%}
+  .field input:focus{border-color:var(--signal)}
+  /* dictionary */
+  dl.dict{display:grid; grid-template-columns:auto 1fr; gap:.5rem 1.2rem; margin:0; font-size:.95rem}
+  dl.dict dt{font-weight:700; white-space:nowrap} dl.dict dd{margin:0; color:var(--ink-2)}
+  @media (max-width:560px){ dl.dict{grid-template-columns:1fr; gap:.15rem} dl.dict dd{margin-bottom:.7rem} }
+  /* final */
+  .final{margin-top:2rem; border-radius:var(--radius); padding:1.5rem; background:var(--ink); color:#e9efed}
+  .final h2{color:#fff; margin-top:0} .final p{color:#c9d6d2}
+  .final .chip{background:#1b302d; border-color:#334d48; color:#e9efed} .final .chip:hover{background:#22403a}
+  .all-done .final{background:var(--signal)} .all-done .final p{color:#dff0e9}
+  footer.end{border-top:1px solid var(--rule); margin-top:3rem; padding-top:1.2rem; font-size:.85rem; color:var(--ink-2)}
+  /* print */
+  @media print{
+    @page{margin:14mm 14mm 16mm}
+    body{background:#fff; font-size:10.5pt; line-height:1.45}
+    .topbar,.rail,.skip,.noprint{display:none !important}
+    .shell{display:block; max-width:none; padding:0}
+    h1{font-size:24pt} .lead{font-size:12pt}
+    .block,.step{box-shadow:none; border:1px solid #9aa; break-inside:avoid; margin-bottom:9mm; padding:5mm}
+    .part{break-before:page; margin-top:0} .part:first-of-type{break-before:auto}
+    .step__num{background:#111 !important; color:#fff !important}
+    .check{background:#eef7f2 !important} .trouble{border:1px solid #bbb} .trouble summary{color:#333}
+    .trouble__body{display:block !important} .tick{display:none} .quiz{border-style:solid}
+    a{color:#111; text-decoration:none} a[href^="http"]::after{content:" (" attr(href) ")"; font-size:8pt; color:#444; overflow-wrap:anywhere}
+    figure.fig svg{max-height:80mm; width:auto; max-width:100%; margin:0 auto}
+    .final{background:#fff !important; color:#111 !important; border:2px solid #111}
+    .final h2,.final p{color:#111 !important}
+  }
+  /* small screens */
+  .toc-mobile{display:none; margin:0 0 2rem}
+  .toc-mobile summary{cursor:pointer; font-weight:700; padding:.8rem 1rem; background:var(--panel); border:1px solid var(--rule); border-radius:10px}
+  .toc-mobile ol{columns:2; column-gap:1.5rem; font-size:.9rem; margin:.8rem 0 0; padding-left:1.2rem}
+  @media (max-width:520px){ .toc-mobile ol{columns:1} }
+  @media (max-width:1080px){
+    .shell{grid-template-columns:minmax(0,1fr); gap:2rem; padding-top:1.75rem}
+    .rail{display:none} .toc-mobile{display:block}
+  }
+  @media (max-width:560px){
+    .topbar__in{padding:.5rem .9rem} .brand span{display:none}
+    .meter__track{width:26vw} .shell{padding-left:.9rem; padding-right:.9rem}
+    .step{padding:1.15rem 1rem} .step__num{width:2.2rem; height:2.2rem; font-size:1rem}
+    .step__title{font-size:1.08rem} .block{padding:1.2rem 1rem}
+    .part__time{display:none}
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
+<header class="topbar">
+  <div class="topbar__in">
+    <div class="brand">
+      <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true">
+        <rect x="1" y="1" width="24" height="24" rx="7" fill="#0f1f1e"/>
+        <path d="M7 16.5V9.5l6 3.5 6-3.5v7" fill="none" stroke="#e5f1ec" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>Crear una web con WordPress y Gutenberg</span>
+    </div>
+    <div class="meter" role="group" aria-label="Progreso de la sesión">
+      <div class="meter__track" aria-hidden="true"><div class="meter__fill" id="bar"></div></div>
+      <span><b id="count">0</b> de <span id="total">10</span> pasos</span>
+    </div>
+    <div class="tools">
+      <button class="btn btn--quiet noprint" type="button" id="font-minus" aria-label="Reducir el tamaño de la letra">A−</button>
+      <button class="btn btn--quiet noprint" type="button" id="font-plus" aria-label="Aumentar el tamaño de la letra">A+</button>
+      <button class="btn" type="button" id="print-btn">
+        <svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V3h12v6"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8" rx="1"/></svg>
+        Imprimir
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="shell">
+  <nav class="rail noprint" aria-label="Índice de pasos">
+    <h2>Los 10 pasos</h2>
+    <ol id="rail-list">
+      <div class="rail__fill" id="rail-fill" aria-hidden="true"></div>
+      <li><a href="#paso-1" data-target="1"><span class="n">1</span> Entrar al panel</a></li>
+      <li><a href="#paso-2" data-target="2"><span class="n">2</span> Crear página Inicio</a></li>
+      <li><a href="#paso-3" data-target="3"><span class="n">3</span> Crear página Sobre nosotros</a></li>
+      <li><a href="#paso-4" data-target="4"><span class="n">4</span> Editor Gutenberg</a></li>
+      <li><a href="#paso-5" data-target="5"><span class="n">5</span> Bloques básicos</a></li>
+      <li><a href="#paso-6" data-target="6"><span class="n">6</span> Texto e imágenes</a></li>
+      <li><a href="#paso-7" data-target="7"><span class="n">7</span> Menú de navegación</a></li>
+      <li><a href="#paso-8" data-target="8"><span class="n">8</span> Página de inicio</a></li>
+      <li><a href="#paso-9" data-target="9"><span class="n">9</span> Colores y letra</a></li>
+      <li><a href="#paso-10" data-target="10"><span class="n">10</span> Publicar y revisar</a></li>
+    </ol>
+    <p style="margin-top:1.2rem; font-size:.8rem; color:var(--ink-2)">
+      <button class="btn btn--quiet" type="button" id="reset" style="font-size:.8rem; padding:.25rem .5rem">Borrar mi progreso</button>
+    </p>
+  </nav>
+<main id="contenido">
+
+    <section class="hero">
+      <h1>Crear una web con WordPress y Gutenberg</h1>
+      <p class="lead">WordPress ya está instalado. Ahora aprenderás a crear tu propia web usando el editor Gutenberg, paso a paso. <strong>No hace falta saber programar.</strong></p>
+      <ul class="meta">
+        <li data-state>10 pasos</li>
+        <li>60 minutos</li>
+        <li>Sin requisitos previos</li>
+        <li>Funciona sin internet</li>
+      </ul>
+
+      <div class="notice notice--info">
+        <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#0b6b52" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+        <p><strong>¿Ya instalaste WordPress?</strong> Si ya terminaste la <a href="practica-web-interactiva.html">práctica de XAMPP y WordPress</a>, puedes empezar directamente. Si no, termina primero la práctica de instalación.</p>
+      </div>
+
+      <div class="block">
+        <h2>Estas 5 cosas tienen que ser verdad</h2>
+        <p>Márcalas antes de empezar. Si alguna no la puedes marcar, avisa al profesor.</p>
+        <ul class="preflight">
+          <li><input type="checkbox" id="gwpf1"><label for="gwpf1">Tengo WordPress instalado <small>en tu ordenador local.</small></label></li>
+          <li><input type="checkbox" id="gwpf2"><label for="gwpf2">Puedo entrar al panel de administración <small>con tu usuario y contraseña.</small></label></li>
+          <li><input type="checkbox" id="gwpf3"><label for="gwpf3">No me importa equivocarme <small>aquí nada se rompe de verdad.</small></label></li>
+          <li><input type="checkbox" id="gwpf4"><label for="gwpf4">Tengo 60 minutos <small>con un descanso a medio camino.</small></label></li>
+          <li><input type="checkbox" id="gwpf5"><label for="gwpf5">Sé que esto es solo el comienzo <small>después vendrá más contenido.</small></label></li>
+        </ul>
+      </div>
+
+      <div class="notice notice--warn">
+        <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#8a5a00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2.5 20h19L12 3Z"/><path d="M12 9v5"/><circle cx="12" cy="17.2" r=".9" fill="#8a5a00" stroke="none"/></svg>
+        <p><strong>¿Nunca has usado un ordenador?</strong> Antes de esta práctica, haz la <a href="../01_sesion-0/sesion-0-interactiva.html">Sesión 0 · Primeros pasos</a>. Allí se aprende el ratón, el teclado y las carpetas.</p>
+        <p>También puedes consultar la <a href="practica-web-gutenberg.html">práctica web con Gutenberg</a>.</p>
+      </div>
+
+    <div class="block">
+      <h2>Sobre el editor Gutenberg</h2>
+      <p>Gutenberg es el editor de bloques de WordPress. Desde la versión 5.0 de WordPress (diciembre 2018), <strong>viene instalado por defecto</strong> y no hace falta añadirlo como plugin aparte.</p>
+      <p>Si usas una versión muy antigua de WordPress o si alguien lo desactivó, puedes instalarlo como plugin:</p>
+      <ol class="actions">
+        <li>En el panel lateral, haz clic en <strong>Plugins</strong> → <strong>Añadir nuevo</strong>.</li>
+        <li>En el buscador, escribe <strong>Gutenberg</strong>.</li>
+        <li>Busca el plugin oficial de Automattic y haz clic en <strong>Instalar ahora</strong>.</li>
+        <li>Cuando termine, haz clic en <strong>Activar</strong>.</li>
+      </ol>
+      <div class="check">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        <p><strong>Comprueba:</strong> en el panel lateral ves la opción <strong>Entradas</strong> y al editar una entrada aparece el editor de bloques.</p>
+      </div>
+    </div>
+
+    <section class="part" id="parte-a">
+      <span class="part__k">Bloque A</span>
+      <h2>Entrar al panel y crear páginas</h2>
+      <span class="part__time">≈ 20 min</span>
+    </section>
+
+    <article class="step step--split" id="paso-1" data-step="1">
+      <header class="step__head">
+        <span class="step__num" aria-hidden="true">1</span>
+        <h3 class="step__title">Entrar al panel de administración</h3>
+        <label class="tick"><input type="checkbox" data-done="1"><span>Hecho</span></label>
+      </header>
+      <ol class="actions">
+        <li>Abre el navegador y escribe <code>http://localhost/miwordpress/wp-admin/</code> en la barra de direcciones.</li>
+        <li>Pulsa <strong>Enter</strong>.</li>
+        <li>Escribe tu <strong>usuario</strong> y tu <strong>contraseña</strong>.</li>
+        <li>Haz clic en <strong>Acceder</strong>.</li>
+      </ol>
+      <div class="check">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        <p><strong>Comprueba:</strong> ves el panel lateral izquierdo con opciones como Entradas, Páginas, Apariencia y Plugins.</p>
+      </div>
+      <figure class="fig">
+        <div class="svgpad"><svg viewBox="0 0 340 220" role="img" aria-labelledby="wp-t wp-d">
+          <title id="wp-t">Panel de administración de WordPress</title>
+          <desc id="wp-d">Diagrama del panel lateral izquierdo con Entradas, Páginas, Medios, Apariencia, Plugins y Usuarios.</desc>
+          <g font-family="Consolas, monospace" font-size="10">
+            <rect x="4" y="4" width="332" height="212" rx="8" fill="#e5f1ec" stroke="#0b6b52" stroke-width="2"/>
+            <text x="16" y="24" font-family="Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#0b6b52">Panel de administración</text>
+            <text x="16" y="48" fill="#0f1f1e">▾ Entradas</text>
+            <text x="28" y="66" fill="#47595a">├ Todas las entradas</text>
+            <text x="28" y="84" fill="#47595a">├ Añadir nueva</text>
+            <text x="16" y="102" fill="#0f1f1e">▾ Páginas</text>
+            <text x="28" y="120" fill="#47595a">├ Todas las páginas</text>
+            <text x="28" y="138" fill="#47595a">└ Añadir nueva</text>
+            <text x="16" y="156" fill="#0f1f1e">▾ Apariencia</text>
+            <text x="28" y="174" fill="#47595a">├ Temas</text>
+            <text x="28" y="192" fill="#47595a">└ Menús</text>
+            <text x="160" y="48" fill="#0f1f1e">▾ Plugins</text>
+            <text x="172" y="66" fill="#47595a">├ Plugins instalados</text>
+            <text x="172" y="84" fill="#47595a">└ Añadir nuevo</text>
+            <text x="160" y="102" fill="#0f1f1e">▾ Usuarios</text>
+            <text x="172" y="120" fill="#47595a">├ Todos los usuarios</text>
+            <text x="172" y="138" fill="#47595a">└ Añadir nuevo</text>
+            <text x="160" y="156" fill="#0f1f1e">▾ Herramientas</text>
+            <text x="172" y="174" fill="#47595a">└ Ajustes</text>
+          </g>
+        </svg></div>
+        <figcaption>Panel lateral de WordPress: las secciones principales para gestionar tu web.</figcaption>
+      </figure>
+    </article>
+
+    <article class="step" id="paso-2" data-step="2">
+      <header class="step__head">
+        <span class="step__num" aria-hidden="true">2</span>
+        <h3 class="step__title">Crear la página Inicio</h3>
+        <label class="tick"><input type="checkbox" data-done="2"><span>Hecho</span></label>
+      </header>
+      <ol class="actions">
+        <li>En el panel lateral, haz clic en <strong>Páginas</strong> → <strong>Añadir nueva</strong>.</li>
+        <li>En el campo de título, escribe <strong>Inicio</strong>.</li>
+        <li>Haz clic en <strong>Guardar borrador</strong>.</li>
+      </ol>
+      <div class="check">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        <p><strong>Comprueba:</strong> la página Inicio aparece en la lista de páginas con estado "Borrador".</p>
+      </div>
+    </article>
+
+    <article class="step" id="paso-3" data-step="3">
+      <header class="step__head">
+        <span class="step__num" aria-hidden="true">3</span>
+        <h3 class="step__title">Crear la página Sobre nosotros</h3>
+        <label class="tick"><input type="checkbox" data-done="3"><span>Hecho</span></label>
+      </header>
+      <ol class="actions">
+        <li>Haz clic en <strong>Páginas</strong> → <strong>Añadir nueva</strong>.</li>
+        <li>En el campo de título, escribe <strong>Sobre nosotros</strong>.</li>
+        <li>Haz clic en <strong>Guardar borrador</strong>.</li>
+      </ol>
+      <div class="check">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        <p><strong>Comprueba:</strong> tienes dos páginas creadas: Inicio y Sobre nosotros.</p>
+      </div>
+      <figure class="fig">
+        <div class="svgpad"><svg viewBox="0 0 340 140" role="img" aria-labelledby="pag3-t pag3-d">
+          <title id="pag3-t">Página Sobre nosotros creada</title>
+          <desc id="pag3-d">Confirmación de que la página Sobre usuarios está en borrador.</desc>
+          <g font-family="Consolas, monospace" font-size="10">
+            <rect x="4" y="4" width="332" height="132" rx="8" fill="#e5f1ec" stroke="#0b6b52" stroke-width="2"/>
+            <text x="16" y="24" font-family="Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#0b6b52">Página · Sobre nosotros</text>
+            <text x="16" y="52" fill="#47595a">Estado: Borrador</text>
+            <text x="16" y="72" fill="#47595a">Autor: administrador</text>
+            <text x="16" y="92" fill="#47595a">URL: http://localhost/miwordpress/sobre-nosotros/</text>
+            <text x="16" y="112" fill="#0f1f1e">Guardar borrador · Vista previa · Publicar</text>
+          </g>
+        </svg></div>
+        <figcaption>Página Sobre nosotros guardada como borrador.</figcaption>
+      </figure>
+    </article>
+
+    <section class="part" id="parte-b">
+      <span class="part__k">Bloque B</span>
+      <h2>Usar el editor Gutenberg</h2>
+      <span class="part__time">≈ 25 min</span>
+    </section>
+
+    <article class="step step--split" id="paso-4" data-step="4">
+      <header class="step__head">
+        <span class="step__num" aria-hidden="true">4</span>
+        <h3 class="step__title">Abrir el editor Gutenberg</h3>
+        <label class="tick"><input type="checkbox" data-done="4"><span>Hecho</span></label>
+      </header>
+      <ol class="actions">
+        <li>En el panel lateral, haz clic en <strong>Páginas</strong> → <strong>Todas las páginas</strong>.</li>
+        <li>Pasa el ratón sobre la página <strong>Inicio</strong> y haz clic en <strong>Editar</strong>.</li>
+        <li>Se abrirá el editor Gutenberg con un área en blanco y un botón <strong>+</strong> arriba a la izquierda.</li>
+      </ol>
+      <div class="check">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        <p><strong>Comprueba:</strong> ves el editor con el botón <strong>+</strong> y el área de contenido vacío.</p>
+      </div>
+      <figure class="fig">
+        <div class="svgpad"><svg viewBox="0 0 340 200" role="img" aria-labelledby="gut4-t gut4-d">
+          <title id="gut4-t">Editor Gutenberg abierto</title>
+          <desc id="gut4-d">Editor de bloques con botón de añadir bloque y área de edición vacía.</desc>
+          <g font-family="Consolas, monospace" font-size="10">
+            <rect x="4" y="4" width="332" height="192" rx="8" fill="#e5f1ec" stroke="#0b6b52" stroke-width="2"/>
+            <text x="16" y="24" font-family="Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#0b6b52">Editor de bloques (Gutenberg)</text>
+            <text x="16" y="48" fill="#0f1f1e">╭───── Añadir bloque (+) ─────╮</text>
+            <text x="16" y="66" fill="#47595a">│  Párrafo   Encabezado   Imagen│</text>
+            <text x="16" y="84" fill="#47595a">│  Lista     Espacio           │</text>
+            <text x="16" y="102" fill="#47595a">╰─────────────────────────────╯</text>
+            <text x="16" y="122" fill="#0f1f1e">Escribe / para elegir un bloque</text>
+            <text x="16" y="142" fill="#47595a">[ área de edición vacía ]</text>
+            <text x="16" y="162" fill="#47595a">                               │</text>
+            <text x="16" y="182" fill="#47595a">╰─────────────────────────────╯</text>
+          </g>
+        </svg></div>
+        <figcaption>Editor Gutenberg: el botón + abre el inserto de bloques.</figcaption>
+      </figure>
+    </article>
+
+    <article class="step" id="paso-5" data-step="5">
+      <header class="step__head">
+        <span class="step__num" aria-hidden="true">5</span>
+        <h3 class="step__title">Bloques básicos de Gutenberg</h3>
+        <label class="tick"><input type="checkbox" data-done="5"><span>Hecho</span></label>
+      </header>
+      <p>En Gutenberg todo es un <strong>bloque</strong>. Los bloques más usados son:</p>
+      <table class="tbl">
+        <thead><tr><th>Bloque</th><th>Para qué sirve</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Párrafo</strong></td><td>Escribir texto normal.</td></tr>
+          <tr><td><strong>Encabezado</strong></td><td>Títulos y subtítulos (H1, H2, H3…).</td></tr>
+          <tr><td><strong>Imagen</strong></td><td>Insertar una foto o ilustración.</td></tr>
+          <tr><td><strong>Lista</strong></td><td>Listas con viñetas o numeradas.</td></tr>
+          <tr><td><strong>Espacio</strong></td><td>Dejar separación entre bloques.</td></tr>
+        </tbody>
+      </table>
+      <div class="check">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        <p><strong>Comprueba:</strong> puedes añadir un bloque de párrafo pulsando el botón <strong>+</strong> y eligiendo "Párrafo".</p>
+      </div>
+      <figure class="fig">
+        <div class="svgpad"><svg viewBox="0 0 340 180" role="img" aria-labelledby="blq5-t blq5-d">
+          <title id="blq5-t">Inserto de bloques de Gutenberg</title>
+          <desc id="blq5-d">Menú de bloques disponibles al pulsar el botón +.</desc>
+          <g font-family="Consolas, monospace" font-size="10">
+            <rect x="4" y="4" width="332" height="172" rx="8" fill="#e5f1ec" stroke="#0b6b52" stroke-width="2"/>
+            <text x="16" y="24" font-family="Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#0b6b52">Bloques más usados</text>
+            <text x="16" y="48" fill="#0f1f1e">Párrafo   Texto de cuerpo.</text>
+            <text x="16" y="66" fill="#0f1f1e">Encabezado   Títulos H1 a H6.</text>
+            <text x="16" y="84" fill="#0f1f1e">Imagen   Fotos e ilustraciones.</text>
+            <text x="16" y="102" fill="#0f1f1e">Lista   Viñetas o numerada.</text>
+            <text x="16" y="120" fill="#0f1f1e">Espacio   Separación entre bloques.</text>
+            <text x="16" y="140" fill="#47595a">Escribe / para buscar más bloques</text>
+          </g>
+        </svg></div>
+        <figcaption>Bloques básicos disponibles en el inserto de Gutenberg.</figcaption>
+      </figure>
+    </article>
+
+    <article class="step step--split" id="paso-6" data-step="6">
+      <header class="step__head">
+        <span class="step__num" aria-hidden="true">6</span>
+        <h3 class="step__title">Texto e imágenes</h3>
+        <label class="tick"><input type="checkbox" data-done="6"><span>Hecho</span></label>
+      </header>
+      <ol class="actions">
+        <li>Escribe un título en el bloque <strong>Encabezado</strong>.</li>
+        <li>Debajo, escribe un párrafo con una frase de bienvenida.</li>
+        <li>Pulsa el botón <strong>+</strong> y elige <strong>Imagen</strong>.</li>
+        <li>Sube una imagen desde tu ordenador o elige una ya subida.</li>
+      </ol>
+      <div class="check">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        <p><strong>Comprueba:</strong> la página tiene título, texto e imagen visibles en la previsualización.</p>
+      </div>
+      <figure class="fig">
+        <div class="svgpad"><svg viewBox="0 0 340 160" role="img" aria-labelledby="con6-t con6-d">
+          <title id="con6-t">Página con bloques de texto e imagen</title>
+          <desc id="con6-d">Ejemplo de página con encabezado, párrafo y bloque de imagen.</desc>
+          <g font-family="Consolas, monospace" font-size="10">
+            <rect x="4" y="4" width="332" height="152" rx="8" fill="#e5f1ec" stroke="#0b6b52" stroke-width="2"/>
+            <text x="16" y="24" font-family="Segoe UI, sans-serif" font-size="12" font-weight="700" fill="#0b6b52">Bienvenido a mi web</text>
+            <text x="16" y="52" fill="#0f1f1e">Este es un párrafo de bienvenida.</text>
+            <text x="16" y="72" fill="#47595a">[ imagen ]</text>
+            <rect x="24" y="80" width="60" height="40" fill="#ccd6d4" stroke="#47595a"/>
+            <text x="34" y="104" fill="#47595a">Imagen subida</text>
+            <text x="16" y="124" fill="#47595a">Bloque: Encabezado → Párrafo → Imagen</text>
+            <text x="16" y="142" fill="#47595a">Vista previa de la página Inicio</text>
+          </g>
+        </svg></div>
+        <figcaption>Bloques de texto e imagen en la página Inicio.</figcaption>
+      </figure>
+    </article>
+
+    <article class="step" id="paso-7" data-step="7">
+      <header class="step__head">
+        <span class="step__num" aria-hidden="true">7</span>
+        <h3 class="step__title">Menú de navegación</h3>
+        <label class="tick"><input type="checkbox" data-done="7"><span>Hecho</span></label>
+      </header>
+      <ol class="actions">
+        <li>En el panel lateral, haz clic en <strong>Apariencia</strong> → <strong>Menús</strong>.</li>
+        <li>Escribe un nombre para el menú y pulsa <strong>Crear menú</strong>.</li>
+        <li>Marca las páginas <strong>Inicio</strong> y <strong>Sobre nosotros</strong> y pulsa <strong>Añadir al menú</strong>.</li>
+        <li>Marca la ubicación <strong>Menú principal</strong> y guarda.</li>
+      </ol>
+      <div class="check">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        <p><strong>Comprueba:</strong> el menú aparece en la parte superior de tu web con los dos enlaces.</p>
+      </div>
+      <figure class="fig">
+        <div class="svgpad"><svg viewBox="0 0 340 140" role="img" aria-labelledby="menu7-t menu7-d">
+          <title id="menu7-t">Menú de navegación</title>
+          <desc id="menu7-d">Menú principal con enlaces a Inicio y Sobre nosotros.</desc>
+          <g font-family="Consolas, monospace" font-size="10">
+            <rect x="4" y="4" width="332" height="132" rx="8" fill="#e5f1ec" stroke="#0b6b52" stroke-width="2"/>
+            <text x="16" y="24" font-family="Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#0b6b52">Menú principal</text>
+            <text x="16" y="48" fill="#0f1f1e">╭──────────────╮</text>
+            <text x="16" y="66" fill="#47595a">│ Inicio   │ Sobre nosotros │</text>
+            <text x="16" y="84" fill="#47595a">╰──────────────╯</text>
+            <text x="16" y="104" fill="#47595a">Ubicación: Menú principal (cabecera)</text>
+            <text x="16" y="122" fill="#47595a">Páginas: Inicio y Sobre nosotros</text>
+          </g>
+        </svg></div>
+        <figcaption>Menú de navegación con los enlaces a las dos páginas creadas.</figcaption>
+      </figure>
+    </article>
+
+    <article class="step step--split" id="paso-8" data-step="8">
+      <header class="step__head">
+        <span class="step__num" aria-hidden="true">8</span>
+        <h3 class="step__title">Página de inicio estática</h3>
+        <label class="tick"><input type="checkbox" data-done="8"><span>Hecho</span></label>
+      </header>
+      <ol class="actions">
+        <li>En el panel lateral, haz clic en <strong>Configuración</strong> → <strong>Lectura</strong>.</li>
+        <li>Selecciona <strong>Una página estática</strong>.</li>
+        <li>En "Página de inicio", elige <strong>Inicio</strong>.</li>
+        <li>En "Página de publicaciones", elige <strong>Sobre nosotros</strong>.</li>
+        <li>Haz clic en <strong>Guardar cambios</strong>.</li>
+      </ol>
+      <div class="check">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        <p><strong>Comprueba:</strong> al abrir tu web, la primera página que ves es Inicio.</p>
+      </div>
+      <figure class="fig">
+        <div class="svgpad"><svg viewBox="0 0 340 160" role="img" aria-labelledby="ini8-t ini8-d">
+          <title id="ini8-t">Página de inicio estática configurada</title>
+          <desc id="ini8-d">Ajustes de lectura con página de inicio seleccionada.</desc>
+          <g font-family="Consolas, monospace" font-size="10">
+            <rect x="4" y="4" width="332" height="152" rx="8" fill="#e5f1ec" stroke="#0b6b52" stroke-width="2"/>
+            <text x="16" y="24" font-family="Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#0b6b52">Configuración → Lectura</text>
+            <text x="16" y="48" fill="#0f1f1e">Tu página de inicio muestra: Una página estática</text>
+            <text x="28" y="66" fill="#47595a">Página de inicio: Inicio</text>
+            <text x="28" y="84" fill="#47595a">Página de publicaciones: Sobre nosotros</text>
+            <text x="16" y="104" fill="#0b6b52">✓ Guardar cambios</text>
+            <text x="16" y="124" fill="#47595a">Al visitar http://localhost/miwordpress/</text>
+            <text x="16" y="142" fill="#47595a">se muestra primero la página Inicio</text>
+          </g>
+        </svg></div>
+        <figcaption>Ajustes de lectura: página de inicio estática seleccionada.</figcaption>
+      </figure>
+    </article>
+
+    <article class="step" id="paso-9" data-step="9">
+      <header class="step__head">
+        <span class="step__num" aria-hidden="true">9</span>
+        <h3 class="step__title">Colores y letra</h3>
+        <label class="tick"><input type="checkbox" data-done="9"><span>Hecho</span></label>
+      </header>
+      <ol class="actions">
+        <li>En el panel lateral, haz clic en <strong>Apariencia</strong> → <strong>Personalizar</strong>.</li>
+        <li>Busca <strong>Colores</strong> y elige un color principal.</li>
+        <li>Busca <strong>Tipografía</strong> y elige una letra fácil de leer.</li>
+        <li>Haz clic en <strong>Publicar</strong> para guardar los cambios.</li>
+      </ol>
+      <div class="check">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        <p><strong>Comprueba:</strong> los colores y la letra de tu web cambian según lo que elegiste.</p>
+      </div>
+      <figure class="fig">
+        <div class="svgpad"><svg viewBox="0 0 340 160" role="img" aria-labelledby="col9-t col9-d">
+          <title id="col9-t">Personalizador de colores y letra</title>
+          <desc id="col9-d">Panel de personalización con opciones de colores y tipografía.</desc>
+          <g font-family="Consolas, monospace" font-size="10">
+            <rect x="4" y="4" width="332" height="152" rx="8" fill="#e5f1ec" stroke="#0b6b52" stroke-width="2"/>
+            <text x="16" y="24" font-family="Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#0b6b52">Apariencia → Personalizar</text>
+            <text x="16" y="48" fill="#0f1f1e">Colores</text>
+            <text x="28" y="66" fill="#47595a">Color principal: #0b6b52</text>
+            <text x="28" y="84" fill="#47595a">Color secundario: #47595a</text>
+            <text x="16" y="102" fill="#0f1f1e">Tipografía</text>
+            <text x="28" y="120" fill="#47595a">Fuente: Segoe UI, sans-serif</text>
+            <text x="16" y="138" fill="#0b6b52">✓ Publicar cambios</text>
+          </g>
+        </svg></div>
+        <figcaption>Personalizador de WordPress: colores y tipografía.</figcaption>
+      </figure>
+    </article>
+
+    <article class="step" id="paso-10" data-step="10">
+      <header class="step__head">
+        <span class="step__num" aria-hidden="true">10</span>
+        <h3 class="step__title">Publicar y revisar</h3>
+        <label class="tick"><input type="checkbox" data-done="10"><span>Hecho</span></label>
+      </header>
+      <ol class="actions">
+        <li>En el editor de la página Inicio, haz clic en <strong>Publicar</strong> (arriba a la derecha).</li>
+        <li>Revisa que todo esté correcto y vuelve a pulsar <strong>Publicar</strong>.</li>
+        <li>Abre tu web en una pestaña nueva: <code>http://localhost/miwordpress/</code>.</li>
+        <li>Recorre las páginas y comprueba que el menú, las imágenes y los textos se ven bien.</li>
+      </ol>
+      <div class="check">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        <p><strong>Comprueba:</strong> tu web está publicada y accesible desde el navegador.</p>
+      </div>
+      <figure class="fig">
+        <div class="svgpad"><svg viewBox="0 0 340 160" role="img" aria-labelledby="pub10-t pub10-d">
+          <title id="pub10-t">Web publicada y accesible</title>
+          <desc id="pub10-d">Página publicada en localhost con menú, texto e imagen.</desc>
+          <g font-family="Consolas, monospace" font-size="10">
+            <rect x="4" y="4" width="332" height="152" rx="8" fill="#e5f1ec" stroke="#0b6b52" stroke-width="2"/>
+            <text x="16" y="24" font-family="Segoe UI, sans-serif" font-size="12" font-weight="700" fill="#0b6b52">Mi WordPress local</text>
+            <text x="16" y="48" fill="#0f1f1e">╭──────────────╮  ┌─────────────┐</text>
+            <text x="16" y="66" fill="#47595a">│ Inicio  │    │ Imagen      │</text>
+            <text x="16" y="84" fill="#47595a">╰──────────────╯  │ de portada  │</text>
+            <text x="110" y="102" fill="#47595a">│                 │</text>
+            <text x="110" y="120" fill="#47595a">╰─────────────────╯</text>
+            <text x="16" y="138" fill="#47595a">http://localhost/miwordpress/</text>
+            <text x="16" y="152" fill="#0f1f1e">Publicada y online en tu ordenador</text>
+          </g>
+        </svg></div>
+        <figcaption>Tu web publicada y accesible desde el navegador.</figcaption>
+      </figure>
+    </article>
+      <h2 id="final-title">Chuleta: Gutenberg</h2>
+      <p id="final-msg" hidden><strong>¡10 de 10!</strong> Ya tienes tu web creada con WordPress y Gutenberg.</p>
+      <div class="chiprow">
+        <button class="chip" type="button" data-copy="http://localhost/miwordpress/"><span>http://localhost/miwordpress/</span></button>
+        <button class="chip" type="button" data-copy="http://localhost/miwordpress/wp-admin/"><span>http://localhost/miwordpress/wp-admin/</span></button>
+        <button class="chip" type="button" data-copy="Párrafo"><span>Bloque Párrafo</span></button>
+        <button class="chip" type="button" data-copy="Encabezado"><span>Bloque Encabezado</span></button>
+        <button class="chip" type="button" data-copy="Imagen"><span>Bloque Imagen</span></button>
+      </div>
+    </div>
+
+    <footer class="end">
+      <p>Extensión de la <a href="practica-web-interactiva.html">práctica de XAMPP y WordPress</a>. Sesión previa: <a href="../01_sesion-0/sesion-0-interactiva.html">Sesión 0 · Primeros pasos</a>. Versión técnica: <code>guia-docente-xampp-wordpress.md</code>.</p>
+      <p>Esta página funciona sin internet y no envía datos a ningún sitio. Tu progreso se guarda solo en este navegador.</p>
+      <p><span id="live" role="status" aria-live="polite" class="noprint"></span></p>
+    </footer>
+
+  </main>
+</div>
+<script>
+(function(){
+  'use strict';
+  var KEY='ifct0510-gutenberg-progress.v1';
+  var FONTKEY='ifct0510-gutenberg-font.v1';
+  var SIZES=['100%','112.5%','125%','137.5%'];
+  var boxes=Array.prototype.slice.call(document.querySelectorAll('[data-done]'));
+  var total=boxes.length;
+  var done=new Set();
+  try{
+    var raw=localStorage.getItem(KEY);
+    if(raw) JSON.parse(raw).forEach(function(v){done.add(String(v));});
+  }catch(e){}
+  function save(){
+    try{localStorage.setItem(KEY,JSON.stringify(Array.from(done)));}catch(e){}
+  }
+  function announce(msg){
+    var live=document.getElementById('live');
+    if(live) live.textContent=msg;
+  }
+  function render(){
+    boxes.forEach(function(b){
+      var id=b.getAttribute('data-done');
+      var on=done.has(id);
+      b.checked=on;
+      var step=b.closest('.step');
+      if(step) step.classList.toggle('is-done',on);
+    });
+    var n=done.size;
+    var count=document.getElementById('count');
+    var bar=document.getElementById('bar');
+    if(count) count.textContent=String(n);
+    if(bar) bar.style.width=(total?(n/total*100):0)+'%';
+    var fill=document.getElementById('rail-fill');
+    if(fill) fill.style.height=(total&&n>0)?('calc('+(n/total*100)+'% - .9rem)'):'0';
+    Array.prototype.forEach.call(document.querySelectorAll('.rail a[data-target]'),function(a){
+      var t=a.getAttribute('data-target');
+      a.classList.toggle('is-done',done.has(t));
+      a.classList.toggle('is-current',t==String(n+1));
+    });
+    var totalSpan=document.getElementById('total');
+    if(totalSpan) totalSpan.textContent=String(total);
+    var msg=document.getElementById('final-msg');
+    if(msg) msg.hidden = n<total;
+    var final=document.querySelector('.final');
+    if(final && n===total) final.classList.add('all-done');
+  }
+  function onDoneChange(b){
+    var id=b.getAttribute('data-done');
+    if(b.checked){done.add(id);}else{done.delete(id);}
+    save();
+    render();
+    announce(n+' de '+total+' pasos completados');
+  }
+  boxes.forEach(function(b){
+    b.addEventListener('change',function(){onDoneChange(b);});
+  });
+  document.getElementById('reset').addEventListener('click',function(){
+    if(confirm('¿Borrar todo el progreso?')) {
+      done.clear();
+      save();
+      render();
+    }
+  });
+  document.getElementById('font-minus').addEventListener('click',function(){changeFont(-1);});
+  document.getElementById('font-plus').addEventListener('click',function(){changeFont(1);});
+  function changeFont(delta){
+    var idx=0;
+    try{idx=SIZES.indexOf(localStorage.getItem(FONTKEY)||'100%');}catch(e){}
+    var next=Math.min(Math.max(0,idx+delta),SIZES.length-1);
+    localStorage.setItem(FONTKEY,SIZES[next]);
+    document.documentElement.style.fontSize=SIZES[next];
+    render();
+  }
+  try{
+    var savedSize=localStorage.getItem(FONTKEY);
+    if(savedSize) document.documentElement.style.fontSize=savedSize;
+  }catch(e){}
+  document.getElementById('print-btn').addEventListener('click',function(){window.print();});
+  Array.prototype.forEach.call(document.querySelectorAll('.chip'),function(chip){
+    chip.addEventListener('click',function(){
+      var text=chip.getAttribute('data-copy');
+      navigator.clipboard.writeText(text).then(function(){
+        chip.classList.add('copied');
+        setTimeout(function(){chip.classList.remove('copied');},1500);
+      });
+    });
+  });
+  render();
+})();
+</script>
+</body>
+</html>

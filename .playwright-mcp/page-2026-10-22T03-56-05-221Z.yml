@@ -1,0 +1,92 @@
+- generic [active] [ref=f14e1]:
+  - generic [ref=f14e2]:
+    - banner:
+      - navigation [ref=f14e3]:
+        - generic [ref=f14e4]:
+          - link [ref=f14e7] [cursor=pointer]:
+            - /url: http://localhost/practica/
+            - paragraph [ref=f14e8]: Centro de Formación
+          - list [ref=f14e10]:
+            - listitem [ref=f14e11]:
+              - link "Inicio" [ref=f14e12] [cursor=pointer]:
+                - /url: http://localhost/practica/
+            - listitem [ref=f14e13]:
+              - link "Noticias" [ref=f14e14] [cursor=pointer]:
+                - /url: http://localhost/practica/category/noticias/
+            - listitem [ref=f14e15]:
+              - link "Formación" [ref=f14e16] [cursor=pointer]:
+                - /url: http://localhost/practica/category/formacion/
+    - article [ref=f14e20]:
+      - generic [ref=f14e22]:
+        - generic [ref=f14e23]:
+          - img "Centro de Formación" [ref=f14e25]
+          - generic [ref=f14e27]:
+            - heading "Sobre el centro" [level=1] [ref=f14e28]
+            - paragraph [ref=f14e29]: Centro de formación profesional autorizado. Formamos en informática y comunicaciones, administración y gestión desde 2005.
+        - generic [ref=f14e31]:
+          - heading "Nuestra propuesta" [level=2] [ref=f14e32]
+          - paragraph [ref=f14e33]: Más de 5.000 alumnos han pasado por nuestras aulas. Impartimos certificados de profesionalidad, cursos de especialización y formación para el empleo, con acompañamiento durante todo el proceso formativo.
+          - heading "Instalaciones" [level=2] [ref=f14e34]
+          - paragraph [ref=f14e35]: Aulas informáticas equipadas, aulas de formación para el empleo y espacios de orientación laboral a tu disposición.
+    - contentinfo [ref=f14e36]:
+      - generic [ref=f14e37]:
+        - generic [ref=f14e39]:
+          - generic [ref=f14e41]:
+            - heading "Sobre el centro" [level=5] [ref=f14e42]
+            - generic [ref=f14e43]:
+              - paragraph [ref=f14e44]:
+                - text: Centro de
+                - strong [ref=f14e45]: formación profesional autorizado
+                - text: . Formamos en informática y comunicaciones, administración y gestión desde 2005. Más de 5.000 alumnos ya han pasado por nuestras aulas.
+              - paragraph [ref=f14e46]:
+                - link "Conoce el centro" [ref=f14e47] [cursor=pointer]:
+                  - /url: http://localhost/practica/sobre-el-centro/
+          - generic [ref=f14e49]:
+            - heading "Enlaces útiles" [level=5] [ref=f14e50]
+            - list [ref=f14e52]:
+              - listitem [ref=f14e53]:
+                - link "Inicio" [ref=f14e54] [cursor=pointer]:
+                  - /url: http://localhost/practica/
+              - listitem [ref=f14e55]:
+                - link "Sobre el centro" [ref=f14e56] [cursor=pointer]:
+                  - /url: http://localhost/practica/sobre-el-centro/
+              - listitem [ref=f14e57]:
+                - link "Servicios" [ref=f14e58] [cursor=pointer]:
+                  - /url: http://localhost/practica/servicios/
+              - listitem [ref=f14e59]:
+                - link "Contacto" [ref=f14e60] [cursor=pointer]:
+                  - /url: http://localhost/practica/contacto/
+              - listitem [ref=f14e61]:
+                - link "Noticias" [ref=f14e62] [cursor=pointer]:
+                  - /url: http://localhost/practica/category/noticias/
+          - generic [ref=f14e64]:
+            - heading "Contacto" [level=5] [ref=f14e65]
+            - generic [ref=f14e66]:
+              - paragraph [ref=f14e67]:
+                - strong [ref=f14e68]: "Dirección:"
+                - text: Calle Principal, 128001 Madrid
+              - paragraph [ref=f14e69]:
+                - strong [ref=f14e70]: "Teléfono:"
+                - text: 900 000 000
+                - strong [ref=f14e71]: "Correo:"
+                - text: info@centroformacion.local
+              - paragraph [ref=f14e72]:
+                - strong [ref=f14e73]: "Horario:"
+                - text: L-V, de 9:00 a 14:00 y de 16:00 a 19:00
+        - separator [ref=f14e74]
+        - generic:
+          - list [ref=f14e75]:
+            - listitem [ref=f14e76]:
+              - link "Inicio" [ref=f14e77] [cursor=pointer]:
+                - /url: http://localhost/practica/
+            - listitem [ref=f14e78]:
+              - link "Noticias" [ref=f14e79] [cursor=pointer]:
+                - /url: http://localhost/practica/category/noticias/
+            - listitem [ref=f14e80]:
+              - link "Formación" [ref=f14e81] [cursor=pointer]:
+                - /url: http://localhost/practica/category/formacion/
+          - generic [ref=f14e82]:
+            - text: Hestia | Desarrollado por
+            - link "ThemeIsle" [ref=f14e83] [cursor=pointer]:
+              - /url: https://themeisle.com
+  - button "Activar hacer scroll al inicio" [ref=f14e84] [cursor=pointer]

@@ -1,0 +1,104 @@
+- generic [active] [ref=f10e1]:
+  - generic [ref=f10e2]:
+    - banner:
+      - navigation [ref=f10e3]:
+        - generic [ref=f10e4]:
+          - link [ref=f10e7] [cursor=pointer]:
+            - /url: http://localhost/practica/
+            - paragraph [ref=f10e8]: Centro de Formación
+          - list [ref=f10e10]:
+            - listitem [ref=f10e11]:
+              - link "Inicio" [ref=f10e12] [cursor=pointer]:
+                - /url: http://localhost/practica/
+            - listitem [ref=f10e13]:
+              - link "Noticias" [ref=f10e14] [cursor=pointer]:
+                - /url: http://localhost/practica/category/noticias/
+            - listitem [ref=f10e15]:
+              - link "Formación" [ref=f10e16] [cursor=pointer]:
+                - /url: http://localhost/practica/category/formacion/
+    - article [ref=f10e20]:
+      - generic [ref=f10e22]:
+        - generic [ref=f10e23]:
+          - img "Centro de Formación" [ref=f10e25]
+          - generic [ref=f10e27]:
+            - heading "Contacto" [level=1] [ref=f10e28]
+            - paragraph [ref=f10e29]: Escríbenos o visítanos, estaremos encantados de atenderte.
+        - generic [ref=f10e31]:
+          - heading "Datos de contacto" [level=2] [ref=f10e32]
+          - list [ref=f10e33]:
+            - listitem [ref=f10e34]:
+              - strong [ref=f10e35]: "Dirección:"
+              - text: Calle Principal, 1 — 28001 Madrid
+            - listitem [ref=f10e36]:
+              - strong [ref=f10e37]: "Teléfono:"
+              - text: 900 000 000
+            - listitem [ref=f10e38]:
+              - strong [ref=f10e39]: "Correo:"
+              - text: info@centroformacion.local
+            - listitem [ref=f10e40]:
+              - strong [ref=f10e41]: "Horario:"
+              - text: L-V, de 9:00 a 14:00 y de 16:00 a 19:00
+        - heading "Formulario de contacto" [level=2] [ref=f10e44]
+        - paragraph [ref=f10e45]: "[forminator_form id=»30″]"
+    - contentinfo [ref=f10e46]:
+      - generic [ref=f10e47]:
+        - generic [ref=f10e49]:
+          - generic [ref=f10e51]:
+            - heading "Sobre el centro" [level=5] [ref=f10e52]
+            - generic [ref=f10e53]:
+              - paragraph [ref=f10e54]:
+                - text: Centro de
+                - strong [ref=f10e55]: formación profesional autorizado
+                - text: . Formamos en informática y comunicaciones, administración y gestión desde 2005. Más de 5.000 alumnos ya han pasado por nuestras aulas.
+              - paragraph [ref=f10e56]:
+                - link "Conoce el centro" [ref=f10e57] [cursor=pointer]:
+                  - /url: http://localhost/practica/sobre-el-centro/
+          - generic [ref=f10e59]:
+            - heading "Enlaces útiles" [level=5] [ref=f10e60]
+            - list [ref=f10e62]:
+              - listitem [ref=f10e63]:
+                - link "Inicio" [ref=f10e64] [cursor=pointer]:
+                  - /url: http://localhost/practica/
+              - listitem [ref=f10e65]:
+                - link "Sobre el centro" [ref=f10e66] [cursor=pointer]:
+                  - /url: http://localhost/practica/sobre-el-centro/
+              - listitem [ref=f10e67]:
+                - link "Servicios" [ref=f10e68] [cursor=pointer]:
+                  - /url: http://localhost/practica/servicios/
+              - listitem [ref=f10e69]:
+                - link "Contacto" [ref=f10e70] [cursor=pointer]:
+                  - /url: http://localhost/practica/contacto/
+              - listitem [ref=f10e71]:
+                - link "Noticias" [ref=f10e72] [cursor=pointer]:
+                  - /url: http://localhost/practica/category/noticias/
+          - generic [ref=f10e74]:
+            - heading "Contacto" [level=5] [ref=f10e75]
+            - generic [ref=f10e76]:
+              - paragraph [ref=f10e77]:
+                - strong [ref=f10e78]: "Dirección:"
+                - text: Calle Principal, 128001 Madrid
+              - paragraph [ref=f10e79]:
+                - strong [ref=f10e80]: "Teléfono:"
+                - text: 900 000 000
+                - strong [ref=f10e81]: "Correo:"
+                - text: info@centroformacion.local
+              - paragraph [ref=f10e82]:
+                - strong [ref=f10e83]: "Horario:"
+                - text: L-V, de 9:00 a 14:00 y de 16:00 a 19:00
+        - separator [ref=f10e84]
+        - generic:
+          - list [ref=f10e85]:
+            - listitem [ref=f10e86]:
+              - link "Inicio" [ref=f10e87] [cursor=pointer]:
+                - /url: http://localhost/practica/
+            - listitem [ref=f10e88]:
+              - link "Noticias" [ref=f10e89] [cursor=pointer]:
+                - /url: http://localhost/practica/category/noticias/
+            - listitem [ref=f10e90]:
+              - link "Formación" [ref=f10e91] [cursor=pointer]:
+                - /url: http://localhost/practica/category/formacion/
+          - generic [ref=f10e92]:
+            - text: Hestia | Desarrollado por
+            - link "ThemeIsle" [ref=f10e93] [cursor=pointer]:
+              - /url: https://themeisle.com
+  - button "Activar hacer scroll al inicio" [ref=f10e94] [cursor=pointer]

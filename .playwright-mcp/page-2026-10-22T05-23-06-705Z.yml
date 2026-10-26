@@ -1,0 +1,168 @@
+- generic [active] [ref=f8e1]:
+  - generic [ref=f8e2]:
+    - navigation "Barra de herramientas":
+      - menu:
+        - group [ref=f8e3]:
+          - menuitem "Acerca de WordPress" [ref=f8e4] [cursor=pointer]
+        - group [ref=f8e7]:
+          - menuitem "Cafetería La Espiga" [ref=f8e8] [cursor=pointer]
+        - group [ref=f8e9]:
+          - menuitem "Editar el sitio" [ref=f8e10] [cursor=pointer]
+        - group [ref=f8e11]:
+          - menuitem "1 actualización disponible" [ref=f8e12] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f8e14]: "1"
+        - group [ref=f8e16]:
+          - menuitem "0 comentarios en moderación" [ref=f8e17] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f8e19]: "0"
+        - group [ref=f8e21]:
+          - menuitem "Añadir" [ref=f8e22] [cursor=pointer]
+        - group [ref=f8e25]:
+          - menuitem "Editar la página" [ref=f8e26] [cursor=pointer]
+      - menu [ref=f8e27]:
+        - group [ref=f8e28]:
+          - menuitem "Hola, profesor" [ref=f8e29] [cursor=pointer]
+        - group [ref=f8e30]:
+          - menuitem "Buscar" [ref=f8e31]:
+            - generic [ref=f8e32]:
+              - textbox "Buscar" [ref=f8e33] [cursor=pointer]
+              - generic [ref=f8e34]: Buscar
+  - link "Saltar al contenido" [ref=f8e35] [cursor=pointer]:
+    - /url: "#wp--skip-link--target"
+  - generic [ref=f8e36]:
+    - banner [ref=f8e37]:
+      - generic [ref=f8e40]:
+        - paragraph [ref=f8e41]:
+          - link "Cafetería La Espiga" [ref=f8e42] [cursor=pointer]:
+            - /url: http://localhost/cafeteria
+        - navigation [ref=f8e44]:
+          - list [ref=f8e49]:
+            - list [ref=f8e50]:
+              - listitem [ref=f8e51]:
+                - link "Inicio" [ref=f8e52] [cursor=pointer]:
+                  - /url: http://localhost/cafeteria/
+              - listitem [ref=f8e53]:
+                - link "Carta" [ref=f8e54] [cursor=pointer]:
+                  - /url: http://localhost/cafeteria/carta/
+              - listitem [ref=f8e55]:
+                - link "Sobre nosotros" [ref=f8e56] [cursor=pointer]:
+                  - /url: http://localhost/cafeteria/sobre-nosotros/
+              - listitem [ref=f8e57]:
+                - link "Novedades" [ref=f8e58] [cursor=pointer]:
+                  - /url: http://localhost/cafeteria/novedades/
+              - listitem [ref=f8e59]:
+                - link "Contacto" [ref=f8e60] [cursor=pointer]:
+                  - /url: http://localhost/cafeteria/contacto/
+    - main [ref=f8e61]:
+      - generic [ref=f8e62]:
+        - heading "Nuestra carta" [level=1] [ref=f8e63]
+        - paragraph [ref=f8e64]: "Cocina sencilla, producto bueno y precios claros. La carta cambia con la temporada: esto es lo que encontrarás ahora mismo en La Espiga."
+        - figure [ref=f8e65]:
+          - img "Mesa servida con cafe y reposteria artesanal" [ref=f8e66]
+        - heading "Desayunos" [level=2] [ref=f8e67]
+        - figure [ref=f8e68]:
+          - table [ref=f8e69]:
+            - rowgroup [ref=f8e70]:
+              - row [ref=f8e71]:
+                - columnheader "Producto" [ref=f8e72]
+                - columnheader "Descripción" [ref=f8e73]
+                - columnheader "Precio" [ref=f8e74]
+            - rowgroup [ref=f8e75]:
+              - row [ref=f8e76]:
+                - cell "Café con leche y tostada" [ref=f8e77]
+                - cell "Tostada de pan de masa madre con tomate y AOVE" [ref=f8e78]
+                - cell "2,90 €" [ref=f8e79]
+              - row [ref=f8e80]:
+                - cell "Desayuno La Espiga" [ref=f8e81]
+                - cell "Café, zumo natural y tostada grande" [ref=f8e82]
+                - cell "4,50 €" [ref=f8e83]
+              - row [ref=f8e84]:
+                - cell "Bollería artesanal" [ref=f8e85]
+                - cell "Napolitana, croissant o magdalena del obrador" [ref=f8e86]
+                - cell "1,80 €" [ref=f8e87]
+        - heading "Cafés e infusiones" [level=2] [ref=f8e88]
+        - figure [ref=f8e89]:
+          - table [ref=f8e90]:
+            - rowgroup [ref=f8e91]:
+              - row [ref=f8e92]:
+                - columnheader "Producto" [ref=f8e93]
+                - columnheader "Descripción" [ref=f8e94]
+                - columnheader "Precio" [ref=f8e95]
+            - rowgroup [ref=f8e96]:
+              - row [ref=f8e97]:
+                - cell "Espresso" [ref=f8e98]
+                - cell "Blend de tueste natural" [ref=f8e99]
+                - cell "1,30 €" [ref=f8e100]
+              - row [ref=f8e101]:
+                - cell "Café de especialidad" [ref=f8e102]
+                - cell "Origen único, preparado en V60" [ref=f8e103]
+                - cell "2,60 €" [ref=f8e104]
+              - row [ref=f8e105]:
+                - cell "Té o infusión" [ref=f8e106]
+                - cell "Selección de temporada, mira las novedades" [ref=f8e107]
+                - cell "1,90 €" [ref=f8e108]
+        - heading "Dulces y salados" [level=2] [ref=f8e109]
+        - figure [ref=f8e110]:
+          - table [ref=f8e111]:
+            - rowgroup [ref=f8e112]:
+              - row [ref=f8e113]:
+                - columnheader "Producto" [ref=f8e114]
+                - columnheader "Descripción" [ref=f8e115]
+                - columnheader "Precio" [ref=f8e116]
+            - rowgroup [ref=f8e117]:
+              - row [ref=f8e118]:
+                - cell "Empanada casera" [ref=f8e119]
+                - cell "De atún o de verduras, ración" [ref=f8e120]
+                - cell "3,00 €" [ref=f8e121]
+              - row [ref=f8e122]:
+                - cell "Bocadillo de calamares" [ref=f8e123]
+                - cell "Con alioli y limón" [ref=f8e124]
+                - cell "4,20 €" [ref=f8e125]
+              - row [ref=f8e126]:
+                - cell "Tarta del día" [ref=f8e127]
+                - cell "Pregunta en barra por la tarta de hoy" [ref=f8e128]
+                - cell "3,20 €" [ref=f8e129]
+        - paragraph [ref=f8e130]:
+          - emphasis [ref=f8e131]: "Precios con IVA incluido. ¿Hambre? Pásate sin compromiso: hay sitio en la barra y en la terraza."
+    - contentinfo [ref=f8e132]:
+      - generic [ref=f8e134]:
+        - generic [ref=f8e135]:
+          - generic [ref=f8e137]:
+            - heading [level=2] [ref=f8e138]:
+              - link "Cafetería La Espiga" [ref=f8e139] [cursor=pointer]:
+                - /url: http://localhost/cafeteria
+            - paragraph [ref=f8e140]: Cafetería y panadería artesanal en el centro de la ciudad
+          - generic [ref=f8e141]:
+            - navigation "2" [ref=f8e142]:
+              - list [ref=f8e143]:
+                - listitem [ref=f8e144]:
+                  - link "Blog" [ref=f8e145] [cursor=pointer]:
+                    - /url: "#"
+                - listitem [ref=f8e146]:
+                  - link "Acerca de" [ref=f8e147] [cursor=pointer]:
+                    - /url: "#"
+                - listitem [ref=f8e148]:
+                  - link "FAQs" [ref=f8e149] [cursor=pointer]:
+                    - /url: "#"
+                - listitem [ref=f8e150]:
+                  - link "Autores" [ref=f8e151] [cursor=pointer]:
+                    - /url: "#"
+            - navigation "3" [ref=f8e152]:
+              - list [ref=f8e153]:
+                - listitem [ref=f8e154]:
+                  - link "Eventos" [ref=f8e155] [cursor=pointer]:
+                    - /url: "#"
+                - listitem [ref=f8e156]:
+                  - link "Tienda" [ref=f8e157] [cursor=pointer]:
+                    - /url: "#"
+                - listitem [ref=f8e158]:
+                  - link "Patrones" [ref=f8e159] [cursor=pointer]:
+                    - /url: "#"
+                - listitem [ref=f8e160]:
+                  - link "Temas" [ref=f8e161] [cursor=pointer]:
+                    - /url: "#"
+        - generic [ref=f8e163]:
+          - paragraph [ref=f8e164]: Twenty Twenty-Five
+          - paragraph [ref=f8e165]:
+            - text: Diseñado con
+            - link "WordPress" [ref=f8e166] [cursor=pointer]:
+              - /url: https://es.wordpress.org
