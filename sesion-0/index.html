@@ -5,192 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
 <title>Sesión 0 · Primeros pasos con el ordenador</title>
-<style>
-  :root{
-    --ground:#eef2f1; --panel:#ffffff; --ink:#0f1f1e; --ink-2:#47595a;
-    --rule:#ccd6d4; --rule-soft:#e2e9e7; --signal:#0b6b52; --signal-soft:#e5f1ec;
-    --alert:#a8321f; --alert-soft:#faece8; --warn:#8a5a00; --warn-soft:#fdf4e3;
-    --radius:12px; --shadow:0 1px 1px rgba(15,31,30,.05), 0 10px 24px -16px rgba(15,31,30,.35);
-    --font:"Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
-    --mono:"Cascada Mono", Consolas, "SF Mono", Menlo, monospace; --measure:66ch;
-  }
-  *,*::before,*::after{box-sizing:border-box}
-  html{scroll-behavior:smooth; scroll-padding-top:5.5rem}
-  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
-  body{margin:0; background:var(--ground); color:var(--ink); font-family:var(--font); font-size:1.0625rem; line-height:1.6; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility}
-  ::selection{background:#bfe3d6; color:var(--ink)}
-  :focus-visible{outline:3px solid var(--signal); outline-offset:2px; border-radius:4px}
-  a{color:var(--signal); text-underline-offset:3px; text-decoration-thickness:1.5px}
-  a:hover{text-decoration-thickness:2.5px}
-  p{margin:0 0 1em} ul,ol{margin:0 0 1em; padding-left:1.4em} li{margin:.35em 0}
-  strong{font-weight:650} code,.mono{font-family:var(--mono); font-size:.94em}
-  code{background:#fff; border:1px solid var(--rule); border-radius:6px; padding:.1em .38em; white-space:normal; overflow-wrap:anywhere}
-  hr{border:0; border-top:1px solid var(--rule); margin:2.5rem 0}
-  .skip{position:absolute; left:-9999px; top:0; background:var(--ink); color:#fff; padding:.8rem 1.2rem; z-index:100; border-radius:0 0 8px 0}
-  .skip:focus{left:0}
-  /* ---------- top bar ---------- */
-  .topbar{position:sticky; top:0; z-index:50; background:var(--panel); border-bottom:1px solid var(--rule)}
-  .topbar__in{max-width:1180px; margin:0 auto; padding:.55rem 1.25rem; display:flex; align-items:center; gap:1rem; flex-wrap:wrap}
-  .brand{display:flex; align-items:center; gap:.6rem; font-weight:700; letter-spacing:-.01em; margin-right:auto; min-width:0}
-  .brand svg{flex:none} .brand span{white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
-  .meter{display:flex; align-items:center; gap:.6rem; font-variant-numeric:tabular-nums; font-size:.9rem; color:var(--ink-2)}
-  .meter__track{width:min(30vw,180px); height:8px; background:var(--rule-soft); border-radius:99px; overflow:hidden; border:1px solid var(--rule)}
-  .meter__fill{height:100%; width:0%; background:var(--signal); transition:width .35s cubic-bezier(.2,.8,.2,1)}
-  .meter b{color:var(--ink); font-weight:700}
-  .tools{display:flex; align-items:center; gap:.4rem}
-  .btn{font:inherit; font-size:.9rem; font-weight:600; color:var(--ink); background:var(--panel); border:1px solid var(--rule); border-radius:99px; padding:.42rem .8rem; cursor:pointer; display:inline-flex; align-items:center; gap:.4rem; transition:background .18s, border-color .18s, transform .18s; min-height:38px}
-  .btn:hover{background:var(--signal-soft); border-color:var(--signal)}
-  .btn:active{transform:translateY(1px)}
-  .btn--solid{background:var(--signal); border-color:var(--signal); color:#fff}
-  .btn--solid:hover{background:#085641; border-color:#085641; color:#fff}
-  .btn--quiet{border-color:transparent; color:var(--ink-2)}
-  .btn--quiet:hover{color:var(--ink)}
-  /* ---------- shell ---------- */
-  .shell{max-width:1180px; margin:0 auto; padding:2.5rem 1.25rem 7rem; display:grid; grid-template-columns:250px minmax(0,1fr); gap:3rem; align-items:start}
-  main{min-width:0}
-  /* ---------- rail ---------- */
-  .rail{position:sticky; top:4.6rem; align-self:start; font-size:.9rem}
-  .rail h2{font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-2); margin:0 0 .9rem; font-weight:700}
-  .rail ol{list-style:none; margin:0; padding:0 0 0 1.55rem; position:relative}
-  .rail ol::before{content:""; position:absolute; left:.45rem; top:.45rem; bottom:.45rem; width:2px; background:var(--rule-soft); border-radius:2px}
-  .rail__fill{position:absolute; left:.45rem; top:.45rem; width:2px; background:var(--signal); border-radius:2px; height:0; transition:height .35s cubic-bezier(.2,.8,.2,1)}
-  .rail li{position:relative; margin:0}
-  .rail a{display:flex; gap:.55rem; align-items:baseline; padding:.3rem .2rem; color:var(--ink-2); text-decoration:none; border-radius:6px}
-  .rail a:hover{color:var(--ink); background:#fff}
-  .rail a::before{content:""; position:absolute; left:-1.55rem; top:.62rem; width:.9rem; height:.9rem; border-radius:50%; background:var(--ground); border:2px solid var(--rule); box-sizing:border-box}
-  .rail a.is-done::before{background:var(--signal); border-color:var(--signal)}
-  .rail a.is-current{color:var(--ink); font-weight:650}
-  .rail a.is-current::before{border-color:var(--signal); box-shadow:0 0 0 3px var(--signal-soft)}
-  .rail .n{font-variant-numeric:tabular-nums; color:var(--ink-2); font-size:.8rem; min-width:1.1em}
-  .rail a.is-done .n{color:var(--signal)}
-  /* ---------- hero ---------- */
-  .hero{margin-bottom:3rem}
-  h1{font-size:clamp(2.1rem, 5.2vw, 3.35rem); line-height:1.06; letter-spacing:-.035em; margin:0 0 1rem; font-weight:750; text-wrap:balance; max-width:20ch}
-  .lead{font-size:1.2rem; color:var(--ink-2); max-width:52ch; margin-bottom:1.5rem; text-wrap:pretty}
-  .meta{display:flex; flex-wrap:wrap; gap:.5rem; margin:0 0 1.9rem; padding:0; list-style:none}
-  .meta li{font-size:.82rem; font-weight:600; letter-spacing:.01em; background:var(--panel); border:1px solid var(--rule); color:var(--ink-2); padding:.34rem .7rem; border-radius:99px}
-  /* ---------- blocks ---------- */
-  .block{background:var(--panel); border:1px solid var(--rule); border-radius:var(--radius); padding:1.6rem; margin:0 0 1.5rem; box-shadow:var(--shadow)}
-  .block h2{font-size:1.3rem; letter-spacing:-.02em; margin:0 0 .8rem; text-wrap:balance}
-  .block h3{font-size:1.05rem; margin:1.6rem 0 .5rem}
-  .block > :last-child{margin-bottom:0}
-  .notice{border-radius:var(--radius); padding:1.1rem 1.25rem; display:flex; gap:.9rem; align-items:flex-start; margin:0 0 1.5rem}
-  .notice svg{flex:none; margin-top:.15rem} .notice p{margin:0}
-  .notice--warn{background:var(--warn-soft); border:1px solid #e6cf9e}
-  .notice--info{background:var(--signal-soft); border:1px solid #b9d9cd}
-  /* pre-flight */
-  .preflight{list-style:none; padding:0; margin:0; display:grid; gap:.55rem}
-  .preflight li{display:flex; gap:.7rem; align-items:flex-start; margin:0}
-  .preflight input{width:1.15rem; height:1.15rem; margin:.25rem 0 0; accent-color:var(--signal); flex:none}
-  .preflight label{font-size:1rem} .preflight small{display:block; color:var(--ink-2); font-size:.86rem}
-  /* parts */
-  .part{margin:4rem 0 1.5rem; display:flex; align-items:baseline; gap:1rem; border-bottom:2px solid var(--ink); padding-bottom:.6rem}
-  .part__k{font-size:.75rem; letter-spacing:.14em; text-transform:uppercase; font-weight:750; color:var(--signal); white-space:nowrap}
-  .part h2{font-size:clamp(1.4rem,3vw,1.9rem); letter-spacing:-.03em; margin:0; text-wrap:balance}
-  .part__time{margin-left:auto; font-size:.85rem; color:var(--ink-2); white-space:nowrap}
-  /* steps */
-  .step{background:var(--panel); border:1px solid var(--rule); border-radius:var(--radius); padding:1.5rem 1.6rem; margin:0 0 1.25rem; box-shadow:var(--shadow); scroll-margin-top:5.5rem; position:relative; transition:border-color .25s, box-shadow .25s}
-  .step.is-done{border-color:#b9d9cd; box-shadow:0 0 0 1px #b9d9cd, var(--shadow)}
-  .step__head{display:flex; align-items:center; gap:.9rem; margin-bottom:.9rem; flex-wrap:wrap}
-  .step__num{flex:none; width:2.5rem; height:2.5rem; border-radius:10px; display:grid; place-items:center; font-weight:750; font-size:1.15rem; background:var(--ink); color:#fff; font-variant-numeric:tabular-nums}
-  .step.is-done .step__num{background:var(--signal)}
-  .step__title{font-size:1.2rem; letter-spacing:-.02em; margin:0; font-weight:700; flex:1 1 auto; text-wrap:balance}
-  .tick{display:inline-flex; align-items:center; gap:.45rem; font-size:.85rem; font-weight:650; border:1px solid var(--rule); border-radius:99px; padding:.32rem .7rem .32rem .5rem; cursor:pointer; color:var(--ink-2); background:var(--panel); flex:none}
-  .tick:hover{border-color:var(--signal); color:var(--ink)}
-  .tick input{width:1.05rem; height:1.05rem; accent-color:var(--signal); margin:0}
-  .step.is-done .tick{background:var(--signal-soft); border-color:#b9d9cd; color:var(--signal)}
-  .step__grid{display:grid; grid-template-columns:1fr; gap:1.4rem}
-  @media (min-width:900px){ .step--split .step__grid{grid-template-columns:1.05fr .95fr; align-items:start} }
-  .actions{counter-reset:a; list-style:none; padding:0; margin:0 0 1rem}
-  .actions li{position:relative; padding-left:2.1rem; margin:.55rem 0; text-wrap:pretty}
-  .actions li::before{counter-increment:a; content:counter(a); position:absolute; left:0; top:.12rem; width:1.45rem; height:1.45rem; border-radius:50%; display:grid; place-items:center; font-size:.78rem; font-weight:700; background:var(--rule-soft); color:var(--ink-2)}
-  .check{display:flex; gap:.7rem; align-items:flex-start; padding:.85rem 1rem; background:var(--signal-soft); border:1px solid #b9d9cd; border-radius:10px; margin:1rem 0 0; -webkit-print-color-adjust:exact; print-color-adjust:exact}
-  .check svg{flex:none; margin-top:.2rem} .check p{margin:0; font-size:.97rem} .check strong{color:var(--signal)}
-  .trouble{margin:1rem 0 0; border:1px solid var(--rule); border-radius:10px; background:#fcfdfd}
-  .trouble summary{cursor:pointer; padding:.65rem .9rem; font-weight:650; font-size:.94rem; color:var(--ink-2); display:flex; align-items:center; gap:.5rem; list-style:none}
-  .trouble summary::-webkit-details-marker{display:none}
-  .trouble summary::before{content:"+"; font-family:var(--mono); font-weight:700; width:1rem; color:var(--alert)}
-  .trouble[open] summary::before{content:"–"}
-  .trouble summary:hover{color:var(--ink)}
-  .trouble__body{padding:0 .9rem .9rem; font-size:.94rem; color:var(--ink-2)} .trouble__body :last-child{margin-bottom:0}
-  /* figures */
-  figure.fig{margin:0}
-  figure.fig svg{width:100%; height:auto; display:block; border:none; background:none}
-  .svgpad{display:inline-block; padding:.75rem .9rem; border:1px solid var(--rule); border-radius:10px; background:#fbfcfc}
-  figcaption{font-size:.82rem; color:var(--ink-2); margin-top:.5rem; line-height:1.45} figcaption b{color:var(--ink)}
-  /* copy chips */
-  .chip{display:inline-flex; align-items:center; gap:.45rem; font-family:var(--mono); font-size:.86rem; background:#fff; border:1px solid var(--rule); border-radius:8px; padding:.5rem .7rem; cursor:pointer; color:var(--ink); text-align:left; max-width:100%; min-height:40px}
-  .chip:hover{border-color:var(--signal); background:var(--signal-soft)}
-  .chip svg{flex:none; opacity:.6} .chip span{overflow-wrap:anywhere}
-  .chip.copied{border-color:var(--signal); background:var(--signal-soft); color:var(--signal); font-weight:650}
-  .chiprow{display:flex; flex-wrap:wrap; gap:.5rem; margin:.4rem 0 1rem}
-  /* table */
-  .tbl{width:100%; border-collapse:collapse; font-size:.95rem; margin:.8rem 0 1.2rem}
-  .tbl th,.tbl td{text-align:left; padding:.6rem .7rem; border-bottom:1px solid var(--rule-soft); vertical-align:top; overflow-wrap:anywhere}
-  .tbl th{font-size:.78rem; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-2); border-bottom:1px solid var(--rule)}
-  .tbl tr:last-child td{border-bottom:0}
-  .tbl code{white-space:nowrap}
-  /* quiz */
-  .quiz{margin:1.2rem 0 0; padding:1.1rem; border:1px dashed var(--rule); border-radius:10px; background:#fbfcfc}
-  .quiz__q{margin:0 0 .8rem; font-weight:650; font-size:.98rem}
-  .quiz__opts{display:flex; flex-wrap:wrap; gap:.5rem}
-  .opt{font:inherit; font-size:.92rem; cursor:pointer; text-align:left; background:var(--panel); border:1px solid var(--rule); border-radius:8px; padding:.5rem .8rem; color:var(--ink)}
-  .opt:hover:not(:disabled){border-color:var(--signal); background:var(--signal-soft)}
-  .opt--right{border-color:var(--signal); background:var(--signal-soft); font-weight:650}
-  .opt--wrong{border-color:var(--alert); background:var(--alert-soft)}
-  .opt:disabled{cursor:default}
-  .quiz__fb{margin:.7rem 0 0; font-size:.9rem; min-height:1.2em}
-  .quiz__fb.is-ok{color:var(--signal); font-weight:650} .quiz__fb.is-no{color:var(--alert); font-weight:650}
-  /* fields */
-  .fields{display:grid; gap:.9rem; margin:1rem 0}
-  .field{display:grid; gap:.2rem}
-  .field label{font-size:.85rem; font-weight:650; color:var(--ink-2)}
-  .field input{font:inherit; font-size:1rem; padding:.5rem .6rem; border:1px solid var(--rule); border-radius:8px; background:#fff; width:100%}
-  .field input:focus{border-color:var(--signal)}
-  /* dictionary */
-  dl.dict{display:grid; grid-template-columns:auto 1fr; gap:.5rem 1.2rem; margin:0; font-size:.95rem}
-  dl.dict dt{font-weight:700; white-space:nowrap} dl.dict dd{margin:0; color:var(--ink-2)}
-  @media (max-width:560px){ dl.dict{grid-template-columns:1fr; gap:.15rem} dl.dict dd{margin-bottom:.7rem} }
-  /* final */
-  .final{margin-top:2rem; border-radius:var(--radius); padding:1.5rem; background:var(--ink); color:#e9efed}
-  .final h2{color:#fff; margin-top:0} .final p{color:#c9d6d2}
-  .final .chip{background:#1b302d; border-color:#334d48; color:#e9efed} .final .chip:hover{background:#22403a}
-  .all-done .final{background:var(--signal)} .all-done .final p{color:#dff0e9}
-  footer.end{border-top:1px solid var(--rule); margin-top:3rem; padding-top:1.2rem; font-size:.85rem; color:var(--ink-2)}
-  /* print */
-  @media print{
-    @page{margin:14mm 14mm 16mm}
-    body{background:#fff; font-size:10.5pt; line-height:1.45}
-    .topbar,.rail,.skip,.noprint{display:none !important}
-    .shell{display:block; max-width:none; padding:0}
-    h1{font-size:24pt} .lead{font-size:12pt}
-    .block,.step{box-shadow:none; border:1px solid #9aa; break-inside:avoid; margin-bottom:9mm; padding:5mm}
-    .part{break-before:page; margin-top:0} .part:first-of-type{break-before:auto}
-    .step__num{background:#111 !important; color:#fff !important}
-    .check{background:#eef7f2 !important} .trouble{border:1px solid #bbb} .trouble summary{color:#333}
-    .trouble__body{display:block !important} .tick{display:none} .quiz{border-style:solid}
-    a{color:#111; text-decoration:none} a[href^="http"]::after{content:" (" attr(href) ")"; font-size:8pt; color:#444; overflow-wrap:anywhere}
-    figure.fig svg{max-height:80mm; width:auto; max-width:100%; margin:0 auto}
-    .final{background:#fff !important; color:#111 !important; border:2px solid #111}
-    .final h2,.final p{color:#111 !important}
-  }
-  /* small screens */
-  .toc-mobile{display:none; margin:0 0 2rem}
-  .toc-mobile summary{cursor:pointer; font-weight:700; padding:.8rem 1rem; background:var(--panel); border:1px solid var(--rule); border-radius:10px}
-  .toc-mobile ol{columns:2; column-gap:1.5rem; font-size:.9rem; margin:.8rem 0 0; padding-left:1.2rem}
-  @media (max-width:520px){ .toc-mobile ol{columns:1} }
-  @media (max-width:1080px){
-    .shell{grid-template-columns:minmax(0,1fr); gap:2rem; padding-top:1.75rem}
-    .rail{display:none} .toc-mobile{display:block}
-  }
-  @media (max-width:560px){
-    .topbar__in{padding:.5rem .9rem} .brand span{display:none}
-    .meter__track{width:26vw} .shell{padding-left:.9rem; padding-right:.9rem}
-    .step{padding:1.15rem 1rem} .step__num{width:2.2rem; height:2.2rem; font-size:1rem}
-    .step__title{font-size:1.08rem} .block{padding:1.2rem 1rem}
-    .part__time{display:none}
-  }
-</style>
+<link rel="stylesheet" href="../assets/css/shared.css">
 </head>
 <body>
 <a class="skip" href="#contenido">Saltar al contenido</a>
@@ -241,8 +56,8 @@
       <button class="btn btn--quiet" type="button" id="reset" style="font-size:.8rem; padding:.25rem .5rem">Borrar mi progreso</button>
     </p>
   </nav>
-<main id="contenido">
 
+  <main id="contenido">
 
     <section class="hero">
       <h1>Sesión 0 · Primeros pasos con el ordenador</h1>
@@ -256,7 +71,7 @@
 
       <div class="notice notice--info">
         <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#0b6b52" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
-        <p><strong>¿Ya sabes lo básico?</strong> Si marcaste todo el checklist del final, puedes ir directo a la <a href="../02_practica/practica-web-interactiva.html">práctica de XAMPP y WordPress</a>.</p>
+        <p><strong>¿Ya sabes lo básico?</strong> Si marcaste todo el checklist del final, puedes ir directo a la <a href="../practica-xampp/index.html">práctica de XAMPP y WordPress</a>.</p>
       </div>
 
       <div class="block">
@@ -270,6 +85,7 @@
           <li><input type="checkbox" id="s0pf5"><label for="s0pf5">Sé que esto es solo el comienzo <small>después viene la práctica de la web.</small></label></li>
         </ul>
       </div>
+    </section>
 
     <section class="part" id="parte-a">
       <span class="part__k">Bloque A</span>
@@ -294,6 +110,7 @@
         <p><strong>Comprueba:</strong> aparece el <strong>escritorio</strong> (la pantalla con iconos y la franja de abajo).</p>
       </div>
     </article>
+
     <article class="step" id="paso-2" data-step="2">
       <header class="step__head">
         <span class="step__num" aria-hidden="true">2</span>
@@ -338,6 +155,7 @@
         <p><strong>Comprueba:</strong> abres y cierras la Calculadora 5 veces con doble clic y la X.</p>
       </div>
     </article>
+
     <article class="step step--split" id="paso-4" data-step="4">
       <header class="step__head">
         <span class="step__num" aria-hidden="true">4</span>
@@ -364,6 +182,7 @@
         <p><strong>Comprueba:</strong> escribes `http://localhost/` en el Bloc de notas.</p>
       </div>
     </article>
+
     <article class="step step--split" id="paso-5" data-step="5">
       <header class="step__head">
         <span class="step__num" aria-hidden="true">5</span>
@@ -402,6 +221,7 @@
         <p><strong>Comprueba:</strong> la imagen está en Descargas. Todo lo que descargas va ahí, no al escritorio.</p>
       </div>
     </article>
+
     <article class="step step--split" id="paso-7" data-step="7">
       <header class="step__head">
         <span class="step__num" aria-hidden="true">7</span>
@@ -446,6 +266,7 @@
         <p><strong>Comprueba:</strong> hiciste una captura, la pegaste en Word y la guardaste.</p>
       </div>
     </article>
+
     <article class="step step--split" id="paso-9" data-step="9">
       <header class="step__head">
         <span class="step__num" aria-hidden="true">9</span>
@@ -496,6 +317,7 @@
       </table>
       <p><strong>Si alguna casilla está vacía</strong>, repite el punto correspondiente antes de seguir. No pasa nada por repetir.</p>
     </article>
+
     <article class="step" id="paso-11" data-step="11">
       <header class="step__head">
         <span class="step__num" aria-hidden="true">11</span>
@@ -555,147 +377,22 @@
     </div>
 
     <footer class="end">
-      <p>Sesión previa a la <a href="../02_practica/practica-web-interactiva.html">práctica de XAMPP y WordPress</a>. Versión técnica: <code>guia-docente-xampp-wordpress.md</code>.</p>
+      <p>Sesión previa a la <a href="../practica-xampp/index.html">práctica de XAMPP y WordPress</a>. Versión técnica: <code>guia-docente-xampp-wordpress.md</code>.</p>
       <p>Esta página funciona sin internet y no envía datos a ningún sitio. Tu progreso se guarda solo en este navegador.</p>
       <p><span id="live" role="status" aria-live="polite" class="noprint"></span></p>
     </footer>
 
   </main>
-</div>
+
 <script>
-(function(){
-  'use strict';
-  var KEY='ifct0510-s0-progress.v1';
-  var FONTKEY='ifct0510-s0-font.v1';
-  var SIZES=['100%','112.5%','125%','137.5%'];
-  var boxes=Array.prototype.slice.call(document.querySelectorAll('[data-done]'));
-  var total=boxes.length;
-  var done=new Set();
-  try{
-    var raw=localStorage.getItem(KEY);
-    if(raw) JSON.parse(raw).forEach(function(v){done.add(String(v));});
-  }catch(e){}
-  function save(){
-    try{localStorage.setItem(KEY,JSON.stringify(Array.from(done)));}catch(e){}
-  }
-  function announce(msg){
-    var live=document.getElementById('live');
-    if(live) live.textContent=msg;
-  }
-  function render(){
-    boxes.forEach(function(b){
-      var id=b.getAttribute('data-done');
-      var on=done.has(id);
-      b.checked=on;
-      var step=b.closest('.step');
-      if(step) step.classList.toggle('is-done',on);
-    });
-    var n=done.size;
-    var count=document.getElementById('count');
-    var bar=document.getElementById('bar');
-    if(count) count.textContent=String(n);
-    if(bar) bar.style.width=(total?(n/total*100):0)+'%';
-    var fill=document.getElementById('rail-fill');
-    if(fill) fill.style.height=(total&&n>0)?('calc('+(n/total*100)+'% - .9rem)'):'0';
-    Array.prototype.forEach.call(document.querySelectorAll('.rail a[data-target]'),function(a){
-      a.classList.toggle('is-done',done.has(a.getAttribute('data-target')));
-    });
-    document.body.classList.toggle('all-done',n===total&&total>0);
-    var msg=document.getElementById('final-msg');
-    if(msg) msg.hidden=(n!==total);
-    var title=document.getElementById('final-title');
-    if(title) title.textContent=(n===total)?'¡Sesión 0 terminada!':'Chuleta: direcciones y atajos';
-  }
-  boxes.forEach(function(b){
-    b.addEventListener('change',function(){
-      var id=b.getAttribute('data-done');
-      if(b.checked){done.add(id);announce('Paso '+id+' marcado como hecho.');}
-      else{done.delete(id);announce('Paso '+id+' desmarcado.');}
-      save();render();
-    });
-  });
-  document.getElementById('total').textContent=String(total);
-  var reset=document.getElementById('reset');
-  if(reset) reset.addEventListener('click',function(){
-    if(!confirm('¿Borrar las marcas de todos los pasos? No se puede deshacer.')) return;
-    done.clear();save();render();announce('Progreso borrado.');
-  });
-  var printBtn=document.getElementById('print-btn');
-  if(printBtn) printBtn.addEventListener('click',function(){window.print();});
-  window.addEventListener('beforeprint',function(){
-    Array.prototype.forEach.call(document.querySelectorAll('details'),function(d){
-      d.setAttribute('data-was-open',d.open?'1':'0');d.open=true;
-    });
-  });
-  window.addEventListener('afterprint',function(){
-    Array.prototype.forEach.call(document.querySelectorAll('details'),function(d){
-      if(d.getAttribute('data-was-open')==='0')d.open=false;
-    });
-  });
-  var idx=0;
-  try{idx=parseInt(localStorage.getItem(FONTKEY)||'0',10)||0;}catch(e){}
-  if(idx<0||idx>=SIZES.length)idx=0;
-  function applyFont(){
-    document.documentElement.style.fontSize=SIZES[idx];
-    try{localStorage.setItem(FONTKEY,String(idx));}catch(e){}
-  }
-  applyFont();
-  var fp=document.getElementById('font-plus');
-  var fm=document.getElementById('font-minus');
-  if(fp) fp.addEventListener('click',function(){
-    idx=Math.min(SIZES.length-1,idx+1);applyFont();announce('Letra más grande.');
-  });
-  if(fm) fm.addEventListener('click',function(){
-    idx=Math.max(0,idx-1);applyFont();announce('Letra más pequeña.');
-  });
-  function legacyCopy(text){
-    var ta=document.createElement('textarea');
-    ta.value=text;ta.setAttribute('readonly','');
-    ta.style.position='fixed';ta.style.top='-1000px';
-    document.body.appendChild(ta);
-    ta.select();
-    var ok=false;
-    try{ok=document.execCommand('copy');}catch(e){ok=false;}
-    document.body.removeChild(ta);
-    return ok;
-  }
-  document.addEventListener('click',function(ev){
-    var btn=ev.target.closest('[data-copy]');
-    if(!btn) return;
-    var text=btn.getAttribute('data-copy');
-    var finish=function(ok){
-      var span=btn.querySelector('span');
-      var previous=span?span.textContent:btn.textContent;
-      btn.classList.add('copied');
-      if(span) span.textContent=ok?'¡Copiado!':previous;
-      else btn.textContent='¡Copiado!';
-      announce(ok?'Dirección copiada al portapapeles.':'No se pudo copiar. Selecciona el texto a mano.');
-      window.setTimeout(function(){
-        btn.classList.remove('copied');
-        if(span) span.textContent=previous;else btn.textContent=previous;
-      },1800);
-    };
-    if(navigator.clipboard&&navigator.clipboard.writeText){
-      navigator.clipboard.writeText(text).then(function(){finish(true);},function(){finish(legacyCopy(text));});
-    }else{
-      finish(legacyCopy(text));
-    }
-  });
-  if('IntersectionObserver' in window){
-    var steps=Array.prototype.slice.call(document.querySelectorAll('.step'));
-    var io=new IntersectionObserver(function(entries){
-      entries.forEach(function(en){
-        if(!en.isIntersecting) return;
-        var id=en.target.id;
-        Array.prototype.forEach.call(document.querySelectorAll('.rail a'),function(a){
-          a.classList.toggle('is-current',a.getAttribute('href')==='#'+id);
-        });
-      });
-    },{rootMargin:'-30% 0px -55% 0px',threshold:0});
-    steps.forEach(function(s){io.observe(s);});
-  }
-  render();
-})();
+window.IFCT0510 = {
+  key: 'ifct0510-s0-progress.v1',
+  fontKey: 'ifct0510-s0-font.v1',
+  total: 12,
+  sizes: ['100%','112.5%','125%','137.5%']
+};
 </script>
+<script src="../assets/js/shared.js"></script>
+
 </body>
 </html>

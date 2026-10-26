@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Monta tu web en el ordenador · XAMPP y WordPress paso a paso</title>
+<link rel="stylesheet" href="../assets/css/shared.css">
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
+<header class="topbar">
+  <div class="topbar__in">
+    <div class="brand">
+      <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true">
+        <rect x="1" y="1" width="24" height="24" rx="7" fill="#0f1f1e"/>
+        <path d="M7 16.5V9.5l6 3.5 6-3.5v7" fill="none" stroke="#e5f1ec" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>Monta tu web · XAMPP + WordPress</span>
+    </div>
+    <div class="meter" role="group" aria-label="Progreso de la práctica">
+      <div class="meter__track" aria-hidden="true"><div class="meter__fill" id="bar"></div></div>
+      <span><b id="count">0</b> de <span id="total">14</span> pasos</span>
+    </div>
+    <div class="tools">
+      <button class="btn btn--quiet noprint" type="button" id="font-minus" aria-label="Reducir el tamaño de la letra">A−</button>
+      <button class="btn btn--quiet noprint" type="button" id="font-plus" aria-label="Aumentar el tamaño de la letra">A+</button>
+      <button class="btn" type="button" id="print-btn">
+        <svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V3h12v6"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8" rx="1"/></svg>
+        Imprimir
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="shell">
+  <nav class="rail noprint" aria-label="Índice de pasos">
+    <details class="rail-mobile" open>
+      <summary>Los 14 pasos</summary>
+      <ol id="rail-list">
+        <div class="rail__fill" id="rail-fill" aria-hidden="true"></div>
+        <li><a href="#paso-1" data-target="1"><span class="n">1</span> Descargar XAMPP</a></li>
+        <li><a href="#paso-2" data-target="2"><span class="n">2</span> Abrir el instalador</a></li>
+        <li><a href="#paso-3" data-target="3"><span class="n">3</span> Instalar</a></li>
+        <li><a href="#paso-4" data-target="4"><span class="n">4</span> Encender servicios</a></li>
+        <li><a href="#paso-5" data-target="5"><span class="n">5</span> Comprobar</a></li>
+        <li><a href="#paso-6" data-target="6"><span class="n">6</span> Descargar WordPress</a></li>
+        <li><a href="#paso-7" data-target="7"><span class="n">7</span> Crear la carpeta</a></li>
+        <li><a href="#paso-8" data-target="8"><span class="n">8</span> Descomprimir</a></li>
+        <li><a href="#paso-9" data-target="9"><span class="n">9</span> Crear base de datos</a></li>
+        <li><a href="#paso-10" data-target="10"><span class="n">10</span> Abrir instalador</a></li>
+        <li><a href="#paso-11" data-target="11"><span class="n">11</span> Datos de conexión</a></li>
+        <li><a href="#paso-12" data-target="12"><span class="n">12</span> Tu usuario</a></li>
+        <li><a href="#paso-13" data-target="13"><span class="n">13</span> Entrar</a></li>
+        <li><a href="#paso-14" data-target="14"><span class="n">14</span> Ver tu web</a></li>
+      </ol>
+      <p style="margin-top:1.2rem; font-size:.8rem; color:var(--ink-2)">
+        <button class="btn btn--quiet" type="button" id="reset" style="font-size:.8rem; padding:.25rem .5rem">Borrar mi progreso</button>
+      </p>
+    </details>
+  </nav>
+
+  <main id="contenido">
+
+    <section class="hero">
+      <h1>Monta tu web en tu ordenador</h1>
+      <p class="lead">Vas a instalar XAMPP y WordPress y a ver tu propia página en el navegador. <strong>No hace falta saber informática.</strong> Cada paso termina con una comprobación.</p>
+      <ul class="meta">
+        <li data-state>14 pasos</li>
+        <li>3 sesiones de 60 minutos</li>
+        <li>Windows o macOS</li>
+        <li>Funciona sin internet</li>
+      </ul>
+
+      <details class="toc-mobile">
+        <summary>Ver el índice de los 14 pasos</summary>
+        <ol>
+          <li><a href="#paso-1">Descargar XAMPP</a></li>
+          <li><a href="#paso-2">Abrir el instalador</a></li>
+          <li><a href="#paso-3">Instalar</a></li>
+          <li><a href="#paso-4">Encender servicios</a></li>
+          <li><a href="#paso-5">Comprobar</a></li>
+          <li><a href="#paso-6">Descargar WordPress</a></li>
+          <li><a href="#paso-7">Crear la carpeta</a></li>
+          <li><a href="#paso-8">Descomprimir</a></li>
+          <li><a href="#paso-9">Crear base de datos</a></li>
+          <li><a href="#paso-10">Abrir instalador</a></li>
+          <li><a href="#paso-11">Datos de conexión</a></li>
+          <li><a href="#paso-12">Tu usuario</a></li>
+          <li><a href="#paso-13">Entrar</a></li>
+          <li><a href="#paso-14">Ver tu web</a></li>
+        </ol>
+      </details>
+
+      <div class="notice notice--warn">
+        <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#8a5a00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2.5 20h19L12 3Z"/><path d="M12 9v5"/><circle cx="12" cy="17.2" r=".9" fill="#8a5a00" stroke="none"/></svg>
+        <p><strong>¿Nunca has usado un ordenador?</strong> Antes de esta práctica, haz la <a href="../sesion-0/index.html">Sesión 0 · Primeros pasos</a>. Allí se aprende el ratón, el teclado y las carpetas y también puedes consultar la <a href="../practica-gutenberg/index.html">práctica web con Gutenberg</a>.</p>
+      </div>
+
+      <div class="block">
+        <h2>Estas 5 cosas tienen que ser verdad</h2>
+        <p>Márcalas antes de empezar. Si alguna no la puedes marcar, avisa al profesor.</p>
+        <ul class="preflight">
+          <li><input type="checkbox" id="pf1"><label for="pf1">Estoy en un <strong>ordenador con Windows</strong> <small>En Mac se hace casi igual; el profesor te indica los cambios.</small></label></li>
+          <li><input type="checkbox" id="pf2"><label for="pf2">Sé hacer <strong>doble clic</strong> con el botón izquierdo <small>Pulsar dos veces rápido, sin mover el ratón.</small></label></li>
+          <li><input type="checkbox" id="pf3"><label for="pf3">Tengo <strong>internet</strong> <small>Solo para las descargas. Después ya no hace falta.</small></label></li>
+          <li><input type="checkbox" id="pf4"><label for="pf4">Quedan <strong>2 GB libres</strong> en el disco <small>Es poco más que una película.</small></label></li>
+          <li><input type="checkbox" id="pf5"><label for="pf5">Puedo <strong>instalar programas</strong> <small>Si el ordenador es del centro, hace falta permiso.</small></label></li>
+        </ul>
+      </div>
+
+      <div class="block">
+        <h2>Las partes de la pantalla que vamos a nombrar</h2>
+        <figure class="fig">
+          <div class="svgpad"><svg viewBox="0 0 520 300" role="img" aria-labelledby="dsk-t dsk-d">
+            <title id="dsk-t">Esquema de un escritorio de Windows</title>
+            <desc id="dsk-d">Pantalla con cuatro iconos arriba a la izquierda, la papelera abajo a la derecha y una barra de tareas abajo con el botón Inicio, tres programas abiertos y el reloj.</desc>
+            <rect x="10" y="10" width="500" height="268" rx="10" fill="#ffffff" stroke="#47595a" stroke-width="2"/>
+            <g fill="#e5f1ec" stroke="#0b6b52" stroke-width="1.6">
+              <rect x="34" y="34" width="34" height="30" rx="4"/>
+              <rect x="34" y="88" width="34" height="30" rx="4"/>
+              <rect x="34" y="142" width="34" height="30" rx="4"/>
+              <rect x="34" y="196" width="34" height="30" rx="4"/>
+            </g>
+            <g fill="#0f1f1e" font-size="10" font-family="Segoe UI, sans-serif">
+              <text x="51" y="78" text-anchor="middle">Equipo</text>
+              <text x="51" y="132" text-anchor="middle">Papelera</text>
+              <text x="51" y="186" text-anchor="middle">Word</text>
+              <text x="51" y="240" text-anchor="middle">Carpeta</text>
+            </g>
+            <rect x="10" y="240" width="500" height="38" fill="#f1f5f4" stroke="#47595a" stroke-width="2"/>
+            <rect x="22" y="248" width="26" height="22" rx="4" fill="#0b6b52"/>
+            <path d="M28 253h14M28 259h14M28 265h14" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/>
+            <g fill="#ccd6d4" stroke="#47595a" stroke-width="1.4">
+              <rect x="60" y="249" width="22" height="20" rx="3"/>
+              <rect x="90" y="249" width="22" height="20" rx="3"/>
+              <rect x="120" y="249" width="22" height="20" rx="3"/>
+            </g>
+            <text x="492" y="263" text-anchor="end" font-size="10" fill="#47595a" font-family="Segoe UI, sans-serif">12:30</text>
+            <g stroke="#0b6b52" stroke-width="1.6" fill="none" stroke-linecap="round">
+              <path d="M78 34v-8h-8"/><path d="M132 124h8v-8" />
+            </g>
+            <text x="88" y="20" font-size="11" fill="#0b6b52" font-weight="700" font-family="Segoe UI, sans-serif">Iconos</text>
+            <text x="146" y="128" font-size="11" fill="#0b6b52" font-weight="700" font-family="Segoe UI, sans-serif">Barra de tareas</text>
+            <text x="146" y="146" font-size="10" fill="#47595a" font-family="Segoe UI, sans-serif">Menú Inicio (⊞) · programas abiertos · reloj</text>
+          </svg></div>
+          <figcaption><b>Los iconos</b> se abren con doble clic. <b>La barra de tareas</b> está siempre abajo: ahí vive el menú Inicio, que es donde están todos los programas.</figcaption>
+        </figure>
+      </div>
+
+      <div class="block">
+        <h2>Cuatro símbolos del teclado que vas a escribir</h2>
+        <figure class="fig">
+          <div class="svgpad"><svg viewBox="0 0 560 150" role="img" aria-labelledby="key-t key-d">
+            <title id="key-t">Teclas necesarias para escribir una dirección web</title>
+            <desc id="key-d">Se muestran las teclas dos puntos, barra inclinada, punto y arroba, con la combinación que hay que pulsar en cada una.</desc>
+            <g font-family="Segoe UI, sans-serif">
+              <g>
+                <rect x="14" y="30" width="120" height="56" rx="8" fill="#fff" stroke="#0f1f1e" stroke-width="2"/>
+                <text x="74" y="66" font-size="22" text-anchor="middle" fill="#0f1f1e">:</text>
+                <text x="74" y="115" font-size="10" text-anchor="middle" fill="#47595a">Shift + ;</text>
+              </g>
+              <g>
+                <rect x="150" y="30" width="120" height="56" rx="8" fill="#fff" stroke="#0f1f1e" stroke-width="2"/>
+                <text x="210" y="66" font-size="22" text-anchor="middle" fill="#0f1f1e">/</text>
+                <text x="210" y="115" font-size="10" text-anchor="middle" fill="#47595a">tecla junto a Shift derecho</text>
+              </g>
+              <g>
+                <rect x="286" y="30" width="120" height="56" rx="8" fill="#fff" stroke="#0f1f1e" stroke-width="2"/>
+                <text x="346" y="66" font-size="22" text-anchor="middle" fill="#0f1f1e">.</text>
+                <text x="346" y="115" font-size="10" text-anchor="middle" fill="#47595a">tecla a la derecha de la Ñ</text>
+              </g>
+              <g>
+                <rect x="422" y="30" width="120" height="56" rx="8" fill="#e5f1ec" stroke="#0b6b52" stroke-width="2"/>
+                <text x="482" y="66" font-size="22" text-anchor="middle" fill="#0b6b52">@</text>
+                <text x="482" y="115" font-size="10" text-anchor="middle" fill="#0b6b52" font-weight="700">AltGr + 2</text>
+              </g>
+            </g>
+          </svg></div>
+          <figcaption>Escribir <code>http://localhost/miwordpress/</code> parece difícil y solo son cuatro símbolos. Practícalos antes de empezar.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ PARTE A ============ -->
+    <section class="part" id="parte-a">
+      <span class="part__k">Parte A</span>
+      <h2>Instalar XAMPP</h2>
+      <span class="part__time">≈ 45 min</span>
+    </section>
+
+    <article class="step step--split" id="paso-1" data-step="1">
+      <header class="step__head">
+        <span class="step__num" aria-hidden="true">1</span>
+        <h3 class="step__title">Descargar XAMPP</h3>
+        <label class="tick"><input type="checkbox" data-done="1"><span>Hecho</span></label>
+      </header>
+      <div class="step__grid">
+        <div>
+          <ol class="actions">
+            <li>Abre el navegador (Chrome, Edge o Firefox).</li>
+            <li>Haz <strong>un clic</strong> en la barra de direcciones, la franja blanca de arriba.</li>
+            <li>Escribe la dirección de abajo y pulsa <strong>Enter</strong>.</li>
+            <li>Baja un poco con la rueda hasta ver el botón <strong>XAMPP for Windows</strong> y púlsalo.</li>
+            <li>Espera: la descarga empieza sola.</li>
+          </ol>
+          <div class="chiprow">
+            <button class="chip" type="button" data-copy="https://www.apachefriends.org/es/index.html">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+              <span>https://www.apachefriends.org/es/index.html</span>
+            </button>
+          </div>
+          <div class="check">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            <p><strong>Comprueba:</strong> en la carpeta <strong>Descargas</strong> hay un archivo que empieza por <code>xampp-windows</code> y termina en <code>.exe</code>.</p>
+          </div>
+        </div>
+        <div>
+          <figure class="fig">
+            <div class="svgpad"><svg viewBox="0 0 420 260" role="img" aria-labelledby="ab-t ab-d">
+              <title id="ab-t">Barra de direcciones frente a buscador</title>
+              <desc id="ab-d">Arriba, una ventana con la dirección escrita en la barra superior. Abajo, una página de buscador con un cuadro en el centro. Solo la barra de arriba lleva directamente a la web.</desc>
+              <g font-family="Segoe UI, sans-serif">
+                <rect x="8" y="8" width="404" height="104" rx="8" fill="#fff" stroke="#0b6b52" stroke-width="2.5"/>
+                <rect x="18" y="18" width="384" height="30" rx="15" fill="#e5f1ec" stroke="#0b6b52" stroke-width="1.6"/>
+                <text x="34" y="38" font-size="11.5" fill="#0b6b52" font-weight="700">apachefriends.org/es/index.html</text>
+                <text x="18" y="72" font-size="11" fill="#47595a">Aquí escribes la dirección exacta →</text>
+                <text x="18" y="94" font-size="11" fill="#0b6b52" font-weight="700">va directo a la web. Correcto.</text>
+                <rect x="8" y="132" width="404" height="118" rx="8" fill="#fff" stroke="#47595a" stroke-width="2" stroke-dasharray="5 4"/>
+                <rect x="88" y="160" width="244" height="30" rx="15" fill="#f1f5f4" stroke="#47595a" stroke-width="1.6"/>
+                <circle cx="106" cy="175" r="6" fill="none" stroke="#47595a" stroke-width="2"/>
+                <path d="M111 180l6 6" stroke="#47595a" stroke-width="2" stroke-linecap="round"/>
+                <text x="122" y="179" font-size="11" fill="#47595a">buscar…</text>
+                <text x="18" y="212" font-size="11" fill="#47595a">El buscador adivina. Los primeros resultados</text>
+                <text x="18" y="230" font-size="11" fill="#47595a">suelen ser anuncios, no la web oficial.</text>
+              </g>
+            </svg></div>
+            <figcaption><b>Arriba:</b> barra de direcciones. <b>Abajo:</b> buscador. Si sabes la dirección, escríbela siempre arriba.</figcaption>
+          </figure>
+
+          <div class="quiz" data-quiz data-okmsg="La barra de direcciones lleva directo a la web." data-errmsg="Casi. El buscador adivina y enseña anuncios; la barra de direcciones va directa.">
+            <p class="quiz__q">¿Dónde escribirías <code>apachefriends.org</code>?</p>
+            <div class="quiz__opts">
+              <button class="opt" type="button" data-ok="true">En la barra de direcciones</button>
+              <button class="opt" type="button" data-ok="false">En el buscador</button>
+            </div>
+            <p class="quiz__fb" role="status"></p>
+          </div>
+        </div>
+      </div>
+      <details class="trouble">
+        <summary>Si algo no sale</summary>
+        <div class="trouble__body">
+          <p><strong>No encuentro el botón de descarga:</strong> la página cambia a menudo. Busca la palabra "Download" o "Descargar" en grande.</p>
+          <p><strong>Se ha abierto una página rara:</strong> has pulsado un anuncio. Cierra la pestaña y vuelve a escribir la dirección a mano.</p>
+        </div>
+      </details>
+    </article>
+
+    <article class="step step--split" id="paso-2" data-step="2">
+      <header class="step__head">
+        <span class="step__num" aria-hidden="true">2</span>
+        <h3 class="step__title">Abrir el instalador</h3>
+        <label class="tick"><input type="checkbox" data-done="2"><span>Hecho</span></label>
+      </header>
+      <div class="step__grid">
+        <div>
+          <ol class="actions">
+            <li>Abre la carpeta <strong>Descargas</strong>.</li>
+            <li>Haz <strong>doble clic</strong> en el archivo <code>xampp-windows…exe</code>.</li>
+            <li>Windows pregunta si permites cambios: pulsa <strong>Sí</strong>.</li>
+            <li>Si el antivirus avisa: <strong>Permitir</strong> o <strong>Ejecutar de todos modos</strong>.</li>
+          </ol>
+          <div class="check">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            <p><strong>Comprueba:</strong> aparece una ventana con el botón <strong>Next</strong>.</p>
+          </div>
+        </div>
+        <div>
+          <figure class="fig">
+            <div class="svgpad"><svg viewBox="0 0 340 220" role="img" aria-labelledby="ms-t ms-d">
+              <title id="ms-t">El ratón: botón izquierdo y derecho</title>
+              <desc id="ms-d">Dibujo de un ratón visto desde arriba. El botón izquierdo se usa para hacer clic y doble clic; el derecho abre un menú de opciones.</desc>
+              <g font-family="Segoe UI, sans-serif">
+                <path d="M170 24c26 0 42 20 42 46v58c0 30-19 50-42 50s-42-20-42-50V70c0-26 16-46 42-46Z" fill="#fff" stroke="#0f1f1e" stroke-width="2.5"/>
+                <path d="M128 84h42V26c-24 1-42 22-42 48Z" fill="#e5f1ec" stroke="#0b6b52" stroke-width="2.5"/>
+                <path d="M212 84h-42V26c24 1 42 22 42 48Z" fill="#faece8" stroke="#a8321f" stroke-width="2.5"/>
+                <path d="M170 46v30" stroke="#0b6b52" stroke-width="2" stroke-dasharray="4 3"/>
+                <text x="96" y="60" text-anchor="end" font-size="12" font-weight="700" fill="#0b6b52">Izquierdo</text>
+                <text x="90" y="78" text-anchor="end" font-size="10.5" fill="#47595a">clic · doble clic</text>
+                <text x="244" y="60" font-size="12" font-weight="700" fill="#a8321f">Derecho</text>
+                <text x="244" y="78" text-anchor="end" font-size="10.5" fill="#47595a">menú de opciones</text>
+                <path d="M100 64h22" stroke="#0b6b52" stroke-width="1.5"/>
+                <path d="M216 64h22" stroke="#a8321f" stroke-width="1.5"/>
+                <text x="170" y="196" text-anchor="middle" font-size="11" fill="#47595a">Doble clic = dos pulsaciones rápidas,</text>
+                <text x="170" y="211" text-anchor="middle" font-size="11" fill="#47595a">sin mover el ratón entre las dos.</text>
+              </g>
+            </svg></div>
+            <figcaption>Si el doble clic no abre nada, espera un segundo y prueba otra vez. No hace falta pulsar más fuerte.</figcaption>
+          </figure>
+        </div>
+      </div>
+      <details class="trouble">
+        <summary>Si algo no sale</summary>
+        <div class="trouble__body">
+          <p><strong>Windows dice que falta un administrador:</strong> llama al profesor. No intentes saltarte el aviso.</p>
+          <p><strong>No veo el archivo:</strong> en Descargas, ordena por <em>Fecha de modificación</em>: lo último descargado sale arriba.</p>
+        </div>
+      </details>
+    </article>
+
+    <article class="step" id="paso-3" data-step="3">
+      <header class="step__head">
+        <span class="step__num" aria-hidden="true">3</span>
+        <h3 class="step__title">Instalar: casi todo es pulsar «Next»</h3>
+        <label class="tick"><input type="checkbox" data-done="3"><span>Hecho</span></label>
+      </header>
+      <ol class="actions">
+        <li>Primera pantalla: <strong>Next</strong>.</li>
+        <li>Pantalla de componentes: deja marcados <strong>solo</strong> Apache, MySQL y phpMyAdmin. Desmarca lo demás y pulsa <strong>Next</strong>.</li>
+        <li>Carpeta de instalación: déjala como viene (<code>C:\xampp</code>) y pulsa <strong>Next</strong>.</li>
+        <li>Idioma: <strong>English</strong> o <strong>Español</strong>. Pulsa <strong>Next</strong>.</li>
+        <li>Espera a que la barra llegue al final. Deja marcada la casilla de abrir el panel y pulsa <strong>Finish</strong>.</li>
+      </ol>
+      <div class="check">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        <p><strong>Comprueba:</strong> se abre la ventana <strong>XAMPP Control Panel</strong>, con una lista de nombres y botones <strong>Start</strong>.</p>
+      </div>
+      <details class="trouble">
+        <summary>Si algo no sale</summary>
+        <div class="trouble__body">
+          <p><strong>No se abrió el panel:</strong> menú Inicio → escribe <code>xampp</code> → <strong>XAMPP Control Panel</strong>.</p>
+          <p><strong>Ha terminado pero no veo nada:</strong> mira en la barra de tareas, abajo; puede estar minimizado.</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- ============ PARTE B ============ -->
+    <section class="part" id="parte-b">
+      <span class="part__k">Parte B</span>
+      <h2>Encender el servidor</h2>
+      <span class="part__time">≈ 15 min</span>
+    </section>
+
+    <article class="step step--split" id="paso-4" data-step="4">
+      <header class="step__head">
+        <span class="step__num" aria-hidden="true">4</span>
+        <h3 class="step__title">Encender Apache y MySQL</h3>
+        <label class="tick"><input type="checkbox" data-done="4"><span>Hecho</span></label>
+      </header>
+      <div class="step__grid">
+        <div>
+          <ol class="actions">
+            <li>En la fila <strong>Apache</strong>, pulsa <strong>Start</strong>.</li>
+            <li>En la fila <strong>MySQL</strong>, pulsa <strong>Start</strong>.</li>
+            <li>Espera unos segundos.</li>
+          </ol>
+          <div class="check">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            <p><strong>Comprueba:</strong> los dos botones ahora dicen <strong>Stop</strong> y los nombres se ponen <strong>en verde</strong>. Aparecen los números <strong>80</strong> y <strong>3306</strong>.</p>
+          </div>
+        </div>
+        <div>
+          <figure class="fig">
+            <div class="svgpad"><svg viewBox="0 0 420 200" role="img" aria-labelledby="xm-t xm-d">
+              <title id="xm-t">Panel de control de XAMPP con los dos servicios en verde</title>
+              <desc id="xm-d">Tabla con dos filas, Apache y MySQL. Cada fila tiene un botón que dice Stop y una etiqueta verde de funcionando, con el número de puerto 80 y 3306.</desc>
+              <g font-family="Segoe UI, sans-serif">
+                <rect x="6" y="6" width="408" height="188" rx="8" fill="#fff" stroke="#47595a" stroke-width="2"/>
+                <rect x="6" y="6" width="408" height="28" rx="8" fill="#f1f5f4" stroke="#47595a" stroke-width="2"/>
+                <text x="18" y="25" font-size="11" font-weight="700" fill="#0f1f1e">XAMPP Control Panel v3.3.0</text>
+                <g font-size="11.5" fill="#0f1f1e">
+                  <text x="26" y="76" font-weight="700">Apache</text>
+                  <text x="26" y="136" font-weight="700">MySQL</text>
+                </g>
+                <g>
+                  <rect x="112" y="56" width="70" height="28" rx="5" fill="#fff" stroke="#0b6b52" stroke-width="2"/>
+                  <text x="147" y="75" text-anchor="middle" font-size="11.5" font-weight="700" fill="#0b6b52">Stop</text>
+                  <rect x="112" y="116" width="70" height="28" rx="5" fill="#fff" stroke="#0b6b52" stroke-width="2"/>
+                  <text x="147" y="135" text-anchor="middle" font-size="11.5" font-weight="700" fill="#0b6b52">Stop</text>
+                </g>
+                <rect x="204" y="56" width="112" height="28" rx="14" fill="#e5f1ec" stroke="#0b6b52" stroke-width="1.6"/>
+                <circle cx="222" cy="70" r="5" fill="#0b6b52"/>
+                <text x="234" y="75" font-size="11" font-weight="700" fill="#0b6b52">Running : 80</text>
+                <rect x="204" y="116" width="126" height="28" rx="14" fill="#e5f1ec" stroke="#0b6b52" stroke-width="1.6"/>
+                <circle cx="222" cy="130" r="5" fill="#0b6b52"/>
+                <text x="234" y="135" font-size="11" font-weight="700" fill="#0b6b52">Running : 3306</text>
+                <text x="26" y="176" font-size="10.5" fill="#47595a">Verde = encendido. Si está gris, no funciona.</text>
+              </g>
+            </svg></div>
+            <figcaption>El verde es la única señal que importa. Si Apache se apaga solo, avisa al profesor.</figcaption>
+          </figure>
+
+          <div class="quiz" data-quiz data-okmsg="Con Stop se enciende; y al encenderse cambia a Stop." data-errmsg="No. Start enciende el servicio. Stop lo apaga.">
+            <p class="quiz__q">El botón de Apache dice «Stop». ¿Qué significa?</p>
+            <div class="quiz__opts">
+              <button class="opt" type="button" data-ok="true">Que ya está encendido</button>
+              <button class="opt" type="button" data-ok="false">Que está apagado</button>
+            </div>
+            <p class="quiz__fb" role="status"></p>
+          </div>
+        </div>
+      </div>
+      <details class="trouble">
+        <summary>Si algo no sale</summary>
+        <div class="trouble__body">
+          <p><strong>Apache no se pone verde y se apaga:</strong> otro programa ocupa la puerta 80 (Skype, Teams, IIS). No lo toques: avisa al profesor.</p>
+          <p><strong>MySQL no arranca:</strong> la puerta 3306 está ocupada. También lo resuelve el profesor.</p>
+        </div>
+      </details>
+    </article>
+
+    <article class="step" id="paso-5" data-step="5">
+      <header class="step__head">
+        <span class="step__num" aria-hidden="true">5</span>
+        <h3 class="step__title">Comprobar que el servidor responde</h3>
+        <label class="tick"><input type="checkbox" data-done="5"><span>Hecho</span></label>
+      </header>
+      <ol class="actions">
+        <li>Abre el navegador.</li>
+        <li>Escribe <code>http://localhost/</code> en la barra de direcciones y pulsa <strong>Enter</strong>.</li>
+      </ol>
+      <div class="chiprow">
+        <button class="chip" type="button" data-copy="http://localhost/">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+          <span>http://localhost/</span>
+        </button>
+      </div>
+      <div class="check">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        <p><strong>Comprueba:</strong> sale la página de bienvenida de XAMPP. Si sale, <strong>ya tienes un servidor</strong>.</p>
+      </div>
+      <p style="margin-top:1rem"><strong>«localhost» significa «mi propio ordenador»</strong>: es una dirección que solo funciona en tu equipo. No está en internet.</p>
+      <details class="trouble">
+        <summary>Si algo no sale</summary>
+        <div class="trouble__body">
+          <p><strong>La página no carga:</strong> Apache está apagado. Vuelve al panel y pulsa Start.</p>
+          <p><strong>Me lleva a una página de un buscador:</strong> lo has escrito en el buscador y no en la barra de direcciones.</p>
+        </div>
+      </details>
+    </article>
+
+    <!-- ============ PARTE C ============ -->
+    <section class="part" id="parte-c">
+      <span class="part__k">Parte C</span>
+      <h2>WordPress y su despensa</h2>
+      <span class="part__time">≈ 35 min</span>
+    </section>
+
+    <article class="step step--split" id="paso-6" data-step="6">
+      <header class="step__head">
+        <span class="step__num" aria-hidden="true">6</span>
+        <h3 class="step__title">Descargar WordPress</h3>
+        <label class="tick"><input type="checkbox" data-done="6"><span>Hecho</span></label>
+      </header>
+      <div class="step__grid">
+        <div>
+          <ol class="actions">
+            <li>En el navegador, escribe la dirección y pulsa <strong>Enter</strong>.</li>
+            <li>Pulsa el botón <strong>Download WordPress</strong>.</li>
+            <li>Espera a que termine la descarga.</li>
+          </ol>
+          <div class="chiprow">
+            <button class="chip" type="button" data-copy="https://wordpress.org/download/">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+              <span>https://wordpress.org/download/</span>
+            </button>
+          </div>
+          <div class="check">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            <p><strong>Comprueba:</strong> en <strong>Descargas</strong> hay un archivo llamado <code>wordpress</code> que termina en <code>.zip</code>.</p>
+          </div>
+          <p style="margin-top:1rem">Un <code>.zip</code> es <strong>una caja comprimida</strong>: dentro hay muchos archivos y hay que abrirla.</p>
+        </div>
+        <div>
+          <figure class="fig">
+            <div class="svgpad"><svg viewBox="0 0 400 250" role="img" aria-labelledby="dl-t dl-d">
+              <title id="dl-t">La carpeta Descargas con el archivo wordpress.zip</title>
+              <desc id="dl-d">Ventana del explorador de archivos con la carpeta Descargas seleccionada a la izquierda y el archivo comprimido wordpress.zip destacado a la derecha.</desc>
+              <g font-family="Segoe UI, sans-serif">
+                <rect x="6" y="6" width="388" height="238" rx="8" fill="#fff" stroke="#47595a" stroke-width="2"/>
+                <rect x="6" y="6" width="388" height="26" rx="8" fill="#f1f5f4" stroke="#47595a" stroke-width="2"/>
+                <text x="18" y="24" font-size="10.5" fill="#47595a">Explorador de archivos</text>
+                <rect x="6" y="32" width="120" height="212" fill="#fbfcfc" stroke="#ccd6d4"/>
+                <rect x="6" y="52" width="120" height="24" fill="#e5f1ec"/>
+                <text x="40" y="69" font-size="10.5" font-weight="700" fill="#0b6b52">Descargas</text>
+                <path d="M20 60l6 6v6h-12v-6z" fill="none" stroke="#0b6b52" stroke-width="1.6"/>
+                <text x="20" y="98" font-size="10.5" fill="#47595a">Documentos</text>
+                <text x="20" y="120" font-size="10.5" fill="#47595a">Imágenes</text>
+                <text x="20" y="142" font-size="10.5" fill="#47595a">Escritorio</text>
+                <rect x="136" y="52" width="248" height="34" rx="4" fill="#e5f1ec" stroke="#0b6b52" stroke-width="1.6"/>
+                <rect x="146" y="61" width="14" height="16" rx="2" fill="#fff" stroke="#0b6b52" stroke-width="1.4"/>
+                <text x="168" y="73" font-size="10.5" font-weight="700" fill="#0b6b52">wordpress.zip</text>
+                <text x="136" y="112" font-size="10" fill="#47595a">Hoy · 24,8 MB</text>
+                <text x="136" y="150" font-size="10.5" fill="#47595a">Clic derecho → Extraer todo…</text>
+                <path d="M312 74v34" stroke="#0b6b52" stroke-width="1.6" fill="none"/>
+                <path d="M306 102l6 8 6-8" fill="#0b6b52"/>
+              </g>
+            </svg></div>
+            <figcaption>Todo lo que descargas aparece en <b>Descargas</b>, no en el escritorio. Búscalo ahí primero.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </article>
+
+    <article class="step" id="paso-7" data-step="7">
+      <header class="step__head">
+        <span class="step__num" aria-hidden="true">7</span>
+        <h3 class="step__title">Crear la carpeta de tu web</h3>
+        <label class="tick"><input type="checkbox" data-done="7"><span>Hecho</span></label>
+      </header>
+      <ol class="actions">
+        <li>Abre <strong>Explorador de archivos</strong>.</li>
+        <li>Entra en la unidad <strong>C:</strong> → carpeta <strong>xampp</strong> → carpeta <strong>htdocs</strong>.</li>
+        <li>Dentro de <strong>htdocs</strong>, haz clic derecho en un espacio vacío → <strong>Nuevo</strong> → <strong>Carpeta</strong>.</li>
+        <li>Escribe <code>miwordpress</code> y pulsa <strong>Enter</strong>.</li>
+      </ol>
+      <div class="chiprow">
+        <button class="chip" type="button" data-copy="C:\xampp\htdocs">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+          <span>C:\xampp\htdocs</span>
+        </button>
+      </div>
+      <div class="check">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        <p><strong>Comprueba:</strong> existe <code>C:\xampp\htdocs\miwordpress</code> y está vacía.</p>
+      </div>
+      <p style="margin-top:1rem"><code>htdocs</code> es la carpeta donde el servidor busca las webs. <strong>Todo lo que pongas dentro se verá en el navegador.</strong></p>
+      <details class="trouble">
+        <summary>Si algo no sale</summary>
+        <div class="trouble__body">
+          <p><strong>El nombre se queda mal escrito:</strong> clic derecho → Cambiar nombre. Sin espacios, sin tildes y todo en minúsculas.</p>
+          <p><strong>No encuentro la unidad C:</strong> abre <em>Este equipo</em> en la columna de la izquierda.</p>
+        </div>
+      </details>
+    </article>
+
+    <article class="step step--split" id="paso-8" data-step="8">
+      <header class="step__head">
+        <span class="step__num" aria-hidden="true">8</span>
+        <h3 class="step__title">Descomprimir dentro de la carpeta</h3>
+        <label class="tick"><input type="checkbox" data-done="8"><span>Hecho</span></label>
+      </header>
+      <div class="step__grid">
+        <div>
+          <ol class="actions">
+            <li>Abre <strong>Descargas</strong>.</li>
+            <li>Clic derecho en <code>wordpress.zip</code> → <strong>Extraer todo…</strong></li>
+            <li>Pulsa <strong>Examinar</strong> y elige <code>C:\xampp\htdocs\miwordpress</code>. <strong>No</strong> elijas <code>htdocs</code>.</li>
+            <li>Pulsa <strong>Extraer</strong>.</li>
+          </ol>
+          <div class="check">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            <p><strong>Comprueba:</strong> dentro de <code>miwordpress</code> ves directamente <code>wp-admin</code>, <code>wp-content</code>, <code>wp-includes</code>, <code>index.php</code> y <code>wp-config-sample.php</code>.</p>
+          </div>
+        </div>
+        <div>
+          <figure class="fig">
+            <div class="svgpad"><svg viewBox="0 0 400 220" role="img" aria-labelledby="de-t de-d">
+              <title id="de-t">Descomprimir correctamente dentro de miwordpress</title>
+              <desc id="de-d">Vista de la carpeta miwordpress con los archivos wp-admin, wp-content, wp-includes, index.php y wp-config-sample.php directamente, sin carpeta wordpress de por medio.</desc>
+              <g font-family="Segoe UI, sans-serif">
+                <rect x="6" y="6" width="388" height="208" rx="8" fill="#fff" stroke="#47595a" stroke-width="2"/>
+                <rect x="6" y="6" width="388" height="26" rx="8" fill="#f1f5f4" stroke="#47595a" stroke-width="2"/>
+                <text x="18" y="24" font-size="10.5" fill="#47595a">Explorador de archivos - miwordpress</text>
+                <rect x="16" y="44" width="110" height="28" rx="4" fill="#e5f1ec"/>
+                <rect x="30" y="51" width="20" height="14" fill="#0b6b52"/>
+                <text x="50" y="58" font-size="10" font-weight="700" fill="#0b6b52">wp-admin</text>
+                <rect x="136" y="44" width="110" height="28" rx="4" fill="#e5f1ec"/>
+                <rect x="150" y="51" width="20" height="14" fill="#0b6b52"/>
+                <text x="170" y="58" font-size="10" font-weight="700" fill="#0b6b52">wp-content</text>
+                <rect x="256" y="44" width="110" height="28" rx="4" fill="#e5f1ec"/>
+                <rect x="270" y="51" width="20" height="14" fill="#0b6b52"/>
+                <text x="290" y="58" font-size="10" font-weight="700" fill="#0b6b52">wp-includes</text>
+                <rect x="16" y="88" width="110" height="28" rx="4" fill="#fff" stroke="#47595a"/>
+                <rect x="30" y="95" width="14" height="14" fill="#e5f1ec" stroke="#47595a"/>
+                <text x="50" y="102" font-size="10" font-weight="700" fill="#0f1f1e">index.php</text>
+                <rect x="136" y="88" width="110" height="28" rx="4" fill="#fff" stroke="#47595a"/>
+                <rect x="150" y="95" width="14" height="14" fill="#e5f1ec" stroke="#47595a"/>
+                <text x="170" y="102" font-size="10" font-weight="700" fill="#0f1f1e">wp-config-sample.php</text>
+                <text x="16" y="142" font-size="10" fill="#47595a">Todo directamente, sin carpeta "wordpress" de por medio.</text>
+              </g>
+            </svg></div>
+            <figcaption>Estructura correcta: todos los archivos de WordPress dentro de miwordpress.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </article>
+
+    <article class="step" id="paso-9" data-step="9">
+      <header class="step__head">
+        <span class="step__num" aria-hidden="true">9</span>
+        <h3 class="step__title">Crear la "despensa" (la base de datos)</h3>
+        <label class="tick"><input type="checkbox" data-done="9"><span>Hecho</span></label>
+      </header>
+      <ol class="actions">
+        <li>En el navegador, escribe: <code>http://localhost/phpmyadmin/</code> y pulsa <strong>Enter</strong>.</li>
+        <li>Arriba, pulsa la pestaña <strong>Bases de datos</strong>.</li>
+        <li>En la casilla <strong>Nombre de la base de datos</strong>, escribe: <code>wordpress_db</code>.</li>
+        <li>Pulsa el botón <strong>Crear</strong>.</li>
+        <li><strong>No toques nada más.</strong> No hay que crear tablas: WordPress las crea solo.</li>
+      </ol>
+      <div class="check">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        <p><strong>Comprueba:</strong> en la lista de la izquierda aparece <strong>wordpress_db</strong>.</p>
+      </div>
+    </article>
+
+    <article class="step step--split" id="paso-10" data-step="10">
+      <header class="step__head">
+        <span class="step__num" aria-hidden="true">10</span>
+        <h3 class="step__title">Abrir el instalador de WordPress</h3>
+        <label class="tick"><input type="checkbox" data-done="10"><span>Hecho</span></label>
+      </header>
+      <div class="step__grid">
+        <div>
+          <ol class="actions">
+            <li>En el navegador, escribe: <code>http://localhost/miwordpress/</code> y pulsa <strong>Enter</strong>.</li>
+            <li>Elige <strong>Español</strong> y pulsa <strong>Continuar</strong>.</li>
+            <li>Pulsa el botón <strong>¡Vamos allá!</strong></li>
+          </ol>
+          <div class="check">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            <p><strong>Comprueba:</strong> aparece un formulario que pide datos de la base de datos.</p>
+          </div>
+        </div>
+        <div>
+          <figure class="fig">
+            <div class="svgpad"><svg viewBox="0 0 340 160" role="img" aria-labelledby="ins10-t ins10-d">
+              <title id="ins10-t">Asistente de instalación de WordPress</title>
+              <desc id="ins10-d">Pantalla de bienvenida de WordPress con selección de idioma y botón Vamos allá.</desc>
+              <g font-family="Segoe UI, sans-serif">
+                <rect x="4" y="4" width="332" height="152" rx="8" fill="#e5f1ec" stroke="#0b6b52" stroke-width="2"/>
+                <text x="16" y="24" font-family="Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#0b6b52">Bienvenido a WordPress</text>
+                <text x="16" y="52" fill="#0f1f1e">Elige tu idioma:</text>
+                <rect x="16" y="64" width="100" height="22" rx="4" fill="#fff" stroke="#0b6b52" stroke-width="1.6"/>
+                <text x="66" y="80" text-anchor="middle" font-size="10" fill="#0b6b52">Español</text>
+                <rect x="16" y="104" width="100" height="28" rx="4" fill="#0b6b52"/>
+                <text x="66" y="120" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">¡Vamos allá!</text>
+              </g>
+            </svg></div>
+            <figcaption>El asistente de WordPress pide el idioma antes de continuar.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </article>
+
+    <article class="step" id="paso-11" data-step="11">
+      <header class="step__head">
+        <span class="step__num" aria-hidden="true">11</span>
+        <h3 class="step__title">Rellenar los datos de conexión</h3>
+        <label class="tick"><input type="checkbox" data-done="11"><span>Hecho</span></label>
+      </header>
+      <table class="tbl">
+        <thead><tr><th>Campo del formulario</th><th>Qué escribir</th></tr></thead>
+        <tbody>
+          <tr><td>Nombre de la base de datos</td><td><code>wordpress_db</code></td></tr>
+          <tr><td>Nombre de usuario</td><td><code>root</code></td></tr>
+          <tr><td>Contraseña</td><td><strong>nada, déjala vacía</strong></td></tr>
+          <tr><td>Servidor de la base de datos</td><td><code>localhost</code></td></tr>
+          <tr><td>Prefijo de tabla</td><td><code>wp_</code> (déjalo como está)</td></tr>
+        </tbody>
+      </table>
+      <ol class="actions">
+        <li>Copia estos datos exactamente.</li>
+        <li>Pulsa <strong>Enviar</strong> y después <strong>Ejecutar la instalación</strong>.</li>
+      </ol>
+      <div class="check">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        <p><strong>Comprueba:</strong> sale una pantalla que pide el título del sitio, un usuario y una contraseña.</p>
+      </div>
+      <p style="margin-top:1rem"><strong>Si sale un error rojo</strong> que habla de "conectar con la base de datos": revisa que escribiste <code>root</code>, que la contraseña está vacía y que el servidor es <code>localhost</code>. Es el fallo más común.</p>
+    </article>
+
+    <article class="step step--split" id="paso-12" data-step="12">
+      <header class="step__head">
+        <span class="step__num" aria-hidden="true">12</span>
+        <h3 class="step__title">Crear tu usuario de administrador</h3>
+        <label class="tick"><input type="checkbox" data-done="12"><span>Hecho</span></label>
+      </header>
+      <div class="step__grid">
+        <div>
+          <table class="tbl">
+            <thead><tr><th>Campo</th><th>Qué escribir</th></tr></thead>
+            <tbody>
+              <tr><td>Título del sitio</td><td>El nombre de tu web, por ejemplo: <code>La web de Ana</code></td></tr>
+              <tr><td>Nombre de usuario</td><td>Algo tuyo, por ejemplo: <code>ana</code> (evita <code>admin</code>)</td></tr>
+              <tr><td>Contraseña</td><td>Una que recuerdes. Apúntala en tu cuaderno.</td></tr>
+              <tr><td>Correo electrónico</td><td>Tu correo, o el que te diga el profesor</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <p>Pulsa <strong>Instalar WordPress</strong> y espera.</p>
+          <div class="check">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            <p><strong>Comprueba:</strong> aparece una pantalla con un botón <strong>Acceder</strong>.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="step" id="paso-13" data-step="13">
+      <header class="step__head">
+        <span class="step__num" aria-hidden="true">13</span>
+        <h3 class="step__title">Entrar en tu web</h3>
+        <label class="tick"><input type="checkbox" data-done="13"><span>Hecho</span></label>
+      </header>
+      <ol class="actions">
+        <li>Pulsa <strong>Acceder</strong>.</li>
+        <li>Escribe tu usuario y tu contraseña.</li>
+        <li>Pulsa <strong>Entrar</strong>.</li>
+      </ol>
+      <div class="check">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        <p><strong>Comprueba:</strong> ves el escritorio de WordPress (un panel con menús a la izquierda).</p>
+      </div>
+    </article>
+
+    <article class="step" id="paso-14" data-step="14">
+      <header class="step__head">
+        <span class="step__num" aria-hidden="true">14</span>
+        <h3 class="step__title">Ver tu web publicada</h3>
+        <label class="tick"><input type="checkbox" data-done="14"><span>Hecho</span></label>
+      </header>
+      <ol class="actions">
+        <li>Arriba a la izquierda, pasa el ratón por el nombre de tu web.</li>
+        <li>Pulsa <strong>Visitar sitio</strong>.</li>
+      </ol>
+      <div class="check">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        <p><strong>Comprueba:</strong> ves tu web publicada. <strong>Ya está: tienes una web funcionando.</strong></p>
+      </div>
+    </article>
+
+    <div class="final">
+      <h2 id="final-title">Chuleta: direcciones útiles</h2>
+      <p id="final-msg" hidden><strong>¡14 de 14!</strong> Ya tienes tu web funcionando en tu ordenador.</p>
+      <div class="chiprow">
+        <button class="chip" type="button" data-copy="http://localhost/miwordpress/"><span>http://localhost/miwordpress/</span></button>
+        <button class="chip" type="button" data-copy="http://localhost/miwordpress/wp-admin/"><span>Panel de WordPress</span></button>
+        <button class="chip" type="button" data-copy="http://localhost/phpmyadmin/"><span>phpMyAdmin</span></button>
+        <button class="chip" type="button" data-copy="http://localhost/"><span>Panel de XAMPP</span></button>
+      </div>
+    </div>
+
+    <footer class="end">
+      <p>Práctica previa: <a href="../sesion-0/index.html">Sesión 0 · Primeros pasos</a>. Extensión: <a href="../practica-gutenberg/index.html">práctica web con Gutenberg</a>. Versión técnica: <code>guia-docente-xampp-wordpress.md</code>.</p>
+      <p>Esta página funciona sin internet y no envía datos a ningún sitio. Tu progreso se guarda solo en este navegador.</p>
+      <p><span id="live" role="status" aria-live="polite" class="noprint"></span></p>
+    </footer>
+
+  </main>
+
+<script>
+window.IFCT0510 = {
+  key: 'ifct0510-xampp-progress.v1',
+  fontKey: 'ifct0510-xampp-font.v1',
+  total: 14,
+  sizes: ['100%','112.5%','125%','137.5%']
+};
+</script>
+<script src="../assets/js/shared.js"></script>
+
+</body>
+</html>
