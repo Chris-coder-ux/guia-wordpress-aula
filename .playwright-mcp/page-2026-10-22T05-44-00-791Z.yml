@@ -1,8 +1,0 @@
-- generic [ref=f12e2]:
-  - text: You are attempting to log out of Cafetería La Espiga
-  - paragraph
-  - paragraph [ref=f12e3]:
-    - text: Do you really want to
-    - link "log out" [ref=f12e4] [cursor=pointer]:
-      - /url: http://localhost/cafeteria/wp-login.php?action=logout&_wpnonce=64657933a3
-    - text: "?"

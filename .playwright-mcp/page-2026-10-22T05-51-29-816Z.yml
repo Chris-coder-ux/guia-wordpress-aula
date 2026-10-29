@@ -1,8 +1,0 @@
-- generic [ref=f13e2]:
-  - text: Estás intentando salir de Cafetería La Espiga.
-  - paragraph
-  - paragraph [ref=f13e3]:
-    - text: ¿Seguro que quieres
-    - link "salir" [ref=f13e4] [cursor=pointer]:
-      - /url: http://localhost/cafeteria/wp-login.php?action=logout&_wpnonce=64657933a3
-    - text: "?"
