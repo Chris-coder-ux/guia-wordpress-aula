@@ -242,5 +242,25 @@
     steps.forEach(function(s){ io.observe(s); });
   }
 
+  // ---------- botón Volver arriba ----------
+  var backTop = document.querySelector('.back-to-top');
+  if(backTop){
+    var showThreshold = 300;
+    function toggleBackTop(){
+      if(window.scrollY > showThreshold){
+        backTop.classList.add('visible');
+        backTop.hidden = false;
+      } else {
+        backTop.classList.remove('visible');
+        backTop.hidden = true;
+      }
+    }
+    window.addEventListener('scroll', toggleBackTop, { passive: true });
+    backTop.addEventListener('click', function(){
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    toggleBackTop();
+  }
+
   render();
 })();
