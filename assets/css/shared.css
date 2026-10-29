@@ -575,7 +575,11 @@ h1{
 .trouble__body :last-child{margin-bottom:0}
 
 /* ---------- figures ---------- */
-figure.fig{margin:0}
+figure.fig{
+  margin:0;
+  width:100%;
+  max-width:720px;
+}
 figure.fig svg{
   width:100%;
   height:auto;
@@ -584,11 +588,13 @@ figure.fig svg{
   background:none;
 }
 .svgpad{
-  display:inline-block;
+  display:block;
+  width:100%;
   padding:.75rem .9rem;
   border:1px solid var(--rule);
   border-radius:10px;
   background:#fbfcfc;
+  box-sizing:border-box;
 }
 figcaption{
   font-size:.82rem;
