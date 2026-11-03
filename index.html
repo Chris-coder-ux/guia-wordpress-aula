@@ -7,63 +7,7 @@
   <meta name="color-scheme" content="light">
   <title>IFCT0510 · Prácticas de aula · XAMPP y WordPress</title>
   <link rel="stylesheet" href="assets/css/shared.css">
-  <style>
-    /* Portada: tarjetas de módulo, no encabezados horizontales de bloque. */
-    .part--card {
-      display: block;
-      border-bottom: 0;
-      padding-bottom: 0;
-    }
-
-    .part--card__head {
-      display: flex;
-      align-items: baseline;
-      gap: 1rem;
-      border-bottom: 2px solid var(--ink);
-      padding-bottom: .6rem;
-    }
-
-    .part--card__body {
-      margin-top: 1rem;
-    }
-
-    .part--card__body> :first-child {
-      margin-top: 0;
-    }
-
-    .part--card__body> :last-child {
-      margin-bottom: 0;
-    }
-
-    /* 560px: ancho en el que el encabezado horizontal (etiqueta + título) deja de caber junto sin forzar salto incómodo del título. Valor contenido-driven, no tamaño de dispositivo. */
-    @media (max-width: 560px) {
-      .part--card__head {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: .45rem;
-      }
-    }
-
-    @media print {
-      .part--card {
-        break-before: auto;
-      }
-    }
-
-    /* Focus visible para navegación por teclado en controles de tarjeta. */
-    .part--card__body a.btn:focus-visible {
-      outline: 2px solid var(--ink);
-      outline-offset: 2px;
-      border-radius: 2px;
-    }
-
-    /* Touch target mínimo para enlaces del rail lateral (WCAG SC 2.5.8). */
-    .rail ol a {
-      display: block;
-      padding: .4rem .6rem;
-    }
-  </style>
-  <link rel="icon" type="image/svg+xml" href="assets/svg/favicon.svg">
+<link rel="icon" type="image/svg+xml" href="assets/svg/favicon.svg">
 </head>
 <body>
   <a class="skip" href="#contenido">Saltar al contenido</a>
@@ -105,45 +49,27 @@
           capturas). Luego sigue con la práctica de <strong>XAMPP y WordPress</strong> y, por último, con la de
           <strong>Gutenberg</strong>.</p>
       </div>
-      <section class="part part--card">
-        <div class="part--card__head">
-          <span class="part__k">Sesión 0</span>
-          <h2>Primeros pasos con el ordenador</h2>
-        </div>
-        <div class="part--card__body">
-          <p>12 pasos, ≈ 90 minutos. Encender, escritorio, ratón, teclado, navegador, descargas, carpetas, capturas y
+          <section class="part">
+      <span class="part__k">Sesión 0</span>
+      <h2>Primeros pasos con el ordenador</h2>
+      <p>12 pasos, ≈ 90 minutos. Encender, escritorio, ratón, teclado, navegador, descargas, carpetas, capturas y
             ergonomía.</p>
-          <div class="part__actions">
-            <a class="btn btn--solid" href="sesion-0/index.html">Ir a Sesión 0</a>
-          </div>
-        </div>
-      </section>
-      <section class="part part--card">
-        <div class="part--card__head">
-          <span class="part__k">Práctica principal</span>
-          <h2>Instalar XAMPP y WordPress en local</h2>
-        </div>
-        <div class="part--card__body">
-          <p>14 pasos, 3 sesiones de 60 min. Descarga, instalación, base de datos, despliegue y acceso al panel de
+      <p><a class="btn btn--solid" href="sesion-0/index.html">Ir a Sesión 0</a></p>
+    </section>
+          <section class="part">
+      <span class="part__k">Práctica principal</span>
+      <h2>Instalar XAMPP y WordPress en local</h2>
+      <p>14 pasos, 3 sesiones de 60 min. Descarga, instalación, base de datos, despliegue y acceso al panel de
             WordPress.</p>
-          <div class="part__actions">
-            <a class="btn btn--solid" href="practica-xampp/index.html">Ir a la práctica de XAMPP y WordPress</a>
-          </div>
-        </div>
-      </section>
-      <section class="part part--card">
-        <div class="part--card__head">
-          <span class="part__k">Práctica de extensión</span>
-          <h2>Crear una web con WordPress y Gutenberg</h2>
-        </div>
-        <div class="part--card__body">
-          <p>Primera sesión de 60 min: entrar al panel, crear una página con encabezado, párrafo e imagen y guardar como
+      <p><a class="btn btn--solid" href="practica-xampp/index.html">Ir a la práctica de XAMPP y WordPress</a></p>
+    </section>
+          <section class="part">
+      <span class="part__k">Práctica de extensión</span>
+      <h2>Crear una web con WordPress y Gutenberg</h2>
+      <p>Primera sesión de 60 min: entrar al panel, crear una página con encabezado, párrafo e imagen y guardar como
             borrador. Menú, estilos y publicación quedan para ampliación.</p>
-          <div class="part__actions">
-            <a class="btn btn--solid" href="practica-gutenberg/index.html">Ir a la práctica de Gutenberg</a>
-          </div>
-        </div>
-      </section>
+      <p><a class="btn btn--solid" href="practica-gutenberg/index.html">Ir a la práctica de Gutenberg</a></p>
+    </section>
       <footer class="end">
         <p>Material didáctico del certificado <strong>IFCT0510</strong>. Funciona sin internet y no envía datos a ningún
           sitio.</p>
