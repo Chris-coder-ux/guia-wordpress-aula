@@ -1,85 +1,148 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="light">
-<title>IFCT0510 · Prácticas de aula · XAMPP y WordPress</title>
-<link rel="stylesheet" href="assets/css/shared.css">
-<link rel="icon" type="image/svg+xml" href="assets/svg/favicon.svg">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>IFCT0510 · Prácticas de aula · XAMPP y WordPress</title>
+  <link rel="stylesheet" href="assets/css/shared.css">
+  <style>
+    /* Portada: tarjetas de módulo, no encabezados horizontales de bloque. */
+    .part--card {
+      display: block;
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .part--card__head {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      border-bottom: 2px solid var(--ink);
+      padding-bottom: .6rem;
+    }
+
+    .part--card__body {
+      margin-top: 1rem;
+    }
+
+    .part--card__body> :first-child {
+      margin-top: 0;
+    }
+
+    .part--card__body> :last-child {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 560px) {
+      .part--card__head {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: .45rem;
+      }
+    }
+
+    @media print {
+      .part--card {
+        break-before: auto;
+      }
+    }
+  </style>
+  <link rel="icon" type="image/svg+xml" href="assets/svg/favicon.svg">
 </head>
 <body>
-<a class="skip" href="#contenido">Saltar al contenido</a>
-
-<header class="topbar">
-  <div class="topbar__in">
-    <div class="brand">
-      <img src="assets/svg/logo.svg" width="26" height="26" alt="" aria-hidden="true">
-      <span>IFCT0510 · Prácticas de aula</span>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+  <header class="topbar">
+    <div class="topbar__in">
+      <div class="brand">
+        <img src="assets/svg/logo.svg" width="26" height="26" alt="" aria-hidden="true">
+        <span>IFCT0510 · Prácticas de aula</span>
+      </div>
     </div>
+  </header>
+  <div class="shell">
+    <nav class="rail noprint" aria-label="Módulos del curso">
+      <h2>Módulos</h2>
+      <ol>
+        <li><a href="sesion-0/index.html">Sesión 0 · Primeros pasos con el ordenador</a></li>
+        <li><a href="practica-xampp/index.html">Práctica · XAMPP y WordPress</a></li>
+        <li><a href="practica-gutenberg/index.html">Práctica · WordPress y Gutenberg</a></li>
+      </ol>
+      <p style="margin-top:1.2rem; font-size:.8rem; color:var(--ink-2)">
+        Orden recomendado: Sesión 0 → XAMPP/WordPress → Gutenberg.
+      </p>
+    </nav>
+    <main id="contenido">
+      <section class="hero">
+        <h1>IFCT0510 · Prácticas de aula</h1>
+        <p class="lead">Material didáctico para aprender a instalar XAMPP y WordPress en tu ordenador, desde cero, sin
+          internet y sin saber programar.</p>
+        <ul class="meta">
+          <li>Certificado IFCT0510</li>
+          <li>Formato: HTML sin dependencias externas</li>
+          <li>Imprimible en A4</li>
+          <li>Funciona con doble clic</li>
+        </ul>
+      </section>
+      <div class="block">
+        <h2>¿Por dónde empezar?</h2>
+        <p>Si nunca has usado un ordenador, empieza por la <strong>Sesión 0</strong> (ratón, teclado, carpetas,
+          capturas). Luego sigue con la práctica de <strong>XAMPP y WordPress</strong> y, por último, con la de
+          <strong>Gutenberg</strong>.</p>
+      </div>
+      <section class="part part--card">
+        <div class="part--card__head">
+          <span class="part__k">Sesión 0</span>
+          <h2>Primeros pasos con el ordenador</h2>
+        </div>
+        <div class="part--card__body">
+          <p>12 pasos, ≈ 90 minutos. Encender, escritorio, ratón, teclado, navegador, descargas, carpetas, capturas y
+            ergonomía.</p>
+          <div class="part__actions">
+            <a class="btn btn--solid" href="sesion-0/index.html">Ir a Sesión 0</a>
+          </div>
+        </div>
+      </section>
+      <section class="part part--card">
+        <div class="part--card__head">
+          <span class="part__k">Práctica principal</span>
+          <h2>Instalar XAMPP y WordPress en local</h2>
+        </div>
+        <div class="part--card__body">
+          <p>14 pasos, 3 sesiones de 60 min. Descarga, instalación, base de datos, despliegue y acceso al panel de
+            WordPress.</p>
+          <div class="part__actions">
+            <a class="btn btn--solid" href="practica-xampp/index.html">Ir a la práctica de XAMPP y WordPress</a>
+          </div>
+        </div>
+      </section>
+      <section class="part part--card">
+        <div class="part--card__head">
+          <span class="part__k">Práctica de extensión</span>
+          <h2>Crear una web con WordPress y Gutenberg</h2>
+        </div>
+        <div class="part--card__body">
+          <p>Primera sesión de 60 min: entrar al panel, crear una página con encabezado, párrafo e imagen y guardar como
+            borrador. Menú, estilos y publicación quedan para ampliación.</p>
+          <div class="part__actions">
+            <a class="btn btn--solid" href="practica-gutenberg/index.html">Ir a la práctica de Gutenberg</a>
+          </div>
+        </div>
+      </section>
+      <footer class="end">
+        <p>Material didáctico del certificado <strong>IFCT0510</strong>. Funciona sin internet y no envía datos a ningún
+          sitio.</p>
+        <p>Versión técnica: <code>guia-docente-xampp-wordpress.md</code> · Ficha para alumnado:
+          <code>ficha-practica-xampp-wordpress.md</code>.</p>
+      </footer>
+    </main>
   </div>
-</header>
-
-<div class="shell">
-  <nav class="rail noprint" aria-label="Módulos del curso">
-    <h2>Módulos</h2>
-    <ol>
-      <li><a href="sesion-0/index.html">Sesión 0 · Primeros pasos con el ordenador</a></li>
-      <li><a href="practica-xampp/index.html">Práctica · XAMPP y WordPress</a></li>
-      <li><a href="practica-gutenberg/index.html">Práctica · WordPress y Gutenberg</a></li>
-    </ol>
-    <p style="margin-top:1.2rem; font-size:.8rem; color:var(--ink-2)">
-      Orden recomendado: Sesión 0 → XAMPP/WordPress → Gutenberg.
-    </p>
-  </nav>
-
-  <main id="contenido">
-    <section class="hero">
-      <h1>IFCT0510 · Prácticas de aula</h1>
-      <p class="lead">Material didáctico para aprender a instalar XAMPP y WordPress en tu ordenador, desde cero, sin internet y sin saber programar.</p>
-      <ul class="meta">
-        <li>Certificado IFCT0510</li>
-        <li>Formato: HTML sin dependencias externas</li>
-        <li>Imprimible en A4</li>
-        <li>Funciona con doble clic</li>
-      </ul>
-    </section>
-
-    <div class="block">
-      <h2>¿Por dónde empezar?</h2>
-      <p>Si nunca has usado un ordenador, empieza por la <strong>Sesión 0</strong> (ratón, teclado, carpetas, capturas). Luego sigue con la práctica de <strong>XAMPP y WordPress</strong> y, por último, con la de <strong>Gutenberg</strong>.</p>
-    </div>
-
-    <section class="part">
-      <span class="part__k">Sesión 0</span>
-      <h2>Primeros pasos con el ordenador</h2>
-      <p>12 pasos, ≈ 90 minutos. Encender, escritorio, ratón, teclado, navegador, descargas, carpetas, capturas y ergonomía.</p>
-      <p><a class="btn btn--solid" href="sesion-0/index.html">Ir a Sesión 0</a></p>
-    </section>
-
-    <section class="part">
-      <span class="part__k">Práctica principal</span>
-      <h2>Instalar XAMPP y WordPress en local</h2>
-      <p>14 pasos, 3 sesiones de 60 min. Descarga, instalación, base de datos, despliegue y acceso al panel de WordPress.</p>
-      <p><a class="btn btn--solid" href="practica-xampp/index.html">Ir a la práctica de XAMPP y WordPress</a></p>
-    </section>
-
-    <section class="part">
-      <span class="part__k">Práctica de extensión</span>
-      <h2>Crear una web con WordPress y Gutenberg</h2>
-      <p>10 pasos, 60 min. Entrar al panel, crear páginas, usar el editor de bloques, menús y publicar.</p>
-      <p><a class="btn btn--solid" href="practica-gutenberg/index.html">Ir a la práctica de Gutenberg</a></p>
-    </section>
-
-    <footer class="end">
-      <p>Material didáctico del certificado <strong>IFCT0510</strong>. Funciona sin internet y no envía datos a ningún sitio.</p>
-      <p>Versión técnica: <code>guia-docente-xampp-wordpress.md</code> · Ficha para alumnado: <code>ficha-practica-xampp-wordpress.md</code>.</p>
-    </footer>
-  </main>
-
-<button class="back-to-top" aria-label="Volver arriba" hidden>
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
-</button>
-
+  <button class="back-to-top" aria-label="Volver arriba" hidden>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round" aria-hidden="true">
+      <path d="M18 15l-6-6-6 6" />
+    </svg>
+  </button>
 </body>
 </html>
