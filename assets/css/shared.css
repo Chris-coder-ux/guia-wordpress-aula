@@ -866,6 +866,9 @@ figure.fig.fig--poster{
 figure.fig.fig--poster--zonas{
   --poster-min:1100px;
 }
+figure.fig.fig--poster--raton{
+  --poster-min:900px;
+}
 figure.fig.fig--poster .fig--poster__scroll{
   overflow-x:auto;
   -webkit-overflow-scrolling:touch;
