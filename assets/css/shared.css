@@ -872,6 +872,9 @@ figure.fig.fig--poster--raton{
 figure.fig.fig--poster--teclado{
   --poster-min:900px;
 }
+figure.fig.fig--poster--navegador{
+  --poster-min:900px;
+}
 figure.fig.fig--poster .fig--poster__scroll{
   overflow-x:auto;
   -webkit-overflow-scrolling:touch;

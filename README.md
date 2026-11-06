@@ -136,6 +136,7 @@ Carpeta despliegue     C:\xampp\htdocs\miwordpress\
 - Infografía del paso 2 de `sesion-0/`: `assets/svg/zonas-escritorio.svg` — póster de 1200 × 840 con las 5 zonas del escritorio; se ve en miniatura y se abre a tamaño nativo con el enlace «Abrir la infografía ampliada»
 - Ilustración del paso 3 de `sesion-0/`: `assets/svg/raton.svg` — póster de 900 × 560 con la postura de la mano sobre el ratón y el puntero; se ve en miniatura y se abre a tamaño nativo con el enlace «Abrir la ilustración ampliada»
 - Ilustración del paso 4 de `sesion-0/`: `assets/svg/teclado.svg` — póster de 900 × 380 con el teclado completo y las 8 teclas de la sesión resaltadas en verde; se ve en miniatura y se abre a tamaño nativo con el enlace «Abrir la ilustración ampliada»
+- Ilustración del paso 5 de `sesion-0/`: `assets/svg/navegador.svg` — póster de 900 × 560 con la ventana del navegador, la barra de direcciones y el buscador de Google resaltados en verde; se ve en miniatura y se abre a tamaño nativo con el enlace «Abrir la ilustración ampliada»
 
 ---
 
