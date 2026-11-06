@@ -1,4 +1,95 @@
 /* ============================================================
+   IFCT0510 — SVG: tokens, escala y utilidades
+   Sistema comun para los diagramas e iconos SVG del proyecto.
+   Los diagramas son inline en cada HTML; esta hoja define la
+   escala (radios, grosores, tipografia) y las utilidades que
+   sustituyen a los literales de color dentro del SVG.
+   ============================================================ */
+
+:root{
+  /* grosores de trazo */
+  --svg-line-1:1.2px;
+  --svg-line-2:1.5px;
+  --svg-line-3:2px;
+  /* radios de esquina */
+  --svg-r-1:4px;
+  --svg-r-2:8px;
+  --svg-r-3:12px;
+  --svg-r-4:20px;
+  /* escala tipografica */
+  --svg-fs-1:9px;
+  --svg-fs-2:11px;
+  --svg-fs-3:13px;
+}
+
+/* Contenedor oculto de <defs> compartidos por documento */
+.svg-defs{
+  position:absolute;
+  width:0;
+  height:0;
+  overflow:hidden;
+}
+
+/* Superficies y trazos */
+.svg-surface{
+  fill:var(--panel, #ffffff);
+  stroke:var(--rule, #ccd6d4);
+  stroke-width:var(--svg-line-2);
+}
+.svg-surface--soft{
+  fill:var(--signal-soft, #e5f1ec);
+  stroke:var(--rule, #ccd6d4);
+  stroke-width:var(--svg-line-1);
+}
+.svg-rule{
+  fill:none;
+  stroke:var(--rule, #ccd6d4);
+  stroke-width:var(--svg-line-1);
+}
+.svg-rule--strong{
+  fill:none;
+  stroke:var(--ink-2, #47595a);
+  stroke-width:var(--svg-line-2);
+}
+
+/* Estados (codigo de color de la practica) */
+.svg-ok{
+  stroke:var(--signal, #0b6b52);
+  fill:none;
+}
+.svg-warn{
+  stroke:var(--warn, #8a5a00);
+  fill:none;
+}
+.svg-alert{
+  stroke:var(--alert, #a8321f);
+  fill:none;
+}
+.svg-ok-fill{ fill:var(--signal, #0b6b52); }
+.svg-warn-fill{ fill:var(--warn, #8a5a00); }
+.svg-alert-fill{ fill:var(--alert, #a8321f); }
+
+/* Tipografia dentro del SVG */
+.svg-title{
+  font-size:var(--svg-fs-3);
+  font-weight:700;
+  fill:var(--ink, #0f1f1e);
+}
+.svg-label{
+  font-size:var(--svg-fs-2);
+  fill:var(--ink, #0f1f1e);
+}
+.svg-hint{
+  font-size:var(--svg-fs-1);
+  fill:var(--ink-2, #47595a);
+}
+.svg-mono{
+  font-family:var(--mono);
+  font-size:var(--svg-fs-2);
+}
+
+
+/* ============================================================
    IFCT0510 — CSS compartido (SRP)
    Tokens, reset, layout, componentes y impresión.
    Se carga en todos los módulos: sesion-0, practica-gutenberg,
@@ -81,16 +172,20 @@ hr{
 
 /* ---------- skip link ---------- */
 .skip{
-  position:absolute;
-  left:-9999px;
-  top:0;
+  position:fixed;
+  top:-1000px;
+  left:0.5rem;
   background:var(--ink);
   color:#fff;
   padding:.8rem 1.2rem;
   z-index:100;
-  border-radius:0 0 8px 0;
+  border-radius:0 0 8px 8px;
+  transition:top 0.2s ease;
 }
-.skip:focus{left:0}
+.skip:focus{
+  top:0.5rem;
+  left:0.5rem;
+}
 
 /* ---------- top bar ---------- */
 .topbar{
@@ -192,7 +287,7 @@ hr{
 
 /* ---------- shell ---------- */
 .shell{
-  max-width:1180px;
+  max-width:1440px;
   margin:0 auto;
   padding:2.5rem 1.25rem 7rem;
   display:grid;
@@ -232,6 +327,12 @@ main{min-width:0}
   width:2px;
   background:var(--rule-soft);
   border-radius:2px;
+}
+/* Contenedor de la barra de progreso del rail. El relleno (.rail__fill) es
+   hermano de la lista y se ancla a este bloque, no al <ol>: asi el relleno
+   queda por encima de la pista vertical y nunca se descuadra. */
+.rail__progress{
+  position:relative;
 }
 .rail__fill{
   position:absolute;
@@ -363,12 +464,10 @@ h1{
   margin:0 0 1rem;
   font-weight:750;
   text-wrap:balance;
-  max-width:20ch;
 }
 .lead{
   font-size:1.2rem;
   color:var(--ink-2);
-  max-width:52ch;
   margin-bottom:1.5rem;
   text-wrap:pretty;
 }
@@ -455,12 +554,12 @@ h1{
 
 /* ---------- parts ---------- */
 .part{
-  margin:4rem 0 1.5rem;
+  margin:3rem 0 2rem;
+  padding:0 1rem 1rem;
   display:flex;
-  align-items:baseline;
-  gap:1rem;
-  border-bottom:2px solid var(--ink);
-  padding-bottom:.6rem;
+  flex-direction:column;
+  gap:.75rem;
+  border-bottom:1px solid var(--rule-soft);
 }
 .part__k{
   font-size:.75rem;
@@ -468,7 +567,14 @@ h1{
   text-transform:uppercase;
   font-weight:750;
   color:var(--signal);
-  white-space:nowrap;
+  white-space:normal;
+  min-width:0;
+  align-self:flex-start;
+}
+.part__content{
+  display:flex;
+  flex-direction:column;
+  gap:.4rem;
 }
 .part h2{
   font-size:clamp(1.4rem,3vw,1.9rem);
@@ -477,11 +583,40 @@ h1{
   text-wrap:balance;
 }
 .part__time{
-  margin-left:auto;
   font-size:.85rem;
   color:var(--ink-2);
-  white-space:nowrap;
+  white-space:normal;
 }
+.part > .btn{
+  align-self:flex-start;
+}
+@media (min-width:768px){
+  .part{
+    gap:1rem;
+  }
+  .part__content{
+    gap:.4rem;
+  }
+}
+
+/* ---------- distinción visual entre partes ---------- */
+.part--sesion-0{
+  border-left:4px solid var(--signal);
+  background:#fbfcfc;
+}
+.part--sesion-0 .part__k{color:var(--signal)}
+
+.part--xampp{
+  border-left:4px solid #1d4ed8;
+  background:#f8fafc;
+}
+.part--xampp .part__k{color:#1d4ed8}
+
+.part--gutenberg{
+  border-left:4px solid #d97706;
+  background:#fffbeb;
+}
+.part--gutenberg .part__k{color:#d97706}
 
 /* ---------- steps ---------- */
 .step{
@@ -562,6 +697,20 @@ h1{
 }
 @media (min-width:900px){
   .step--split .step__grid{grid-template-columns:1.05fr .95fr; align-items:start}
+  .step--split[style*="--fig-wide-span"] .fig--wide{grid-column: var(--fig-wide-span);}
+}
+
+/* Ancho consistente para pasos sin grid (pasos 3, 5, 7, 9, 11, 13, 14) */
+.step:not(.step--split) > .actions,
+.step:not(.step--split) > .check,
+.step:not(.step--split) > .chiprow,
+.step:not(.step--split) > .trouble,
+.step:not(.step--split) > p,
+.step:not(.step--split) > table,
+.step:not(.step--split) > .notice {
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* ---------- actions / check ---------- */
@@ -605,6 +754,15 @@ h1{
   margin:1rem 0 0;
   -webkit-print-color-adjust:exact;
   print-color-adjust:exact;
+}
+.step:not(.step--split) > .check--illustration{max-width:none}
+.check--illustration{display:block}
+.check--illustration svg{
+  display:block;
+  width:100%;
+  max-width:100%;
+  height:auto;
+  margin:0 auto;
 }
 .check svg{flex:none; margin-top:.2rem}
 .check p{margin:0; font-size:.97rem}
@@ -651,6 +809,9 @@ figure.fig{
   width:100%;
   max-width:720px;
 }
+figure.fig--wide{
+  max-width:620px;
+}
 figure.fig svg{
   width:100%;
   height:auto;
@@ -666,6 +827,26 @@ figure.fig svg{
   border-radius:10px;
   background:#fbfcfc;
   box-sizing:border-box;
+  aspect-ratio:340/200;
+}
+
+.svgpad svg{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+.step--split .fig--wide{
+  justify-self:center;
+  width:100%;
+  max-width:620px;
+}
+@media (min-width:900px){
+  .step--split .fig--wide{
+    max-width:660px;
+  }
+  .step--split .fig--wide .svgpad{
+    padding:1rem 1.1rem;
+  }
 }
 figcaption{
   font-size:.82rem;

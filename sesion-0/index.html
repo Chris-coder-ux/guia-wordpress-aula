@@ -1,404 +1,1113 @@
-<!DOCTYPE html>
+﻿<!doctype html>
 <html lang="es">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="light">
-<title>Sesión 0 · Primeros pasos con el ordenador</title>
-<link rel="stylesheet" href="../assets/css/shared.css">
-<link rel="icon" type="image/svg+xml" href="../assets/svg/favicon.svg">
-</head>
-<body>
-<a class="skip" href="#contenido">Saltar al contenido</a>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <title>Sesión 0 · Primeros pasos con el ordenador</title>
+    <link rel="stylesheet" href="../assets/css/shared.css" />
+    <link rel="icon" type="image/svg+xml" href="../assets/svg/favicon.svg" />
+    <style>
+      /* Sistema SVG del modulo Sesion 0 (Onda A).
+     Las utilidades comunes viven en assets/css/shared.css; aqui se fija el
+     prefijo de los ids de <defs> y la escala tipografica del modulo. */
+      .sesion-svg {
+        --svg-fs-1: 9px;
+        --svg-fs-2: 11px;
+        --svg-fs-3: 13px;
+      }
+    </style>
+  </head>
 
-<header class="topbar">
-  <div class="topbar__in">
-    <div class="brand">
-      <img src="../assets/svg/logo.svg" width="26" height="26" alt="" aria-hidden="true">
-      <span>Sesión 0 · Primeros pasos con el ordenador</span>
-    </div>
-    <div class="meter" role="group" aria-label="Progreso de la sesión">
-      <div class="meter__track" aria-hidden="true"><div class="meter__fill" id="bar"></div></div>
-      <span><b id="count">0</b> de <span id="total">12</span> pasos</span>
-    </div>
-    <div class="tools">
-      <button class="btn btn--quiet noprint" type="button" id="font-minus" aria-label="Reducir el tamaño de la letra">A−</button>
-      <button class="btn btn--quiet noprint" type="button" id="font-plus" aria-label="Aumentar el tamaño de la letra">A+</button>
-      <button class="btn" type="button" id="print-btn">
-        <img src="../assets/svg/print.svg" width="15" height="15" alt="" aria-hidden="true">
-        Imprimir
-      </button>
-    </div>
-  </div>
-</header>
-
-<div class="shell">
-  <nav class="rail noprint" aria-label="Índice de pasos">
-    <a class="rail__home" href="../index.html" aria-label="Volver a la portada">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-      Inicio
-    </a>
-    <h2>Los 12 pasos</h2>
-    <ol id="rail-list">
-      <div class="rail__fill" id="rail-fill" aria-hidden="true"></div>
-      <li><a href="#paso-1" data-target="1"><span class="n">1</span> Encender</a></li>
-      <li><a href="#paso-2" data-target="2"><span class="n">2</span> Escritorio</a></li>
-      <li><a href="#paso-3" data-target="3"><span class="n">3</span> Ratón</a></li>
-      <li><a href="#paso-4" data-target="4"><span class="n">4</span> Teclado</a></li>
-      <li><a href="#paso-5" data-target="5"><span class="n">5</span> Navegador</a></li>
-      <li><a href="#paso-6" data-target="6"><span class="n">6</span> Descargas</a></li>
-      <li><a href="#paso-7" data-target="7"><span class="n">7</span> Carpetas</a></li>
-      <li><a href="#paso-8" data-target="8"><span class="n">8</span> Captura</a></li>
-      <li><a href="#paso-9" data-target="9"><span class="n">9</span> Cuelgues</a></li>
-      <li><a href="#paso-10" data-target="10"><span class="n">10</span> Checklist</a></li>
-      <li><a href="#paso-11" data-target="11"><span class="n">11</span> Ergonomía</a></li>
-      <li><a href="#paso-12" data-target="12"><span class="n">12</span> Notas profesores</a></li>
-    </ol>
-    <p style="margin-top:1.2rem; font-size:.8rem; color:var(--ink-2)">
-      <button class="btn btn--quiet" type="button" id="reset" style="font-size:.8rem; padding:.25rem .5rem">Borrar mi progreso</button>
-    </p>
-  </nav>
-
-  <main id="contenido">
-
-    <section class="hero">
-      <h1>Sesión 0 · Primeros pasos con el ordenador</h1>
-      <p class="lead">Antes de instalar la web, aprendemos lo básico: encender, usar el ratón, el teclado, el navegador y las carpetas. <strong>No hace falta haber usado un ordenador nunca.</strong></p>
-      <ul class="meta">
-        <li data-state>12 pasos</li>
-        <li>90 minutos</li>
-        <li>Sin requisitos previos</li>
-        <li>Funciona sin internet</li>
-      </ul>
-
-      <div class="notice notice--info">
-        <img src="../assets/svg/info.svg" width="22" height="22" alt="" aria-hidden="true">
-        <p><strong>¿Ya sabes lo básico?</strong> Si marcaste todo el checklist del final, puedes ir directo a la <a href="../practica-xampp/index.html">práctica de XAMPP y WordPress</a>.</p>
+  <body>
+    <a class="skip" href="#contenido">Saltar al contenido</a
+    ><!-- Recursos SVG compartidos del modulo (ids prefijados sesion-*).
+     No se dibujan: solo se referencian desde los diagramas. --><svg
+      class="svg-defs"
+      aria-hidden="true"
+      focusable="false"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <defs>
+        <linearGradient id="sesion-surface" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="var(--panel, #ffffff)" />
+          <stop offset="1" stop-color="var(--signal-soft, #e5f1ec)" />
+        </linearGradient>
+        <linearGradient id="sesion-action" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="var(--signal, #0b6b52)" />
+          <stop offset="1" stop-color="var(--ink, #0f1f1e)" />
+        </linearGradient>
+        <filter id="sesion-shadow" x="-20%" y="-20%" width="140%" height="150%">
+          <feDropShadow
+            dx="0"
+            dy="2"
+            stdDeviation="3"
+            flood-color="var(--ink, #0f1f1e)"
+            flood-opacity="0.14"
+          />
+        </filter>
+      </defs>
+    </svg>
+    <header class="topbar">
+      <div class="topbar__in">
+        <div class="brand">
+          <img
+            src="../assets/svg/logo.svg"
+            width="26"
+            height="26"
+            alt=""
+            aria-hidden="true"
+          />
+          <span>Sesión 0 · Primeros pasos con el ordenador</span>
+        </div>
+        <div class="meter" role="group" aria-label="Progreso de la sesión">
+          <div class="meter__track" aria-hidden="true">
+            <div class="meter__fill" id="bar"></div>
+          </div>
+          <span><b id="count">0</b> de <span id="total">12</span> pasos</span>
+        </div>
+        <div class="tools">
+          <button
+            class="btn btn--quiet noprint"
+            type="button"
+            id="font-minus"
+            aria-label="Reducir el tamaño de la letra"
+          >
+            A−</button
+          ><button
+            class="btn btn--quiet noprint"
+            type="button"
+            id="font-plus"
+            aria-label="Aumentar el tamaño de la letra"
+          >
+            A+</button
+          ><button class="btn" type="button" id="print-btn">
+            <img
+              src="../assets/svg/print.svg"
+              width="15"
+              height="15"
+              alt=""
+              aria-hidden="true"
+            />
+            Imprimir
+          </button>
+        </div>
       </div>
+    </header>
+    <div class="shell">
+      <nav class="rail noprint" aria-label="Índice de pasos">
+        <a
+          class="rail__home"
+          href="../index.html"
+          aria-label="Volver a la portada"
+          ><svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+            <polyline points="9 22 9 12 15 12 15 22" />
+          </svg>
+          Inicio
+        </a>
+        <h2>Los 12 pasos</h2>
+        <div class="rail__progress">
+          <ol id="rail-list">
+            <li>
+              <a href="#paso-1" data-target="1"
+                ><span class="n">1</span> Encender</a
+              >
+            </li>
+            <li>
+              <a href="#paso-2" data-target="2"
+                ><span class="n">2</span> Escritorio</a
+              >
+            </li>
+            <li>
+              <a href="#paso-3" data-target="3"><span class="n">3</span> Ratón</a>
+            </li>
+            <li>
+              <a href="#paso-4" data-target="4"
+                ><span class="n">4</span> Teclado</a
+              >
+            </li>
+            <li>
+              <a href="#paso-5" data-target="5"
+                ><span class="n">5</span> Navegador</a
+              >
+            </li>
+            <li>
+              <a href="#paso-6" data-target="6"
+                ><span class="n">6</span> Descargar archivo</a
+              >
+            </li>
+            <li>
+              <a href="#paso-7" data-target="7"
+                ><span class="n">7</span> Carpetas</a
+              >
+            </li>
+            <li>
+              <a href="#paso-8" data-target="8"
+                ><span class="n">8</span> Captura</a
+              >
+            </li>
+            <li>
+              <a href="#paso-9" data-target="9"
+                ><span class="n">9</span> Algo colgado</a
+              >
+            </li>
+            <li>
+              <a href="#paso-10" data-target="10"
+                ><span class="n">10</span> Lista de comprobación</a
+              >
+            </li>
+            <li>
+              <a href="#paso-11" data-target="11"
+                ><span class="n">11</span> Cuidar el cuerpo</a
+              >
+            </li>
+            <li>
+              <a href="#paso-12" data-target="12"
+                ><span class="n">12</span> Notas profesores</a
+              >
+            </li>
+          </ol>
+          <div class="rail__fill" id="rail-fill" aria-hidden="true"></div>
+        </div>
+        <p style="margin-top: 1.2rem; font-size: 0.8rem; color: var(--ink-2)">
+          <button
+            class="btn btn--quiet"
+            type="button"
+            id="reset"
+            style="font-size: 0.8rem; padding: 0.25rem 0.5rem"
+          >
+            Borrar mi progreso
+          </button>
+        </p>
+      </nav>
+      <main id="contenido" tabindex="-1">
+        <section class="hero">
+          <h1>Sesión 0 · Primeros pasos con el ordenador</h1>
+          <p class="lead">
+            Antes de instalar la web, aprendemos lo básico: encender, usar el
+            ratón, el teclado, el navegador y las carpetas.
+            <strong>No hace falta haber usado un ordenador nunca.</strong>
+          </p>
+          <ul class="meta">
+            <li data-state>12 pasos</li>
+            <li>90 minutos</li>
+            <li>Sin requisitos previos</li>
+            <li>Funciona sin internet</li>
+          </ul>
 
-      <div class="block">
-        <h2>Estas 5 cosas tienen que ser verdad</h2>
-        <p>Márcalas antes de empezar. Si alguna no la puedes marcar, avisa al profesor.</p>
-        <ul class="preflight">
-          <li><input type="checkbox" id="s0pf1"><label for="s0pf1">Estoy en un ordenador del aula <small>con Windows o macOS.</small></label></li>
-          <li><input type="checkbox" id="s0pf2"><label for="s0pf2">Puedo pedir ayuda al profesor <small>si algo no entiendo.</small></label></li>
-          <li><input type="checkbox" id="s0pf3"><label for="s0pf3">No me importa equivocarme <small>aquí nada se rompe de verdad.</small></label></li>
-          <li><input type="checkbox" id="s0pf4"><label for="s0pf4">Tengo 90 minutos <small>con un descanso a medio camino.</small></label></li>
-          <li><input type="checkbox" id="s0pf5"><label for="s0pf5">Sé que esto es solo el comienzo <small>después viene la práctica de la web.</small></label></li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="part" id="parte-a">
-      <span class="part__k">Bloque A</span>
-      <h2>Encender y el escritorio</h2>
-      <span class="part__time">≈ 20 min</span>
-    </section>
-
-    <article class="step step--split" id="paso-1" data-step="1">
-      <header class="step__head">
-        <span class="step__num" aria-hidden="true">1</span>
-        <h3 class="step__title">Encender el ordenador</h3>
-        <label class="tick"><input type="checkbox" data-done="1"><span>Hecho</span></label>
-      </header>
-      <ol class="actions">
-        <li>Busca el <strong>botón de encendido</strong>: en la torre del PC o en el lateral/teclado del portátil. Tiene el símbolo <strong>⏻</strong>.</li>
-        <li>Púlsalo <strong>una vez</strong> y <strong>quita la mano</strong>.</li>
-        <li>Espera. Puede tardar un minuto. <strong>No lo pulses varias veces.</strong></li>
-        <li>Si pide contraseña, escríbela y pulsa <strong>Enter</strong>.</li>
-      </ol>
-      <div class="check">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-        <p><strong>Comprueba:</strong> aparece el <strong>escritorio</strong> (la pantalla con iconos y la franja de abajo).</p>
-      </div>
-    </article>
-
-    <article class="step" id="paso-2" data-step="2">
-      <header class="step__head">
-        <span class="step__num" aria-hidden="true">2</span>
-        <h3 class="step__title">Las 5 zonas del escritorio</h3>
-        <label class="tick"><input type="checkbox" data-done="2"><span>Hecho</span></label>
-      </header>
-      <table class="tbl">
-        <thead><tr><th>Zona</th><th>Dónde está</th><th>Para qué sirve</th></tr></thead>
-        <tbody>
-          <tr><td><strong>Iconos</strong></td><td>Repartidos por el fondo</td><td>Abren programas o carpetas con <strong>doble clic</strong></td></tr>
-          <tr><td><strong>Barra de tareas</strong></td><td>Franja de abajo</td><td>Muestra lo que tienes abierto</td></tr>
-          <tr><td><strong>Menú Inicio</strong></td><td>Icono de ventana (⊞) abajo a la izquierda</td><td>Aquí están <strong>todos</strong> los programas</td></tr>
-          <tr><td><strong>Reloj y fecha</strong></td><td>Abajo a la derecha</td><td>Hora del ordenador</td></tr>
-          <tr><td><strong>Papelera</strong></td><td>Un cubo, en el escritorio</td><td>Lo que borras va aquí</td></tr>
-        </tbody>
-      </table>
-      <div class="check">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-        <p><strong>Comprueba:</strong> señalas cada zona con el dedo y dices para qué sirve.</p>
-      </div>
-    </article>
-
-    <article class="step step--split" id="paso-3" data-step="3">
-      <header class="step__head">
-        <span class="step__num" aria-hidden="true">3</span>
-        <h3 class="step__title">El ratón</h3>
-        <label class="tick"><input type="checkbox" data-done="3"><span>Hecho</span></label>
-      </header>
-      <p>Apoya la mano encima. La palma descansa y los dedos curvados, <strong>como una mano sobre una taza</strong>. El dedo índice va en el <strong>botón izquierdo</strong>; el corazón, en el derecho.</p>
-      <p>Es la flechita que se mueve cuando mueves el ratón. <strong>Si no la ves, mueve el ratón</strong> y aparecerá.</p>
-      <table class="tbl">
-        <thead><tr><th>Movimiento</th><th>Cómo se hace</th><th>Para qué</th></tr></thead>
-        <tbody>
-          <tr><td><strong>Clic</strong></td><td>Pulsar y soltar el botón izquierdo una vez</td><td>Elegir algo, pulsar un botón</td></tr>
-          <tr><td><strong>Doble clic</strong></td><td>Pulsar dos veces seguidas, rápido, sin mover el ratón</td><td><strong>Abrir</strong> un programa o carpeta</td></tr>
-          <tr><td><strong>Clic derecho</strong></td><td>Pulsar el botón derecho una vez</td><td>Sale un menú de opciones (copiar, renombrar…)</td></tr>
-          <tr><td><strong>Arrastrar</strong></td><td>Mantener pulsado el izquierdo, mover y soltar</td><td>Mover cosas, seleccionar varias</td></tr>
-        </tbody>
-      </table>
-      <div class="check">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-        <p><strong>Comprueba:</strong> abres y cierras la Calculadora 5 veces con doble clic y la X.</p>
-      </div>
-    </article>
-
-    <article class="step step--split" id="paso-4" data-step="4">
-      <header class="step__head">
-        <span class="step__num" aria-hidden="true">4</span>
-        <h3 class="step__title">El teclado</h3>
-        <label class="tick"><input type="checkbox" data-done="4"><span>Hecho</span></label>
-      </header>
-      <p>Las 8 teclas que vas a usar:</p>
-      <table class="tbl">
-        <thead><tr><th>Tecla</th><th>Nombre</th><th>Para qué sirve</th></tr></thead>
-        <tbody>
-          <tr><td><strong>Enter</strong> ⏎</td><td>Intro</td><td>Confirmar, aceptar, bajar de línea</td></tr>
-          <tr><td><strong>Esc</strong></td><td>Escape</td><td><strong>Cancelar</strong> y salir de un menú</td></tr>
-          <tr><td><strong>Retroceso</strong> ⌫</td><td>Borrar</td><td>Borra lo último que escribiste</td></tr>
-          <tr><td><strong>Barra espaciadora</strong></td><td>—</td><td>Poner un espacio entre palabras</td></tr>
-          <tr><td><strong>Shift</strong> ⇧</td><td>Mayúsculas</td><td>Poner <strong>UNA</strong> mayúscula o el símbolo de arriba (`@`, `:`)</td></tr>
-          <tr><td><strong>Bloq Mayús</strong></td><td>—</td><td>Dejar todo en mayúsculas</td></tr>
-          <tr><td><strong>Ctrl</strong></td><td>Control</td><td>Se usa junto con otra tecla: `Ctrl+C`, `Ctrl+V`…</td></tr>
-          <tr><td><strong>⊞ Windows</strong></td><td>Tecla Windows</td><td>Abre el menú Inicio</td></tr>
-        </tbody>
-      </table>
-      <p>Símbolos para una dirección web: `:` = `Shift` + `;` · `/` = tecla junto a `Shift` derecho · `.` = tecla junto a la `Ñ` · `@` = `AltGr` + `2`.</p>
-      <div class="check">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-        <p><strong>Comprueba:</strong> escribes `http://localhost/` en el Bloc de notas.</p>
-      </div>
-    </article>
-
-    <article class="step step--split" id="paso-5" data-step="5">
-      <header class="step__head">
-        <span class="step__num" aria-hidden="true">5</span>
-        <h3 class="step__title">El navegador</h3>
-        <label class="tick"><input type="checkbox" data-done="5"><span>Hecho</span></label>
-      </header>
-      <p>El <strong>navegador</strong> es el programa para ver internet. Los más usados son <strong>Chrome</strong>, <strong>Edge</strong> y <strong>Firefox</strong>.</p>
-      <table class="tbl">
-        <thead><tr><th>Zona</th><th>Dónde está</th><th>Qué pasa si escribes ahí</th></tr></thead>
-        <tbody>
-          <tr><td><strong>Barra de direcciones</strong></td><td>Arriba del todo</td><td>Va <strong>directo</strong> a esa web</td></tr>
-          <tr><td><strong>Buscador</strong> (Google)</td><td>En medio de la página</td><td><strong>Busca</strong> lo que escribas</td></tr>
-        </tbody>
-      </table>
-      <p><strong>Regla de oro:</strong> si sabes la dirección exacta, escríbela <strong>arriba</strong>, en la barra de direcciones.</p>
-      <div class="check">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-        <p><strong>Comprueba:</strong> sabes volver atrás y abrir una pestaña nueva (`Ctrl` + `T`).</p>
-      </div>
-    </article>
-
-    <article class="step" id="paso-6" data-step="6">
-      <header class="step__head">
-        <span class="step__num" aria-hidden="true">6</span>
-        <h3 class="step__title">Descargar un archivo y encontrarlo</h3>
-        <label class="tick"><input type="checkbox" data-done="6"><span>Hecho</span></label>
-      </header>
-      <ol class="actions">
-        <li>Abre el navegador y busca una imagen cualquiera.</li>
-        <li>Haz <strong>clic derecho</strong> sobre la imagen → <strong>Guardar imagen como…</strong></li>
-        <li>Elige la carpeta <strong>Descargas</strong> y pulsa <strong>Guardar</strong>.</li>
-        <li>Abre el <strong>Explorador de archivos</strong> y, a la izquierda, pulsa <strong>Descargas</strong>.</li>
-      </ol>
-      <div class="check">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-        <p><strong>Comprueba:</strong> la imagen está en Descargas. Todo lo que descargas va ahí, no al escritorio.</p>
-      </div>
-    </article>
-
-    <article class="step step--split" id="paso-7" data-step="7">
-      <header class="step__head">
-        <span class="step__num" aria-hidden="true">7</span>
-        <h3 class="step__title">Carpetas: crear, nombrar, mover</h3>
-        <label class="tick"><input type="checkbox" data-done="7"><span>Hecho</span></label>
-      </header>
-      <ol class="actions">
-        <li>Abre <strong>Explorador de archivos</strong> → a la izquierda, pulsa <strong>Documentos</strong>.</li>
-        <li>Clic derecho en un espacio vacío → <strong>Nuevo</strong> → <strong>Carpeta</strong>. Escribe tu nombre y pulsa <strong>Enter</strong>.</li>
-        <li>Ve a <strong>Descargas</strong>, clic derecho sobre un archivo → <strong>Cortar</strong> (`Ctrl` + `X`). Entra en tu carpeta, clic derecho en vacío → <strong>Pegar</strong> (`Ctrl` + `V`).</li>
-      </ol>
-      <table class="tbl">
-        <thead><tr><th>Atajo</th><th>Qué hace</th></tr></thead>
-        <tbody>
-          <tr><td><code>Ctrl</code> + <code>C</code></td><td>Copiar</td></tr>
-          <tr><td><code>Ctrl</code> + <code>X</code></td><td>Cortar (mover)</td></tr>
-          <tr><td><code>Ctrl</code> + <code>V</code></td><td>Pegar</td></tr>
-          <tr><td><code>Ctrl</code> + <code>Z</code></td><td><strong>Deshacer</strong> lo último</td></tr>
-        </tbody>
-      </table>
-      <div class="check">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-        <p><strong>Comprueba:</strong> creaste una carpeta en Documentos y moviste un archivo dentro.</p>
-      </div>
-      <p><strong>Aviso:</strong> los nombres de carpeta van <strong>todo junto, sin espacios, sin tildes y en minúsculas</strong>.</p>
-    </article>
-
-    <article class="step" id="paso-8" data-step="8">
-      <header class="step__head">
-        <span class="step__num" aria-hidden="true">8</span>
-        <h3 class="step__title">Hacer una captura de pantalla</h3>
-        <label class="tick"><input type="checkbox" data-done="8"><span>Hecho</span></label>
-      </header>
-      <ol class="actions">
-        <li>Pulsa a la vez <strong>⊞ Windows</strong> + <strong>Shift</strong> + <strong>S</strong>.</li>
-        <li>La pantalla se oscurece. Con el ratón, <strong>arrastra</strong> para rodear lo que quieres fotografiar.</li>
-        <li>Suelta. La foto <strong>ya está copiada</strong>.</li>
-        <li>Abre <strong>Word</strong> (o <strong>Paint</strong>) y pega con <strong>Ctrl</strong> + <strong>V</strong>. Guarda con <strong>Ctrl</strong> + <strong>G</strong>.</li>
-      </ol>
-      <div class="check">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-        <p><strong>Comprueba:</strong> hiciste una captura, la pegaste en Word y la guardaste.</p>
-      </div>
-    </article>
-
-    <article class="step step--split" id="paso-9" data-step="9">
-      <header class="step__head">
-        <span class="step__num" aria-hidden="true">9</span>
-        <h3 class="step__title">Cuando algo se queda colgado</h3>
-        <label class="tick"><input type="checkbox" data-done="9"><span>Hecho</span></label>
-      </header>
-      <table class="tbl">
-        <thead><tr><th>Situación</th><th>Qué haces</th></tr></thead>
-        <tbody>
-          <tr><td>Se queda "pensando"</td><td><strong>Espera 10 segundos.</strong> No hagas clic muchas veces</td></tr>
-          <tr><td>Un programa no responde</td><td><code>Ctrl</code> + <code>Alt</code> + <code>Supr</code> → <strong>Administrador de tareas</strong> → elige el programa → <strong>Finalizar tarea</strong></td></tr>
-          <tr><td>No sabes dónde estás</td><td>Pulsa <strong>Esc</strong> para salir, o cierra la ventana con la <strong>X</strong></td></tr>
-          <tr><td>Nada funciona</td><td>Avisa al profesor. <strong>Nunca desenchufes</strong> el ordenador ni quites la batería</td></tr>
-        </tbody>
-      </table>
-      <p><strong>Lo que NO hay que hacer nunca:</strong></p>
-      <ul>
-        <li>Instalar programas que aparecen en anuncios o ventanas emergentes.</li>
-        <li>Aceptar todo lo que salga sin leerlo.</li>
-        <li>Pulsar el botón de encendido para apagarlo.</li>
-        <li>Desenchufar el ordenador mientras está encendido.</li>
-      </ul>
-      <div class="check">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-        <p><strong>Comprueba:</strong> sabes cuándo esperar y cuándo llamar al profesor.</p>
-      </div>
-    </article>
-
-    <article class="step" id="paso-10" data-step="10">
-      <header class="step__head">
-        <span class="step__num" aria-hidden="true">10</span>
-        <h3 class="step__title">Lista de comprobación: ¿estás listo?</h3>
-        <label class="tick"><input type="checkbox" data-done="10"><span>Hecho</span></label>
-      </header>
-      <p>Marca todas. <strong>Con 8 de 8, puedes empezar la práctica.</strong></p>
-      <table class="tbl">
-        <thead><tr><th>✔</th><th>Soy capaz de…</th></tr></thead>
-        <tbody>
-          <tr><td>☐</td><td>Encender el ordenador y llegar al escritorio</td></tr>
-          <tr><td>☐</td><td>Abrir un programa con <strong>doble clic</strong> y cerrarlo con la <strong>X</strong></td></tr>
-          <tr><td>☐</td><td>Hacer <strong>clic derecho</strong> y usar el menú que sale</td></tr>
-          <tr><td>☐</td><td>Escribir `http://localhost/` en la <strong>barra de direcciones</strong> (con `:`, `/` y `.`)</td></tr>
-          <tr><td>☐</td><td>Volver atrás en el navegador y abrir una <strong>pestaña nueva</strong></td></tr>
-          <tr><td>☐</td><td>Encontrar en <strong>Descargas</strong> un archivo que acabo de descargar</td></tr>
-          <tr><td>☐</td><td>Crear una carpeta en <strong>Documentos</strong> y mover un archivo dentro</td></tr>
-          <tr><td>☐</td><td>Hacer una <strong>captura de pantalla</strong> y pegarla en Word</td></tr>
-        </tbody>
-      </table>
-      <p><strong>Si alguna casilla está vacía</strong>, repite el punto correspondiente antes de seguir. No pasa nada por repetir.</p>
-    </article>
-
-    <article class="step" id="paso-11" data-step="11">
-      <header class="step__head">
-        <span class="step__num" aria-hidden="true">11</span>
-        <h3 class="step__title">Cuidar el cuerpo</h3>
-        <label class="tick"><input type="checkbox" data-done="11"><span>Hecho</span></label>
-      </header>
-      <ol class="actions">
-        <li><strong>Pantalla</strong> a la altura de los ojos. Si miras hacia abajo, sube el ordenador o baja la silla.</li>
-        <li><strong>Pies</strong> apoyados en el suelo o en un reposapiés. Espalda apoyada en el respaldo.</li>
-        <li><strong>Cada 45 minutos</strong>, levanta la vista y mira algo lejano durante 20 segundos. Y mueve las muñecas.</li>
-      </ol>
-      <div class="check">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-        <p><strong>Comprueba:</strong> estás sentado bien y sabes descansar la vista.</p>
-      </div>
-    </article>
-
-    <article class="step" id="paso-12" data-step="12">
-      <header class="step__head">
-        <span class="step__num" aria-hidden="true">12</span>
-        <h3 class="step__title">Notas para el profesorado</h3>
-        <label class="tick"><input type="checkbox" data-done="12"><span>Hecho</span></label>
-      </header>
-      <details class="trouble">
-        <summary>Organización de la sesión (90 min)</summary>
-        <div class="trouble__body">
+          <details class="toc-mobile noprint">
+            <summary>Ver el índice de los 12 pasos</summary>
+            <ol>
+              <li><a href="#paso-1">Encender</a></li>
+              <li><a href="#paso-2">Escritorio</a></li>
+              <li><a href="#paso-3">Ratón</a></li>
+              <li><a href="#paso-4">Teclado</a></li>
+              <li><a href="#paso-5">Navegador</a></li>
+              <li><a href="#paso-6">Descargar archivo</a></li>
+              <li><a href="#paso-7">Carpetas</a></li>
+              <li><a href="#paso-8">Captura</a></li>
+              <li><a href="#paso-9">Algo colgado</a></li>
+              <li><a href="#paso-10">Lista de comprobación</a></li>
+              <li><a href="#paso-11">Cuidar el cuerpo</a></li>
+              <li><a href="#paso-12">Notas profesores</a></li>
+            </ol>
+          </details>
+          <div class="notice notice--info">
+            <img
+              src="../assets/svg/info.svg"
+              width="22"
+              height="22"
+              alt=""
+              aria-hidden="true"
+            />
+            <p>
+              <strong>¿Ya sabes lo básico?</strong> Si marcaste todo el
+              checklist del final, puedes ir directo a la
+              <a href="../practica-xampp/index.html"
+                >práctica de XAMPP y WordPress</a
+              >.
+            </p>
+          </div>
+          <div class="block">
+            <h2>Estas 5 cosas tienen que ser verdad</h2>
+            <p>
+              Márcalas antes de empezar. Si alguna no la puedes marcar, avisa al
+              profesor.
+            </p>
+            <ul class="preflight">
+              <li>
+                <input type="checkbox" id="s0pf1" /><label for="s0pf1"
+                  >Estoy en un ordenador del aula
+                  <small>con Windows o macOS.</small></label
+                >
+              </li>
+              <li>
+                <input type="checkbox" id="s0pf2" /><label for="s0pf2"
+                  >Puedo pedir ayuda al profesor
+                  <small>si algo no entiendo.</small></label
+                >
+              </li>
+              <li>
+                <input type="checkbox" id="s0pf3" /><label for="s0pf3"
+                  >No me importa equivocarme
+                  <small>aquí nada se rompe de verdad.</small></label
+                >
+              </li>
+              <li>
+                <input type="checkbox" id="s0pf4" /><label for="s0pf4"
+                  >Tengo 90 minutos
+                  <small>con un descanso a medio camino.</small></label
+                >
+              </li>
+              <li>
+                <input type="checkbox" id="s0pf5" /><label for="s0pf5"
+                  >Sé que esto es solo el comienzo
+                  <small>después viene la práctica de la web.</small></label
+                >
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section class="part" id="parte-a">
+          <span class="part__k">Bloque A</span>
+          <h2>Encender y el escritorio</h2>
+          <span class="part__time">≈ 20 min</span>
+        </section>
+        <article class="step step--split" id="paso-1" data-step="1">
+          <header class="step__head">
+            <span class="step__num" aria-hidden="true">1</span>
+            <h3 class="step__title">Encender el ordenador</h3>
+            <label class="tick"
+              ><input type="checkbox" data-done="1" /><span>Hecho</span></label
+            >
+          </header>
+          <ol class="actions">
+            <li>
+              Busca el <strong>botón de encendido</strong>: en la torre del PC o
+              en el lateral/teclado del portátil. Tiene el símbolo
+              <strong>⏻</strong>.
+            </li>
+            <li>
+              Púlsalo <strong>una vez</strong> y <strong>quita la mano</strong>.
+            </li>
+            <li>
+              Espera. Puede tardar un minuto.
+              <strong>No lo pulses varias veces.</strong>
+            </li>
+            <li>
+              Si pide contraseña, escríbela y pulsa <strong>Enter</strong>.
+            </li>
+          </ol>
+          <div class="check">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#0b6b52"
+              stroke-width="2.4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M20 6 9 17l-5-5" />
+            </svg>
+            <p>
+              <strong>Comprueba:</strong> aparece el
+              <strong>escritorio</strong> (la pantalla con iconos y la franja de
+              abajo).
+            </p>
+          </div>
+        </article>
+        <article class="step" id="paso-2" data-step="2">
+          <header class="step__head">
+            <span class="step__num" aria-hidden="true">2</span>
+            <h3 class="step__title">Las 5 zonas del escritorio</h3>
+            <label class="tick"
+              ><input type="checkbox" data-done="2" /><span>Hecho</span></label
+            >
+          </header>
           <table class="tbl">
-            <thead><tr><th>Minutos</th><th>Bloque</th></tr></thead>
+            <thead>
+              <tr>
+                <th>Zona</th>
+                <th>Dónde está</th>
+                <th>Para qué sirve</th>
+              </tr>
+            </thead>
             <tbody>
-              <tr><td>0-10</td><td>Encendido, escritorio, presentación</td></tr>
-              <tr><td>10-30</td><td>Ratón: los 4 movimientos + ejercicios</td></tr>
-              <tr><td>30-45</td><td>Teclado: teclas y símbolos (`:`, `/`, `.`, `@`)</td></tr>
-              <tr><td>45-50</td><td><strong>Descanso</strong></td></tr>
-              <tr><td>50-65</td><td>Navegador: barra de direcciones vs buscador, pestañas</td></tr>
-              <tr><td>65-80</td><td>Descargas y carpetas</td></tr>
-              <tr><td>80-90</td><td>Captura de pantalla + lista de comprobación</td></tr>
+              <tr>
+                <td><strong>Iconos</strong></td>
+                <td>Repartidos por el fondo</td>
+                <td>
+                  Abren programas o carpetas con <strong>doble clic</strong>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Barra de tareas</strong></td>
+                <td>Franja de abajo</td>
+                <td>Muestra lo que tienes abierto</td>
+              </tr>
+              <tr>
+                <td><strong>Menú Inicio</strong></td>
+                <td>Icono de ventana (⊞) abajo a la izquierda</td>
+                <td>Aquí están <strong>todos</strong> los programas</td>
+              </tr>
+              <tr>
+                <td><strong>Reloj y fecha</strong></td>
+                <td>Abajo a la derecha</td>
+                <td>Hora del ordenador</td>
+              </tr>
+              <tr>
+                <td><strong>Papelera</strong></td>
+                <td>Un cubo, en el escritorio</td>
+                <td>Lo que borras va aquí</td>
+              </tr>
             </tbody>
           </table>
-          <p><strong>Señales de que el grupo no está listo:</strong> confunden barra de direcciones con buscador; no encuentran un archivo descargado; no saben hacer doble clic; escriben `;` donde debería ir `:`; no saben hacer la captura.</p>
-          <p><strong>Adaptaciones:</strong> puntero grande y de color; pegatinas en el teclado (`Enter`, `Shift`, `Ctrl`, punto); parejas (uno maneja, otro dicta); imprimir la ficha; repetir ejercicios de puntería las veces que haga falta.</p>
-          <p><strong>Evaluación:</strong> observación directa con la lista del paso 10. Un ítem sin marcar = repetir ese bloque.</p>
+          <div class="check">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#0b6b52"
+              stroke-width="2.4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M20 6 9 17l-5-5" />
+            </svg>
+            <p>
+              <strong>Comprueba:</strong> señalas cada zona con el dedo y dices
+              para qué sirve.
+            </p>
+          </div>
+        </article>
+        <article class="step step--split" id="paso-3" data-step="3">
+          <header class="step__head">
+            <span class="step__num" aria-hidden="true">3</span>
+            <h3 class="step__title">El ratón</h3>
+            <label class="tick"
+              ><input type="checkbox" data-done="3" /><span>Hecho</span></label
+            >
+          </header>
+          <p>
+            Apoya la mano encima. La palma descansa y los dedos curvados,
+            <strong>como una mano sobre una taza</strong>. El dedo índice va en
+            el <strong>botón izquierdo</strong>; el corazón, en el derecho.
+          </p>
+          <p>
+            Es la flechita que se mueve cuando mueves el ratón.
+            <strong>Si no la ves, mueve el ratón</strong> y aparecerá.
+          </p>
+          <table class="tbl">
+            <thead>
+              <tr>
+                <th>Movimiento</th>
+                <th>Cómo se hace</th>
+                <th>Para qué</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Clic</strong></td>
+                <td>Pulsar y soltar el botón izquierdo una vez</td>
+                <td>Elegir algo, pulsar un botón</td>
+              </tr>
+              <tr>
+                <td><strong>Doble clic</strong></td>
+                <td>Pulsar dos veces seguidas, rápido, sin mover el ratón</td>
+                <td><strong>Abrir</strong> un programa o carpeta</td>
+              </tr>
+              <tr>
+                <td><strong>Clic derecho</strong></td>
+                <td>Pulsar el botón derecho una vez</td>
+                <td>Sale un menú de opciones (copiar, renombrar…)</td>
+              </tr>
+              <tr>
+                <td><strong>Arrastrar</strong></td>
+                <td>Mantener pulsado el izquierdo, mover y soltar</td>
+                <td>Mover cosas, seleccionar varias</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="check">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#0b6b52"
+              stroke-width="2.4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M20 6 9 17l-5-5" />
+            </svg>
+            <p>
+              <strong>Comprueba:</strong> abres y cierras la Calculadora 5 veces
+              con doble clic y la X.
+            </p>
+          </div>
+        </article>
+        <article class="step step--split" id="paso-4" data-step="4">
+          <header class="step__head">
+            <span class="step__num" aria-hidden="true">4</span>
+            <h3 class="step__title">El teclado</h3>
+            <label class="tick"
+              ><input type="checkbox" data-done="4" /><span>Hecho</span></label
+            >
+          </header>
+          <p>Las 8 teclas que vas a usar:</p>
+          <table class="tbl">
+            <thead>
+              <tr>
+                <th>Tecla</th>
+                <th>Nombre</th>
+                <th>Para qué sirve</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Enter</strong> ⏎</td>
+                <td>Intro</td>
+                <td>Confirmar, aceptar, bajar de línea</td>
+              </tr>
+              <tr>
+                <td><strong>Esc</strong></td>
+                <td>Escape</td>
+                <td><strong>Cancelar</strong> y salir de un menú</td>
+              </tr>
+              <tr>
+                <td><strong>Retroceso</strong> ⌫</td>
+                <td>Borrar</td>
+                <td>Borra lo último que escribiste</td>
+              </tr>
+              <tr>
+                <td><strong>Barra espaciadora</strong></td>
+                <td>—</td>
+                <td>Poner un espacio entre palabras</td>
+              </tr>
+              <tr>
+                <td><strong>Shift</strong> ⇧</td>
+                <td>Mayúsculas</td>
+                <td>
+                  Poner <strong>UNA</strong> mayúscula o el símbolo de arriba
+                  (`@`, `:`)
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Bloq Mayús</strong></td>
+                <td>—</td>
+                <td>Dejar todo en mayúsculas</td>
+              </tr>
+              <tr>
+                <td><strong>Ctrl</strong></td>
+                <td>Control</td>
+                <td>Se usa junto con otra tecla: `Ctrl+C`, `Ctrl+V`…</td>
+              </tr>
+              <tr>
+                <td><strong>⊞ Windows</strong></td>
+                <td>Tecla Windows</td>
+                <td>Abre el menú Inicio</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            Símbolos para una dirección web: `:` = `Shift` + `;` · `/` = tecla
+            junto a `Shift` derecho · `.` = tecla junto a la `Ñ` · `@` = `AltGr`
+            + `2`.
+          </p>
+          <div class="check">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#0b6b52"
+              stroke-width="2.4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M20 6 9 17l-5-5" />
+            </svg>
+            <p>
+              <strong>Comprueba:</strong> escribes `http://localhost/` en el
+              Bloc de notas.
+            </p>
+          </div>
+        </article>
+        <article class="step step--split" id="paso-5" data-step="5">
+          <header class="step__head">
+            <span class="step__num" aria-hidden="true">5</span>
+            <h3 class="step__title">El navegador</h3>
+            <label class="tick"
+              ><input type="checkbox" data-done="5" /><span>Hecho</span></label
+            >
+          </header>
+          <p>
+            El <strong>navegador</strong> es el programa para ver internet. Los
+            más usados son <strong>Chrome</strong>, <strong>Edge</strong> y
+            <strong>Firefox</strong>.
+          </p>
+          <table class="tbl">
+            <thead>
+              <tr>
+                <th>Zona</th>
+                <th>Dónde está</th>
+                <th>Qué pasa si escribes ahí</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Barra de direcciones</strong></td>
+                <td>Arriba del todo</td>
+                <td>Va <strong>directo</strong> a esa web</td>
+              </tr>
+              <tr>
+                <td><strong>Buscador</strong> (Google)</td>
+                <td>En medio de la página</td>
+                <td><strong>Busca</strong> lo que escribas</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            <strong>Regla de oro:</strong> si sabes la dirección exacta,
+            escríbela <strong>arriba</strong>, en la barra de direcciones.
+          </p>
+          <div class="check">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#0b6b52"
+              stroke-width="2.4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M20 6 9 17l-5-5" />
+            </svg>
+            <p>
+              <strong>Comprueba:</strong> sabes volver atrás y abrir una pestaña
+              nueva (`Ctrl` + `T`).
+            </p>
+          </div>
+        </article>
+        <article class="step" id="paso-6" data-step="6">
+          <header class="step__head">
+            <span class="step__num" aria-hidden="true">6</span>
+            <h3 class="step__title">Descargar un archivo y encontrarlo</h3>
+            <label class="tick"
+              ><input type="checkbox" data-done="6" /><span>Hecho</span></label
+            >
+          </header>
+          <ol class="actions">
+            <li>Abre el navegador y busca una imagen cualquiera.</li>
+            <li>
+              Haz <strong>clic derecho</strong> sobre la imagen →
+              <strong>Guardar imagen como…</strong>
+            </li>
+            <li>
+              Elige la carpeta <strong>Descargas</strong> y pulsa
+              <strong>Guardar</strong>.
+            </li>
+            <li>
+              Abre el <strong>Explorador de archivos</strong> y, a la izquierda,
+              pulsa <strong>Descargas</strong>.
+            </li>
+          </ol>
+          <div class="check">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#0b6b52"
+              stroke-width="2.4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M20 6 9 17l-5-5" />
+            </svg>
+            <p>
+              <strong>Comprueba:</strong> la imagen está en Descargas. Todo lo
+              que descargas va ahí, no al escritorio.
+            </p>
+          </div>
+        </article>
+        <article class="step step--split" id="paso-7" data-step="7">
+          <header class="step__head">
+            <span class="step__num" aria-hidden="true">7</span>
+            <h3 class="step__title">Carpetas: crear, nombrar, mover</h3>
+            <label class="tick"
+              ><input type="checkbox" data-done="7" /><span>Hecho</span></label
+            >
+          </header>
+          <ol class="actions">
+            <li>
+              Abre <strong>Explorador de archivos</strong> → a la izquierda,
+              pulsa <strong>Documentos</strong>.
+            </li>
+            <li>
+              Clic derecho en un espacio vacío → <strong>Nuevo</strong> →
+              <strong>Carpeta</strong>. Escribe tu nombre y pulsa
+              <strong>Enter</strong>.
+            </li>
+            <li>
+              Ve a <strong>Descargas</strong>, clic derecho sobre un archivo →
+              <strong>Cortar</strong> (`Ctrl` + `X`). Entra en tu carpeta, clic
+              derecho en vacío → <strong>Pegar</strong> (`Ctrl` + `V`).
+            </li>
+          </ol>
+          <table class="tbl">
+            <thead>
+              <tr>
+                <th>Atajo</th>
+                <th>Qué hace</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>Ctrl</code> + <code>C</code></td>
+                <td>Copiar</td>
+              </tr>
+              <tr>
+                <td><code>Ctrl</code> + <code>X</code></td>
+                <td>Cortar (mover)</td>
+              </tr>
+              <tr>
+                <td><code>Ctrl</code> + <code>V</code></td>
+                <td>Pegar</td>
+              </tr>
+              <tr>
+                <td><code>Ctrl</code> + <code>Z</code></td>
+                <td><strong>Deshacer</strong> lo último</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="check">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#0b6b52"
+              stroke-width="2.4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M20 6 9 17l-5-5" />
+            </svg>
+            <p>
+              <strong>Comprueba:</strong> creaste una carpeta en Documentos y
+              moviste un archivo dentro.
+            </p>
+          </div>
+          <p>
+            <strong>Aviso:</strong> los nombres de carpeta van
+            <strong>todo junto, sin espacios, sin tildes y en minúsculas</strong
+            >.
+          </p>
+        </article>
+        <article class="step" id="paso-8" data-step="8">
+          <header class="step__head">
+            <span class="step__num" aria-hidden="true">8</span>
+            <h3 class="step__title">Hacer una captura de pantalla</h3>
+            <label class="tick"
+              ><input type="checkbox" data-done="8" /><span>Hecho</span></label
+            >
+          </header>
+          <ol class="actions">
+            <li>
+              Pulsa a la vez <strong>⊞ Windows</strong> +
+              <strong>Shift</strong> + <strong>S</strong>.
+            </li>
+            <li>
+              La pantalla se oscurece. Con el ratón,
+              <strong>arrastra</strong> para rodear lo que quieres fotografiar.
+            </li>
+            <li>Suelta. La foto <strong>ya está copiada</strong>.</li>
+            <li>
+              Abre <strong>Word</strong> (o <strong>Paint</strong>) y pega con
+              <strong>Ctrl</strong> + <strong>V</strong>. Guarda con
+              <strong>Ctrl</strong> + <strong>G</strong>.
+            </li>
+          </ol>
+          <div class="check">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#0b6b52"
+              stroke-width="2.4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M20 6 9 17l-5-5" />
+            </svg>
+            <p>
+              <strong>Comprueba:</strong> hiciste una captura, la pegaste en
+              Word y la guardaste.
+            </p>
+          </div>
+        </article>
+        <article class="step step--split" id="paso-9" data-step="9">
+          <header class="step__head">
+            <span class="step__num" aria-hidden="true">9</span>
+            <h3 class="step__title">Cuando algo se queda colgado</h3>
+            <label class="tick"
+              ><input type="checkbox" data-done="9" /><span>Hecho</span></label
+            >
+          </header>
+          <table class="tbl">
+            <thead>
+              <tr>
+                <th>Situación</th>
+                <th>Qué haces</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Se queda "pensando"</td>
+                <td>
+                  <strong>Espera 10 segundos.</strong> No hagas clic muchas
+                  veces
+                </td>
+              </tr>
+              <tr>
+                <td>Un programa no responde</td>
+                <td>
+                  <code>Ctrl</code> + <code>Alt</code> + <code>Supr</code> →
+                  <strong>Administrador de tareas</strong> → elige el programa →
+                  <strong>Finalizar tarea</strong>
+                </td>
+              </tr>
+              <tr>
+                <td>No sabes dónde estás</td>
+                <td>
+                  Pulsa <strong>Esc</strong> para salir, o cierra la ventana con
+                  la <strong>X</strong>
+                </td>
+              </tr>
+              <tr>
+                <td>Nada funciona</td>
+                <td>
+                  Avisa al profesor. <strong>Nunca desenchufes</strong> el
+                  ordenador ni quites la batería
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <p><strong>Lo que NO hay que hacer nunca:</strong></p>
+          <ul>
+            <li>
+              Instalar programas que aparecen en anuncios o ventanas emergentes.
+            </li>
+            <li>Aceptar todo lo que salga sin leerlo.</li>
+            <li>Pulsar el botón de encendido para apagarlo.</li>
+            <li>Desenchufar el ordenador mientras está encendido.</li>
+          </ul>
+          <div class="check">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#0b6b52"
+              stroke-width="2.4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M20 6 9 17l-5-5" />
+            </svg>
+            <p>
+              <strong>Comprueba:</strong> sabes cuándo esperar y cuándo llamar
+              al profesor.
+            </p>
+          </div>
+        </article>
+        <article class="step" id="paso-10" data-step="10">
+          <header class="step__head">
+            <span class="step__num" aria-hidden="true">10</span>
+            <h3 class="step__title">Lista de comprobación: ¿estás listo?</h3>
+            <label class="tick"
+              ><input type="checkbox" data-done="10" /><span>Hecho</span></label
+            >
+          </header>
+          <p>
+            Marca todas.
+            <strong>Con 8 de 8, puedes empezar la práctica.</strong>
+          </p>
+          <table class="tbl">
+            <thead>
+              <tr>
+                <th>✔</th>
+                <th>Soy capaz de…</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>☐</td>
+                <td>Encender el ordenador y llegar al escritorio</td>
+              </tr>
+              <tr>
+                <td>☐</td>
+                <td>
+                  Abrir un programa con <strong>doble clic</strong> y cerrarlo
+                  con la <strong>X</strong>
+                </td>
+              </tr>
+              <tr>
+                <td>☐</td>
+                <td>
+                  Hacer <strong>clic derecho</strong> y usar el menú que sale
+                </td>
+              </tr>
+              <tr>
+                <td>☐</td>
+                <td>
+                  Escribir `http://localhost/` en la
+                  <strong>barra de direcciones</strong> (con `:`, `/` y `.`)
+                </td>
+              </tr>
+              <tr>
+                <td>☐</td>
+                <td>
+                  Volver atrás en el navegador y abrir una
+                  <strong>pestaña nueva</strong>
+                </td>
+              </tr>
+              <tr>
+                <td>☐</td>
+                <td>
+                  Encontrar en <strong>Descargas</strong> un archivo que acabo
+                  de descargar
+                </td>
+              </tr>
+              <tr>
+                <td>☐</td>
+                <td>
+                  Crear una carpeta en <strong>Documentos</strong> y mover un
+                  archivo dentro
+                </td>
+              </tr>
+              <tr>
+                <td>☐</td>
+                <td>
+                  Hacer una <strong>captura de pantalla</strong> y pegarla en
+                  Word
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            <strong>Si alguna casilla está vacía</strong>, repite el punto
+            correspondiente antes de seguir. No pasa nada por repetir.
+          </p>
+        </article>
+        <article class="step" id="paso-11" data-step="11">
+          <header class="step__head">
+            <span class="step__num" aria-hidden="true">11</span>
+            <h3 class="step__title">Cuidar el cuerpo</h3>
+            <label class="tick"
+              ><input type="checkbox" data-done="11" /><span>Hecho</span></label
+            >
+          </header>
+          <ol class="actions">
+            <li>
+              <strong>Pantalla</strong> a la altura de los ojos. Si miras hacia
+              abajo, sube el ordenador o baja la silla.
+            </li>
+            <li>
+              <strong>Pies</strong> apoyados en el suelo o en un reposapiés.
+              Espalda apoyada en el respaldo.
+            </li>
+            <li>
+              <strong>Cada 45 minutos</strong>, levanta la vista y mira algo
+              lejano durante 20 segundos. Y mueve las muñecas.
+            </li>
+          </ol>
+          <div class="check">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#0b6b52"
+              stroke-width="2.4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M20 6 9 17l-5-5" />
+            </svg>
+            <p>
+              <strong>Comprueba:</strong> estás sentado bien y sabes descansar
+              la vista.
+            </p>
+          </div>
+        </article>
+        <article class="step" id="paso-12" data-step="12">
+          <header class="step__head">
+            <span class="step__num" aria-hidden="true">12</span>
+            <h3 class="step__title">Notas para el profesorado</h3>
+            <label class="tick"
+              ><input type="checkbox" data-done="12" /><span>Hecho</span></label
+            >
+          </header>
+          <details class="trouble">
+            <summary>Organización de la sesión (90 min)</summary>
+            <div class="trouble__body">
+              <table class="tbl">
+                <thead>
+                  <tr>
+                    <th>Minutos</th>
+                    <th>Bloque</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>0-10</td>
+                    <td>Encendido, escritorio, presentación</td>
+                  </tr>
+                  <tr>
+                    <td>10-30</td>
+                    <td>Ratón: los 4 movimientos + ejercicios</td>
+                  </tr>
+                  <tr>
+                    <td>30-45</td>
+                    <td>Teclado: teclas y símbolos (`:`, `/`, `.`, `@`)</td>
+                  </tr>
+                  <tr>
+                    <td>45-50</td>
+                    <td><strong>Descanso</strong></td>
+                  </tr>
+                  <tr>
+                    <td>50-65</td>
+                    <td>
+                      Navegador: barra de direcciones vs buscador, pestañas
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>65-80</td>
+                    <td>Descargas y carpetas</td>
+                  </tr>
+                  <tr>
+                    <td>80-90</td>
+                    <td>Captura de pantalla + lista de comprobación</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>
+                <strong>Señales de que el grupo no está listo:</strong>
+                confunden barra de direcciones con buscador; no encuentran un
+                archivo descargado; no saben hacer doble clic; escriben `;`
+                donde debería ir `:`; no saben hacer la captura.
+              </p>
+              <p>
+                <strong>Adaptaciones:</strong> puntero grande y de color;
+                pegatinas en el teclado (`Enter`, `Shift`, `Ctrl`, punto);
+                parejas (uno maneja, otro dicta); imprimir la ficha; repetir
+                ejercicios de puntería las veces que haga falta.
+              </p>
+              <p>
+                <strong>Evaluación:</strong> observación directa con la lista
+                del paso 10. Un ítem sin marcar = repetir ese bloque.
+              </p>
+            </div>
+          </details>
+        </article>
+        <div class="final">
+          <h2 id="final-title">Chuleta: direcciones y atajos</h2>
+          <p id="final-msg" hidden>
+            <strong>¡12 de 12!</strong> Ya estás listo para la práctica de la
+            web.
+          </p>
+          <div class="chiprow">
+            <button class="chip" type="button" data-copy="http://localhost/">
+              <span>http://localhost/</span></button
+            ><button
+              class="chip"
+              type="button"
+              data-copy="http://localhost/miwordpress/"
+            >
+              <span>http://localhost/miwordpress/</span></button
+            ><button class="chip" type="button" data-copy="Ctrl + C">
+              <span>Ctrl + C</span></button
+            ><button class="chip" type="button" data-copy="Ctrl + V">
+              <span>Ctrl + V</span></button
+            ><button class="chip" type="button" data-copy="Ctrl + Z">
+              <span>Ctrl + Z</span></button
+            ><button class="chip" type="button" data-copy="⊞ + Shift + S">
+              <span>⊞ + Shift + S</span>
+            </button>
+          </div>
         </div>
-      </details>
-    </article>
-
-    <div class="final">
-      <h2 id="final-title">Chuleta: direcciones y atajos</h2>
-      <p id="final-msg" hidden><strong>¡12 de 12!</strong> Ya estás listo para la práctica de la web.</p>
-      <div class="chiprow">
-        <button class="chip" type="button" data-copy="http://localhost/"><span>http://localhost/</span></button>
-        <button class="chip" type="button" data-copy="http://localhost/miwordpress/"><span>http://localhost/miwordpress/</span></button>
-        <button class="chip" type="button" data-copy="Ctrl + C"><span>Ctrl + C</span></button>
-        <button class="chip" type="button" data-copy="Ctrl + V"><span>Ctrl + V</span></button>
-        <button class="chip" type="button" data-copy="Ctrl + Z"><span>Ctrl + Z</span></button>
-        <button class="chip" type="button" data-copy="⊞ + Shift + S"><span>⊞ + Shift + S</span></button>
-      </div>
+        <footer class="end">
+          <p>
+            Sesión previa a la
+            <a href="../practica-xampp/index.html"
+              >práctica de XAMPP y WordPress</a
+            >. Versión técnica: <code>guia-docente-xampp-wordpress.md</code>.
+          </p>
+          <p>
+            Esta página funciona sin internet y no envía datos a ningún sitio.
+            Tu progreso se guarda solo en este navegador.
+          </p>
+          <p>
+            <span
+              id="live"
+              role="status"
+              aria-live="polite"
+              class="noprint"
+            ></span>
+          </p>
+        </footer>
+      </main>
     </div>
-
-    <footer class="end">
-      <p>Sesión previa a la <a href="../practica-xampp/index.html">práctica de XAMPP y WordPress</a>. Versión técnica: <code>guia-docente-xampp-wordpress.md</code>.</p>
-      <p>Esta página funciona sin internet y no envía datos a ningún sitio. Tu progreso se guarda solo en este navegador.</p>
-      <p><span id="live" role="status" aria-live="polite" class="noprint"></span></p>
-    </footer>
-
-  </main>
-
-<button class="back-to-top" aria-label="Volver arriba" hidden>
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
-</button>
-
-<script>
-window.IFCT0510 = {
-  key: 'ifct0510-s0-progress.v1',
-  fontKey: 'ifct0510-s0-font.v1',
-  total: 12,
-  sizes: ['100%','112.5%','125%','137.5%']
-};
-</script>
-<script src="../assets/js/shared.js"></script>
-
-</body>
+    <button class="back-to-top" aria-label="Volver arriba" hidden>
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M18 15l-6-6-6 6" />
+      </svg>
+    </button>
+    <script>
+      window.IFCT0510 = {
+        key: "ifct0510-s0-progress.v1",
+        fontKey: "ifct0510-s0-font.v1",
+        total: 12,
+        sizes: ["100%", "112.5%", "125%", "137.5%"],
+      };
+    </script>
+    <script src="../assets/js/shared.js"></script>
+  </body>
 </html>

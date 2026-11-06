@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="utf-8">
@@ -19,7 +19,7 @@
     </div>
     <div class="meter" role="group" aria-label="Progreso de la sesión">
       <div class="meter__track" aria-hidden="true"><div class="meter__fill" id="bar"></div></div>
-      <span><b id="count">0</b> de <span id="total">10</span> pasos</span>
+      <span><b id="count">0</b> de <span id="total">12</span> pasos</span>
     </div>
     <div class="tools">
       <button class="btn btn--quiet noprint" type="button" id="font-minus" aria-label="Reducir el tamaño de la letra">A−</button>
@@ -38,59 +38,100 @@
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
       Inicio
     </a>
-    <h2>Los 10 pasos</h2>
-    <ol id="rail-list">
+    <h2>Los 12 pasos</h2>
+    <div class="rail__progress">
+      <ol id="rail-list">
+        <li><a href="#paso-1" data-target="1"><span class="n">1</span> Entrar al panel</a></li>
+        <li><a href="#paso-2" data-target="2"><span class="n">2</span> Elegir tema</a></li>
+        <li><a href="#paso-3" data-target="3"><span class="n">3</span> Comprobar Gutenberg</a></li>
+        <li><a href="#paso-4" data-target="4"><span class="n">4</span> Crear página</a></li>
+        <li><a href="#paso-5" data-target="5"><span class="n">5</span> Crear Sobre nosotros</a></li>
+        <li><a href="#paso-6" data-target="6"><span class="n">6</span> Abrir el editor</a></li>
+        <li><a href="#paso-7" data-target="7"><span class="n">7</span> Bloques básicos</a></li>
+        <li><a href="#paso-8" data-target="8"><span class="n">8</span> Texto e imágenes</a></li>
+        <li><a href="#paso-9" data-target="9"><span class="n">9</span> Menú (ampliación)</a></li>
+        <li><a href="#paso-10" data-target="10"><span class="n">10</span> Inicio (ampliación)</a></li>
+        <li><a href="#paso-11" data-target="11"><span class="n">11</span> Colores y letra</a></li>
+        <li><a href="#paso-12" data-target="12"><span class="n">12</span> Publicar</a></li>
+      </ol>
       <div class="rail__fill" id="rail-fill" aria-hidden="true"></div>
-      <li><a href="#paso-1" data-target="1"><span class="n">1</span> Entrar al panel</a></li>
-      <li><a href="#paso-2" data-target="2"><span class="n">2</span> Crear página Inicio</a></li>
-      <li><a href="#paso-3" data-target="3"><span class="n">3</span> Crear página Sobre nosotros</a></li>
-      <li><a href="#paso-4" data-target="4"><span class="n">4</span> Editor Gutenberg</a></li>
-      <li><a href="#paso-5" data-target="5"><span class="n">5</span> Bloques básicos</a></li>
-      <li><a href="#paso-6" data-target="6"><span class="n">6</span> Texto e imágenes</a></li>
-      <li><a href="#paso-7" data-target="7"><span class="n">7</span> Menú de navegación</a></li>
-      <li><a href="#paso-8" data-target="8"><span class="n">8</span> Página de inicio</a></li>
-      <li><a href="#paso-9" data-target="9"><span class="n">9</span> Colores y letra</a></li>
-      <li><a href="#paso-10" data-target="10"><span class="n">10</span> Publicar y revisar</a></li>
-    </ol>
+    </div>
     <p style="margin-top:1.2rem; font-size:.8rem; color:var(--ink-2)">
       <button class="btn btn--quiet" type="button" id="reset" style="font-size:.8rem; padding:.25rem .5rem">Borrar mi progreso</button>
     </p>
   </nav>
 
-  <main id="contenido">
+  <main id="contenido" tabindex="-1">
 
     <section class="hero">
-      <h1>Crear una web con WordPress y Gutenberg</h1>
-      <p class="lead">WordPress ya está instalado. Ahora aprenderás a crear tu propia web usando el editor Gutenberg, paso a paso. <strong>No hace falta saber programar.</strong></p>
+      <h1>Primera sesión · Crear una página con Gutenberg</h1>
+      <p class="lead">WordPress ya está instalado. En esta primera sesión el objetivo es muy concreto: <strong>crear y guardar una página sencilla con un encabezado, un párrafo y una imagen</strong>. <strong>No hace falta saber programar</strong>, pero sí necesitas saber usar el ratón, el teclado y el navegador (ver <a href="../sesion-0/index.html">Sesión 0</a>).</p>
       <ul class="meta">
-        <li data-state>10 pasos</li>
+        <li data-state>12 pasos</li>
         <li>60 minutos</li>
-        <li>Sin requisitos previos</li>
-        <li>Funciona sin internet</li>
+        <li>WordPress ya preparado</li>
+        <li>Funciona en local</li>
       </ul>
+
+      <details class="toc-mobile noprint">
+        <summary>Ver el índice de los 12 pasos</summary>
+        <ol>
+          <li><a href="#paso-1">Entrar al panel</a></li>
+          <li><a href="#paso-2">Elegir tema</a></li>
+          <li><a href="#paso-3">Comprobar Gutenberg</a></li>
+          <li><a href="#paso-4">Crear página</a></li>
+          <li><a href="#paso-5">Crear Sobre nosotros</a></li>
+          <li><a href="#paso-6">Abrir el editor</a></li>
+          <li><a href="#paso-7">Bloques básicos</a></li>
+          <li><a href="#paso-8">Texto e imágenes</a></li>
+          <li><a href="#paso-9">Menú (ampliación)</a></li>
+          <li><a href="#paso-10">Inicio (ampliación)</a></li>
+          <li><a href="#paso-11">Colores y letra</a></li>
+          <li><a href="#paso-12">Publicar</a></li>
+        </ol>
+      </details>
 
       <div class="notice notice--info">
         <img src="../assets/svg/info.svg" width="22" height="22" alt="" aria-hidden="true">
-        <p><strong>¿Ya instalaste WordPress?</strong> Si ya terminaste la <a href="../practica-xampp/index.html">práctica de XAMPP y WordPress</a>, puedes empezar directamente. Si no, termina primero la práctica de instalación.</p>
+        <p><strong>Objetivo de la sesión:</strong> cada alumno crea y guarda una página con un encabezado, un texto corto y una imagen. Menú, colores, tipografía y publicación se dejan para más adelante.</p>
       </div>
 
       <div class="block">
-        <h2>Estas 5 cosas tienen que ser verdad</h2>
+        <h2>Estas 4 cosas tienen que ser verdad</h2>
         <p>Márcalas antes de empezar. Si alguna no la puedes marcar, avisa al profesor.</p>
         <ul class="preflight">
-          <li><input type="checkbox" id="gwpf1"><label for="gwpf1">Tengo WordPress instalado <small>en tu ordenador local.</small></label></li>
-          <li><input type="checkbox" id="gwpf2"><label for="gwpf2">Puedo entrar al panel de administración <small>con tu usuario y contraseña.</small></label></li>
-          <li><input type="checkbox" id="gwpf3"><label for="gwpf3">No me importa equivocarme <small>aquí nada se rompe de verdad.</small></label></li>
-          <li><input type="checkbox" id="gwpf4"><label for="gwpf4">Tengo 60 minutos <small>con un descanso a medio camino.</small></label></li>
-          <li><input type="checkbox" id="gwpf5"><label for="gwpf5">Sé que esto es solo el comienzo <small>después vendrá más contenido.</small></label></li>
+          <li><input type="checkbox" id="gwpf1"><label for="gwpf1">Tengo WordPress instalado <small>y puedo entrar al panel.</small></label></li>
+          <li><input type="checkbox" id="gwpf2"><label for="gwpf2">Puedo entrar al panel de administración <small>con mi usuario y contraseña.</small></label></li>
+          <li><input type="checkbox" id="gwpf3"><label for="gwpf3">Sé usar el navegador y el ratón <small>sin miedo a equivocarme.</small></label></li>
+          <li><input type="checkbox" id="gwpf4"><label for="gwpf4">Tengo 60 minutos <small>y la tarea es muy concreta.</small></label></li>
+        </ul>
+      </div>
+
+      <div class="block">
+        <h2>Resultado esperado de esta sesión</h2>
+        <ol class="outcomes">
+          <li>Entrar al panel de administración de WordPress.</li>
+          <li>Crear una página nueva y ponerle un título.</li>
+          <li>Usar bloques básicos para añadir encabezado, texto e imagen.</li>
+          <li>Guardar la página como borrador y revisarla.</li>
+        </ol>
+      </div>
+
+      <div class="block">
+        <h2>Qué dejamos para más adelante</h2>
+        <ul class="outcomes">
+          <li>Instalar plugins y cambiar el tema.</li>
+          <li>Crear el menú de navegación.</li>
+          <li>Configurar la página de inicio y cambiar estilos.</li>
+          <li>Publicar la web y revisar el resultado final.</li>
         </ul>
       </div>
     </section>
 
     <section class="part" id="parte-a">
       <span class="part__k">Bloque A</span>
-      <h2>Entrar al panel y crear páginas</h2>
-      <span class="part__time">≈ 20 min</span>
+      <h2>Entrar al panel, crear la página y trabajar con bloques básicos</h2>
+      <span class="part__time">≈ 30 min</span>
     </section>
 
     <article class="step step--split" id="paso-1" data-step="1">
@@ -105,36 +146,232 @@
         <li>Escribe tu <strong>usuario</strong> y tu <strong>contraseña</strong>.</li>
         <li>Haz clic en <strong>Acceder</strong>.</li>
       </ol>
-      <div class="check">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-        <p><strong>Comprueba:</strong> ves el panel lateral izquierdo con opciones como Entradas, Páginas, Apariencia y Plugins.</p>
-      </div>
       <figure class="fig">
-        <div class="svgpad"><svg viewBox="0 0 340 220" role="img" aria-labelledby="wp-t wp-d">
-          <title id="wp-t">Panel de administración de WordPress</title>
-          <desc id="wp-d">Diagrama del panel lateral izquierdo con Entradas, Páginas, Medios, Apariencia, Plugins y Usuarios.</desc>
-          <g font-family="Consolas, monospace" font-size="10">
-            <rect x="4" y="4" width="332" height="212" rx="8" fill="#e5f1ec" stroke="#0b6b52" stroke-width="2"/>
-            <text x="16" y="24" font-family="Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#0b6b52">Panel de administración</text>
-            <text x="16" y="48" fill="#0f1f1e">▾ Entradas</text>
-            <text x="28" y="66" fill="#47595a">├ Todas las entradas</text>
-            <text x="28" y="84" fill="#47595a">├ Añadir nueva</text>
-            <text x="16" y="102" fill="#0f1f1e">▾ Páginas</text>
-            <text x="28" y="120" fill="#47595a">├ Todas las páginas</text>
-            <text x="28" y="138" fill="#47595a">└ Añadir nueva</text>
-            <text x="16" y="156" fill="#0f1f1e">▾ Apariencia</text>
-            <text x="28" y="174" fill="#47595a">├ Temas</text>
-            <text x="28" y="192" fill="#47595a">└ Menús</text>
-            <text x="160" y="48" fill="#0f1f1e">▾ Plugins</text>
-            <text x="172" y="66" fill="#47595a">├ Plugins instalados</text>
-            <text x="172" y="84" fill="#47595a">└ Añadir nuevo</text>
-            <text x="160" y="102" fill="#0f1f1e">▾ Usuarios</text>
-            <text x="172" y="120" fill="#47595a">├ Todos los usuarios</text>
-            <text x="172" y="138" fill="#47595a">└ Añadir nuevo</text>
-            <text x="160" y="156" fill="#0f1f1e">▾ Herramientas</text>
-            <text x="172" y="174" fill="#47595a">└ Ajustes</text>
+      <div class="check check--illustration">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1000" viewBox="0 0 1440 1000" role="img" aria-labelledby="acceso-titulo acceso-descripcion">
+          <title id="acceso-titulo">Pantalla de acceso al panel de WordPress</title>
+          <desc id="acceso-descripcion">Formulario de acceso de WordPress en el navegador, con los campos de nombre de usuario, contraseña y botón de acceso.</desc>
+          <rect width="1440" height="1000" fill="#f0f0f1"/>
+
+          <!-- Navegador -->
+          <rect width="1440" height="108" fill="#dee1e6"/>
+          <rect width="1440" height="39" fill="#d2d6dc"/>
+          <path d="M0 38.5h1440" stroke="#c3c7ce"/>
+          <circle cx="20" cy="19" r="6" fill="#ed6a5e"/>
+          <circle cx="40" cy="19" r="6" fill="#f4bf4f"/>
+          <circle cx="60" cy="19" r="6" fill="#61c554"/>
+          <rect x="106" y="4" width="258" height="31" rx="9" fill="#e8eaed"/>
+          <rect x="116" y="10" width="15" height="15" rx="3" fill="#aeb4bd"/>
+          <path d="M120 14h7M120 18h7M120 22h5" stroke="#fff" stroke-width="1.4"/>
+          <text x="140" y="24" font-family="Arial, sans-serif" font-size="12" fill="#30343b">WordPress ‹ Mi sitio</text>
+          <path d="M349 15l7 7m0-7l-7 7" stroke="#8b9098" stroke-width="1.4"/>
+          <path d="M16 68h22M16 68l8-8M16 68l8 8" fill="none" stroke="#5f6368" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M52 60l-8 8 8 8" fill="none" stroke="#a0a4aa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M78 61a9 9 0 1 0 3 13M78 57v6h-6" fill="none" stroke="#5f6368" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="113" y="48" width="1212" height="39" rx="19.5" fill="#f1f3f4"/>
+          <path d="M132 62v-3a5 5 0 0 1 10 0v3m-11 0h12v11h-12z" fill="none" stroke="#6c727a" stroke-width="1.4" stroke-linejoin="round"/>
+          <text x="155" y="73" font-family="Arial, sans-serif" font-size="14" fill="#30343b">http://localhost/miwordpress/wp-admin/</text>
+          <path d="M1354 61a8 8 0 1 0 8 8 8 8 0 0 0-8-8zm0 3v5l3 2" fill="none" stroke="#626871" stroke-width="1.4" stroke-linecap="round"/>
+          <circle cx="1397" cy="67" r="3" fill="#626871"/>
+          <circle cx="1407" cy="67" r="3" fill="#626871"/>
+          <circle cx="1417" cy="67" r="3" fill="#626871"/>
+          <path d="M0 107.5h1440" stroke="#c5c8ce"/>
+
+          <!-- Página de inicio de sesión -->
+          <rect y="108" width="1440" height="892" fill="#f0f0f1"/>
+          <g transform="translate(720 236)">
+            <circle r="37" fill="#fff" stroke="#1d2327" stroke-width="2.3"/>
+            <text x="0" y="21" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="58" font-weight="bold" fill="#1d2327">W</text>
           </g>
-        </svg></div>
+
+          <rect x="520" y="306" width="400" height="372" rx="1" fill="#fff"/>
+          <text x="550" y="349" font-family="Arial, sans-serif" font-size="14" fill="#1d2327">Nombre de usuario o correo electrónico</text>
+          <rect x="550" y="362" width="340" height="42" rx="3" fill="#fff" stroke="#8c8f94" stroke-width="1.3"/>
+          <text x="562" y="389" font-family="Arial, sans-serif" font-size="16" fill="#1d2327">usuario</text>
+
+          <text x="550" y="438" font-family="Arial, sans-serif" font-size="14" fill="#1d2327">Contraseña</text>
+          <rect x="550" y="451" width="340" height="42" rx="3" fill="#fff" stroke="#8c8f94" stroke-width="1.3"/>
+          <text x="564" y="478" font-family="Arial, sans-serif" font-size="18" letter-spacing="3" fill="#1d2327">••••••••••</text>
+          <path d="M854 472c8-11 20-11 28 0-8 11-20 11-28 0z" fill="none" stroke="#50575e" stroke-width="1.5"/>
+          <circle cx="868" cy="472" r="3.5" fill="none" stroke="#50575e" stroke-width="1.5"/>
+
+          <rect x="550" y="518" width="18" height="18" rx="2" fill="#fff" stroke="#8c8f94" stroke-width="1.4"/>
+          <text x="578" y="532" font-family="Arial, sans-serif" font-size="14" fill="#1d2327">Recordarme</text>
+          <rect x="786" y="512" width="104" height="38" rx="3" fill="#2271b1"/>
+          <text x="838" y="536" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#fff">Acceder</text>
+
+          <text x="550" y="716" font-family="Arial, sans-serif" font-size="14" fill="#50575e">¿Has olvidado tu contraseña?</text>
+          <text x="550" y="746" font-family="Arial, sans-serif" font-size="14" fill="#50575e">← Volver a Mi sitio</text>
+
+          <text x="720" y="930" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#8c8f94">Interfaz de administración de WordPress</text>
+        </svg>
+      </div>
+      <div class="check check--illustration">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="escritorio-titulo escritorio-descripcion">
+          <title id="escritorio-titulo">Escritorio del panel de WordPress</title>
+          <desc id="escritorio-descripcion">Panel de administración de WordPress con el menú lateral, resumen del sitio, comentarios, borrador rápido y estado de salud.</desc>
+          <rect width="1200" height="800" fill="#f0f0f1"/>
+          <rect width="1200" height="34" fill="#1d2327"/>
+          <circle cx="20" cy="17" r="11" fill="none" stroke="#f0f0f1" stroke-width="1.5"/>
+          <text x="20" y="21" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="bold" fill="#f0f0f1">W</text>
+          <text x="42" y="22" font-family="Arial,sans-serif" font-size="12" fill="#f0f0f1">Mi sitio</text>
+          <path d="M98 15h10m-5-5v10" stroke="#a7aaad" stroke-width="1.5"/>
+          <text x="119" y="22" font-family="Arial,sans-serif" font-size="12" fill="#f0f0f1">Añadir</text>
+          <path d="M178 12h11v10h-11zM180 10h7" fill="none" stroke="#a7aaad" stroke-width="1.2"/>
+          <text x="197" y="22" font-family="Arial,sans-serif" font-size="12" fill="#f0f0f1">Editar página</text>
+          <circle cx="294" cy="17" r="7" fill="none" stroke="#a7aaad" stroke-width="1.2"/>
+          <path d="M294 17l3-3" stroke="#a7aaad" stroke-width="1.2"/>
+          <text x="306" y="22" font-family="Arial,sans-serif" font-size="12" fill="#f0f0f1">3</text>
+          <text x="1104" y="22" font-family="Arial,sans-serif" font-size="12" fill="#f0f0f1">Hola, Admin</text>
+          <circle cx="1176" cy="17" r="11" fill="#72aee6"/>
+          <circle cx="1176" cy="14" r="3.5" fill="#fff"/>
+          <path d="M1169 24q7-9 14 0" fill="#fff"/>
+          
+          <rect x="0" y="34" width="190" height="766" fill="#1d2327"/>
+          <rect x="0" y="43" width="190" height="35" fill="#2271b1"/>
+          <path d="M17 53h14v13H17zM20 50h8v3h-8zM20 57h8M20 61h8" fill="none" stroke="#fff" stroke-width="1.5"/>
+          <text x="43" y="66" font-family="Arial,sans-serif" font-size="13" fill="#fff">Escritorio</text>
+          <text x="15" y="101" font-family="Arial,sans-serif" font-size="12" fill="#a7aaad">Inicio</text>
+          <text x="15" y="125" font-family="Arial,sans-serif" font-size="12" fill="#a7aaad">Actualizaciones</text>
+          <circle cx="111" cy="121" r="9" fill="#d63638"/>
+          <text x="111" y="125" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#fff">3</text>
+          
+          <path d="M15 151h16v13H15zM18 148h10v3" fill="none" stroke="#a7aaad" stroke-width="1.5"/>
+          <text x="43" y="162" font-family="Arial,sans-serif" font-size="13" fill="#c3c4c7">Entradas</text>
+          <path d="M16 181h15v14H16zM19 185h9M19 189h9" fill="none" stroke="#a7aaad" stroke-width="1.4"/>
+          <text x="43" y="194" font-family="Arial,sans-serif" font-size="13" fill="#c3c4c7">Medios</text>
+          <path d="M16 215h14v15H16zM19 219h8M19 223h8" fill="none" stroke="#a7aaad" stroke-width="1.4"/>
+          <text x="43" y="228" font-family="Arial,sans-serif" font-size="13" fill="#c3c4c7">Páginas</text>
+          <path d="M15 249h16v14H15zM19 253h8M19 257h8" fill="none" stroke="#a7aaad" stroke-width="1.4"/>
+          <text x="43" y="262" font-family="Arial,sans-serif" font-size="13" fill="#c3c4c7">Comentarios</text>
+          <circle cx="152" cy="258" r="9" fill="#d63638"/>
+          <text x="152" y="262" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#fff">5</text>
+          <path d="M15 284h15v15H15zM18 287h9v9h-9z" fill="none" stroke="#a7aaad" stroke-width="1.4"/>
+          <text x="43" y="296" font-family="Arial,sans-serif" font-size="13" fill="#c3c4c7">Apariencia</text>
+          <path d="M16 318h14v14H16zM18 321l5 5 5-5" fill="none" stroke="#a7aaad" stroke-width="1.4"/>
+          <text x="43" y="330" font-family="Arial,sans-serif" font-size="13" fill="#c3c4c7">Plugins</text>
+          <circle cx="112" cy="326" r="9" fill="#d63638"/>
+          <text x="112" y="330" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#fff">2</text>
+          <path d="M16 350h14v14H16zM19 354h8M19 358h8" fill="none" stroke="#a7aaad" stroke-width="1.4"/>
+          <text x="43" y="362" font-family="Arial,sans-serif" font-size="13" fill="#c3c4c7">Usuarios</text>
+          <circle cx="22" cy="392" r="7" fill="none" stroke="#a7aaad" stroke-width="1.4"/>
+          <path d="M22 388v8M18 392h8" stroke="#a7aaad" stroke-width="1.2"/>
+          <text x="43" y="396" font-family="Arial,sans-serif" font-size="13" fill="#c3c4c7">Herramientas</text>
+          <path d="M16 416l7-2 7 2v13l-7 2-7-2zM23 414v15" fill="none" stroke="#a7aaad" stroke-width="1.3"/>
+          <text x="43" y="429" font-family="Arial,sans-serif" font-size="13" fill="#c3c4c7">Ajustes</text>
+          <path d="M0 450h14" stroke="#a7aaad" stroke-width="1.5"/>
+          <path d="M15 450l6-5v10z" fill="#a7aaad"/>
+          <text x="43" y="454" font-family="Arial,sans-serif" font-size="13" fill="#a7aaad">Contraer menú</text>
+
+          <text x="220" y="78" font-family="Arial,sans-serif" font-size="23" fill="#1d2327">Escritorio</text>
+          <rect x="1068" y="52" width="91" height="27" rx="2" fill="#f6f7f7" stroke="#2271b1"/>
+          <text x="1113" y="70" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#2271b1">Opciones de pantalla</text>
+          <rect x="1062" y="52" width="94" height="27" fill="none"/>
+          <rect x="1160" y="52" width="40" height="27" rx="2" fill="#f6f7f7" stroke="#2271b1"/>
+          <text x="1180" y="70" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#2271b1">Ayuda</text>
+
+          <rect x="220" y="97" width="960" height="49" fill="#fff" stroke="#c3c4c7"/>
+          <rect x="220" y="97" width="4" height="49" fill="#72aee6"/>
+          <circle cx="246" cy="121" r="10" fill="#72aee6"/>
+          <text x="246" y="125" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" font-weight="bold" fill="#fff">i</text>
+          <text x="266" y="117" font-family="Arial,sans-serif" font-size="13" font-weight="bold" fill="#1d2327">¡Bienvenido a WordPress!</text>
+          <text x="266" y="135" font-family="Arial,sans-serif" font-size="12" fill="#50575e">Descubre las novedades de la versión 6.5 y personaliza tu sitio.</text>
+          <text x="1125" y="126" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#2271b1">Descartar</text>
+          <path d="M1159 116l10 10m0-10l-10 10" stroke="#787c82" stroke-width="1.4"/>
+
+          <text x="220" y="180" font-family="Arial,sans-serif" font-size="17" font-weight="600" fill="#1d2327">Bienvenido a WordPress</text>
+          <text x="1150" y="180" text-anchor="end" font-family="Arial,sans-serif" font-size="12" fill="#2271b1">Personaliza tu escritorio</text>
+          
+          <rect x="220" y="197" width="960" height="131" fill="#fff" stroke="#c3c4c7"/>
+          <rect x="220" y="197" width="7" height="131" fill="#2271b1"/>
+          <circle cx="273" cy="261" r="39" fill="#f0f6fc"/>
+          <circle cx="273" cy="261" r="25" fill="none" stroke="#2271b1" stroke-width="2"/>
+          <text x="273" y="270" text-anchor="middle" font-family="Georgia,serif" font-size="32" font-weight="bold" fill="#2271b1">W</text>
+          <text x="333" y="236" font-family="Arial,sans-serif" font-size="18" font-weight="600" fill="#1d2327">¡Gracias por crear con WordPress!</text>
+          <text x="333" y="261" font-family="Arial,sans-serif" font-size="13" fill="#50575e">WordPress te da la libertad de crear, publicar y compartir.</text>
+          <text x="333" y="283" font-family="Arial,sans-serif" font-size="13" fill="#50575e">Empieza por personalizar tu sitio y añadir contenido para tus visitantes.</text>
+          <rect x="333" y="296" width="130" height="24" rx="2" fill="#2271b1"/>
+          <text x="398" y="312" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" font-weight="600" fill="#fff">Personaliza tu sitio</text>
+          <text x="481" y="312" font-family="Arial,sans-serif" font-size="12" fill="#2271b1">Más información</text>
+          <path d="M724 215v96M952 215v96" stroke="#dcdcde"/>
+          <text x="752" y="235" font-family="Arial,sans-serif" font-size="13" font-weight="600" fill="#1d2327">Siguiente paso</text>
+          <text x="752" y="260" font-family="Arial,sans-serif" font-size="12" fill="#2271b1">Escribe tu primera entrada</text>
+          <text x="752" y="281" font-family="Arial,sans-serif" font-size="12" fill="#2271b1">Añade una página «Acerca de»</text>
+          <text x="752" y="302" font-family="Arial,sans-serif" font-size="12" fill="#2271b1">Configura tu página de inicio</text>
+          <text x="978" y="235" font-family="Arial,sans-serif" font-size="13" font-weight="600" fill="#1d2327">Más acciones</text>
+          <text x="978" y="260" font-family="Arial,sans-serif" font-size="12" fill="#2271b1">Gestiona los menús</text>
+          <text x="978" y="281" font-family="Arial,sans-serif" font-size="12" fill="#2271b1">Activa o desactiva comentarios</text>
+          <text x="978" y="302" font-family="Arial,sans-serif" font-size="12" fill="#2271b1">Aprende más sobre WordPress</text>
+
+          <rect x="220" y="347" width="463" height="272" fill="#fff" stroke="#c3c4c7"/>
+          <rect x="220" y="347" width="463" height="40" fill="#fff"/>
+          <text x="238" y="373" font-family="Arial,sans-serif" font-size="14" font-weight="600" fill="#1d2327">De un vistazo</text>
+          <path d="M220 387h463" stroke="#c3c4c7"/>
+          <path d="M238 411h17v15h-17zM241 407h11v4" fill="none" stroke="#787c82" stroke-width="1.3"/>
+          <text x="266" y="423" font-family="Arial,sans-serif" font-size="13" fill="#2271b1">8 entradas</text>
+          <path d="M367 410h17v16h-17zM370 414h11M370 418h11M370 422h8" fill="none" stroke="#787c82" stroke-width="1.3"/>
+          <text x="394" y="423" font-family="Arial,sans-serif" font-size="13" fill="#2271b1">4 páginas</text>
+          <path d="M493 413q8-9 16 0v11h-16zM497 409h8" fill="none" stroke="#787c82" stroke-width="1.3"/>
+          <text x="520" y="423" font-family="Arial,sans-serif" font-size="13" fill="#2271b1">5 comentarios</text>
+          <path d="M238 444h427" stroke="#dcdcde"/>
+          <text x="238" y="471" font-family="Arial,sans-serif" font-size="12" fill="#50575e">WordPress 6.5.2 con el tema</text>
+          <text x="403" y="471" font-family="Arial,sans-serif" font-size="12" fill="#2271b1">Twenty Twenty-Four</text>
+          <text x="238" y="492" font-family="Arial,sans-serif" font-size="12" fill="#50575e">Tu sitio está actualizado.</text>
+          <circle cx="246" cy="527" r="8" fill="#00a32a"/>
+          <path d="M242 527l3 3 5-6" fill="none" stroke="#fff" stroke-width="1.5"/>
+          <text x="263" y="531" font-family="Arial,sans-serif" font-size="12" fill="#50575e">Todo está en orden</text>
+          <rect x="238" y="552" width="427" height="46" fill="#f6f7f7"/>
+          <text x="251" y="571" font-family="Arial,sans-serif" font-size="11" fill="#646970">Visibilidad en buscadores</text>
+          <text x="251" y="588" font-family="Arial,sans-serif" font-size="12" fill="#1d2327">Permitir que los motores de búsqueda indexen este sitio</text>
+          <rect x="636" y="565" width="16" height="16" fill="#fff" stroke="#8c8f94"/>
+          
+          <rect x="697" y="347" width="483" height="272" fill="#fff" stroke="#c3c4c7"/>
+          <text x="715" y="373" font-family="Arial,sans-serif" font-size="14" font-weight="600" fill="#1d2327">Actividad</text>
+          <path d="M697 387h483" stroke="#c3c4c7"/>
+          <text x="715" y="411" font-family="Arial,sans-serif" font-size="12" font-weight="600" fill="#1d2327">Publicado recientemente</text>
+          <text x="715" y="436" font-family="Arial,sans-serif" font-size="12" fill="#646970">Hoy, 10:24</text>
+          <text x="801" y="436" font-family="Arial,sans-serif" font-size="12" fill="#2271b1">Ideas para un hogar más sostenible</text>
+          <text x="715" y="457" font-family="Arial,sans-serif" font-size="12" fill="#646970">Ayer, 16:10</text>
+          <text x="801" y="457" font-family="Arial,sans-serif" font-size="12" fill="#2271b1">Bienvenidos a nuestro nuevo sitio</text>
+          <path d="M715 474h447" stroke="#dcdcde"/>
+          <text x="715" y="497" font-family="Arial,sans-serif" font-size="12" font-weight="600" fill="#1d2327">Comentarios recientes</text>
+          <circle cx="729" cy="523" r="12" fill="#e2e4e7"/>
+          <circle cx="729" cy="520" r="4" fill="#8c8f94"/>
+          <path d="M721 531q8-12 16 0" fill="#8c8f94"/>
+          <text x="750" y="519" font-family="Arial,sans-serif" font-size="12" fill="#646970">Marta comenta en</text>
+          <text x="852" y="519" font-family="Arial,sans-serif" font-size="12" fill="#2271b1">Ideas para un hogar más sostenible</text>
+          <text x="750" y="538" font-family="Arial,sans-serif" font-size="11" fill="#50575e">«¡Me encanta esta guía! Muy útil y fácil de seguir.»</text>
+          <rect x="750" y="548" width="49" height="20" rx="2" fill="#f6f7f7" stroke="#c3c4c7"/>
+          <text x="774" y="562" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#50575e">Aprobar</text>
+          <text x="808" y="562" font-family="Arial,sans-serif" font-size="11" fill="#2271b1">Responder</text>
+          <text x="874" y="562" font-family="Arial,sans-serif" font-size="11" fill="#2271b1">Editar</text>
+          <text x="917" y="562" font-family="Arial,sans-serif" font-size="11" fill="#b32d2e">Spam</text>
+          <text x="958" y="562" font-family="Arial,sans-serif" font-size="11" fill="#b32d2e">Papelera</text>
+          <path d="M715 581h447" stroke="#dcdcde"/>
+          <text x="715" y="602" font-family="Arial,sans-serif" font-size="11" fill="#2271b1">Ver todos los comentarios</text>
+          
+          <rect x="220" y="637" width="463" height="137" fill="#fff" stroke="#c3c4c7"/>
+          <text x="238" y="663" font-family="Arial,sans-serif" font-size="14" font-weight="600" fill="#1d2327">Borrador rápido</text>
+          <path d="M220 675h463" stroke="#c3c4c7"/>
+          <text x="238" y="698" font-family="Arial,sans-serif" font-size="11" fill="#646970">Título</text>
+          <rect x="238" y="705" width="427" height="27" rx="2" fill="#fff" stroke="#8c8f94"/>
+          <text x="248" y="723" font-family="Arial,sans-serif" font-size="12" fill="#8c8f94">Título de la entrada</text>
+          <text x="238" y="750" font-family="Arial,sans-serif" font-size="11" fill="#646970">Contenido</text>
+          <text x="238" y="768" font-family="Arial,sans-serif" font-size="12" fill="#8c8f94">¿En qué estás pensando?</text>
+          <rect x="575" y="741" width="90" height="25" rx="2" fill="#2271b1"/>
+          <text x="620" y="758" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" font-weight="600" fill="#fff">Guardar borrador</text>
+
+          <rect x="697" y="637" width="483" height="137" fill="#fff" stroke="#c3c4c7"/>
+          <text x="715" y="663" font-family="Arial,sans-serif" font-size="14" font-weight="600" fill="#1d2327">Salud del sitio</text>
+          <path d="M697 675h483" stroke="#c3c4c7"/>
+          <circle cx="738" cy="723" r="20" fill="#edfaef"/>
+          <path d="M728 723l7 7 14-16" fill="none" stroke="#00a32a" stroke-width="3"/>
+          <text x="772" y="714" font-family="Arial,sans-serif" font-size="13" font-weight="600" fill="#1d2327">¡Buen trabajo!</text>
+          <text x="772" y="735" font-family="Arial,sans-serif" font-size="12" fill="#50575e">Tu sitio funciona correctamente. No se han detectado</text>
+          <text x="772" y="753" font-family="Arial,sans-serif" font-size="12" fill="#50575e">problemas críticos de rendimiento o seguridad.</text>
+          <text x="772" y="769" font-family="Arial,sans-serif" font-size="11" fill="#2271b1">Ver detalles de salud del sitio →</text>
+        </svg>
+      </div>
         <figcaption>Panel lateral de WordPress: las secciones principales para gestionar tu web.</figcaption>
       </figure>
     </article>
@@ -142,8 +379,392 @@
     <article class="step" id="paso-2" data-step="2">
       <header class="step__head">
         <span class="step__num" aria-hidden="true">2</span>
-        <h3 class="step__title">Crear la página Inicio</h3>
+        <h3 class="step__title">Elegir el aspecto de tu web</h3>
         <label class="tick"><input type="checkbox" data-done="2"><span>Hecho</span></label>
+      </header>
+      <ol class="actions">
+        <li>En el menú de la izquierda, haz clic en <strong>Apariencia</strong> → <strong>Temas</strong>.</li>
+        <li>Mira los temas disponibles. Si quieres, haz clic en <strong>Vista previa</strong> para ver cómo quedaría tu web.</li>
+        <li>Cuando elijas uno, haz clic en <strong>Activar</strong>.</li>
+        <li>Si no ves estas opciones o no sabes cuál elegir, pide ayuda al profesor antes de continuar.</li>
+      </ol>
+      <div class="check check--illustration">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900" role="img" aria-labelledby="temas-titulo temas-descripcion">
+          <title id="temas-titulo">Pantalla de temas de WordPress</title>
+          <desc id="temas-descripcion">Ejemplo ilustrativo del panel de WordPress. En Apariencia, selecciona Temas para revisar diseños y activar el que prefieras.</desc>
+          <defs>
+            <filter id="temas-sombra" x="-10%" y="-10%" width="120%" height="130%">
+              <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#000" flood-opacity=".12"/>
+            </filter>
+            <clipPath id="tema-preview-1"><rect x="190" y="188" width="370" height="238"/></clipPath>
+            <clipPath id="tema-preview-2"><rect x="590" y="188" width="370" height="238"/></clipPath>
+            <clipPath id="tema-preview-3"><rect x="990" y="188" width="370" height="238"/></clipPath>
+          </defs>
+          <rect width="1440" height="900" fill="#f0f0f1"/>
+
+          <rect width="1440" height="32" fill="#1d2327"/>
+          <circle cx="20" cy="16" r="10" fill="#fff"/>
+          <text x="20" y="21" text-anchor="middle" font-family="Arial,sans-serif" font-size="15" font-weight="700" fill="#1d2327">W</text>
+          <text x="44" y="21" font-family="Arial,sans-serif" font-size="13" fill="#f0f0f1">Mi sitio</text>
+          <path d="M111 11h12v10h-12zM114 8h6v3h-6" fill="none" stroke="#c3c4c7" stroke-width="1.4"/>
+          <text x="132" y="21" font-family="Arial,sans-serif" font-size="13" fill="#c3c4c7">2</text>
+          <text x="184" y="21" font-family="Arial,sans-serif" font-size="13" fill="#c3c4c7">＋ Añadir</text>
+          <text x="1300" y="21" font-family="Arial,sans-serif" font-size="13" fill="#c3c4c7">Hola, admin</text>
+          <circle cx="1410" cy="16" r="10" fill="#8c8f94"/>
+          <circle cx="1410" cy="13" r="3.5" fill="#f0f0f1"/>
+          <path d="M1404 22q6-8 12 0" fill="#f0f0f1"/>
+
+          <rect y="32" width="160" height="868" fill="#1d2327"/>
+          <path d="M15 53h15v13H15zM18 50h9v3h-9" fill="none" stroke="#a7aaad" stroke-width="1.5"/>
+          <text x="40" y="66" font-family="Arial,sans-serif" font-size="13" fill="#c3c4c7">Escritorio</text>
+          <path d="M16 95h15v12H16zM19 92h9v3h-9" fill="none" stroke="#a7aaad" stroke-width="1.3"/>
+          <text x="40" y="105" font-family="Arial,sans-serif" font-size="13" fill="#c3c4c7">Entradas</text>
+          <path d="M16 129h14v13H16zM18 132h10M18 136h10" fill="none" stroke="#a7aaad" stroke-width="1.3"/>
+          <text x="40" y="140" font-family="Arial,sans-serif" font-size="13" fill="#c3c4c7">Medios</text>
+          <path d="M15 162h14v13H15zM18 165h8M18 169h8" fill="none" stroke="#a7aaad" stroke-width="1.3"/>
+          <text x="40" y="174" font-family="Arial,sans-serif" font-size="13" fill="#c3c4c7">Páginas</text>
+          <path d="M15 197h14v12H15zM18 200h8M18 204h8" fill="none" stroke="#a7aaad" stroke-width="1.3"/>
+          <text x="40" y="208" font-family="Arial,sans-serif" font-size="13" fill="#c3c4c7">Comentarios</text>
+          <rect y="220" width="160" height="36" fill="#2271b1"/>
+          <path d="M15 231h14v13H15zM18 234h8M18 238h8" fill="none" stroke="#fff" stroke-width="1.3"/>
+          <text x="40" y="243" font-family="Arial,sans-serif" font-size="13" font-weight="600" fill="#fff">Apariencia</text>
+          <rect x="24" y="256" width="136" height="30" fill="#1d2327"/>
+          <rect x="24" y="256" width="3" height="30" fill="#72aee6"/>
+          <text x="40" y="276" font-family="Arial,sans-serif" font-size="12" font-weight="600" fill="#fff">Temas</text>
+          <text x="40" y="307" font-family="Arial,sans-serif" font-size="12" fill="#c3c4c7">Editor</text>
+          <text x="40" y="335" font-family="Arial,sans-serif" font-size="12" fill="#c3c4c7">Personalizar</text>
+          <path d="M15 365h15v14H15zM18 369h9M18 373h9" fill="none" stroke="#a7aaad" stroke-width="1.3"/>
+          <text x="40" y="377" font-family="Arial,sans-serif" font-size="13" fill="#c3c4c7">Plugins</text>
+          <circle cx="23" cy="410" r="6" fill="none" stroke="#a7aaad" stroke-width="1.3"/>
+          <path d="M13 424q10-13 20 0" fill="none" stroke="#a7aaad" stroke-width="1.3"/>
+          <text x="40" y="416" font-family="Arial,sans-serif" font-size="13" fill="#c3c4c7">Usuarios</text>
+          <path d="M16 438h14v14H16zM19 442h8M19 446h8" fill="none" stroke="#a7aaad" stroke-width="1.3"/>
+          <text x="40" y="450" font-family="Arial,sans-serif" font-size="13" fill="#c3c4c7">Herramientas</text>
+          <circle cx="23" cy="480" r="7" fill="none" stroke="#a7aaad" stroke-width="1.3"/>
+          <circle cx="23" cy="480" r="2" fill="#a7aaad"/>
+          <text x="40" y="485" font-family="Arial,sans-serif" font-size="13" fill="#c3c4c7">Ajustes</text>
+          <text x="15" y="879" font-family="Arial,sans-serif" font-size="11" fill="#a7aaad">WordPress 6.5.2</text>
+
+          <text x="190" y="83" font-family="Arial,sans-serif" font-size="24" font-weight="600" fill="#1d2327">Temas</text>
+          <text x="270" y="82" font-family="Arial,sans-serif" font-size="14" fill="#646970">Añade, activa o administra temas</text>
+          <rect x="1226" y="55" width="184" height="32" rx="2" fill="#f6f7f7" stroke="#2271b1"/>
+          <text x="1318" y="76" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" fill="#2271b1">Añadir nuevo tema</text>
+          <rect x="190" y="111" width="1219" height="46" fill="#fff" stroke="#c3c4c7"/>
+          <rect x="206" y="123" width="18" height="18" rx="2" fill="#fff" stroke="#8c8f94"/>
+          <path d="M210 132l4 4 7-8" fill="none" stroke="#50575e" stroke-width="1.4"/>
+          <text x="236" y="136" font-family="Arial,sans-serif" font-size="13" fill="#1d2327">Todos</text>
+          <text x="297" y="136" font-family="Arial,sans-serif" font-size="13" fill="#646970">Actualizaciones disponibles</text>
+          <rect x="1240" y="119" width="150" height="30" rx="2" fill="#fff" stroke="#8c8f94"/>
+          <text x="1252" y="139" font-family="Arial,sans-serif" font-size="12" fill="#646970">Buscar temas...</text>
+          <circle cx="1374" cy="133" r="6" fill="none" stroke="#646970" stroke-width="1.4"/>
+          <path d="M1378 137l5 5" stroke="#646970" stroke-width="1.4"/>
+          <text x="190" y="178" font-family="Arial,sans-serif" font-size="13" fill="#50575e">Temas instalados</text>
+
+          <g filter="url(#temas-sombra)">
+            <rect x="190" y="188" width="370" height="330" fill="#fff" stroke="#c3c4c7"/>
+            <g clip-path="url(#tema-preview-1)">
+              <rect x="190" y="188" width="370" height="238" fill="#f5f0e8"/>
+              <rect x="190" y="188" width="370" height="35" fill="#faf8f3"/>
+              <text x="210" y="210" font-family="Georgia,serif" font-size="14" fill="#302d28">CASA ABIERTA</text>
+              <text x="418" y="209" font-family="Arial,sans-serif" font-size="9" fill="#514b43">INICIO　PROYECTOS　CONTACTO</text>
+              <rect x="190" y="223" width="370" height="203" fill="#dfd5c5"/>
+              <rect x="210" y="244" width="153" height="161" fill="#b9c3aa"/>
+              <rect x="225" y="260" width="123" height="145" fill="#e9e2d5"/>
+              <rect x="237" y="273" width="97" height="132" fill="#8d9b7c"/>
+              <circle cx="284" cy="319" r="27" fill="#c5b28d"/>
+              <path d="M237 383q45-70 97 0v22h-97z" fill="#6d7962"/>
+              <text x="382" y="282" font-family="Georgia,serif" font-size="21" fill="#302d28">Un lugar</text>
+              <text x="382" y="307" font-family="Georgia,serif" font-size="21" fill="#302d28">para sentirse</text>
+              <text x="382" y="332" font-family="Georgia,serif" font-size="21" fill="#302d28">en casa.</text>
+              <path d="M382 350h130" stroke="#a19889"/>
+              <text x="382" y="370" font-family="Arial,sans-serif" font-size="9" fill="#514b43">Ideas sencillas para tu hogar</text>
+              <rect x="382" y="383" width="94" height="25" fill="#4a5544"/>
+              <text x="429" y="399" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" fill="#fff">DESCUBRIR</text>
+            </g>
+            <rect x="190" y="426" width="370" height="46" fill="#fff"/>
+            <text x="208" y="455" font-family="Arial,sans-serif" font-size="16" font-weight="600" fill="#1d2327">Twenty Twenty-Four</text>
+            <rect x="190" y="472" width="370" height="46" fill="#f6f7f7"/>
+            <text x="208" y="500" font-family="Arial,sans-serif" font-size="12" fill="#50575e">Detalles del tema</text>
+            <rect x="438" y="480" width="104" height="30" rx="2" fill="#f6f7f7" stroke="#2271b1"/>
+            <text x="490" y="500" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#2271b1">Activar</text>
+          </g>
+
+          <g filter="url(#temas-sombra)">
+            <rect x="590" y="188" width="370" height="330" fill="#fff" stroke="#c3c4c7"/>
+            <g clip-path="url(#tema-preview-2)">
+              <rect x="590" y="188" width="370" height="238" fill="#e6edf2"/>
+              <rect x="590" y="188" width="370" height="36" fill="#f8fafb"/>
+              <text x="610" y="211" font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="#293d4d">NORTE ESTUDIO</text>
+              <text x="817" y="210" font-family="Arial,sans-serif" font-size="9" fill="#52616a">SERVICIOS　NOSOTROS　CONTACTO</text>
+              <rect x="590" y="224" width="370" height="202" fill="#c7d7e1"/>
+              <rect x="612" y="245" width="151" height="159" fill="#91a9b5"/>
+              <path d="M612 347l58-65 41 43 52-55v134H612z" fill="#617b86"/>
+              <circle cx="724" cy="266" r="14" fill="#e1c28e"/>
+              <text x="786" y="273" font-family="Arial,sans-serif" font-size="10" font-weight="700" letter-spacing="1" fill="#506776">DISEÑO Y ARQUITECTURA</text>
+              <text x="786" y="306" font-family="Georgia,serif" font-size="23" fill="#263d4d">Espacios para</text>
+              <text x="786" y="333" font-family="Georgia,serif" font-size="23" fill="#263d4d">nuevas ideas</text>
+              <path d="M786 350h123" stroke="#879aa5"/>
+              <text x="786" y="372" font-family="Arial,sans-serif" font-size="9" fill="#52616a">Diseño funcional para cada día</text>
+              <rect x="786" y="384" width="98" height="25" fill="#314e60"/>
+              <text x="835" y="400" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" fill="#fff">VER PROYECTOS</text>
+            </g>
+            <rect x="590" y="426" width="370" height="46" fill="#fff"/>
+            <text x="608" y="455" font-family="Arial,sans-serif" font-size="16" font-weight="600" fill="#1d2327">Twenty Twenty-Three</text>
+            <rect x="590" y="472" width="370" height="46" fill="#f6f7f7"/>
+            <text x="608" y="500" font-family="Arial,sans-serif" font-size="12" fill="#50575e">Detalles del tema</text>
+            <rect x="838" y="480" width="104" height="30" rx="2" fill="#f6f7f7" stroke="#2271b1"/>
+            <text x="890" y="500" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#2271b1">Activar</text>
+          </g>
+
+          <g filter="url(#temas-sombra)">
+            <rect x="990" y="188" width="370" height="330" fill="#fff" stroke="#c3c4c7"/>
+            <g clip-path="url(#tema-preview-3)">
+              <rect x="990" y="188" width="370" height="238" fill="#f2e9dc"/>
+              <rect x="990" y="188" width="370" height="36" fill="#fffaf4"/>
+              <circle cx="1018" cy="206" r="9" fill="#bd714f"/>
+              <text x="1035" y="210" font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="#3c3028">CAFÉ DE BARRIO</text>
+              <text x="1245" y="210" font-family="Arial,sans-serif" font-size="9" fill="#68584e">CARTA　HISTORIA　VISÍTANOS</text>
+              <rect x="990" y="224" width="370" height="202" fill="#d8c2a6"/>
+              <rect x="1010" y="244" width="330" height="162" fill="#efe2ce"/>
+              <rect x="1030" y="258" width="125" height="134" fill="#b56c48"/>
+              <path d="M1048 285h88v107h-88z" fill="#5a4538"/>
+              <path d="M1060 296h64v43h-64z" fill="#d5aa70"/>
+              <path d="M1070 354h44v38h-44z" fill="#dfc5a1"/>
+              <text x="1174" y="273" font-family="Georgia,serif" font-size="23" fill="#47362d">Un buen café,</text>
+              <text x="1174" y="300" font-family="Georgia,serif" font-size="23" fill="#47362d">sin prisa.</text>
+              <path d="M1174 316h139" stroke="#bca58b"/>
+              <text x="1174" y="339" font-family="Arial,sans-serif" font-size="9" fill="#68584e">Tu rincón de cada mañana</text>
+              <rect x="1174" y="357" width="100" height="25" fill="#654a39"/>
+              <text x="1224" y="373" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" fill="#fff">VER LA CARTA</text>
+            </g>
+            <rect x="990" y="426" width="370" height="46" fill="#fff"/>
+            <text x="1008" y="455" font-family="Arial,sans-serif" font-size="16" font-weight="600" fill="#1d2327">Astra</text>
+            <rect x="990" y="472" width="370" height="46" fill="#f6f7f7"/>
+            <text x="1008" y="500" font-family="Arial,sans-serif" font-size="12" fill="#50575e">Detalles del tema</text>
+            <rect x="1238" y="480" width="104" height="30" rx="2" fill="#f6f7f7" stroke="#2271b1"/>
+            <text x="1290" y="500" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#2271b1">Activar</text>
+          </g>
+        </svg>
+      </div>
+      <div class="check">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        <p><strong>Comprueba:</strong> el tema que has elegido aparece como <strong>Activo</strong>.</p>
+      </div>
+    </article>
+
+    <article class="step" id="paso-3" data-step="3">
+      <header class="step__head">
+        <span class="step__num" aria-hidden="true">3</span>
+        <h3 class="step__title">Comprobar que Gutenberg está disponible</h3>
+        <label class="tick"><input type="checkbox" data-done="3"><span>Hecho</span></label>
+      </header>
+      <ol class="actions">
+        <li>En el panel lateral, haz clic en <strong>Páginas</strong> → <strong>Añadir nueva</strong>.</li>
+        <li>Si aparece el editor con el botón <strong>+</strong> y bloques como <strong>Párrafo</strong>, <strong>Encabezado</strong> e <strong>Imagen</strong>, ya puedes seguir.</li>
+        <li>Si no lo ves, avisa al profesor: puede ser que la instalación del editor no esté disponible en ese momento.</li>
+      </ol>
+      <div class="check check--illustration">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900" role="img" aria-labelledby="gutenberg-titulo gutenberg-descripcion">
+          <title id="gutenberg-titulo">Editor de bloques de WordPress con Gutenberg</title>
+          <desc id="gutenberg-descripcion">Editor de WordPress con el inserter de bloques abierto, el panel de ajustes de la página y los bloques de párrafo, encabezado e imagen disponibles.</desc>
+          <defs>
+            <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+              <feDropShadow dx="0" dy="3" stdDeviation="7" flood-color="#000000" flood-opacity=".16"/>
+            </filter>
+            <style>
+              text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
+              .small{font-size:12px}.normal{font-size:14px}.muted{fill:#646970}.dark{fill:#1d2327}
+            </style>
+          </defs>
+
+          <rect width="1440" height="900" fill="#f0f0f1"/>
+
+          <!-- WordPress admin bar -->
+          <rect width="1440" height="32" fill="#1d2327"/>
+          <circle cx="20" cy="16" r="10" fill="#fff"/>
+          <text x="20" y="21" text-anchor="middle" font-size="15" font-weight="700" fill="#1d2327">W</text>
+          <text x="45" y="21" font-size="13" fill="#f0f0f1">Mi sitio</text>
+          <path d="M119 11h12v10h-12z M122 8h6v3h-6" fill="none" stroke="#c3c4c7" stroke-width="1.4"/>
+          <text x="139" y="21" font-size="13" fill="#c3c4c7">2</text>
+          <path d="M181 11h12a2 2 0 0 1 2 2v7h-10l-4 3v-3h-1a2 2 0 0 1-2-2v-5a2 2 0 0 1 3-2z" fill="none" stroke="#c3c4c7" stroke-width="1.3"/>
+          <text x="204" y="21" font-size="13" fill="#c3c4c7">0</text>
+          <text x="241" y="21" font-size="13" fill="#c3c4c7">＋ Añadir</text>
+          <text x="1322" y="21" font-size="13" fill="#c3c4c7">Hola, admin</text>
+          <circle cx="1410" cy="16" r="10" fill="#8c8f94"/>
+          <circle cx="1410" cy="13" r="3.5" fill="#f0f0f1"/>
+          <path d="M1404 22q6-8 12 0" fill="#f0f0f1"/>
+
+          <!-- Admin sidebar -->
+          <rect x="0" y="32" width="160" height="868" fill="#1d2327"/>
+          <rect x="0" y="43" width="160" height="36" fill="#2271b1"/>
+          <path d="M15 53h15v13H15zM18 50h9v3h-9" fill="none" stroke="#fff" stroke-width="1.5"/>
+          <text x="40" y="66" font-size="13" fill="#fff">Escritorio</text>
+
+          <path d="M16 95h15v12H16zM19 92h9v3h-9" fill="none" stroke="#a7aaad" stroke-width="1.3"/>
+          <text x="40" y="105" font-size="13" fill="#c3c4c7">Entradas</text>
+          <path d="M16 129h14v13H16zM18 132h10M18 136h10" fill="none" stroke="#a7aaad" stroke-width="1.3"/>
+          <text x="40" y="140" font-size="13" fill="#c3c4c7">Medios</text>
+
+          <rect x="0" y="151" width="160" height="35" fill="#2c3338"/>
+          <path d="M15 162h14v13H15zM18 165h8M18 169h8" fill="none" stroke="#fff" stroke-width="1.3"/>
+          <text x="40" y="174" font-size="13" fill="#fff" font-weight="600">Páginas</text>
+          <path d="M148 165l5 4-5 4" fill="none" stroke="#fff" stroke-width="1.4"/>
+          <text x="40" y="204" font-size="12" fill="#c3c4c7">Todas las páginas</text>
+          <rect x="24" y="213" width="136" height="29" fill="#1d2327"/>
+          <rect x="24" y="213" width="3" height="29" fill="#72aee6"/>
+          <text x="40" y="232" font-size="12" fill="#fff" font-weight="600">Añadir nueva</text>
+
+          <path d="M15 258h15v12H15zM17 255h11v3H17" fill="none" stroke="#a7aaad" stroke-width="1.3"/>
+          <text x="40" y="269" font-size="13" fill="#c3c4c7">Comentarios</text>
+          <path d="M15 292h15v13H15zM18 296h9M18 300h6" fill="none" stroke="#a7aaad" stroke-width="1.3"/>
+          <text x="40" y="303" font-size="13" fill="#c3c4c7">Apariencia</text>
+          <path d="M16 327l7-7 7 7-7 7z" fill="none" stroke="#a7aaad" stroke-width="1.3"/>
+          <text x="40" y="337" font-size="13" fill="#c3c4c7">Plugins</text>
+          <circle cx="23" cy="368" r="6" fill="none" stroke="#a7aaad" stroke-width="1.3"/>
+          <path d="M13 382q10-13 20 0" fill="none" stroke="#a7aaad" stroke-width="1.3"/>
+          <text x="40" y="374" font-size="13" fill="#c3c4c7">Usuarios</text>
+          <path d="M16 394h14v14H16zM19 398h8M19 402h8" fill="none" stroke="#a7aaad" stroke-width="1.3"/>
+          <text x="40" y="406" font-size="13" fill="#c3c4c7">Herramientas</text>
+          <circle cx="23" cy="435" r="7" fill="none" stroke="#a7aaad" stroke-width="1.3"/>
+          <circle cx="23" cy="435" r="2" fill="#a7aaad"/>
+          <text x="40" y="440" font-size="13" fill="#c3c4c7">Ajustes</text>
+          <text x="15" y="879" font-size="11" fill="#a7aaad">WordPress 6.5.2</text>
+
+          <!-- Editor toolbar -->
+          <rect x="160" y="32" width="1280" height="60" fill="#fff"/>
+          <line x1="160" y1="91.5" x2="1440" y2="91.5" stroke="#dcdcde"/>
+          <rect x="174" y="42" width="38" height="38" rx="2" fill="#1e1e1e"/>
+          <circle cx="193" cy="61" r="12" fill="#fff"/>
+          <text x="193" y="67" text-anchor="middle" font-size="18" font-weight="700" fill="#1e1e1e">W</text>
+          <rect x="222" y="42" width="38" height="38" rx="2" fill="#2271b1"/>
+          <path d="M241 51v20M231 61h20" stroke="#fff" stroke-width="2"/>
+          <rect x="272" y="42" width="34" height="38" rx="2" fill="#f6f7f7"/>
+          <path d="M293 54h-10l4-4m-4 4 4 4" fill="none" stroke="#50575e" stroke-width="1.5"/>
+          <rect x="309" y="42" width="34" height="38" rx="2" fill="#f6f7f7"/>
+          <path d="M319 54h10l-4-4m4 4-4 4" fill="none" stroke="#8c8f94" stroke-width="1.5"/>
+          <rect x="347" y="42" width="34" height="38" rx="2" fill="#f6f7f7"/>
+          <path d="M357 52h14M357 57h14M357 62h10M357 67h14" stroke="#50575e" stroke-width="1.4"/>
+          <text x="410" y="56" font-size="13" fill="#1d2327">Añadir nueva página</text>
+          <text x="410" y="73" font-size="11" fill="#646970">⌘K</text>
+          <text x="1162" y="66" font-size="12" fill="#646970">Guardado</text>
+          <rect x="1240" y="47" width="48" height="30" rx="2" fill="#f6f7f7" stroke="#c3c4c7"/>
+          <text x="1264" y="67" text-anchor="middle" font-size="12" fill="#1d2327">Vista</text>
+          <rect x="1297" y="47" width="32" height="30" rx="2" fill="#f6f7f7" stroke="#c3c4c7"/>
+          <path d="M1307 57h12M1307 62h12M1307 67h12" stroke="#50575e" stroke-width="1.4"/>
+          <rect x="1337" y="47" width="38" height="30" rx="2" fill="#f6f7f7" stroke="#c3c4c7"/>
+          <text x="1356" y="67" text-anchor="middle" font-size="12" fill="#50575e">⚙</text>
+          <rect x="1383" y="47" width="48" height="30" rx="2" fill="#2271b1"/>
+          <text x="1407" y="67" text-anchor="middle" font-size="12" font-weight="600" fill="#fff">Publicar</text>
+
+          <!-- Editor canvas -->
+          <rect x="160" y="92" width="1040" height="808" fill="#f0f0f1"/>
+          <rect x="427" y="112" width="670" height="760" fill="#fff" filter="url(#shadow)"/>
+          <text x="476" y="179" font-size="31" font-weight="600" fill="#1e1e1e">Comprobar que Gutenberg</text>
+          <text x="476" y="216" font-size="31" font-weight="600" fill="#1e1e1e">está disponible</text>
+          <line x1="476" y1="240" x2="1048" y2="240" stroke="#e0e0e0"/>
+
+          <rect x="476" y="262" width="572" height="88" rx="3" fill="#f0f6fc" stroke="#72aee6" stroke-width="1.5"/>
+          <rect x="491" y="277" width="4" height="58" fill="#2271b1"/>
+          <text x="509" y="289" font-size="13" font-weight="700" fill="#1d2327">PASO 1 · ABRE UNA PÁGINA NUEVA</text>
+          <text x="509" y="313" font-size="13" fill="#3c434a">En el panel lateral, haz clic en Páginas → Añadir nueva.</text>
+          <text x="509" y="333" font-size="12" fill="#646970">La opción «Añadir nueva» aparece seleccionada en el menú.</text>
+
+          <text x="476" y="393" font-size="21" font-weight="600" fill="#1e1e1e">¿Ves el editor de bloques?</text>
+          <text x="476" y="422" font-size="14" fill="#3c434a">Si aparece el botón <tspan font-weight="700">+</tspan> y bloques como Párrafo,</text>
+          <text x="476" y="444" font-size="14" fill="#3c434a">Encabezado e Imagen, ya puedes seguir.</text>
+
+          <rect x="476" y="470" width="572" height="56" rx="3" fill="#edfaef" stroke="#68de7b"/>
+          <circle cx="499" cy="498" r="11" fill="#00a32a"/>
+          <path d="M494 498l4 4 7-8" fill="none" stroke="#fff" stroke-width="2"/>
+          <text x="520" y="494" font-size="13" font-weight="700" fill="#1d2327">COMPROBACIÓN CORRECTA</text>
+          <text x="520" y="513" font-size="13" fill="#3c434a">El editor muestra bloques básicos y no necesitas instalar nada.</text>
+
+          <text x="476" y="566" font-size="16" font-weight="600" fill="#1e1e1e">Si no lo ves</text>
+          <text x="476" y="592" font-size="13" fill="#3c434a">Avisa al profesor: puede que la instalación del editor</text>
+          <text x="476" y="613" font-size="13" fill="#3c434a">no esté disponible en este momento.</text>
+
+          <line x1="476" y1="645" x2="1048" y2="645" stroke="#e0e0e0"/>
+          <text x="476" y="679" font-size="12" fill="#8c8f94">Empieza a escribir o pulsa + para elegir un bloque</text>
+          <rect x="476" y="702" width="572" height="1" fill="#f0f0f1"/>
+
+          <!-- Block inserter panel -->
+          <g filter="url(#shadow)">
+            <rect x="177" y="106" width="274" height="442" rx="3" fill="#fff"/>
+          </g>
+          <text x="194" y="133" font-size="14" font-weight="600" fill="#1d2327">Añadir un bloque</text>
+          <text x="426" y="133" text-anchor="end" font-size="17" fill="#646970">×</text>
+          <rect x="193" y="148" width="242" height="34" rx="2" fill="#fff" stroke="#8c8f94"/>
+          <circle cx="208" cy="163" r="5" fill="none" stroke="#646970" stroke-width="1.4"/>
+          <path d="M212 167l4 4" stroke="#646970" stroke-width="1.4"/>
+          <text x="224" y="168" font-size="12" fill="#646970">Buscar un bloque</text>
+          <text x="194" y="209" font-size="11" font-weight="700" letter-spacing=".5" fill="#646970">BLOQUES</text>
+          <line x1="193" y1="218" x2="435" y2="218" stroke="#dcdcde"/>
+
+          <rect x="191" y="229" width="248" height="73" rx="2" fill="#f0f6fc"/>
+          <rect x="204" y="244" width="30" height="30" rx="2" fill="#fff" stroke="#c3c4c7"/>
+          <path d="M211 252h16M211 257h16M211 262h12" stroke="#1d2327" stroke-width="1.5"/>
+          <text x="245" y="252" font-size="13" font-weight="600" fill="#1d2327">Párrafo</text>
+          <text x="245" y="270" font-size="11" fill="#646970">Empieza con el bloque de texto</text>
+
+          <rect x="204" y="315" width="30" height="30" rx="2" fill="#fff" stroke="#c3c4c7"/>
+          <text x="219" y="337" text-anchor="middle" font-size="19" font-weight="700" fill="#1d2327">H</text>
+          <text x="245" y="326" font-size="13" font-weight="600" fill="#1d2327">Encabezado</text>
+          <text x="245" y="344" font-size="11" fill="#646970">Introduce una nueva sección</text>
+
+          <rect x="204" y="373" width="30" height="30" rx="2" fill="#fff" stroke="#c3c4c7"/>
+          <rect x="210" y="379" width="18" height="18" fill="none" stroke="#1d2327" stroke-width="1.3"/>
+          <circle cx="215" cy="384" r="2" fill="#1d2327"/>
+          <path d="M211 394l5-5 3 3 3-4 4 6" fill="none" stroke="#1d2327" stroke-width="1.3"/>
+          <text x="245" y="384" font-size="13" font-weight="600" fill="#1d2327">Imagen</text>
+          <text x="245" y="402" font-size="11" fill="#646970">Inserta una imagen</text>
+
+          <line x1="193" y1="420" x2="435" y2="420" stroke="#dcdcde"/>
+          <text x="194" y="443" font-size="11" font-weight="700" letter-spacing=".5" fill="#646970">EXPLORAR TODOS</text>
+          <text x="194" y="470" font-size="12" fill="#2271b1">Ver todos los bloques</text>
+          <path d="M414 465l5 5-5 5" fill="none" stroke="#2271b1" stroke-width="1.4"/>
+          <text x="194" y="515" font-size="11" fill="#8c8f94">Bloques básicos disponibles</text>
+
+          <!-- Settings sidebar -->
+          <rect x="1200" y="92" width="240" height="808" fill="#fff"/>
+          <line x1="1200" y1="92" x2="1200" y2="900" stroke="#dcdcde"/>
+          <rect x="1200" y="92" width="120" height="42" fill="#fff"/>
+          <rect x="1320" y="92" width="120" height="42" fill="#fff"/>
+          <text x="1260" y="118" text-anchor="middle" font-size="13" font-weight="600" fill="#1d2327">Página</text>
+          <text x="1380" y="118" text-anchor="middle" font-size="13" fill="#646970">Bloque</text>
+          <line x1="1200" y1="133.5" x2="1440" y2="133.5" stroke="#dcdcde"/>
+          <rect x="1200" y="132" width="120" height="2" fill="#2271b1"/>
+          <text x="1218" y="167" font-size="13" font-weight="600" fill="#1d2327">Página</text>
+          <path d="M1415 161l5 5 5-5" fill="none" stroke="#646970" stroke-width="1.3"/>
+          <line x1="1200" y1="184" x2="1440" y2="184" stroke="#dcdcde"/>
+          <text x="1218" y="211" font-size="12" fill="#646970">Estado</text>
+          <text x="1218" y="236" font-size="12" fill="#1d2327">Borrador</text>
+          <text x="1218" y="272" font-size="12" fill="#646970">Publicación</text>
+          <text x="1218" y="297" font-size="12" fill="#1d2327">Inmediatamente</text>
+          <line x1="1200" y1="316" x2="1440" y2="316" stroke="#dcdcde"/>
+          <text x="1218" y="346" font-size="12" fill="#646970">Enlace permanente</text>
+          <text x="1218" y="371" font-size="12" fill="#2271b1">comprobar-gutenberg</text>
+          <line x1="1200" y1="390" x2="1440" y2="390" stroke="#dcdcde"/>
+          <text x="1218" y="421" font-size="12" fill="#646970">Autor</text>
+          <text x="1218" y="447" font-size="12" fill="#1d2327">admin</text>
+          <line x1="1200" y1="465" x2="1440" y2="465" stroke="#dcdcde"/>
+          <text x="1218" y="496" font-size="12" fill="#646970">Imagen destacada</text>
+          <rect x="1218" y="512" width="204" height="68" rx="2" fill="#f6f7f7" stroke="#c3c4c7"/>
+          <text x="1320" y="542" text-anchor="middle" font-size="12" fill="#2271b1">Establecer imagen</text>
+          <text x="1320" y="560" text-anchor="middle" font-size="11" fill="#646970">destacada</text>
+          <line x1="1200" y1="600" x2="1440" y2="600" stroke="#dcdcde"/>
+          <text x="1218" y="631" font-size="12" fill="#646970">Discusión</text>
+          <text x="1218" y="657" font-size="12" fill="#1d2327">Permitir comentarios</text>
+          <rect x="1400" y="646" width="24" height="14" rx="7" fill="#8c8f94"/>
+          <circle cx="1407" cy="653" r="5" fill="#fff"/>
+        </svg>
+      </div>
+    </article>
+
+    <article class="step" id="paso-4" data-step="4">
+      <header class="step__head">
+        <span class="step__num" aria-hidden="true">4</span>
+        <h3 class="step__title">Crear la página Inicio</h3>
+        <label class="tick"><input type="checkbox" data-done="4"><span>Hecho</span></label>
       </header>
       <ol class="actions">
         <li>En el panel lateral, haz clic en <strong>Páginas</strong> → <strong>Añadir nueva</strong>.</li>
@@ -154,13 +775,87 @@
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
         <p><strong>Comprueba:</strong> la página Inicio aparece en la lista de páginas con estado "Borrador".</p>
       </div>
+      <figure class="fig">
+        <div class="svgpad">
+          <svg viewBox="0 0 680 400" role="img" aria-labelledby="inicio-editor-titulo inicio-editor-descripcion" xmlns="http://www.w3.org/2000/svg">
+            <title id="inicio-editor-titulo">Editor de WordPress con la página Inicio guardada como borrador</title>
+            <desc id="inicio-editor-descripcion">Vista del editor Gutenberg. El título de la página es Inicio, su estado es Borrador y el botón Guardar borrador está en la barra superior.</desc>
+            <rect width="680" height="400" fill="#f0f0f1"/>
+
+            <rect width="680" height="36" fill="#1d2327"/>
+            <circle cx="18" cy="18" r="9" fill="#f0f0f1"/>
+            <path d="M18 11l-3 11h2l1-5 3 5h2l-5-11z" fill="#1d2327"/>
+            <circle cx="18" cy="18" r="9" fill="none" stroke="#f0f0f1" stroke-width="1.2"/>
+            <text x="36" y="23" font-family="Arial,sans-serif" font-size="12" font-weight="600" fill="#f0f0f1">Mi sitio</text>
+            <path d="M122 13h12M128 7v12" stroke="#c3c4c7" stroke-width="1.5"/>
+            <text x="144" y="22" font-family="Arial,sans-serif" font-size="11" fill="#c3c4c7">Añadir</text>
+            <text x="415" y="22" font-family="Arial,sans-serif" font-size="10" fill="#c3c4c7">Borrador guardado</text>
+            <rect x="520" y="6" width="70" height="24" rx="3" fill="#f6f7f7"/>
+            <text x="555" y="22" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#1d2327">Vista previa</text>
+            <rect x="596" y="6" width="76" height="24" rx="3" fill="#2271b1"/>
+            <text x="634" y="22" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" font-weight="600" fill="#fff">Guardar borrador</text>
+
+            <rect y="36" width="50" height="364" fill="#1d2327"/>
+            <rect x="14" y="52" width="22" height="22" rx="2" fill="#fff"/>
+            <path d="M18 57h14M18 62h14M18 67h9" stroke="#1d2327" stroke-width="1.5"/>
+            <rect x="9" y="97" width="32" height="32" rx="3" fill="#2271b1"/>
+            <path d="M25 104v18M16 113h18" stroke="#fff" stroke-width="2"/>
+            <path d="M17 151h16v14H17zM20 155h10M20 159h10" fill="none" stroke="#a7aaad" stroke-width="1.4"/>
+            <path d="M17 184h16v14H17zM20 188h10M20 192h8" fill="none" stroke="#a7aaad" stroke-width="1.4"/>
+            <circle cx="25" cy="219" r="8" fill="none" stroke="#a7aaad" stroke-width="1.4"/>
+            <path d="M25 214v10M20 219h10" stroke="#a7aaad" stroke-width="1.2"/>
+
+            <rect x="50" y="36" width="465" height="42" fill="#fff"/>
+            <path d="M67 52h12l-5-5m5 5-5 5" fill="none" stroke="#50575e" stroke-width="1.4"/>
+            <path d="M95 48l-8 8m0-8l8 8" stroke="#8c8f94" stroke-width="1.3"/>
+            <text x="116" y="54" font-family="Arial,sans-serif" font-size="10" fill="#1d2327">Inicio</text>
+            <text x="116" y="68" font-family="Arial,sans-serif" font-size="9" fill="#646970">Página · Borrador</text>
+            <rect x="475" y="44" width="26" height="26" rx="2" fill="#f6f7f7"/>
+            <path d="M482 52h12M482 57h12M482 62h12" stroke="#50575e" stroke-width="1.3"/>
+
+            <rect x="50" y="78" width="465" height="322" fill="#e8e9eb"/>
+            <rect x="95" y="96" width="375" height="285" fill="#fff" stroke="#dcdcde"/>
+            <text x="128" y="145" font-family="Arial,sans-serif" font-size="11" fill="#8c8f94">Añadir título</text>
+            <text x="128" y="179" font-family="Arial,sans-serif" font-size="27" font-weight="600" fill="#1d2327">Inicio</text>
+            <line x1="128" y1="192" x2="435" y2="192" stroke="#e0e0e0"/>
+            <text x="128" y="224" font-family="Arial,sans-serif" font-size="12" fill="#646970">Escribe / para elegir un bloque</text>
+            <circle cx="119" cy="250" r="10" fill="#2271b1"/>
+            <path d="M119 245v10M114 250h10" stroke="#fff" stroke-width="1.5"/>
+            <rect x="128" y="268" width="270" height="8" rx="4" fill="#f0f0f1"/>
+            <rect x="128" y="284" width="230" height="8" rx="4" fill="#f0f0f1"/>
+
+            <rect x="515" y="36" width="165" height="364" fill="#fff"/>
+            <line x1="515" y1="36" x2="515" y2="400" stroke="#dcdcde"/>
+            <text x="555" y="61" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" font-weight="600" fill="#1d2327">Página</text>
+            <text x="635" y="61" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#646970">Bloque</text>
+            <line x1="515" y1="74" x2="680" y2="74" stroke="#dcdcde"/>
+            <rect x="515" y="72" width="82" height="2" fill="#2271b1"/>
+            <text x="530" y="99" font-family="Arial,sans-serif" font-size="11" font-weight="600" fill="#1d2327">Resumen</text>
+            <path d="M653 94l4 4 4-4" fill="none" stroke="#646970" stroke-width="1.2"/>
+            <line x1="515" y1="111" x2="680" y2="111" stroke="#dcdcde"/>
+            <text x="530" y="137" font-family="Arial,sans-serif" font-size="10" fill="#646970">Estado</text>
+            <text x="660" y="137" text-anchor="end" font-family="Arial,sans-serif" font-size="10" font-weight="600" fill="#1d2327">Borrador</text>
+            <text x="530" y="162" font-family="Arial,sans-serif" font-size="10" fill="#646970">Autor</text>
+            <text x="660" y="162" text-anchor="end" font-family="Arial,sans-serif" font-size="10" fill="#1d2327">Admin</text>
+            <line x1="515" y1="177" x2="680" y2="177" stroke="#dcdcde"/>
+            <text x="530" y="203" font-family="Arial,sans-serif" font-size="10" fill="#646970">Enlace</text>
+            <text x="530" y="220" font-family="Arial,sans-serif" font-size="10" fill="#2271b1">mi-sitio.local/inicio</text>
+            <line x1="515" y1="235" x2="680" y2="235" stroke="#dcdcde"/>
+            <text x="530" y="261" font-family="Arial,sans-serif" font-size="10" fill="#646970">Imagen destacada</text>
+            <rect x="530" y="273" width="135" height="48" rx="2" fill="#f6f7f7" stroke="#c3c4c7"/>
+            <text x="597" y="301" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#2271b1">Establecer imagen</text>
+            <text x="530" y="347" font-family="Arial,sans-serif" font-size="9" fill="#646970">La página aún no está publicada.</text>
+          </svg>
+        </div>
+        <figcaption>Editor de WordPress con la página Inicio guardada como borrador.</figcaption>
+      </figure>
     </article>
 
-    <article class="step" id="paso-3" data-step="3">
+    <article class="step" id="paso-5" data-step="5">
       <header class="step__head">
-        <span class="step__num" aria-hidden="true">3</span>
+        <span class="step__num" aria-hidden="true">5</span>
         <h3 class="step__title">Crear la página Sobre nosotros</h3>
-        <label class="tick"><input type="checkbox" data-done="3"><span>Hecho</span></label>
+        <label class="tick"><input type="checkbox" data-done="5"><span>Hecho</span></label>
       </header>
       <ol class="actions">
         <li>Haz clic en <strong>Páginas</strong> → <strong>Añadir nueva</strong>.</li>
@@ -172,18 +867,160 @@
         <p><strong>Comprueba:</strong> tienes dos páginas creadas: Inicio y Sobre nosotros.</p>
       </div>
       <figure class="fig">
-        <div class="svgpad"><svg viewBox="0 0 340 140" role="img" aria-labelledby="pag3-t pag3-d">
-          <title id="pag3-t">Página Sobre nosotros creada</title>
-          <desc id="pag3-d">Confirmación de que la página Sobre usuarios está en borrador.</desc>
-          <g font-family="Consolas, monospace" font-size="10">
-            <rect x="4" y="4" width="332" height="132" rx="8" fill="#e5f1ec" stroke="#0b6b52" stroke-width="2"/>
-            <text x="16" y="24" font-family="Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#0b6b52">Página · Sobre nosotros</text>
-            <text x="16" y="52" fill="#47595a">Estado: Borrador</text>
-            <text x="16" y="72" fill="#47595a">Autor: administrador</text>
-            <text x="16" y="92" fill="#47595a">URL: http://localhost/miwordpress/sobre-nosotros/</text>
-            <text x="16" y="112" fill="#0f1f1e">Guardar borrador · Vista previa · Publicar</text>
-          </g>
-        </svg></div>
+        <div class="svgpad">
+<svg viewBox="0 0 480 280" role="img" aria-labelledby="pag3-t pag3-d" xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="optimizeLegibility">
+  <title id="pag3-t">Editor de WordPress creando la página Sobre nosotros</title>
+  <desc id="pag3-d">Interfaz realista del editor Gutenberg con el título 'Sobre nosotros' y el botón 'Guardar borrador' correctamente espaciados en la barra lateral.</desc>
+
+  <defs>
+    <!-- Sombras realistas multicapa -->
+    <filter id="shadow-topbar" x="-5%" y="-20%" width="110%" height="160%">
+      <feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-color="#000" flood-opacity="0.25"/>
+    </filter>
+    <filter id="shadow-panel" x="-10%" y="-5%" width="120%" height="110%">
+      <feDropShadow dx="0" dy="1" stdDeviation="3" flood-color="#000" flood-opacity="0.10"/>
+    </filter>
+    <filter id="shadow-sidebar-right" x="-15%" y="0%" width="130%" height="100%">
+      <feDropShadow dx="-1" dy="0" stdDeviation="2" flood-color="#000" flood-opacity="0.12"/>
+    </filter>
+    <filter id="shadow-btn" x="-20%" y="-30%" width="140%" height="170%">
+      <feDropShadow dx="0" dy="1" stdDeviation="1" flood-color="#000" flood-opacity="0.18"/>
+    </filter>
+    <filter id="shadow-btn-green" x="-20%" y="-30%" width="140%" height="170%">
+      <feDropShadow dx="0" dy="1.5" stdDeviation="1.5" flood-color="#064a38" flood-opacity="0.35"/>
+    </filter>
+    <filter id="shadow-btn-blue" x="-20%" y="-30%" width="140%" height="170%">
+      <feDropShadow dx="0" dy="1.5" stdDeviation="1.5" flood-color="#135e96" flood-opacity="0.35"/>
+    </filter>
+    <filter id="shadow-sidebar-left" x="-20%" y="0%" width="140%" height="100%">
+      <feDropShadow dx="1" dy="0" stdDeviation="2" flood-color="#000" flood-opacity="0.30"/>
+    </filter>
+
+    <!-- Gradientes -->
+    <linearGradient id="grad-topbar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#23282d"/>
+      <stop offset="100%" stop-color="#1d2327"/>
+    </linearGradient>
+    <linearGradient id="grad-btn-green" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0e8a6a"/>
+      <stop offset="100%" stop-color="#0b6b52"/>
+    </linearGradient>
+    <linearGradient id="grad-sidebar-left" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1a1e23"/>
+      <stop offset="100%" stop-color="#23282d"/>
+    </linearGradient>
+    <linearGradient id="grad-canvas" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fbfbfc"/>
+      <stop offset="100%" stop-color="#f6f7f7"/>
+    </linearGradient>
+    <linearGradient id="grad-icon-active" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0e8a6a"/>
+      <stop offset="100%" stop-color="#0b6b52"/>
+    </linearGradient>
+    <linearGradient id="grad-line" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f5f5f5"/>
+      <stop offset="100%" stop-color="#ececec"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Fondo general de la interfaz de administración -->
+  <rect x="0" y="0" width="480" height="280" fill="#f0f0f1"/>
+
+  <!-- 1. BARRA SUPERIOR (Topbar) -->
+  <rect x="0" y="0" width="480" height="36" fill="url(#grad-topbar)" filter="url(#shadow-topbar)"/>
+
+  <!-- Logo WordPress simplificado -->
+  <circle cx="18" cy="18" r="9" fill="#f0f0f1"/>
+  <path d="M18 11.2l-2.9 10.6h1.9l1-4.8 2.9 4.8h1.9L18 11.2z" fill="#1d2327"/>
+  <circle cx="18" cy="18" r="9" fill="none" stroke="#f0f0f1" stroke-width="1.2"/>
+
+  <!-- Nombre del sitio -->
+  <text x="38" y="22.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="14" font-weight="600" fill="#f0f0f1" letter-spacing="0.1">Mi WordPress</text>
+
+  <!-- Icono de añadir nuevo (+) -->
+  <circle cx="450" cy="18" r="11" fill="#2c3338"/>
+  <path d="M450 13v10M445 18h10" stroke="#f0f0f1" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- 2. MENÚ LATERAL IZQUIERDO -->
+  <rect x="0" y="36" width="40" height="244" fill="url(#grad-sidebar-left)" filter="url(#shadow-sidebar-left)"/>
+
+  <!-- Icono Páginas (activo) -->
+  <rect x="12" y="100" width="16" height="14" rx="2" fill="url(#grad-icon-active)" filter="url(#shadow-btn-green)"/>
+  <line x1="15" y1="104" x2="25" y2="104" stroke="#ffffff" stroke-width="1.2" stroke-linecap="round"/>
+  <line x1="15" y1="108" x2="25" y2="108" stroke="#ffffff" stroke-width="1.2" stroke-linecap="round"/>
+  <line x1="15" y1="112" x2="22" y2="112" stroke="#ffffff" stroke-width="1.2" stroke-linecap="round"/>
+
+  <!-- 3. ÁREA PRINCIPAL DEL EDITOR -->
+  <rect x="40" y="36" width="300" height="244" fill="url(#grad-canvas)"/>
+
+  <!-- Campo de Título -->
+  <text x="60" y="75" font-family="Georgia, 'Times New Roman', serif" font-size="22" font-weight="700" fill="#1d2327" letter-spacing="-0.3">Sobre nosotros</text>
+  <line x1="60" y1="88" x2="320" y2="88" stroke="#dcdcde" stroke-width="0.8"/>
+
+  <!-- Bloque de párrafo (Gutenberg) -->
+  <!-- Manejador de arrastre (6 puntos) -->
+  <g fill="#9ca3af">
+    <circle cx="50" cy="115" r="1.5"/>
+    <circle cx="56" cy="115" r="1.5"/>
+    <circle cx="50" cy="121" r="1.5"/>
+    <circle cx="56" cy="121" r="1.5"/>
+    <circle cx="50" cy="127" r="1.5"/>
+    <circle cx="56" cy="127" r="1.5"/>
+  </g>
+
+  <!-- Contenido del bloque (Placeholder) -->
+  <text x="76" y="124" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="15" fill="#a7aaad" font-style="italic">Escribe / para elegir un bloque</text>
+
+  <!-- Bloques simulados -->
+  <rect x="76" y="140" width="220" height="8" rx="4" fill="url(#grad-line)" stroke="#ececec" stroke-width="0.4"/>
+  <rect x="76" y="156" width="180" height="8" rx="4" fill="url(#grad-line)" stroke="#ececec" stroke-width="0.4"/>
+
+  <!-- Botón flotante de inserción de bloque (+) -->
+  <circle cx="53" cy="160" r="11" fill="url(#grad-icon-active)" filter="url(#shadow-btn-blue)"/>
+  <path d="M53 155v10M48 160h10" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- Barra de scroll vertical en el lienzo -->
+  <rect x="336" y="36" width="4" height="244" rx="2" fill="#dcdcde" opacity="0.5"/>
+  <rect x="336" y="60" width="4" height="100" rx="2" fill="#a7aaad" opacity="0.7"/>
+
+  <!-- 4. BARRA LATERAL DERECHA (Document Settings) -->
+  <rect x="340" y="36" width="140" height="244" fill="#ffffff" filter="url(#shadow-sidebar-right)"/>
+  <line x1="340" y1="36" x2="340" y2="280" stroke="#dcdcde" stroke-width="0.8"/>
+
+  <!-- Pestañas de la barra lateral -->
+  <text x="355" y="62" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="13" font-weight="700" fill="#1d2327">Página</text>
+  <rect x="355" y="70" width="40" height="2" fill="#2271b1"/>
+
+  <text x="430" y="62" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="13" fill="#757575" text-anchor="middle">Bloque</text>
+
+  <!-- Panel de Estado y visibilidad -->
+  <text x="355" y="98" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="12" font-weight="600" fill="#1d2327">Estado y visibilidad</text>
+  <line x1="355" y1="108" x2="465" y2="108" stroke="#dcdcde" stroke-width="0.8"/>
+
+  <text x="355" y="128" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="12" fill="#757575">Estado</text>
+  <text x="460" y="128" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="12" fill="#1d2327" text-anchor="end">Borrador</text>
+
+  <text x="355" y="150" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="12" fill="#757575">Visibilidad</text>
+  <text x="460" y="150" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="12" fill="#1d2327" text-anchor="end">Público</text>
+
+  <!-- Indicador de guardado con punto verde -->
+  <circle cx="358" cy="168" r="3" fill="#46b450"/>
+  <text x="367" y="171" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="10" fill="#646970">Borrador guardado</text>
+
+  <!-- Botón de acción principal -->
+  <rect x="355" y="185" width="110" height="34" rx="4" fill="url(#grad-btn-green)" stroke="#064a38" stroke-width="0.8" filter="url(#shadow-btn-green)"/>
+  <rect x="356" y="186" width="108" height="32" rx="3.5" fill="none" stroke="#2eb894" stroke-width="0.6" opacity="0.4"/>
+  <text x="410" y="207" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="13" font-weight="600" fill="#ffffff" text-anchor="middle">Guardar borrador</text>
+
+  <!-- Enlace de vista previa -->
+  <text x="410" y="240" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="12" fill="#2271b1" text-anchor="middle" text-decoration="underline">Vista previa</text>
+
+  <!-- Cursor de ratón realista (flecha con sombra) -->
+  <g filter="url(#shadow-btn)">
+    <path d="M238 132l8 18 3.5-6.5 6.5 4z" fill="#fff" stroke="#1d2327" stroke-width="1.2" stroke-linejoin="round"/>
+    <path d="M238 132l8 18 3.5-6.5 6.5 4z" fill="#1d2327" stroke="#1d2327" stroke-width="0.6" stroke-linejoin="round" opacity="0.9" transform="translate(0.8 0.8)"/>
+  </g>
+</svg>      </div>
         <figcaption>Página Sobre nosotros guardada como borrador.</figcaption>
       </figure>
     </article>
@@ -194,11 +1031,11 @@
       <span class="part__time">≈ 25 min</span>
     </section>
 
-    <article class="step step--split" id="paso-4" data-step="4">
+    <article class="step step--split" id="paso-6" data-step="6">
       <header class="step__head">
-        <span class="step__num" aria-hidden="true">4</span>
+        <span class="step__num" aria-hidden="true">6</span>
         <h3 class="step__title">Abrir el editor Gutenberg</h3>
-        <label class="tick"><input type="checkbox" data-done="4"><span>Hecho</span></label>
+        <label class="tick"><input type="checkbox" data-done="6"><span>Hecho</span></label>
       </header>
       <ol class="actions">
         <li>En el panel lateral, haz clic en <strong>Páginas</strong> → <strong>Todas las páginas</strong>.</li>
@@ -210,31 +1047,72 @@
         <p><strong>Comprueba:</strong> ves el editor con el botón <strong>+</strong> y el área de contenido vacío.</p>
       </div>
       <figure class="fig">
-        <div class="svgpad"><svg viewBox="0 0 340 200" role="img" aria-labelledby="gut4-t gut4-d">
-          <title id="gut4-t">Editor Gutenberg abierto</title>
-          <desc id="gut4-d">Editor de bloques con botón de añadir bloque y área de edición vacía.</desc>
-          <g font-family="Consolas, monospace" font-size="10">
-            <rect x="4" y="4" width="332" height="192" rx="8" fill="#e5f1ec" stroke="#0b6b52" stroke-width="2"/>
-            <text x="16" y="24" font-family="Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#0b6b52">Editor de bloques (Gutenberg)</text>
-            <text x="16" y="48" fill="#0f1f1e">╭───── Añadir bloque (+) ─────╮</text>
-            <text x="16" y="66" fill="#47595a">│  Párrafo   Encabezado   Imagen│</text>
-            <text x="16" y="84" fill="#47595a">│  Lista     Espacio           │</text>
-            <text x="16" y="102" fill="#47595a">╰─────────────────────────────╯</text>
-            <text x="16" y="122" fill="#0f1f1e">Escribe / para elegir un bloque</text>
-            <text x="16" y="142" fill="#47595a">[ área de edición vacía ]</text>
-            <text x="16" y="162" fill="#47595a">                               │</text>
-            <text x="16" y="182" fill="#47595a">╰─────────────────────────────╯</text>
-          </g>
-        </svg></div>
-        <figcaption>Editor Gutenberg: el botón + abre el inserto de bloques.</figcaption>
+        <div class="svgpad">
+          <svg viewBox="0 0 680 400" role="img" aria-labelledby="gut4-t gut4-d" xmlns="http://www.w3.org/2000/svg">
+            <title id="gut4-t">Editor Gutenberg con la página Inicio abierta</title>
+            <desc id="gut4-d">Recreación de la pantalla del editor de WordPress. La página Inicio está vacía, el botón azul con el signo más aparece arriba a la izquierda y los ajustes de página se muestran a la derecha.</desc>
+            <defs>
+              <filter id="gut4-shadow" x="-10%" y="-10%" width="120%" height="130%">
+                <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#1d2327" flood-opacity=".16"/>
+              </filter>
+            </defs>
+            <rect x="5" y="5" width="670" height="390" rx="5" fill="#fff" stroke="#c3c4c7" filter="url(#gut4-shadow)"/>
+            <rect x="6" y="6" width="668" height="38" fill="#fff"/>
+            <line x1="6" y1="44" x2="674" y2="44" stroke="#dcdcde"/>
+            <circle cx="24" cy="25" r="11" fill="#1d2327"/>
+            <text x="24" y="30" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#fff">W</text>
+            <rect x="44" y="11" width="28" height="28" rx="2" fill="#2271b1"/>
+            <path d="M58 17v16M50 25h16" stroke="#fff" stroke-width="2"/>
+            <path d="M91 20a7 7 0 1 0 2 9M91 16v5h-5" fill="none" stroke="#50575e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M119 20a7 7 0 1 1-2 9M119 16v5h5" fill="none" stroke="#8c8f94" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <line x1="143" y1="12" x2="143" y2="38" stroke="#dcdcde"/>
+            <rect x="153" y="13" width="24" height="24" rx="2" fill="#f6f7f7"/>
+            <path d="M159 19h12M159 24h12M159 29h8" stroke="#50575e" stroke-width="1.4"/>
+            <text x="340" y="27" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#1d2327">Inicio · Página</text>
+            <rect x="494" y="12" width="67" height="24" rx="2" fill="#f6f7f7" stroke="#c3c4c7"/>
+            <text x="527.5" y="28" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#1d2327">Vista previa</text>
+            <rect x="568" y="12" width="91" height="24" rx="2" fill="#2271b1"/>
+            <text x="613.5" y="28" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" font-weight="600" fill="#fff">Guardar</text>
+
+            <rect x="6" y="45" width="501" height="349" fill="#f0f0f1"/>
+            <rect x="73" y="59" width="367" height="319" fill="#fff"/>
+            <text x="111" y="118" font-family="Arial,sans-serif" font-size="26" font-weight="600" fill="#1d2327">Inicio</text>
+            <line x1="111" y1="159" x2="402" y2="159" stroke="#dcdcde"/>
+            <text x="111" y="190" font-family="Arial,sans-serif" font-size="11" fill="#646970">Escribe / para elegir un bloque</text>
+            <rect x="100" y="204" width="22" height="22" rx="2" fill="#fff" stroke="#2271b1" stroke-width="1.5"/>
+            <path d="M111 209v12M105 215h12" stroke="#2271b1" stroke-width="1.5"/>
+
+            <rect x="507" y="45" width="167" height="349" fill="#fff"/>
+            <line x1="507" y1="45" x2="507" y2="394" stroke="#dcdcde"/>
+            <text x="548" y="70" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" font-weight="600" fill="#1d2327">Página</text>
+            <text x="632" y="70" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#646970">Bloque</text>
+            <line x1="507" y1="82" x2="674" y2="82" stroke="#dcdcde"/>
+            <rect x="507" y="80" width="83" height="2" fill="#2271b1"/>
+            <text x="520" y="108" font-family="Arial,sans-serif" font-size="10" font-weight="600" fill="#1d2327">Resumen</text>
+            <path d="M650 103l4 4 4-4" fill="none" stroke="#646970" stroke-width="1.2"/>
+            <line x1="507" y1="120" x2="674" y2="120" stroke="#dcdcde"/>
+            <text x="520" y="145" font-family="Arial,sans-serif" font-size="9" fill="#646970">Estado</text>
+            <text x="658" y="145" text-anchor="end" font-family="Arial,sans-serif" font-size="9" font-weight="600" fill="#1d2327">Borrador</text>
+            <text x="520" y="169" font-family="Arial,sans-serif" font-size="9" fill="#646970">Autor</text>
+            <text x="658" y="169" text-anchor="end" font-family="Arial,sans-serif" font-size="9" fill="#1d2327">admin</text>
+            <line x1="507" y1="183" x2="674" y2="183" stroke="#dcdcde"/>
+            <text x="520" y="209" font-family="Arial,sans-serif" font-size="9" fill="#646970">Enlace permanente</text>
+            <text x="520" y="228" font-family="Arial,sans-serif" font-size="9" fill="#2271b1">mi-sitio.local/inicio</text>
+            <line x1="507" y1="242" x2="674" y2="242" stroke="#dcdcde"/>
+            <text x="520" y="268" font-family="Arial,sans-serif" font-size="9" fill="#646970">Imagen destacada</text>
+            <rect x="520" y="281" width="140" height="42" rx="2" fill="#f6f7f7" stroke="#c3c4c7"/>
+            <text x="590" y="306" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" fill="#2271b1">Establecer imagen</text>
+          </svg>
+        </div>
+        <figcaption>Vista del editor Gutenberg con la página Inicio abierta y el botón + para añadir bloques.</figcaption>
       </figure>
     </article>
 
-    <article class="step" id="paso-5" data-step="5">
+    <article class="step" id="paso-7" data-step="7">
       <header class="step__head">
-        <span class="step__num" aria-hidden="true">5</span>
+        <span class="step__num" aria-hidden="true">7</span>
         <h3 class="step__title">Bloques básicos de Gutenberg</h3>
-        <label class="tick"><input type="checkbox" data-done="5"><span>Hecho</span></label>
+        <label class="tick"><input type="checkbox" data-done="7"><span>Hecho</span></label>
       </header>
       <p>En Gutenberg todo es un <strong>bloque</strong>. Los bloques más usados son:</p>
       <table class="tbl">
@@ -252,29 +1130,89 @@
         <p><strong>Comprueba:</strong> puedes añadir un bloque de párrafo pulsando el botón <strong>+</strong> y eligiendo "Párrafo".</p>
       </div>
       <figure class="fig">
-        <div class="svgpad"><svg viewBox="0 0 340 180" role="img" aria-labelledby="blq5-t blq5-d">
-          <title id="blq5-t">Inserto de bloques de Gutenberg</title>
-          <desc id="blq5-d">Menú de bloques disponibles al pulsar el botón +.</desc>
-          <g font-family="Consolas, monospace" font-size="10">
-            <rect x="4" y="4" width="332" height="172" rx="8" fill="#e5f1ec" stroke="#0b6b52" stroke-width="2"/>
-            <text x="16" y="24" font-family="Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#0b6b52">Bloques más usados</text>
-            <text x="16" y="48" fill="#0f1f1e">Párrafo   Texto de cuerpo.</text>
-            <text x="16" y="66" fill="#0f1f1e">Encabezado   Títulos H1 a H6.</text>
-            <text x="16" y="84" fill="#0f1f1e">Imagen   Fotos e ilustraciones.</text>
-            <text x="16" y="102" fill="#0f1f1e">Lista   Viñetas o numerada.</text>
-            <text x="16" y="120" fill="#0f1f1e">Espacio   Separación entre bloques.</text>
-            <text x="16" y="140" fill="#47595a">Escribe / para buscar más bloques</text>
-          </g>
-        </svg></div>
-        <figcaption>Bloques básicos disponibles en el inserto de Gutenberg.</figcaption>
+        <div class="svgpad">
+          <svg viewBox="0 0 680 400" role="img" aria-labelledby="blq5-t blq5-d" xmlns="http://www.w3.org/2000/svg">
+            <title id="blq5-t">Editor Gutenberg con el inserto de bloques abierto</title>
+            <desc id="blq5-d">Recreación de la pantalla del editor de WordPress. El panel de inserción está abierto y muestra bloques como Párrafo, Encabezado, Imagen y Lista; la página Inicio permanece en el área de edición.</desc>
+            <defs>
+              <filter id="blq5-shadow" x="-10%" y="-10%" width="120%" height="130%">
+                <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#1d2327" flood-opacity=".16"/>
+              </filter>
+            </defs>
+            <rect x="5" y="5" width="670" height="390" rx="5" fill="#fff" stroke="#c3c4c7" filter="url(#blq5-shadow)"/>
+
+            <rect x="6" y="6" width="668" height="38" fill="#fff"/>
+            <line x1="6" y1="44" x2="674" y2="44" stroke="#dcdcde"/>
+            <circle cx="24" cy="25" r="11" fill="#1d2327"/>
+            <text x="24" y="30" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#fff">W</text>
+            <rect x="44" y="11" width="28" height="28" rx="2" fill="#2271b1"/>
+            <path d="M58 17v16M50 25h16" stroke="#fff" stroke-width="2"/>
+            <path d="M91 20a7 7 0 1 0 2 9M91 16v5h-5" fill="none" stroke="#50575e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M119 20a7 7 0 1 1-2 9M119 16v5h5" fill="none" stroke="#8c8f94" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <line x1="143" y1="12" x2="143" y2="38" stroke="#dcdcde"/>
+            <rect x="153" y="13" width="24" height="24" rx="2" fill="#f6f7f7"/>
+            <path d="M159 19h12M159 24h12M159 29h8" stroke="#50575e" stroke-width="1.4"/>
+            <text x="398" y="27" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#1d2327">Inicio · Página</text>
+            <rect x="494" y="12" width="67" height="24" rx="2" fill="#f6f7f7" stroke="#c3c4c7"/>
+            <text x="527.5" y="28" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#1d2327">Vista previa</text>
+            <rect x="568" y="12" width="91" height="24" rx="2" fill="#2271b1"/>
+            <text x="613.5" y="28" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" font-weight="600" fill="#fff">Guardar</text>
+
+            <rect x="6" y="45" width="248" height="349" fill="#fff"/>
+            <line x1="254" y1="45" x2="254" y2="394" stroke="#dcdcde"/>
+            <text x="21" y="69" font-family="Arial,sans-serif" font-size="13" font-weight="600" fill="#1d2327">Bloques</text>
+            <path d="M226 59l12 12M238 59l-12 12" stroke="#50575e" stroke-width="1.5"/>
+            <rect x="18" y="82" width="222" height="30" rx="2" fill="#fff" stroke="#8c8f94"/>
+            <circle cx="31" cy="95" r="5" fill="none" stroke="#646970" stroke-width="1.2"/>
+            <path d="M35 99l4 4" stroke="#646970" stroke-width="1.2"/>
+            <text x="46" y="99" font-family="Arial,sans-serif" font-size="10" fill="#646970">Buscar bloques</text>
+            <line x1="18" y1="125" x2="240" y2="125" stroke="#dcdcde"/>
+            <text x="19" y="145" font-family="Arial,sans-serif" font-size="9" font-weight="600" fill="#1d2327">MÁS USADOS</text>
+
+            <rect x="16" y="155" width="108" height="54" fill="#f6f7f7"/>
+            <path d="M28 171h17M28 176h17M28 181h12" stroke="#50575e" stroke-width="1.2"/>
+            <text x="28" y="198" font-family="Arial,sans-serif" font-size="9" fill="#1d2327">Párrafo</text>
+            <rect x="132" y="155" width="108" height="54" fill="#fff"/>
+            <path d="M145 170h18M145 176h14M145 182h16" stroke="#50575e" stroke-width="1.5"/>
+            <text x="145" y="198" font-family="Arial,sans-serif" font-size="9" fill="#1d2327">Encabezado</text>
+
+            <rect x="16" y="213" width="108" height="54" fill="#fff"/>
+            <rect x="28" y="225" width="18" height="15" fill="none" stroke="#50575e" stroke-width="1.2"/>
+            <circle cx="33" cy="230" r="2" fill="#50575e"/>
+            <path d="M29 238l5-5 3 3 3-4 5 6" fill="none" stroke="#50575e" stroke-width="1.2"/>
+            <text x="28" y="256" font-family="Arial,sans-serif" font-size="9" fill="#1d2327">Imagen</text>
+            <rect x="132" y="213" width="108" height="54" fill="#fff"/>
+            <circle cx="146" cy="228" r="1.5" fill="#50575e"/>
+            <circle cx="146" cy="235" r="1.5" fill="#50575e"/>
+            <circle cx="146" cy="242" r="1.5" fill="#50575e"/>
+            <path d="M151 228h13M151 235h13M151 242h13" stroke="#50575e" stroke-width="1.2"/>
+            <text x="145" y="256" font-family="Arial,sans-serif" font-size="9" fill="#1d2327">Lista</text>
+
+            <line x1="18" y1="278" x2="240" y2="278" stroke="#dcdcde"/>
+            <text x="19" y="298" font-family="Arial,sans-serif" font-size="9" font-weight="600" fill="#1d2327">DISEÑO</text>
+            <path d="M29 311h17M29 316h17M29 321h17" stroke="#50575e" stroke-width="1.2"/>
+            <text x="54" y="320" font-family="Arial,sans-serif" font-size="9" fill="#1d2327">Espaciador</text>
+            <text x="19" y="360" font-family="Arial,sans-serif" font-size="8" fill="#646970">Elige un bloque para añadirlo</text>
+            <text x="19" y="373" font-family="Arial,sans-serif" font-size="8" fill="#646970">a la página.</text>
+
+            <rect x="254" y="45" width="420" height="349" fill="#f0f0f1"/>
+            <rect x="279" y="60" width="346" height="319" fill="#fff"/>
+            <text x="318" y="116" font-family="Arial,sans-serif" font-size="26" font-weight="600" fill="#1d2327">Inicio</text>
+            <line x1="318" y1="157" x2="590" y2="157" stroke="#dcdcde"/>
+            <text x="318" y="187" font-family="Arial,sans-serif" font-size="11" fill="#646970">Escribe / para elegir un bloque</text>
+            <rect x="307" y="200" width="22" height="22" rx="2" fill="#fff" stroke="#2271b1" stroke-width="1.5"/>
+            <path d="M318 205v12M312 211h12" stroke="#2271b1" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <figcaption>Inserto de bloques abierto en Gutenberg: selecciona Párrafo para empezar a escribir.</figcaption>
       </figure>
     </article>
 
-    <article class="step step--split" id="paso-6" data-step="6">
+    <article class="step step--split" id="paso-8" data-step="8">
       <header class="step__head">
-        <span class="step__num" aria-hidden="true">6</span>
+        <span class="step__num" aria-hidden="true">8</span>
         <h3 class="step__title">Texto e imágenes</h3>
-        <label class="tick"><input type="checkbox" data-done="6"><span>Hecho</span></label>
+        <label class="tick"><input type="checkbox" data-done="8"><span>Hecho</span></label>
       </header>
       <ol class="actions">
         <li>Escribe un título en el bloque <strong>Encabezado</strong>.</li>
@@ -287,168 +1225,448 @@
         <p><strong>Comprueba:</strong> la página tiene título, texto e imagen visibles en la previsualización.</p>
       </div>
       <figure class="fig">
-        <div class="svgpad"><svg viewBox="0 0 340 160" role="img" aria-labelledby="con6-t con6-d">
-          <title id="con6-t">Página con bloques de texto e imagen</title>
-          <desc id="con6-d">Ejemplo de página con encabezado, párrafo y bloque de imagen.</desc>
-          <g font-family="Consolas, monospace" font-size="10">
-            <rect x="4" y="4" width="332" height="152" rx="8" fill="#e5f1ec" stroke="#0b6b52" stroke-width="2"/>
-            <text x="16" y="24" font-family="Segoe UI, sans-serif" font-size="12" font-weight="700" fill="#0b6b52">Bienvenido a mi web</text>
-            <text x="16" y="52" fill="#0f1f1e">Este es un párrafo de bienvenida.</text>
-            <text x="16" y="72" fill="#47595a">[ imagen ]</text>
-            <rect x="24" y="80" width="60" height="40" fill="#ccd6d4" stroke="#47595a"/>
-            <text x="34" y="104" fill="#47595a">Imagen subida</text>
-            <text x="16" y="124" fill="#47595a">Bloque: Encabezado → Párrafo → Imagen</text>
-            <text x="16" y="142" fill="#47595a">Vista previa de la página Inicio</text>
-          </g>
-        </svg></div>
-        <figcaption>Bloques de texto e imagen en la página Inicio.</figcaption>
-      </figure>
-    </article>
+        <div class="svgpad">
+          <svg viewBox="0 0 680 400" role="img" aria-labelledby="con6-t con6-d" xmlns="http://www.w3.org/2000/svg">
+            <title id="con6-t">Editor Gutenberg con título, párrafo e imagen</title>
+            <desc id="con6-d">Recreación del editor de WordPress mientras se crea la página Inicio. El área de edición contiene un encabezado, un párrafo de bienvenida y una fotografía insertada; a la derecha aparecen los ajustes del bloque de imagen.</desc>
+            <defs>
+              <filter id="con6-shadow" x="-10%" y="-10%" width="120%" height="130%">
+                <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#1d2327" flood-opacity=".16"/>
+              </filter>
+            </defs>
+            <rect x="5" y="5" width="670" height="390" rx="5" fill="#fff" stroke="#c3c4c7" filter="url(#con6-shadow)"/>
 
-    <article class="step" id="paso-7" data-step="7">
-      <header class="step__head">
-        <span class="step__num" aria-hidden="true">7</span>
-        <h3 class="step__title">Menú de navegación</h3>
-        <label class="tick"><input type="checkbox" data-done="7"><span>Hecho</span></label>
-      </header>
-      <ol class="actions">
-        <li>En el panel lateral, haz clic en <strong>Apariencia</strong> → <strong>Menús</strong>.</li>
-        <li>Escribe un nombre para el menú y pulsa <strong>Crear menú</strong>.</li>
-        <li>Marca las páginas <strong>Inicio</strong> y <strong>Sobre nosotros</strong> y pulsa <strong>Añadir al menú</strong>.</li>
-        <li>Marca la ubicación <strong>Menú principal</strong> y guarda.</li>
-      </ol>
-      <div class="check">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-        <p><strong>Comprueba:</strong> el menú aparece en la parte superior de tu web con los dos enlaces.</p>
-      </div>
-      <figure class="fig">
-        <div class="svgpad"><svg viewBox="0 0 340 140" role="img" aria-labelledby="menu7-t menu7-d">
-          <title id="menu7-t">Menú de navegación</title>
-          <desc id="menu7-d">Menú principal con enlaces a Inicio y Sobre nosotros.</desc>
-          <g font-family="Consolas, monospace" font-size="10">
-            <rect x="4" y="4" width="332" height="132" rx="8" fill="#e5f1ec" stroke="#0b6b52" stroke-width="2"/>
-            <text x="16" y="24" font-family="Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#0b6b52">Menú principal</text>
-            <text x="16" y="48" fill="#0f1f1e">╭──────────────╮</text>
-            <text x="16" y="66" fill="#47595a">│ Inicio   │ Sobre nosotros │</text>
-            <text x="16" y="84" fill="#47595a">╰──────────────╯</text>
-            <text x="16" y="104" fill="#47595a">Ubicación: Menú principal (cabecera)</text>
-            <text x="16" y="122" fill="#47595a">Páginas: Inicio y Sobre nosotros</text>
-          </g>
-        </svg></div>
-        <figcaption>Menú de navegación con los enlaces a las dos páginas creadas.</figcaption>
-      </figure>
-    </article>
+            <rect x="6" y="6" width="668" height="38" fill="#fff"/>
+            <line x1="6" y1="44" x2="674" y2="44" stroke="#dcdcde"/>
+            <circle cx="24" cy="25" r="11" fill="#1d2327"/>
+            <text x="24" y="30" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#fff">W</text>
+            <rect x="44" y="11" width="28" height="28" rx="2" fill="#2271b1"/>
+            <path d="M58 17v16M50 25h16" stroke="#fff" stroke-width="2"/>
+            <path d="M91 20a7 7 0 1 0 2 9M91 16v5h-5" fill="none" stroke="#50575e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M119 20a7 7 0 1 1-2 9M119 16v5h5" fill="none" stroke="#8c8f94" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <line x1="143" y1="12" x2="143" y2="38" stroke="#dcdcde"/>
+            <rect x="153" y="13" width="24" height="24" rx="2" fill="#f6f7f7"/>
+            <path d="M159 19h12M159 24h12M159 29h8" stroke="#50575e" stroke-width="1.4"/>
+            <text x="340" y="27" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#1d2327">Inicio · Página</text>
+            <rect x="494" y="12" width="67" height="24" rx="2" fill="#f6f7f7" stroke="#c3c4c7"/>
+            <text x="527.5" y="28" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#1d2327">Vista previa</text>
+            <rect x="568" y="12" width="91" height="24" rx="2" fill="#2271b1"/>
+            <text x="613.5" y="28" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" font-weight="600" fill="#fff">Guardar</text>
 
-    <article class="step step--split" id="paso-8" data-step="8">
-      <header class="step__head">
-        <span class="step__num" aria-hidden="true">8</span>
-        <h3 class="step__title">Página de inicio estática</h3>
-        <label class="tick"><input type="checkbox" data-done="8"><span>Hecho</span></label>
-      </header>
-      <ol class="actions">
-        <li>En el panel lateral, haz clic en <strong>Configuración</strong> → <strong>Lectura</strong>.</li>
-        <li>Selecciona <strong>Una página estática</strong>.</li>
-        <li>En "Página de inicio", elige <strong>Inicio</strong>.</li>
-        <li>En "Página de publicaciones", elige <strong>Sobre nosotros</strong>.</li>
-        <li>Haz clic en <strong>Guardar cambios</strong>.</li>
-      </ol>
-      <div class="check">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-        <p><strong>Comprueba:</strong> al abrir tu web, la primera página que ves es Inicio.</p>
-      </div>
-      <figure class="fig">
-        <div class="svgpad"><svg viewBox="0 0 340 160" role="img" aria-labelledby="ini8-t ini8-d">
-          <title id="ini8-t">Página de inicio estática configurada</title>
-          <desc id="ini8-d">Ajustes de lectura con página de inicio seleccionada.</desc>
-          <g font-family="Consolas, monospace" font-size="10">
-            <rect x="4" y="4" width="332" height="152" rx="8" fill="#e5f1ec" stroke="#0b6b52" stroke-width="2"/>
-            <text x="16" y="24" font-family="Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#0b6b52">Configuración → Lectura</text>
-            <text x="16" y="48" fill="#0f1f1e">Tu página de inicio muestra: Una página estática</text>
-            <text x="28" y="66" fill="#47595a">Página de inicio: Inicio</text>
-            <text x="28" y="84" fill="#47595a">Página de publicaciones: Sobre nosotros</text>
-            <text x="16" y="104" fill="#0b6b52">✓ Guardar cambios</text>
-            <text x="16" y="124" fill="#47595a">Al visitar http://localhost/miwordpress/</text>
-            <text x="16" y="142" fill="#47595a">se muestra primero la página Inicio</text>
-          </g>
-        </svg></div>
-        <figcaption>Ajustes de lectura: página de inicio estática seleccionada.</figcaption>
+            <rect x="6" y="45" width="501" height="349" fill="#f0f0f1"/>
+            <rect x="73" y="59" width="367" height="319" fill="#fff"/>
+            <text x="111" y="118" font-family="Arial,sans-serif" font-size="25" font-weight="600" fill="#1d2327">Bienvenido a mi web</text>
+            <line x1="111" y1="139" x2="402" y2="139" stroke="#dcdcde"/>
+            <text x="111" y="168" font-family="Arial,sans-serif" font-size="11" fill="#1d2327">Este es un párrafo de bienvenida.</text>
+            <rect x="111" y="184" width="278" height="153" fill="#d9e7ed"/>
+            <circle cx="333" cy="214" r="23" fill="#f2d89b"/>
+            <path d="M112 302l73-70 55 48 41-37 107 94H112z" fill="#78998a"/>
+            <path d="M112 323l88-62 55 45 45-26 88 57H112z" fill="#5f806f"/>
+            <rect x="111" y="184" width="278" height="153" fill="none" stroke="#2271b1" stroke-width="1.5"/>
+            <rect x="389" y="184" width="24" height="24" fill="#2271b1"/>
+            <path d="M401 190v12M395 196h12" stroke="#fff" stroke-width="1.5"/>
+            <rect x="373" y="184" width="16" height="24" fill="#2271b1"/>
+            <path d="M379 190l5 6-5 6" fill="none" stroke="#fff" stroke-width="1.4"/>
+            <rect x="111" y="347" width="278" height="20" fill="#fff"/>
+            <text x="111" y="361" font-family="Arial,sans-serif" font-size="9" fill="#646970">Bloque: Imagen</text>
+
+            <rect x="507" y="45" width="167" height="349" fill="#fff"/>
+            <line x1="507" y1="45" x2="507" y2="394" stroke="#dcdcde"/>
+            <text x="548" y="70" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#646970">Página</text>
+            <text x="632" y="70" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" font-weight="600" fill="#1d2327">Bloque</text>
+            <line x1="507" y1="82" x2="674" y2="82" stroke="#dcdcde"/>
+            <rect x="590" y="80" width="84" height="2" fill="#2271b1"/>
+            <text x="520" y="108" font-family="Arial,sans-serif" font-size="10" font-weight="600" fill="#1d2327">Imagen</text>
+            <line x1="507" y1="120" x2="674" y2="120" stroke="#dcdcde"/>
+            <text x="520" y="146" font-family="Arial,sans-serif" font-size="9" fill="#646970">Texto alternativo</text>
+            <rect x="520" y="156" width="140" height="44" rx="2" fill="#fff" stroke="#8c8f94"/>
+            <text x="529" y="174" font-family="Arial,sans-serif" font-size="8" fill="#646970">Describe la imagen</text>
+            <text x="529" y="188" font-family="Arial,sans-serif" font-size="8" fill="#646970">para quien no puede verla</text>
+            <text x="520" y="226" font-family="Arial,sans-serif" font-size="9" fill="#646970">Tamaño de imagen</text>
+            <rect x="520" y="237" width="140" height="28" rx="2" fill="#fff" stroke="#8c8f94"/>
+            <text x="529" y="255" font-family="Arial,sans-serif" font-size="9" fill="#1d2327">Tamaño completo</text>
+            <path d="M647 248l4 4 4-4" fill="none" stroke="#646970" stroke-width="1.2"/>
+            <line x1="507" y1="278" x2="674" y2="278" stroke="#dcdcde"/>
+            <text x="520" y="304" font-family="Arial,sans-serif" font-size="9" fill="#646970">Estilos</text>
+            <rect x="520" y="315" width="63" height="48" fill="#f6f7f7" stroke="#c3c4c7"/>
+            <rect x="527" y="321" width="49" height="28" fill="#d9e7ed"/>
+            <text x="551.5" y="358" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" fill="#1d2327">Predeterminado</text>
+            <rect x="591" y="315" width="69" height="48" fill="#fff" stroke="#c3c4c7"/>
+            <rect x="598" y="321" width="55" height="28" rx="8" fill="#d9e7ed"/>
+            <text x="625.5" y="358" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" fill="#1d2327">Redondeado</text>
+          </svg>
+        </div>
+        <figcaption>Vista del editor Gutenberg con título, texto e imagen en la página Inicio.</figcaption>
       </figure>
     </article>
 
     <article class="step" id="paso-9" data-step="9">
       <header class="step__head">
         <span class="step__num" aria-hidden="true">9</span>
-        <h3 class="step__title">Colores y letra</h3>
+        <h3 class="step__title">Menú de navegación</h3>
         <label class="tick"><input type="checkbox" data-done="9"><span>Hecho</span></label>
       </header>
+      <div class="notice notice--info">
+        <img src="../assets/svg/info.svg" width="22" height="22" alt="" aria-hidden="true">
+        <p><strong>Ruta según el tema activo:</strong> Los temas de bloques (Twenty Twenty-Five, Twenty Twenty-Four) no tienen <strong>Apariencia → Menús</strong>. Usan el <strong>Editor del sitio</strong>. Si usas un tema clásico (Astra, etc.), verás <strong>Apariencia → Menús</strong>.</p>
+      </div>
       <ol class="actions">
-        <li>En el panel lateral, haz clic en <strong>Apariencia</strong> → <strong>Personalizar</strong>.</li>
-        <li>Busca <strong>Colores</strong> y elige un color principal.</li>
+        <li>
+          <strong>En temas de bloques:</strong> Apariencia → <strong>Editor</strong> → <strong>Navegación</strong>.
+          <br>
+          <strong>En temas clásicos:</strong> Apariencia → <strong>Menús</strong>.
+        </li>
+        <li>
+          <strong>En temas de bloques:</strong> Pulsa el icono <strong>+</strong> (Añadir bloque) dentro de la navegación, elige <strong>Enlace de página</strong>, selecciona <strong>Inicio</strong> y repite para <strong>Sobre nosotros</strong>. Pulsa <strong>Guardar</strong>.
+          <br>
+          <strong>En temas clásicos:</strong> Escribe un nombre para el menú y pulsa <strong>Crear menú</strong>. Marca las páginas <strong>Inicio</strong> y <strong>Sobre nosotros</strong> y pulsa <strong>Añadir al menú</strong>. Marca la ubicación <strong>Menú principal</strong> y guarda.
+        </li>
+      </ol>
+      <div class="check">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        <p><strong>Comprueba:</strong> el menú aparece en la parte superior de tu web con los dos enlaces.</p>
+      </div>
+      <figure class="fig">
+        <div class="svgpad">
+          <svg viewBox="0 0 680 400" role="img" aria-labelledby="menu7-t menu7-d" xmlns="http://www.w3.org/2000/svg">
+            <title id="menu7-t">Editor de navegación de WordPress con dos enlaces de página</title>
+            <desc id="menu7-d">Recreación del Editor del sitio. El menú contiene los enlaces Inicio y Sobre nosotros, con una vista previa del menú en la cabecera de la web y el botón Guardar disponible.</desc>
+            <defs>
+              <filter id="menu7-shadow" x="-10%" y="-10%" width="120%" height="130%">
+                <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#1d2327" flood-opacity=".16"/>
+              </filter>
+            </defs>
+            <rect x="5" y="5" width="670" height="390" rx="5" fill="#fff" stroke="#c3c4c7" filter="url(#menu7-shadow)"/>
+
+            <rect x="6" y="6" width="668" height="38" fill="#fff"/>
+            <line x1="6" y1="44" x2="674" y2="44" stroke="#dcdcde"/>
+            <circle cx="24" cy="25" r="11" fill="#1d2327"/>
+            <text x="24" y="30" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#fff">W</text>
+            <path d="M56 19l7 6-7 6" fill="none" stroke="#50575e" stroke-width="1.6"/>
+            <text x="78" y="27" font-family="Arial,sans-serif" font-size="11" fill="#1d2327">Editor del sitio</text>
+            <rect x="561" y="12" width="98" height="24" rx="2" fill="#2271b1"/>
+            <text x="610" y="28" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" font-weight="600" fill="#fff">Guardar</text>
+
+            <rect x="6" y="45" width="250" height="349" fill="#fff"/>
+            <line x1="256" y1="45" x2="256" y2="394" stroke="#dcdcde"/>
+            <text x="22" y="71" font-family="Arial,sans-serif" font-size="13" font-weight="600" fill="#1d2327">Navegación</text>
+            <path d="M226 59l12 12M238 59l-12 12" stroke="#50575e" stroke-width="1.5"/>
+            <text x="22" y="98" font-family="Arial,sans-serif" font-size="9" fill="#646970">MENÚ PRINCIPAL</text>
+            <rect x="17" y="109" width="224" height="43" fill="#f6f7f7"/>
+            <rect x="28" y="120" width="22" height="22" fill="#fff" stroke="#8c8f94"/>
+            <path d="M33 131h12" stroke="#50575e" stroke-width="1.4"/>
+            <text x="60" y="136" font-family="Arial,sans-serif" font-size="10" fill="#1d2327">Inicio</text>
+            <path d="M220 125l-5 5 5 5" fill="none" stroke="#646970" stroke-width="1.2"/>
+            <rect x="17" y="153" width="224" height="43" fill="#fff"/>
+            <rect x="28" y="164" width="22" height="22" fill="#fff" stroke="#8c8f94"/>
+            <path d="M33 175h12" stroke="#50575e" stroke-width="1.4"/>
+            <text x="60" y="180" font-family="Arial,sans-serif" font-size="10" fill="#1d2327">Sobre nosotros</text>
+            <path d="M220 169l-5 5 5 5" fill="none" stroke="#646970" stroke-width="1.2"/>
+            <rect x="18" y="207" width="223" height="34" fill="#fff" stroke="#8c8f94"/>
+            <circle cx="32" cy="224" r="8" fill="none" stroke="#2271b1" stroke-width="1.3"/>
+            <path d="M32 220v8M28 224h8" stroke="#2271b1" stroke-width="1.3"/>
+            <text x="48" y="228" font-family="Arial,sans-serif" font-size="9" fill="#2271b1">Añadir enlace</text>
+            <line x1="18" y1="255" x2="240" y2="255" stroke="#dcdcde"/>
+            <text x="22" y="278" font-family="Arial,sans-serif" font-size="9" font-weight="600" fill="#1d2327">AJUSTES DEL MENÚ</text>
+            <text x="22" y="301" font-family="Arial,sans-serif" font-size="9" fill="#646970">Nombre</text>
+            <rect x="18" y="309" width="223" height="28" fill="#fff" stroke="#8c8f94"/>
+            <text x="28" y="327" font-family="Arial,sans-serif" font-size="9" fill="#1d2327">Menú principal</text>
+            <text x="22" y="365" font-family="Arial,sans-serif" font-size="8" fill="#646970">Los cambios se aplican al guardar.</text>
+
+            <rect x="256" y="45" width="418" height="349" fill="#f0f0f1"/>
+            <rect x="278" y="62" width="374" height="315" fill="#fff"/>
+            <rect x="278" y="62" width="374" height="39" fill="#fff"/>
+            <line x1="278" y1="101" x2="652" y2="101" stroke="#e0e0e0"/>
+            <text x="298" y="87" font-family="Georgia,serif" font-size="14" font-weight="700" fill="#1d2327">Mi sitio</text>
+            <text x="484" y="86" font-family="Arial,sans-serif" font-size="9" fill="#1d2327">Inicio</text>
+            <text x="530" y="86" font-family="Arial,sans-serif" font-size="9" fill="#1d2327">Sobre nosotros</text>
+            <line x1="482" y1="92" x2="513" y2="92" stroke="#2271b1" stroke-width="2"/>
+            <text x="310" y="144" font-family="Arial,sans-serif" font-size="9" fill="#646970">VISTA PREVIA DE LA WEB</text>
+            <text x="310" y="190" font-family="Georgia,serif" font-size="22" font-weight="700" fill="#1d2327">Tu página de inicio</text>
+            <line x1="310" y1="204" x2="620" y2="204" stroke="#dcdcde"/>
+            <rect x="310" y="225" width="278" height="9" rx="2" fill="#e5e5e5"/>
+            <rect x="310" y="244" width="250" height="9" rx="2" fill="#e5e5e5"/>
+            <rect x="310" y="263" width="267" height="9" rx="2" fill="#e5e5e5"/>
+            <rect x="310" y="294" width="114" height="51" fill="#e8ecec"/>
+            <rect x="438" y="294" width="150" height="9" rx="2" fill="#e5e5e5"/>
+            <rect x="438" y="313" width="138" height="9" rx="2" fill="#e5e5e5"/>
+            <rect x="438" y="332" width="123" height="9" rx="2" fill="#e5e5e5"/>
+          </svg>
+        </div>
+        <figcaption>En temas de bloques, añade los enlaces desde el Editor del sitio. En temas clásicos, usa Apariencia → Menús.</figcaption>
+      </figure>
+    </article>
+
+    <article class="step step--split" id="paso-10" data-step="10">
+      <header class="step__head">
+        <span class="step__num" aria-hidden="true">10</span>
+        <h3 class="step__title">Página de inicio estática</h3>
+        <label class="tick"><input type="checkbox" data-done="10"><span>Hecho</span></label>
+      </header>
+      <ol class="actions">
+        <li>En el panel lateral, haz clic en <strong>Configuración</strong> → <strong>Lectura</strong>.</li>
+        <li>Selecciona <strong>Una página estática</strong>.</li>
+        <li>En "Página de inicio", elige <strong>Inicio</strong>.</li>
+        <li>En "Página de publicaciones", elige <strong>— No seleccionar —</strong>.</li>
+        <li>Haz clic en <strong>Guardar cambios</strong>.</li>
+      </ol>
+      <div class="check">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        <p><strong>Comprueba:</strong> al abrir tu web, la primera página que ves es Inicio.</p>
+      </div>
+      <div class="notice notice--info">
+        <img src="../assets/svg/info.svg" width="22" height="22" alt="" aria-hidden="true">
+        <p><strong>¿Por qué "No seleccionar"?</strong> La opción "Página de publicaciones" sirve para elegir dónde se mostrarán las entradas del blog (posts). Como esta práctica crea solo páginas estáticas (Inicio y Sobre nosotros) y no entradas de blog, lo correcto es dejarlo en <strong>— No seleccionar —</strong>. Si en el futuro añades un blog, crearías una página llamada "Blog" y la seleccionarías aquí.</p>
+      </div>
+      <figure class="fig">
+        <div class="svgpad">
+          <svg viewBox="0 0 680 400" role="img" aria-labelledby="ini8-t ini8-d" xmlns="http://www.w3.org/2000/svg">
+            <title id="ini8-t">Ajustes de lectura con Inicio como portada del sitio</title>
+            <desc id="ini8-d">Recreación del escritorio de WordPress en Configuración y Lectura. Está seleccionada la opción Una página estática, la página de inicio es Inicio y la página de publicaciones se deja sin seleccionar.</desc>
+            <defs>
+              <filter id="ini8-shadow" x="-10%" y="-10%" width="120%" height="130%">
+                <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#1d2327" flood-opacity=".16"/>
+              </filter>
+            </defs>
+            <rect x="5" y="5" width="670" height="390" rx="5" fill="#fff" stroke="#c3c4c7" filter="url(#ini8-shadow)"/>
+
+            <rect x="6" y="6" width="668" height="38" fill="#1d2327"/>
+            <circle cx="25" cy="25" r="10" fill="#fff"/>
+            <text x="25" y="29" text-anchor="middle" font-family="Georgia,serif" font-size="14" font-weight="700" fill="#1d2327">W</text>
+            <text x="44" y="28" font-family="Arial,sans-serif" font-size="10" fill="#fff">Mi sitio</text>
+            <text x="112" y="28" font-family="Arial,sans-serif" font-size="9" fill="#dcdcde">Visitar el sitio</text>
+            <text x="569" y="28" font-family="Arial,sans-serif" font-size="9" fill="#fff">Hola, admin</text>
+
+            <rect x="6" y="44" width="150" height="350" fill="#1d2327"/>
+            <rect x="6" y="130" width="150" height="30" fill="#2271b1"/>
+            <path d="M20 71h16v13H20zM23 75h10M23 79h10" fill="none" stroke="#c3c4c7" stroke-width="1"/>
+            <text x="45" y="81" font-family="Arial,sans-serif" font-size="9" fill="#f0f0f1">Escritorio</text>
+            <path d="M20 103h16v13H20zM23 106h10M23 110h10" fill="none" stroke="#c3c4c7" stroke-width="1"/>
+            <text x="45" y="113" font-family="Arial,sans-serif" font-size="9" fill="#f0f0f1">Páginas</text>
+            <path d="M21 139h14M21 144h14M21 149h9" stroke="#fff" stroke-width="1.2"/>
+            <text x="45" y="149" font-family="Arial,sans-serif" font-size="9" font-weight="600" fill="#fff">Configuración</text>
+            <text x="45" y="178" font-family="Arial,sans-serif" font-size="8" fill="#c3c4c7">Generales</text>
+            <rect x="6" y="185" width="150" height="24" fill="#2c3338"/>
+            <text x="45" y="201" font-family="Arial,sans-serif" font-size="8" font-weight="600" fill="#fff">Lectura</text>
+            <text x="45" y="230" font-family="Arial,sans-serif" font-size="8" fill="#c3c4c7">Comentarios</text>
+            <text x="45" y="252" font-family="Arial,sans-serif" font-size="8" fill="#c3c4c7">Medios</text>
+            <text x="45" y="274" font-family="Arial,sans-serif" font-size="8" fill="#c3c4c7">Enlaces permanentes</text>
+
+            <rect x="156" y="44" width="518" height="350" fill="#f0f0f1"/>
+            <text x="178" y="78" font-family="Arial,sans-serif" font-size="18" font-weight="600" fill="#1d2327">Ajustes de lectura</text>
+            <line x1="178" y1="91" x2="646" y2="91" stroke="#c3c4c7"/>
+            <text x="180" y="119" font-family="Arial,sans-serif" font-size="10" font-weight="600" fill="#1d2327">Tu página de inicio muestra</text>
+            <circle cx="190" cy="143" r="6" fill="#fff" stroke="#8c8f94"/>
+            <text x="205" y="147" font-family="Arial,sans-serif" font-size="9" fill="#1d2327">Tus últimas entradas</text>
+            <circle cx="190" cy="169" r="6" fill="#fff" stroke="#2271b1" stroke-width="1.5"/>
+            <circle cx="190" cy="169" r="3" fill="#2271b1"/>
+            <text x="205" y="173" font-family="Arial,sans-serif" font-size="9" font-weight="600" fill="#1d2327">Una página estática</text>
+
+            <text x="214" y="202" font-family="Arial,sans-serif" font-size="9" fill="#1d2327">Página de inicio</text>
+            <rect x="322" y="185" width="210" height="30" rx="2" fill="#fff" stroke="#8c8f94"/>
+            <text x="334" y="204" font-family="Arial,sans-serif" font-size="9" fill="#1d2327">Inicio</text>
+            <path d="M515 197l5 5 5-5" fill="none" stroke="#646970" stroke-width="1.3"/>
+
+            <text x="214" y="243" font-family="Arial,sans-serif" font-size="9" fill="#1d2327">Página de publicaciones</text>
+            <rect x="322" y="226" width="210" height="30" rx="2" fill="#fff" stroke="#8c8f94"/>
+            <text x="334" y="245" font-family="Arial,sans-serif" font-size="9" fill="#1d2327">— No seleccionar —</text>
+            <path d="M515 238l5 5 5-5" fill="none" stroke="#646970" stroke-width="1.3"/>
+
+            <text x="214" y="278" font-family="Arial,sans-serif" font-size="8" fill="#646970">Elige qué página se mostrará al entrar en tu sitio.</text>
+            <line x1="178" y1="294" x2="646" y2="294" stroke="#c3c4c7"/>
+            <text x="180" y="319" font-family="Arial,sans-serif" font-size="10" font-weight="600" fill="#1d2327">Visibilidad en los motores de búsqueda</text>
+            <rect x="181" y="334" width="12" height="12" fill="#fff" stroke="#8c8f94"/>
+            <text x="201" y="344" font-family="Arial,sans-serif" font-size="8" fill="#646970">Pedir a los motores de búsqueda que no indexen este sitio</text>
+            <rect x="180" y="356" width="99" height="25" rx="2" fill="#2271b1"/>
+            <text x="229.5" y="372" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" font-weight="600" fill="#fff">Guardar cambios</text>
+          </svg>
+        </div>
+        <figcaption>En Ajustes → Lectura, elige «Una página estática» y selecciona Inicio para que sea la portada.</figcaption>
+      </figure>
+    </article>
+
+    <article class="step" id="paso-11" data-step="11">
+      <header class="step__head">
+        <span class="step__num" aria-hidden="true">11</span>
+        <h3 class="step__title">Colores y letra</h3>
+        <label class="tick"><input type="checkbox" data-done="11"><span>Hecho</span></label>
+      </header>
+      <div class="notice notice--info">
+        <img src="../assets/svg/info.svg" width="22" height="22" alt="" aria-hidden="true">
+        <p><strong>Ruta según el tema activo:</strong> Los temas de bloques, como Twenty Twenty-Five y Twenty Twenty-Four, usan el <strong>Editor del sitio</strong>. Astra es un tema clásico: si lo usas, verás el <strong>Personalizador</strong>.</p>
+      </div>
+      <ol class="actions">
+        <li>
+          <strong>En temas de bloques:</strong> Apariencia → <strong>Editor</strong> → <strong>Estilos</strong> (icono de media luna).
+          <br>
+          <strong>En temas clásicos:</strong> Apariencia → <strong>Personalizar</strong>.
+        </li>
+        <li>Busca <strong>Colores</strong> (o <strong>Paleta</strong> en el Editor) y elige un color principal.</li>
         <li>Busca <strong>Tipografía</strong> y elige una letra fácil de leer.</li>
-        <li>Haz clic en <strong>Publicar</strong> para guardar los cambios.</li>
+        <li>Haz clic en <strong>Guardar</strong> (Editor) o <strong>Publicar</strong> (Personalizador).</li>
       </ol>
       <div class="check">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
         <p><strong>Comprueba:</strong> los colores y la letra de tu web cambian según lo que elegiste.</p>
       </div>
       <figure class="fig">
-        <div class="svgpad"><svg viewBox="0 0 340 160" role="img" aria-labelledby="col9-t col9-d">
-          <title id="col9-t">Personalizador de colores y letra</title>
-          <desc id="col9-d">Panel de personalización con opciones de colores y tipografía.</desc>
-          <g font-family="Consolas, monospace" font-size="10">
-            <rect x="4" y="4" width="332" height="152" rx="8" fill="#e5f1ec" stroke="#0b6b52" stroke-width="2"/>
-            <text x="16" y="24" font-family="Segoe UI, sans-serif" font-size="11" font-weight="700" fill="#0b6b52">Apariencia → Personalizar</text>
-            <text x="16" y="48" fill="#0f1f1e">Colores</text>
-            <text x="28" y="66" fill="#47595a">Color principal: #0b6b52</text>
-            <text x="28" y="84" fill="#47595a">Color secundario: #47595a</text>
-            <text x="16" y="102" fill="#0f1f1e">Tipografía</text>
-            <text x="28" y="120" fill="#47595a">Fuente: Segoe UI, sans-serif</text>
-            <text x="16" y="138" fill="#0b6b52">✓ Publicar cambios</text>
-          </g>
-        </svg></div>
-        <figcaption>Personalizador de WordPress: colores y tipografía.</figcaption>
+        <div class="svgpad">
+          <svg viewBox="0 0 680 400" role="img" aria-labelledby="col9-t col9-d" xmlns="http://www.w3.org/2000/svg">
+            <title id="col9-t">Estilos del sitio con controles de color y tipografía</title>
+            <desc id="col9-d">Recreación del Editor del sitio de WordPress en el panel Estilos. Se muestran las opciones Tipografía y Colores, una paleta de ejemplo y una vista previa del sitio con texto y botón.</desc>
+            <defs>
+              <filter id="col9-shadow" x="-10%" y="-10%" width="120%" height="130%">
+                <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#1d2327" flood-opacity=".16"/>
+              </filter>
+            </defs>
+            <rect x="5" y="5" width="670" height="390" rx="5" fill="#fff" stroke="#c3c4c7" filter="url(#col9-shadow)"/>
+
+            <rect x="6" y="6" width="668" height="38" fill="#fff"/>
+            <line x1="6" y1="44" x2="674" y2="44" stroke="#dcdcde"/>
+            <circle cx="24" cy="25" r="11" fill="#1d2327"/>
+            <text x="24" y="30" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#fff">W</text>
+            <path d="M56 19l7 6-7 6" fill="none" stroke="#50575e" stroke-width="1.6"/>
+            <text x="78" y="27" font-family="Arial,sans-serif" font-size="11" fill="#1d2327">Editor del sitio</text>
+            <rect x="560" y="12" width="99" height="24" rx="2" fill="#2271b1"/>
+            <text x="609.5" y="28" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" font-weight="600" fill="#fff">Guardar</text>
+
+            <rect x="6" y="45" width="245" height="349" fill="#fff"/>
+            <line x1="251" y1="45" x2="251" y2="394" stroke="#dcdcde"/>
+            <path d="M23 63l-6 6 6 6M17 69h15" fill="none" stroke="#50575e" stroke-width="1.4"/>
+            <text x="42" y="73" font-family="Arial,sans-serif" font-size="12" font-weight="600" fill="#1d2327">Estilos</text>
+            <path d="M221 62l12 12M233 62l-12 12" stroke="#50575e" stroke-width="1.4"/>
+            <text x="21" y="101" font-family="Arial,sans-serif" font-size="9" fill="#646970">Explora los estilos del sitio</text>
+
+            <rect x="17" y="115" width="222" height="58" fill="#fff" stroke="#dcdcde"/>
+            <circle cx="41" cy="144" r="10" fill="none" stroke="#50575e" stroke-width="1.3"/>
+            <path d="M41 134a10 10 0 0 0 0 20z" fill="#50575e"/>
+            <text x="63" y="141" font-family="Arial,sans-serif" font-size="10" font-weight="600" fill="#1d2327">Tipografía</text>
+            <text x="63" y="157" font-family="Arial,sans-serif" font-size="8" fill="#646970">Texto y títulos</text>
+            <path d="M222 140l4 4 4-4" fill="none" stroke="#646970" stroke-width="1.2"/>
+
+            <rect x="17" y="174" width="222" height="58" fill="#fff" stroke="#dcdcde"/>
+            <circle cx="41" cy="203" r="10" fill="#2271b1"/>
+            <path d="M41 193a10 10 0 0 0 0 20z" fill="#1d2327"/>
+            <text x="63" y="200" font-family="Arial,sans-serif" font-size="10" font-weight="600" fill="#1d2327">Colores</text>
+            <text x="63" y="216" font-family="Arial,sans-serif" font-size="8" fill="#646970">Paleta del sitio</text>
+            <path d="M222 199l4 4 4-4" fill="none" stroke="#646970" stroke-width="1.2"/>
+
+            <text x="20" y="259" font-family="Arial,sans-serif" font-size="9" font-weight="600" fill="#1d2327">PALETA</text>
+            <text x="20" y="279" font-family="Arial,sans-serif" font-size="8" fill="#646970">Elige una combinación de colores</text>
+            <rect x="20" y="292" width="28" height="28" fill="#1d2327"/>
+            <rect x="52" y="292" width="28" height="28" fill="#fff" stroke="#c3c4c7"/>
+            <rect x="84" y="292" width="28" height="28" fill="#f1ede5"/>
+            <rect x="116" y="292" width="28" height="28" fill="#c45b3e"/>
+            <rect x="148" y="292" width="28" height="28" fill="#d5aa58"/>
+            <rect x="180" y="292" width="28" height="28" fill="#668278"/>
+            <rect x="20" y="333" width="219" height="31" rx="2" fill="#fff" stroke="#8c8f94"/>
+            <text x="31" y="353" font-family="Arial,sans-serif" font-size="8" fill="#1d2327">Personalizar colores</text>
+            <path d="M221 345l4 4 4-4" fill="none" stroke="#646970" stroke-width="1.2"/>
+
+            <rect x="251" y="45" width="423" height="349" fill="#f0f0f1"/>
+            <rect x="273" y="62" width="379" height="315" fill="#fff"/>
+            <rect x="273" y="62" width="379" height="45" fill="#f1ede5"/>
+            <text x="294" y="90" font-family="Georgia,serif" font-size="14" font-weight="700" fill="#1d2327">Mi sitio</text>
+            <text x="526" y="89" font-family="Arial,sans-serif" font-size="8" fill="#1d2327">Inicio</text>
+            <text x="566" y="89" font-family="Arial,sans-serif" font-size="8" fill="#1d2327">Sobre nosotros</text>
+            <text x="302" y="155" font-family="Georgia,serif" font-size="22" font-weight="700" fill="#1d2327">Una web a tu manera</text>
+            <line x1="302" y1="169" x2="614" y2="169" stroke="#dcdcde"/>
+            <text x="302" y="194" font-family="Arial,sans-serif" font-size="9" fill="#50575e">Prueba colores y tipografías para cambiar</text>
+            <text x="302" y="209" font-family="Arial,sans-serif" font-size="9" fill="#50575e">el aspecto general de todas tus páginas.</text>
+            <rect x="302" y="229" width="116" height="32" rx="2" fill="#c45b3e"/>
+            <text x="360" y="249" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" font-weight="600" fill="#fff">Conócenos</text>
+            <rect x="302" y="286" width="310" height="65" fill="#f1ede5"/>
+            <rect x="318" y="301" width="84" height="35" fill="#d5aa58"/>
+            <rect x="416" y="301" width="181" height="7" rx="2" fill="#d9d5ce"/>
+            <rect x="416" y="316" width="161" height="7" rx="2" fill="#d9d5ce"/>
+            <rect x="416" y="331" width="172" height="7" rx="2" fill="#d9d5ce"/>
+          </svg>
+        </div>
+        <figcaption>En Estilos, abre «Colores» o «Tipografía» y revisa cómo cambian en la vista previa.</figcaption>
       </figure>
     </article>
 
-    <article class="step" id="paso-10" data-step="10">
+    <article class="step" id="paso-12" data-step="12">
       <header class="step__head">
-        <span class="step__num" aria-hidden="true">10</span>
+        <span class="step__num" aria-hidden="true">12</span>
         <h3 class="step__title">Publicar y revisar</h3>
-        <label class="tick"><input type="checkbox" data-done="10"><span>Hecho</span></label>
+        <label class="tick"><input type="checkbox" data-done="12"><span>Hecho</span></label>
       </header>
       <ol class="actions">
-        <li>En el editor de la página Inicio, haz clic en <strong>Publicar</strong> (arriba a la derecha).</li>
-        <li>Revisa que todo esté correcto y vuelve a pulsar <strong>Publicar</strong>.</li>
+        <li>En el editor de la página <strong>Inicio</strong>, haz clic en <strong>Publicar</strong> (arriba a la derecha).</li>
+        <li>Ve a <strong>Páginas</strong> → <strong>Todas las páginas</strong>, pasa el ratón sobre <strong>Sobre nosotros</strong> y haz clic en <strong>Editar</strong>.</li>
+        <li>En el editor de <strong>Sobre nosotros</strong>, haz clic en <strong>Publicar</strong>.</li>
         <li>Abre tu web en una pestaña nueva: <code>http://localhost/miwordpress/</code>.</li>
         <li>Recorre las páginas y comprueba que el menú, las imágenes y los textos se ven bien.</li>
       </ol>
       <div class="check">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-        <p><strong>Comprueba:</strong> tu web está publicada y accesible desde el navegador.</p>
+        <p><strong>Comprueba:</strong> ambas páginas (Inicio y Sobre nosotros) están publicadas y el menú funciona.</p>
       </div>
       <figure class="fig">
-        <div class="svgpad"><svg viewBox="0 0 340 160" role="img" aria-labelledby="pub10-t pub10-d">
-          <title id="pub10-t">Web publicada y accesible</title>
-          <desc id="pub10-d">Página publicada en localhost con menú, texto e imagen.</desc>
-          <g font-family="Consolas, monospace" font-size="10">
-            <rect x="4" y="4" width="332" height="152" rx="8" fill="#e5f1ec" stroke="#0b6b52" stroke-width="2"/>
-            <text x="16" y="24" font-family="Segoe UI, sans-serif" font-size="12" font-weight="700" fill="#0b6b52">Mi WordPress local</text>
-            <text x="16" y="48" fill="#0f1f1e">╭──────────────╮  ┌─────────────┐</text>
-            <text x="16" y="66" fill="#47595a">│ Inicio  │    │ Imagen      │</text>
-            <text x="16" y="84" fill="#47595a">╰──────────────╯  │ de portada  │</text>
-            <text x="110" y="102" fill="#47595a">│                 │</text>
-            <text x="110" y="120" fill="#47595a">╰─────────────────╯</text>
-            <text x="16" y="138" fill="#47595a">http://localhost/miwordpress/</text>
-            <text x="16" y="152" fill="#0f1f1e">Publicada y online en tu ordenador</text>
-          </g>
-        </svg></div>
-        <figcaption>Tu web publicada y accesible desde el navegador.</figcaption>
+        <div class="svgpad">
+          <svg viewBox="0 0 680 400" role="img" aria-labelledby="pub10-t pub10-d" xmlns="http://www.w3.org/2000/svg">
+            <title id="pub10-t">Sitio WordPress publicado en el navegador</title>
+            <desc id="pub10-d">Recreación de una ventana del navegador abierta en la dirección local de WordPress. El sitio publicado muestra los enlaces Inicio y Sobre nosotros, el título de la página y el contenido creado durante la práctica.</desc>
+            <defs>
+              <filter id="pub10-shadow" x="-10%" y="-10%" width="120%" height="130%">
+                <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#1d2327" flood-opacity=".16"/>
+              </filter>
+            </defs>
+            <rect x="5" y="5" width="670" height="390" rx="6" fill="#fff" stroke="#c3c4c7" filter="url(#pub10-shadow)"/>
+
+            <rect x="6" y="6" width="668" height="34" rx="5" fill="#f0f0f1"/>
+            <circle cx="22" cy="23" r="5" fill="#d63638"/>
+            <circle cx="39" cy="23" r="5" fill="#dba617"/>
+            <circle cx="56" cy="23" r="5" fill="#00a32a"/>
+            <path d="M83 19a6 6 0 1 0 2 7M83 15v5h-5" fill="none" stroke="#646970" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="115" y="11" width="448" height="24" rx="12" fill="#fff" stroke="#c3c4c7"/>
+            <circle cx="130" cy="23" r="4" fill="none" stroke="#646970" stroke-width="1"/>
+            <path d="M130 19v4l3 2" fill="none" stroke="#646970" stroke-width="1"/>
+            <text x="143" y="27" font-family="Arial,sans-serif" font-size="9" fill="#1d2327">http://localhost/miwordpress/</text>
+            <path d="M630 18h13v11h-13zM633 15h13v11" fill="none" stroke="#646970" stroke-width="1.1"/>
+
+            <rect x="6" y="40" width="668" height="26" fill="#1d2327"/>
+            <circle cx="21" cy="53" r="7" fill="#fff"/>
+            <text x="21" y="56" text-anchor="middle" font-family="Georgia,serif" font-size="9" font-weight="700" fill="#1d2327">W</text>
+            <text x="34" y="56" font-family="Arial,sans-serif" font-size="8" fill="#fff">Mi sitio</text>
+            <text x="80" y="56" font-family="Arial,sans-serif" font-size="8" fill="#dcdcde">Personalizar</text>
+            <text x="557" y="56" font-family="Arial,sans-serif" font-size="8" fill="#fff">Hola, admin</text>
+
+            <rect x="6" y="66" width="668" height="328" fill="#fff"/>
+            <rect x="6" y="66" width="668" height="52" fill="#f1ede5"/>
+            <text x="38" y="97" font-family="Georgia,serif" font-size="16" font-weight="700" fill="#1d2327">Mi sitio</text>
+            <text x="500" y="95" font-family="Arial,sans-serif" font-size="9" font-weight="600" fill="#1d2327">Inicio</text>
+            <text x="555" y="95" font-family="Arial,sans-serif" font-size="9" fill="#1d2327">Sobre nosotros</text>
+            <line x1="498" y1="103" x2="530" y2="103" stroke="#c45b3e" stroke-width="2"/>
+
+            <text x="59" y="159" font-family="Georgia,serif" font-size="25" font-weight="700" fill="#1d2327">Bienvenido a mi web</text>
+            <text x="59" y="183" font-family="Arial,sans-serif" font-size="10" fill="#50575e">Este es un párrafo de bienvenida.</text>
+            <rect x="59" y="203" width="285" height="146" fill="#f6f7f7" stroke="#dcdcde"/>
+            <rect x="173" y="246" width="56" height="43" rx="2" fill="#fff" stroke="#8c8f94"/>
+            <circle cx="190" cy="260" r="5" fill="none" stroke="#646970" stroke-width="1.2"/>
+            <path d="M180 282l13-13 9 8 8-10 15 15" fill="none" stroke="#646970" stroke-width="1.2" stroke-linejoin="round"/>
+            <text x="201.5" y="316" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" fill="#646970">Imagen de la página</text>
+
+            <rect x="380" y="203" width="242" height="146" fill="#fff"/>
+            <text x="380" y="225" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#1d2327">Una web hecha por ti</text>
+            <line x1="380" y1="237" x2="620" y2="237" stroke="#dcdcde"/>
+            <rect x="380" y="252" width="221" height="7" rx="2" fill="#e5e5e5"/>
+            <rect x="380" y="267" width="208" height="7" rx="2" fill="#e5e5e5"/>
+            <rect x="380" y="282" width="215" height="7" rx="2" fill="#e5e5e5"/>
+            <rect x="380" y="305" width="91" height="28" rx="2" fill="#c45b3e"/>
+            <text x="425.5" y="323" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" font-weight="600" fill="#fff">Leer más</text>
+            <line x1="38" y1="369" x2="642" y2="369" stroke="#dcdcde"/>
+            <text x="38" y="384" font-family="Arial,sans-serif" font-size="8" fill="#646970">Sitio publicado y visible en este ordenador.</text>
+          </svg>
+        </div>
+        <figcaption>Abre la dirección local y revisa el menú, los textos y la imagen en la web publicada.</figcaption>
       </figure>
     </article>
 
     <div class="final">
       <h2 id="final-title">Chuleta: Gutenberg</h2>
-      <p id="final-msg" hidden><strong>¡10 de 10!</strong> Ya tienes tu web creada con WordPress y Gutenberg.</p>
+      <p id="final-msg" hidden><strong>¡12 de 12!</strong> Ya tienes tu web creada con WordPress y Gutenberg.</p>
       <div class="chiprow">
         <button class="chip" type="button" data-copy="http://localhost/miwordpress/"><span>http://localhost/miwordpress/</span></button>
         <button class="chip" type="button" data-copy="http://localhost/miwordpress/wp-admin/"><span>http://localhost/miwordpress/wp-admin/</span></button>
@@ -465,16 +1683,79 @@
     </footer>
 
   </main>
+</div>
 
 <button class="back-to-top" aria-label="Volver arriba" hidden>
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
 </button>
 
 <script>
+(function(){
+  // Migracion del progreso de Gutenberg:
+  //   v1 -> version publicada (10 pasos)
+  //   v2 -> version intermedia con un mapa erroneo (intercambiaba 2 y 3)
+  //   v3 -> numeracion actual (12 pasos)
+  // En la v3 se insertaron dos pasos nuevos en las posiciones 2 y 3, asi que
+  // un id antiguo n (n >= 2) pasa a n + 2. El id 1 no se mueve.
+  var KEY_V1 = 'ifct0510-gutenberg-progress.v1';
+  var KEY_V2 = 'ifct0510-gutenberg-progress.v2';
+  var KEY_V3 = 'ifct0510-gutenberg-progress.v3';
+  var LAST_LEGACY_STEP = 10; // la v1 solo llegaba hasta el paso 10
+
+  function readSteps(key){
+    try{
+      var raw = localStorage.getItem(key);
+      if(raw === null) return null;
+      var parsed = JSON.parse(raw);
+      return Array.isArray(parsed) ? parsed : null;
+    }catch(e){ return null; }
+  }
+
+  function migrateLegacy(steps){
+    var mapped = new Set();
+    steps.forEach(function(step){
+      var n = parseInt(String(step), 10);
+      if(isNaN(n)) return;
+      if(n === 1) mapped.add('1');
+      else if(n >= 2 && n <= LAST_LEGACY_STEP) mapped.add(String(n + 2));
+      else if(n > LAST_LEGACY_STEP) mapped.add(String(n));
+    });
+    return Array.from(mapped);
+  }
+
+  try{
+    if(localStorage.getItem(KEY_V3) !== null) return; // ya esta migrado
+
+    var legacy = readSteps(KEY_V1);
+    var previous = readSteps(KEY_V2);
+
+    // Precedencia: v3 > v1 > v2.
+    // La v2 puede traer el mapa erroneo, asi que solo se usa si no hay una v1
+    // con progreso (entonces la v2 solo puede ser progreso ya escrito en la
+    // numeracion actual) o si la v2 esta vacia, porque una v2 vacia solo
+    // puede venir de un borrado manual del progreso.
+    var useLegacy = false;
+    if(legacy !== null && legacy.length > 0){
+      useLegacy = !(previous !== null && previous.length === 0);
+    }
+
+    if(useLegacy){
+      localStorage.setItem(KEY_V3, JSON.stringify(migrateLegacy(legacy)));
+      return;
+    }
+
+    if(previous !== null){
+      var normalized = new Set();
+      previous.forEach(function(step){ normalized.add(String(step)); });
+      localStorage.setItem(KEY_V3, JSON.stringify(Array.from(normalized)));
+    }
+  }catch(e){}
+})();
+
 window.IFCT0510 = {
-  key: 'ifct0510-gutenberg-progress.v1',
+  key: 'ifct0510-gutenberg-progress.v3',
   fontKey: 'ifct0510-gutenberg-font.v1',
-  total: 10,
+  total: 12,
   sizes: ['100%','112.5%','125%','137.5%']
 };
 </script>

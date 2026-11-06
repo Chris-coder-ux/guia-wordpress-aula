@@ -20,14 +20,36 @@
   var boxes = Array.prototype.slice.call(document.querySelectorAll('[data-done]'));
   var total = boxes.length;
   var done = new Set();
+  // Ids que existen de verdad en esta pagina. El progreso guardado puede
+  // traer ids de otra numeracion (por ejemplo, de una version anterior con
+  // menos pasos); si se aceptaran sin filtrar, el contador diria mas pasos
+  // hechos de los que la pagina tiene y la barra podria pasar del 100 %.
+  var validIds = new Set(boxes.map(function(b){ return b.getAttribute('data-done'); }));
 
   function loadDone(){
+    var raw = null;
     try{
-      var raw = localStorage.getItem(KEY);
-      if(raw){
-        JSON.parse(raw).forEach(function(v){ done.add(String(v)); });
-      }
-    }catch(e){}
+      raw = localStorage.getItem(KEY);
+    }catch(e){ return; }
+    if(!raw) return;
+
+    var parsed = null;
+    try{
+      parsed = JSON.parse(raw);
+    }catch(e){ return; }
+    if(!Array.isArray(parsed)) return;
+
+    var discarded = 0;
+    parsed.forEach(function(v){
+      var id = String(v);
+      if(validIds.has(id)) done.add(id);
+      else discarded++;
+    });
+
+    // Se reescribe el progreso ya saneado para que los ids que no pertenecen
+    // a esta pagina no vuelvan a aparecer. Solo en paginas con pasos: una
+    // pagina sin casillas no debe tocar la clave de otro modulo.
+    if(discarded > 0 && total > 0) save();
   }
   function save(){
     try{
