@@ -860,6 +860,11 @@ figcaption b{color:var(--ink)}
 figure.fig.fig--poster{
   max-width:none;
   margin-top:1.2rem;
+  /* ancho minimo en movil (se amplia con los modificadores) */
+  --poster-min:880px;
+}
+figure.fig.fig--poster--zonas{
+  --poster-min:1100px;
 }
 figure.fig.fig--poster .fig--poster__scroll{
   overflow-x:auto;
@@ -884,7 +889,7 @@ figure.fig.fig--poster img{
    el texto pequeno se pueda leer sin salir de la pagina. */
 @media (max-width:700px){
   figure.fig.fig--poster img{
-    min-width:880px;
+    min-width:var(--poster-min);
   }
 }
 

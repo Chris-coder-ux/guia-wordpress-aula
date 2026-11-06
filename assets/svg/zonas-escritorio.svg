@@ -1,0 +1,191 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="840" viewBox="0 0 1200 840" role="img" aria-labelledby="ze-t ze-d">
+  <title id="ze-t">Las 5 zonas del escritorio</title>
+  <desc id="ze-d">Infografía de un escritorio de ordenador con iconos, barra de tareas, menú Inicio, reloj y fecha y papelera, junto a una explicación de para qué sirve cada zona.</desc>
+
+  <defs>
+    <linearGradient id="ze-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f3f7ff"/>
+      <stop offset="1" stop-color="#e8efff"/>
+    </linearGradient>
+    <linearGradient id="ze-wallpaper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2677c9"/>
+      <stop offset=".55" stop-color="#2455a8"/>
+      <stop offset="1" stop-color="#263c85"/>
+    </linearGradient>
+    <linearGradient id="ze-taskbar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#182947" stop-opacity=".94"/>
+      <stop offset="1" stop-color="#10203d" stop-opacity=".98"/>
+    </linearGradient>
+    <filter id="ze-shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#17315e" flood-opacity=".14"/>
+    </filter>
+    <filter id="ze-softShadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#17315e" flood-opacity=".12"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="840" fill="url(#ze-bg)"/>
+  <circle cx="1110" cy="44" r="92" fill="#dce8ff" opacity=".55"/>
+  <circle cx="30" cy="790" r="110" fill="#dce8ff" opacity=".48"/>
+
+  <text x="52" y="61" font-family="Arial, Helvetica, sans-serif" font-size="37" font-weight="700" fill="#17305a">Las 5 zonas del escritorio</text>
+  <text x="54" y="96" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#536987">Conoce qué hay en la pantalla y para qué sirve cada parte.</text>
+
+  <!-- Ordenador -->
+  <g filter="url(#ze-shadow)">
+    <rect x="42" y="132" width="710" height="530" rx="22" fill="#263754"/>
+    <rect x="56" y="146" width="682" height="498" rx="12" fill="#0d1a31"/>
+    <rect x="69" y="159" width="656" height="472" rx="5" fill="url(#ze-wallpaper)"/>
+  </g>
+
+  <!-- Fondo de escritorio -->
+  <path d="M69 451 C198 391 298 468 400 417 C507 364 601 384 725 315 L725 631 L69 631Z" fill="#367fc4" opacity=".32"/>
+  <path d="M69 509 C194 450 306 515 411 466 C523 413 624 448 725 391 L725 631 L69 631Z" fill="#172f78" opacity=".38"/>
+  <circle cx="606" cy="228" r="56" fill="#89c9ff" opacity=".10"/>
+
+  <!-- Iconos del escritorio -->
+  <g font-family="Arial, Helvetica, sans-serif" text-anchor="middle">
+    <!-- Carpeta -->
+    <g transform="translate(112 199)">
+      <path d="M0 9h21l7 7h32v38H0z" fill="#ffca55" stroke="#fff2c5" stroke-width="2"/>
+      <path d="M0 18h60v36H0z" fill="#f3ae36"/>
+      <path d="M4 22h52v28H4z" fill="#ffd36c"/>
+      <text x="30" y="72" font-size="12" fill="#fff">Documentos</text>
+    </g>
+    <!-- Navegador -->
+    <g transform="translate(204 199)">
+      <circle cx="29" cy="34" r="27" fill="#f8fbff"/>
+      <path d="M29 7 A27 27 0 0 1 54 25 L30 30Z" fill="#40b77a"/>
+      <path d="M54 25 A27 27 0 0 1 15 53 L26 34Z" fill="#f2c54c"/>
+      <path d="M15 53 A27 27 0 0 1 6 24 L29 30Z" fill="#e96456"/>
+      <circle cx="29" cy="34" r="11" fill="#4b8fd2"/>
+      <text x="29" y="72" font-size="12" fill="#fff">Internet</text>
+    </g>
+    <!-- Programa -->
+    <g transform="translate(111 306)">
+      <rect x="3" y="7" width="54" height="48" rx="10" fill="#f4f8ff"/>
+      <rect x="10" y="14" width="40" height="27" rx="4" fill="#55b7ce"/>
+      <path d="M18 48h24M30 41v7" stroke="#637b9b" stroke-width="3" stroke-linecap="round"/>
+      <text x="30" y="74" font-size="12" fill="#fff">Programa</text>
+    </g>
+    <!-- Archivo -->
+    <g transform="translate(205 306)">
+      <path d="M11 5h29l14 14v39H11z" fill="#f7fbff" stroke="#dbe7f7" stroke-width="2"/>
+      <path d="M40 5v15h14" fill="#cbdcf2"/>
+      <path d="M19 32h26M19 39h26M19 46h20" stroke="#6d8eb9" stroke-width="3" stroke-linecap="round"/>
+      <text x="32" y="74" font-size="12" fill="#fff">Archivo</text>
+    </g>
+    <!-- Papelera -->
+    <g transform="translate(649 493)">
+      <path d="M10 18h39l-4 39H14z" fill="#dceaf6" stroke="#fff" stroke-width="2"/>
+      <path d="M7 14h45M20 9h19" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+      <path d="M23 23v27M36 23v27" stroke="#8daac7" stroke-width="3" stroke-linecap="round"/>
+      <text x="29" y="74" font-size="12" fill="#fff">Papelera</text>
+    </g>
+  </g>
+
+  <!-- Barra de tareas -->
+  <rect x="69" y="579" width="656" height="52" fill="url(#ze-taskbar)"/>
+  <path d="M69 579h656" stroke="#ffffff" stroke-opacity=".16"/>
+  <!-- Inicio -->
+  <g transform="translate(88 593)">
+    <path d="M0 2 16 0v15H0zM19 0l17-2v17H19zM0 20h16v15L0 33zM19 20h17v17l-17-2z" fill="#fff"/>
+  </g>
+  <!-- Apps abiertas -->
+  <g transform="translate(151 591)">
+    <rect x="0" y="3" width="36" height="32" rx="7" fill="#ffffff" opacity=".14"/>
+    <rect x="10" y="9" width="17" height="16" rx="3" fill="#54c2d8"/>
+    <path d="M6 30h25" stroke="#85d8e8" stroke-width="2" stroke-linecap="round"/>
+    <rect x="46" y="3" width="36" height="32" rx="7" fill="#ffffff" opacity=".14"/>
+    <path d="M56 10h17v17H56z" fill="#ffd064"/>
+    <rect x="92" y="3" width="36" height="32" rx="7" fill="#ffffff" opacity=".14"/>
+    <circle cx="110" cy="19" r="9" fill="#64c993"/>
+  </g>
+  <text x="312" y="613" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#c5d2e8">Aplicaciones abiertas</text>
+  <!-- Reloj -->
+  <text x="646" y="603" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" fill="#fff">10:30</text>
+  <text x="646" y="620" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#d5e0f2">12/06/2025</text>
+
+  <!-- Soporte del monitor -->
+  <path d="M329 662h136l17 49H312z" fill="#9bacbf"/>
+  <path d="M291 708h212a8 8 0 0 1 8 8v8H283v-8a8 8 0 0 1 8-8z" fill="#8296af"/>
+  <path d="M329 662h136" stroke="#cbd6e4" stroke-width="3"/>
+
+  <!-- Marcadores numerados sobre cada zona -->
+  <g font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" text-anchor="middle">
+    <g filter="url(#ze-softShadow)">
+      <circle cx="90" cy="180" r="17" fill="#fff" stroke="#ed9b36" stroke-width="3"/>
+      <text x="90" y="185" fill="#cf7415">1</text>
+    </g>
+    <g filter="url(#ze-softShadow)">
+      <circle cx="630" cy="518" r="17" fill="#fff" stroke="#e36b68" stroke-width="3"/>
+      <text x="630" y="523" fill="#c6484d">5</text>
+    </g>
+    <g filter="url(#ze-softShadow)">
+      <circle cx="106" cy="558" r="17" fill="#fff" stroke="#8b74dc" stroke-width="3"/>
+      <text x="106" y="563" fill="#6952bd">3</text>
+    </g>
+    <g filter="url(#ze-softShadow)">
+      <circle cx="452" cy="606" r="17" fill="#fff" stroke="#3ca8a0" stroke-width="3"/>
+      <text x="452" y="611" fill="#21877f">2</text>
+    </g>
+    <g filter="url(#ze-softShadow)">
+      <circle cx="699" cy="606" r="17" fill="#fff" stroke="#e3b83f" stroke-width="3"/>
+      <text x="699" y="611" fill="#aa8315">4</text>
+    </g>
+  </g>
+
+  <!-- Explicaciones -->
+  <g font-family="Arial, Helvetica, sans-serif">
+    <g filter="url(#ze-softShadow)">
+      <rect x="785" y="140" width="370" height="91" rx="16" fill="#fff"/>
+      <circle cx="818" cy="185" r="19" fill="#fff2df"/>
+      <text x="818" y="191" text-anchor="middle" font-size="17" font-weight="700" fill="#cf7415">1</text>
+      <text x="850" y="174" font-size="18" font-weight="700" fill="#263b5d">Iconos</text>
+      <text x="850" y="197" font-size="14" fill="#536987">Abren programas o carpetas</text>
+      <text x="850" y="216" font-size="14" fill="#536987">con doble clic.</text>
+    </g>
+    <g filter="url(#ze-softShadow)">
+      <rect x="785" y="240" width="370" height="91" rx="16" fill="#fff"/>
+      <circle cx="818" cy="285" r="19" fill="#def5f2"/>
+      <text x="818" y="291" text-anchor="middle" font-size="17" font-weight="700" fill="#21877f">2</text>
+      <text x="850" y="274" font-size="18" font-weight="700" fill="#263b5d">Barra de tareas</text>
+      <text x="850" y="297" font-size="14" fill="#536987">Está abajo y muestra lo que</text>
+      <text x="850" y="316" font-size="14" fill="#536987">tienes abierto.</text>
+    </g>
+    <g filter="url(#ze-softShadow)">
+      <rect x="785" y="340" width="370" height="91" rx="16" fill="#fff"/>
+      <circle cx="818" cy="385" r="19" fill="#eeeaff"/>
+      <text x="818" y="391" text-anchor="middle" font-size="17" font-weight="700" fill="#6952bd">3</text>
+      <text x="850" y="374" font-size="18" font-weight="700" fill="#263b5d">Menú Inicio</text>
+      <text x="850" y="397" font-size="14" fill="#536987">El icono de ventana abajo a la</text>
+      <text x="850" y="416" font-size="14" fill="#536987">izquierda: aquí están los programas.</text>
+    </g>
+    <g filter="url(#ze-softShadow)">
+      <rect x="785" y="440" width="370" height="91" rx="16" fill="#fff"/>
+      <circle cx="818" cy="485" r="19" fill="#fff7dc"/>
+      <text x="818" y="491" text-anchor="middle" font-size="17" font-weight="700" fill="#aa8315">4</text>
+      <text x="850" y="474" font-size="18" font-weight="700" fill="#263b5d">Reloj y fecha</text>
+      <text x="850" y="497" font-size="14" fill="#536987">Abajo a la derecha: indican</text>
+      <text x="850" y="516" font-size="14" fill="#536987">la hora y la fecha del ordenador.</text>
+    </g>
+    <g filter="url(#ze-softShadow)">
+      <rect x="785" y="540" width="370" height="91" rx="16" fill="#fff"/>
+      <circle cx="818" cy="585" r="19" fill="#ffebeb"/>
+      <text x="818" y="591" text-anchor="middle" font-size="17" font-weight="700" fill="#c6484d">5</text>
+      <text x="850" y="574" font-size="18" font-weight="700" fill="#263b5d">Papelera</text>
+      <text x="850" y="597" font-size="14" fill="#536987">El cubo del escritorio: aquí va</text>
+      <text x="850" y="616" font-size="14" fill="#536987">lo que borras.</text>
+    </g>
+  </g>
+
+  <!-- Recordatorio -->
+  <g filter="url(#ze-softShadow)">
+    <rect x="55" y="755" width="1090" height="62" rx="18" fill="#173a70"/>
+    <circle cx="94" cy="786" r="22" fill="#fff" opacity=".15"/>
+    <!-- Mano señalando -->
+    <path d="M88 798c-4-1-7-4-7-8v-9c0-2 1-4 3-4s3 2 3 4v-12c0-2 1-4 3-4s3 2 3 4v10-14c0-2 1-4 3-4s3 2 3 4v14-10c0-2 1-4 3-4s3 2 3 4v16l4-4c2-2 5-1 5 2 0 1-1 2-2 3l-7 9c-2 2-4 3-7 3h-5z" fill="#fff"/>
+    <text x="133" y="793" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#fff">Comprueba:</text>
+    <text x="253" y="793" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#eaf1ff">señala cada zona con el dedo y di para qué sirve.</text>
+  </g>
+</svg>
