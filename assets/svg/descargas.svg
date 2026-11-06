@@ -1,0 +1,218 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="560" viewBox="0 0 900 560" role="img" aria-labelledby="des-t des-d" font-family="Segoe UI, system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif">
+  <title id="des-t">Descargar una imagen y encontrarla en la carpeta Descargas</title>
+  <desc id="des-d">Tres ventanas en fila muestran cómo guardar una imagen de un gato desde el navegador y localizarla después en la carpeta Descargas.</desc>
+
+  <defs>
+    <linearGradient id="des-fondo" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fbfa"/>
+      <stop offset="1" stop-color="#e8efed"/>
+    </linearGradient>
+    <linearGradient id="des-pelaje" x1="0" y1="0" x2="0.8" y2="1">
+      <stop offset="0" stop-color="#dce8e3"/>
+      <stop offset="1" stop-color="#b9cbc4"/>
+    </linearGradient>
+    <filter id="des-sombra" x="-12%" y="-12%" width="124%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#173b34" flood-opacity=".16"/>
+    </filter>
+    <filter id="des-sombra-menu" x="-25%" y="-25%" width="150%" height="160%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#173b34" flood-opacity=".18"/>
+    </filter>
+    <clipPath id="des-recorte-1">
+      <rect x="40" y="76" width="268" height="380" rx="10"/>
+    </clipPath>
+    <clipPath id="des-recorte-2">
+      <rect x="340" y="76" width="220" height="380" rx="10"/>
+    </clipPath>
+    <clipPath id="des-recorte-3">
+      <rect x="592" y="76" width="268" height="380" rx="10"/>
+    </clipPath>
+  </defs>
+
+  <rect width="900" height="560" fill="url(#des-fondo)"/>
+  <text x="40" y="48" font-size="30" font-weight="700" fill="#173b34">Descargar una imagen y encontrarla</text>
+
+  <!-- Navegador -->
+  <rect x="40" y="76" width="268" height="380" rx="10" fill="#fff" filter="url(#des-sombra)"/>
+  <g clip-path="url(#des-recorte-1)">
+    <rect x="40" y="76" width="268" height="28" fill="#dee3e7"/>
+    <circle cx="56" cy="90" r="3" fill="#ef6a63"/>
+    <circle cx="66" cy="90" r="3" fill="#f4c35e"/>
+    <circle cx="76" cy="90" r="3" fill="#62bd76"/>
+    <text x="88" y="94" font-size="11" fill="#47595a">Navegador</text>
+
+    <rect x="52" y="112" width="244" height="22" rx="11" fill="#f1f3f4"/>
+    <circle cx="64" cy="123" r="4.6" fill="none" stroke="#5f6368" stroke-width="1.5"/>
+    <line x1="67.5" y1="126.5" x2="71" y2="130" stroke="#5f6368" stroke-width="1.5" stroke-linecap="round"/>
+    <text x="78" y="127" font-size="11" fill="#202124">gatos</text>
+
+    <rect x="52" y="144" width="244" height="230" rx="6" fill="#edf3f0" stroke="#cfdcd7" stroke-width="1.5"/>
+    <!-- Gato con rasgos y sombras más naturales -->
+    <path d="M132 210 140 171Q142 165 147 170L164 188Q174 185 184 188L201 170Q206 165 208 172L216 211Q225 226 222 252Q219 285 194 296Q174 306 153 296Q128 284 125 255Q123 229 132 210Z" fill="url(#des-pelaje)" stroke="#9fb4ad" stroke-width="2"/>
+    <path d="M140 181 145 208 162 192Z" fill="#d58f8b" opacity=".85"/>
+    <path d="M201 181 196 208 179 192Z" fill="#d58f8b" opacity=".85"/>
+    <path d="M135 217Q150 205 164 215M184 215Q198 205 211 217" fill="none" stroke="#c0d1cb" stroke-width="3" stroke-linecap="round"/>
+    <ellipse cx="157" cy="241" rx="6.2" ry="8" fill="#fff"/>
+    <ellipse cx="191" cy="241" rx="6.2" ry="8" fill="#fff"/>
+    <ellipse cx="158" cy="242" rx="3.2" ry="5.4" fill="#536c5c"/>
+    <ellipse cx="190" cy="242" rx="3.2" ry="5.4" fill="#536c5c"/>
+    <circle cx="159" cy="240" r="1.2" fill="#fff"/>
+    <circle cx="191" cy="240" r="1.2" fill="#fff"/>
+    <path d="M174 255 168 260Q174 265 180 260Z" fill="#b97678"/>
+    <path d="M174 261Q169 270 162 265M174 261Q179 270 186 265" fill="none" stroke="#687b73" stroke-width="1.8" stroke-linecap="round"/>
+    <path d="M126 253h-16M128 261l-17 4M132 268l-15 8M222 253h16M220 261l17 4M216 268l15 8" fill="none" stroke="#879e96" stroke-width="1.4" stroke-linecap="round"/>
+    <path d="M147 281Q174 294 201 281" fill="none" stroke="#b2c4bd" stroke-width="2" opacity=".8"/>
+
+    <text x="52" y="396" font-size="12" font-weight="600" fill="#173b34">gato.jpg</text>
+    <text x="52" y="412" font-size="11" fill="#70757a">Imagen JPG · 640 × 480</text>
+
+    <!-- Menú contextual -->
+    <rect x="142" y="244" width="152" height="126" rx="6" fill="#fff" stroke="#dadce0" filter="url(#des-sombra-menu)"/>
+    <text x="154" y="266" font-size="11" fill="#3c4043">Abrir imagen</text>
+    <text x="154" y="288" font-size="11" fill="#3c4043">Copiar imagen</text>
+    <line x1="150" y1="299" x2="286" y2="299" stroke="#e8eaed"/>
+    <rect x="147" y="306" width="142" height="26" rx="4" fill="#e8f5f0"/>
+    <text x="154" y="323" font-size="10.5" font-weight="700" fill="#0b6b52">Guardar imagen como…</text>
+    <text x="154" y="352" font-size="11" fill="#3c4043">Guardar página como…</text>
+
+    <path d="M168 226v20l4.8-4.8 3.2 7.4 3.6-1.6-3.2-7.2h6.6z" fill="#fff" stroke="#173b34" stroke-width="1.6" stroke-linejoin="round"/>
+
+    <circle cx="282" cy="158" r="10" fill="#0b6b52" stroke="#fff" stroke-width="2.5"/>
+    <text x="282" y="162.5" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">1</text>
+  </g>
+  <circle cx="292" cy="240" r="10" fill="#0b6b52" stroke="#fff" stroke-width="2.5"/>
+  <text x="292" y="244.5" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">2</text>
+  <rect x="40" y="76" width="268" height="380" rx="10" fill="none" stroke="#b7c9c3" stroke-width="1.5"/>
+
+  <path d="M313 266h17M325 260l6 6-6 6" fill="none" stroke="#0b6b52" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Diálogo para guardar -->
+  <rect x="340" y="76" width="220" height="380" rx="10" fill="#fff" filter="url(#des-sombra)"/>
+  <g clip-path="url(#des-recorte-2)">
+    <rect x="340" y="76" width="220" height="28" fill="#dee3e7"/>
+    <circle cx="356" cy="90" r="3" fill="#ef6a63"/>
+    <circle cx="366" cy="90" r="3" fill="#f4c35e"/>
+    <circle cx="376" cy="90" r="3" fill="#62bd76"/>
+    <text x="388" y="94" font-size="11" fill="#47595a">Guardar imagen</text>
+
+    <text x="354" y="128" font-size="11" fill="#70757a">Nombre:</text>
+    <rect x="354" y="134" width="192" height="26" rx="4" fill="#fff" stroke="#b7c9c3" stroke-width="1.5"/>
+    <text x="362" y="151" font-size="12" fill="#202124">gato.jpg</text>
+
+    <text x="354" y="186" font-size="11" fill="#70757a">Guardar en:</text>
+
+    <path d="M354 207h4l1.5 1.5h6.5v6.5h-12z" fill="#cfe0da" stroke="#8fa5a0"/>
+    <text x="374" y="215" font-size="11" fill="#3c4043">Escritorio</text>
+    <path d="M354 235h4l1.5 1.5h6.5v6.5h-12z" fill="#cfe0da" stroke="#8fa5a0"/>
+    <text x="374" y="243" font-size="11" fill="#3c4043">Imágenes</text>
+
+    <rect x="350" y="252" width="200" height="28" rx="4" fill="#e8f5f0"/>
+    <rect x="350" y="252" width="3" height="28" fill="#0b6b52"/>
+    <path d="M354 263h4l1.5 1.5h6.5v6.5h-12z" fill="#a8c9bd" stroke="#0b6b52"/>
+    <text x="374" y="271" font-size="11" font-weight="700" fill="#0b6b52">Descargas</text>
+
+    <path d="M354 291h4l1.5 1.5h6.5v6.5h-12z" fill="#cfe0da" stroke="#8fa5a0"/>
+    <text x="374" y="299" font-size="11" fill="#3c4043">Documentos</text>
+    <path d="M354 327h4l1.5 1.5h6.5v6.5h-12z" fill="#cfe0da" stroke="#8fa5a0"/>
+    <text x="374" y="335" font-size="11" fill="#3c4043">Este equipo</text>
+
+    <rect x="354" y="356" width="44" height="32" rx="4" fill="#eef2f1" stroke="#cfdcd7"/>
+    <circle cx="376" cy="372" r="10" fill="#dbe7e2" stroke="#b7c9c3" stroke-width="1.5"/>
+    <text x="406" y="370" font-size="11" font-weight="600" fill="#173b34">gato.jpg</text>
+    <text x="406" y="384" font-size="10" fill="#70757a">JPG · 640 × 480</text>
+
+    <rect x="396" y="402" width="68" height="28" rx="4" fill="#fff" stroke="#b7c9c3" stroke-width="1.2"/>
+    <text x="430" y="421" text-anchor="middle" font-size="11.5" fill="#3c4043">Cancelar</text>
+    <rect x="472" y="402" width="74" height="28" rx="4" fill="#0b6b52"/>
+    <text x="509" y="421" text-anchor="middle" font-size="11.5" font-weight="700" fill="#fff">Guardar</text>
+
+    <circle cx="532" cy="266" r="10" fill="#0b6b52" stroke="#fff" stroke-width="2.5"/>
+    <text x="532" y="270.5" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">3</text>
+  </g>
+  <rect x="340" y="76" width="220" height="380" rx="10" fill="none" stroke="#b7c9c3" stroke-width="1.5"/>
+
+  <path d="M565 266h17M577 260l6 6-6 6" fill="none" stroke="#0b6b52" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Explorador de archivos -->
+  <rect x="592" y="76" width="268" height="380" rx="10" fill="#fff" filter="url(#des-sombra)"/>
+  <g clip-path="url(#des-recorte-3)">
+    <rect x="592" y="76" width="268" height="28" fill="#dee3e7"/>
+    <circle cx="608" cy="90" r="3" fill="#ef6a63"/>
+    <circle cx="618" cy="90" r="3" fill="#f4c35e"/>
+    <circle cx="628" cy="90" r="3" fill="#62bd76"/>
+    <text x="640" y="94" font-size="11" fill="#47595a">Explorador de archivos</text>
+
+    <rect x="592" y="104" width="268" height="26" fill="#f1f3f4"/>
+    <path d="M606 112l-5 5 5 5" fill="none" stroke="#5f6368" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="618" y="107" width="118" height="20" rx="10" fill="#fff" stroke="#dadce0"/>
+    <text x="628" y="121" font-size="10.5" fill="#3c4043">Descargas</text>
+
+    <rect x="592" y="130" width="96" height="302" fill="#f6f9f8"/>
+    <line x1="688" y1="130" x2="688" y2="432" stroke="#e2e9e6"/>
+
+    <path d="M600 144h4l1.5 1.5h6.5v6.5h-12z" fill="#cfe0da" stroke="#8fa5a0"/>
+    <text x="620" y="152" font-size="11" fill="#3c4043">Escritorio</text>
+    <path d="M600 168h4l1.5 1.5h6.5v6.5h-12z" fill="#cfe0da" stroke="#8fa5a0"/>
+    <text x="620" y="176" font-size="11" fill="#3c4043">Documentos</text>
+    <path d="M600 192h4l1.5 1.5h6.5v6.5h-12z" fill="#cfe0da" stroke="#8fa5a0"/>
+    <text x="620" y="200" font-size="11" fill="#3c4043">Imágenes</text>
+
+    <rect x="596" y="208" width="88" height="24" rx="4" fill="#e8f5f0"/>
+    <circle cx="606" cy="220" r="10" fill="#0b6b52" stroke="#fff" stroke-width="2"/>
+    <text x="606" y="224" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">4</text>
+    <text x="622" y="224" font-size="11" font-weight="700" fill="#0b6b52">Descargas</text>
+
+    <path d="M600 240h4l1.5 1.5h6.5v6.5h-12z" fill="#cfe0da" stroke="#8fa5a0"/>
+    <text x="620" y="248" font-size="11" fill="#3c4043">Música</text>
+    <path d="M600 288h4l1.5 1.5h6.5v6.5h-12z" fill="#cfe0da" stroke="#8fa5a0"/>
+    <text x="620" y="296" font-size="11" fill="#3c4043">Este equipo</text>
+    <path d="M600 312h4l1.5 1.5h6.5v6.5h-12z" fill="#cfe0da" stroke="#8fa5a0"/>
+    <text x="620" y="320" font-size="11" fill="#3c4043">Papelera</text>
+
+    <text x="700" y="152" font-size="10.5" fill="#70757a">4 elementos</text>
+
+    <rect x="700" y="170" width="72" height="60" rx="5" fill="#eef6f2" stroke="#0b6b52" stroke-width="2"/>
+    <path d="M717 194 720 184Q721 181 724 184L730 190Q736 188 741 190L748 184Q751 181 752 184L755 195Q759 200 758 207Q756 216 747 219Q736 224 725 219Q716 215 715 207Q714 200 717 194Z" fill="url(#des-pelaje)" stroke="#9fb4ad" stroke-width="1"/>
+    <path d="M722 186 725 194 731 191ZM748 186 745 194 739 191Z" fill="#d58f8b"/>
+    <ellipse cx="728" cy="202" rx="2" ry="2.6" fill="#536c5c"/>
+    <ellipse cx="742" cy="202" rx="2" ry="2.6" fill="#536c5c"/>
+    <path d="M735 207l-2 2q2 2 4 0z" fill="#b97678"/>
+    <text x="736" y="247" text-anchor="middle" font-size="11" font-weight="700" fill="#0b6b52">gato.jpg</text>
+
+    <rect x="782" y="170" width="72" height="60" rx="5" fill="#eef2f1" stroke="#cfdcd7" stroke-width="1.5"/>
+    <rect x="800" y="185" width="36" height="28" rx="3" fill="#fff" stroke="#b7c9c3"/>
+    <circle cx="809" cy="193" r="3" fill="#cfdcd7"/>
+    <path d="M803 208l8-8 6 6 5-5 6 6h-25z" fill="#cfdcd7"/>
+    <text x="818" y="247" text-anchor="middle" font-size="11" fill="#3c4043">foto.png</text>
+
+    <rect x="700" y="276" width="72" height="60" rx="5" fill="#eef2f1" stroke="#cfdcd7" stroke-width="1.5"/>
+    <rect x="700" y="312" width="72" height="24" fill="#d5e5df"/>
+    <circle cx="752" cy="292" r="6" fill="#e8f5f0" stroke="#b7c9c3"/>
+    <text x="736" y="353" text-anchor="middle" font-size="11" fill="#3c4043">playa.jpg</text>
+
+    <rect x="782" y="276" width="72" height="60" rx="5" fill="#eef2f1" stroke="#cfdcd7" stroke-width="1.5"/>
+    <rect x="800" y="288" width="36" height="24" rx="2" fill="#fff" stroke="#b7c9c3"/>
+    <line x1="800" y1="294" x2="836" y2="294" stroke="#cfdcd7"/>
+    <line x1="806" y1="301" x2="830" y2="301" stroke="#cfdcd7"/>
+    <line x1="806" y1="307" x2="824" y2="307" stroke="#cfdcd7"/>
+    <text x="818" y="353" text-anchor="middle" font-size="11" fill="#3c4043">captura.png</text>
+
+    <rect x="592" y="432" width="268" height="24" fill="#f6f9f8"/>
+    <line x1="592" y1="432" x2="860" y2="432" stroke="#e2e9e6"/>
+    <text x="604" y="448" font-size="11" fill="#47595a">gato.jpg · 128 KB</text>
+  </g>
+  <rect x="592" y="76" width="268" height="380" rx="10" fill="none" stroke="#b7c9c3" stroke-width="1.5"/>
+
+  <!-- Leyenda -->
+  <circle cx="52" cy="516" r="11" fill="#0b6b52"/>
+  <text x="52" y="520.5" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">1</text>
+  <text x="71" y="521" font-size="13" fill="#47595a">La imagen buscada</text>
+  <circle cx="197" cy="516" r="11" fill="#0b6b52"/>
+  <text x="197" y="520.5" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">2</text>
+  <text x="216" y="521" font-size="13" fill="#47595a">Clic derecho</text>
+  <circle cx="314" cy="516" r="11" fill="#0b6b52"/>
+  <text x="314" y="520.5" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">3</text>
+  <text x="333" y="521" font-size="13" fill="#47595a">Carpeta Descargas</text>
+  <circle cx="452" cy="516" r="11" fill="#0b6b52"/>
+  <text x="452" y="520.5" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">4</text>
+  <text x="471" y="521" font-size="13" fill="#47595a">Descargas en el explorador</text>
+</svg>
