@@ -132,6 +132,7 @@ Carpeta despliegue     C:\xampp\htdocs\miwordpress\
 - Diagramas SVG: estilo "manual de taller" (hechos a mano en el HTML)
 - Tipografía: pila del sistema (`Segoe UI`, `system-ui`, `-apple-system`) — sin fuentes externas
 - Iconos: `assets/svg/` (logo, print, check, info, warn, copy) — SVGs propios
+- Guía visual del paso 1 de `sesion-0/`: `assets/svg/encender.svg` — póster de 1440 × 900; dentro de la página se ve en miniatura y se abre a tamaño nativo con el enlace «Abrir la guía ampliada»
 
 ---
 

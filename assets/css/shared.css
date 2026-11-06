@@ -856,6 +856,38 @@ figcaption{
 }
 figcaption b{color:var(--ink)}
 
+/* Poster de referencia: guia visual a tamano nativo en assets/svg/ */
+figure.fig.fig--poster{
+  max-width:none;
+  margin-top:1.2rem;
+}
+figure.fig.fig--poster .fig--poster__scroll{
+  overflow-x:auto;
+  -webkit-overflow-scrolling:touch;
+}
+figure.fig.fig--poster .fig--poster__scroll:focus-visible{
+  outline:3px solid var(--signal);
+  outline-offset:3px;
+}
+figure.fig.fig--poster .fig--poster__link{
+  display:block;
+}
+figure.fig.fig--poster img{
+  display:block;
+  width:100%;
+  height:auto;
+  border:1px solid var(--rule);
+  border-radius:10px;
+  background:#fbfcfc;
+}
+/* En movil el poster a tamano completo no cabe: se deja desplazable para que
+   el texto pequeno se pueda leer sin salir de la pagina. */
+@media (max-width:700px){
+  figure.fig.fig--poster img{
+    min-width:880px;
+  }
+}
+
 /* ---------- copy chips ---------- */
 .chip{
   display:inline-flex;
