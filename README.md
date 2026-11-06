@@ -15,10 +15,10 @@ Material didáctico **imprimible, interactivo y offline** para el certificado **
 | `index.html` | Portada con enlaces a los 3 módulos | Alumnado / Profesorado |
 | `sesion-0/` | **Sesión 0** · Primeros pasos (ratón, teclado, carpetas, capturas) — 12 pasos, ~90 min | Alumnado sin experiencia |
 | `practica-xampp/` | **Práctica principal** · Instalar XAMPP + WordPress en local — 14 pasos, 3 sesiones de 60 min | Alumnado |
-| `practica-gutenberg/` | **Práctica extensión** · Crear web con WordPress y Gutenberg — 10 pasos, 60 min | Alumnado (tras XAMPP) |
+| `practica-gutenberg/` | **Primera sesión de Gutenberg** · Crear una página con bloques básicos — 12 pasos, 60 min | Alumnado (tras XAMPP) |
 | `assets/` | CSS/JS/SVGs compartidos (SRP) | — (infraestructura) |
-| `03_material/` | **Documentos para imprimir/entregar** (Markdown) | Alumnado + Profesorado |
-| `04_documentos/` | `DESIGN.md` + `PRODUCT.md` (contexto de diseño/producto) | Equipo docente / Mantenedores |
+| `material/` | **Documentos para imprimir/entregar** (Markdown) | Alumnado + Profesorado |
+| `documentos/` | `DESIGN.md` + `PRODUCT.md` (contexto de diseño/producto) | Equipo docente / Mantenedores |
 
 ---
 
@@ -38,11 +38,11 @@ python -m http.server 8080
 3. **Todo funciona sin internet**: CSS/JS/SVGs son locales, progreso se guarda en `localStorage` del navegador.
 
 ### Opción C — Solo imprimir (papel)
-Los archivos en `03_material/*.md` están listos para:
+Los archivos en `material/*.md` están listos para:
 - Abrir en VS Code / Obsidian / Typora → **Exportar a PDF** (A4, márgenes normales)
 - O convertir con `pandoc`:
   ```bash
-  pandoc 03_material/ficha-practica-xampp-wordpress.md -o ficha-alumno.pdf --pdf-engine=weasyprint
+  pandoc material/ficha-practica-xampp-wordpress.md -o ficha-alumno.pdf --pdf-engine=weasyprint
   ```
 
 ---
@@ -53,13 +53,13 @@ Los archivos en `03_material/*.md` están listos para:
 |-------|--------|-------|--------|--------------|
 | 1 | **Sesión 0** | 12 | ~90 min | Encender, escritorio, ratón (clic/doble/clic derecho/arrastrar), teclado (8 teclas clave), navegador (barra vs buscador), descargas, carpetas, capturas, ergonomía |
 | 2 | **XAMPP + WordPress** | 14 | 3×60 min | Instalar XAMPP (solo Apache/MySQL/phpMyAdmin), arrancar servicios, verificar puertos, descargar WP, desplegar en `htdocs/miwordpress`, crear BD en phpMyAdmin, instalar WP, acceder a `wp-admin`, ver web publicada |
-| 3 | **Gutenberg** | 10 | 60 min | Entrar al panel, crear páginas (Inicio, Sobre nosotros), usar editor de bloques (párrafo, encabezado, imagen, lista), menú navegación, página de inicio estática, colores/tipografía, publicar |
+| 3 | **Gutenberg (primera sesión)** | 12 | 60 min | Entrar al panel, elegir el aspecto de la web, comprobar Gutenberg, crear las páginas Inicio y Sobre nosotros, abrir el editor, usar bloques básicos (encabezado, texto e imagen), menú, página de inicio estática, colores y letra, y publicar |
 
 > **Regla de oro:** Si el alumnado no supera la **lista de comprobación del paso 10 (Sesión 0)** o la del **paso 14 (XAMPP)**, **no pasa al siguiente módulo**. Repetir el bloque correspondiente.
 
 ---
 
-## 🧑‍🏫 Material para el profesorado (en `03_material/`)
+## 🧑‍🏫 Material para el profesorado (en `material/`)
 
 | Archivo | Qué contiene |
 |---------|--------------|
@@ -88,7 +88,9 @@ Los archivos en `03_material/*.md` están listos para:
 ## 🛠️ Stack técnico (para mantenimiento)
 
 - **HTML5 semántico** + **CSS custom properties** (tokens en `:root`)
-- **Vanilla JS** (ES2020) — `localStorage` por módulo (`ifct0510-s0-*`, `ifct0510-xampp-*`, `ifct0510-gutenberg-*`)
+- **Vanilla JS** (ES2020) — `localStorage` por módulo (`ifct0510-portada-*`, `ifct0510-s0-*`, `ifct0510-xampp-*`, `ifct0510-gutenberg-*`)
+- **Claves de progreso** — `ifct0510-portada-progress.v1`, `ifct0510-s0-progress.v1`, `ifct0510-xampp-progress.v1`, `ifct0510-gutenberg-progress.v3` (más las `*-font.v1` para el tamaño de letra)
+- **Gate estático de UI** — `scripts/check-ui.ps1` valida el rail, el índice móvil, el foco del salto al contenido y las claves de progreso (`-Fail` devuelve error de salida)
 - **SVG inline/externo** — diagramas esquemáticos a mano (estilo manual de taller)
 - **Arquitectura SRP**: cada módulo = su HTML; `assets/css/shared.css` + `assets/js/shared.js` compartidos
 - **Git** — histórico en `master`, commits atómicos por fase
@@ -101,9 +103,9 @@ Los archivos en `03_material/*.md` están listos para:
 - [ ] Comprobar **≥ 2 GB libres** en disco
 - [ ] Confirmar **puerto 80 libre** (no IIS, Skype, Teams corriendo)
 - [ ] Tener **Python** instalado si vas a usar `http.server` (opcional)
-- [ ] Imprimir/entregar: `sesion-0-primeros-pasos.md` (sesión 0) + `ficha-practica-xampp-wordpress.md` (práctica principal)
-- [ ] Tener a mano: `guia-docente-sesion-0.md`, `guia-docente-xampp-wordpress.md`, `guia-docente-gutenberg.md`
-- [ ] Preparar plantilla de evidencias: `plantilla-evidencias.md` (una por alumno/grupo)
+- [ ] Imprimir/entregar: `material/sesion-0-primeros-pasos.md` (sesión 0) + `material/ficha-practica-xampp-wordpress.md` (práctica principal)
+- [ ] Tener a mano: `material/guia-docente-sesion-0.md`, `material/guia-docente-xampp-wordpress.md`, `material/guia-docente-gutenberg.md`
+- [ ] Preparar plantilla de evidencias: `material/plantilla-evidencias.md` (una por alumno/grupo)
 
 ---
 
@@ -136,7 +138,7 @@ Carpeta despliegue     C:\xampp\htdocs\miwordpress\
 ## 📞 Soporte / Dudas
 
 Si algo no funciona en el aula:
-1. Revisa la **tabla de incidencias** en `guia-docente-xampp-wordpress.md` (sección 6)
+1. Revisa la **tabla de incidencias** en `material/guia-docente-xampp-wordpress.md` (sección 6)
 2. Verifica que Apache/MySQL están **en verde** en el panel de XAMPP
 3. Comprueba que la estructura en `htdocs/miwordpress` es **plana** (sin carpeta `wordpress` intermedia)
 4. Si persiste: **para, anota lo que ves, avisa al profesor** — cuanto menos se toque, más fácil arreglarlo
