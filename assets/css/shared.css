@@ -881,6 +881,9 @@ figure.fig.fig--poster--descargas{
 figure.fig.fig--poster--carpetas{
   --poster-min:1200px;
 }
+figure.fig.fig--poster--captura{
+  --poster-min:1200px;
+}
 figure.fig.fig--poster .fig--poster__scroll{
   overflow-x:auto;
   -webkit-overflow-scrolling:touch;

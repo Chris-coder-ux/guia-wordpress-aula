@@ -139,6 +139,7 @@ Carpeta despliegue     C:\xampp\htdocs\miwordpress\
 - Ilustración del paso 5 de `sesion-0/`: `assets/svg/navegador.svg` — póster de 900 × 560 con la ventana del navegador, la barra de direcciones y el buscador de Google resaltados en verde; se ve en miniatura y se abre a tamaño nativo con el enlace «Abrir la ilustración ampliada»
 - Ilustración del paso 6 de `sesion-0/`: `assets/svg/descargas.svg` — póster de 900 × 560 con la secuencia navegador → diálogo Guardar imagen → Explorador de archivos y las cuatro marcas del proceso; se ve en miniatura y se abre a tamaño nativo con el enlace «Abrir la ilustración ampliada»
 - Ilustración del paso 7 de `sesion-0/`: `assets/svg/carpetas.svg` — póster de 1200 × 880 con cuatro ventanas del Explorador (crear la carpeta en Documentos, nombrarla, cortar `gato.jpg` en Descargas y pegarlo dentro) y las cuatro marcas del proceso; se ve en miniatura y se abre a tamaño nativo con el enlace «Abrir la ilustración ampliada»
+- Ilustración del paso 8 de `sesion-0/`: `assets/svg/captura.svg` — póster de 1200 × 880 con cuatro escenas de la captura de pantalla (Windows + Shift + S, el recuadro de selección sobre la pantalla oscurecida, el aviso de captura copiada y el pegado en Word con Guardar como); se ve en miniatura y se abre a tamaño nativo con el enlace «Abrir la ilustración ampliada»
 
 ---
 
