@@ -279,7 +279,11 @@
     }
     window.addEventListener('scroll', toggleBackTop, { passive: true });
     backTop.addEventListener('click', function(){
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      // El scroll suave tambien es movimiento: si el sistema pide reducirlo,
+      // el salto al inicio es instantaneo.
+      var reduce = window.matchMedia
+        && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
     });
     toggleBackTop();
   }

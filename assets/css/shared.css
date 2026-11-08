@@ -96,24 +96,117 @@
    practica-xampp. Cada módulo solo aporta su propio contenido.
    ============================================================ */
 
+/* Tokens del sistema visual. Cada rol (superficie, texto, borde, acento) tiene
+   su variable: los literales sueltos del CSS se sustituyen por estas para que
+   el tema claro y el tema oscuro remapeen el mismo conjunto de roles en vez de
+   mantener dos paletas Parallelas. */
 :root{
+  /* superficies */
   --ground:#eef2f1;
   --panel:#ffffff;
+  --surface-soft:#fbfcfc;
+  --code-bg:#ffffff;
+  /* texto */
   --ink:#0f1f1e;
   --ink-2:#47595a;
+  --ink-fill:#0f1f1e;
+  --on-ink-fill:#ffffff;
+  /* lineas */
   --rule:#ccd6d4;
   --rule-soft:#e2e9e7;
+  /* Borde de control: mas oscuro que --rule porque delimita un componente que
+     hay que poder identificar (WCAG 1.4.11 pide 3:1). --rule se queda como
+     hairline decorativo para separadores, marcos y tablas. */
+  --rule-control:#858b8a;
+  --signal-rule:#778d85;
+  --warn-rule:#9b8b69;
+  /* acento de marca */
   --signal:#0b6b52;
+  --signal-strong:#096b56;
+  --signal-stronger:#085641;
   --signal-soft:#e5f1ec;
+  --signal-ink:#0b6b52;
+  --on-signal:#ffffff;
+  --selection:#bfe3d6;
+  --focus-signal:rgba(11,107,82,.4);
+  /* semanticos */
   --alert:#a8321f;
   --alert-soft:#faece8;
   --warn:#8a5a00;
   --warn-soft:#fdf4e3;
+  /* bloques por modulo */
+  --part-bg-s0:#fbfcfc;
+  --part-accent-xampp:#1d4ed8;
+  --part-bg-xampp:#f8fafc;
+  --part-accent-gutenberg:#a85600;
+  --part-bg-gutenberg:#fffbeb;
+  /* bloque final (siempre oscuro) */
+  --final-bg:#0f1f1e;
+  --final-ink:#e9efed;
+  --final-ink-strong:#ffffff;
+  --final-ink-soft:#c9d6d2;
+  --final-chip-bg:#1b302d;
+  --final-chip-rule:#567e76;
+  --final-chip-hover:#22403a;
+  /* forma */
   --radius:12px;
   --shadow:0 1px 1px rgba(15,31,30,.05), 0 10px 24px -16px rgba(15,31,30,.35);
+  --shadow-float:0 2px 8px rgba(15,31,30,.15);
+  --shadow-solid:0 1px 1px rgba(15,31,30,.02), 0 6px 14px -12px rgba(11,107,82,.9);
+  --shadow-solid-hover:0 1px 1px rgba(15,31,30,.02), 0 10px 18px -12px rgba(11,107,82,.95);
   --font:"Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
   --mono:"Cascadia Mono", Consolas, "SF Mono", Menlo, monospace;
   --measure:66ch;
+}
+
+/* Tema oscuro. Se compone aparte (no es una inversion mecanica del claro): las
+   superficies suben de tono, los bordes ganan contraste y el verde de marca
+   se aclara para poder seguir siendo el color de accion y de enfasis.
+   Se limita a `screen` para que la impresion siga usando el tema claro. */
+@media screen and (prefers-color-scheme: dark){
+  :root{
+    --ground:#0d1513;
+    --panel:#151f1c;
+    --surface-soft:#111b18;
+    --code-bg:#131e1a;
+    --ink:#e9efec;
+    --ink-2:#a3b8b2;
+    --ink-fill:#e9efec;
+    --on-ink-fill:#0c1412;
+    --rule:#5b726b;
+    --rule-soft:#263631;
+    --rule-control:#5b726b;
+    --signal-rule:#4a8f75;
+    --warn-rule:#9a7c3c;
+    --signal:#3ec89a;
+    --signal-strong:#52d5a8;
+    --signal-stronger:#6ee0b8;
+    --signal-soft:#16342b;
+    --signal-ink:#6fdcb4;
+    --on-signal:#08201a;
+    --selection:#24483d;
+    --focus-signal:rgba(62,200,154,.45);
+    --alert:#f2937d;
+    --alert-soft:#3a1f18;
+    --warn:#e3b466;
+    --warn-soft:#332710;
+    --part-bg-s0:#111b18;
+    --part-accent-xampp:#8ab0ff;
+    --part-bg-xampp:#121a28;
+    --part-accent-gutenberg:#f0b45e;
+    --part-bg-gutenberg:#241d11;
+    --final-bg:#0b1512;
+    --final-ink:#e9efed;
+    --final-ink-strong:#ffffff;
+    --final-ink-soft:#c2d2cd;
+    --final-chip-bg:#182a26;
+    --final-chip-rule:#62867b;
+    --final-chip-hover:#24443c;
+    --shadow:0 1px 1px rgba(0,0,0,.4), 0 10px 24px -16px rgba(0,0,0,.7);
+    --shadow-float:0 2px 10px rgba(0,0,0,.55);
+    --shadow-solid:0 1px 1px rgba(0,0,0,.35), 0 6px 16px -12px rgba(0,0,0,.8);
+    --shadow-solid-hover:0 1px 1px rgba(0,0,0,.35), 0 10px 20px -12px rgba(0,0,0,.85);
+  }
 }
 
 *,*::before,*::after{box-sizing:border-box}
@@ -131,7 +224,7 @@ body{
   text-rendering:optimizeLegibility;
 }
 
-::selection{background:#bfe3d6; color:var(--ink)}
+::selection{background:var(--selection); color:var(--ink)}
 
 :focus-visible{
   outline:3px solid var(--signal);
@@ -140,7 +233,7 @@ body{
 }
 
 a{
-  color:var(--signal);
+  color:var(--signal-ink);
   text-underline-offset:3px;
   text-decoration-thickness:1.5px;
 }
@@ -156,7 +249,7 @@ code,.mono{
   font-size:.94em;
 }
 code{
-  background:#fff;
+  background:var(--code-bg);
   border:1px solid var(--rule);
   border-radius:6px;
   padding:.1em .38em;
@@ -175,8 +268,8 @@ hr{
   position:fixed;
   top:-1000px;
   left:0.5rem;
-  background:var(--ink);
-  color:#fff;
+  background:var(--ink-fill);
+  color:var(--on-ink-fill);
   padding:.8rem 1.2rem;
   z-index:100;
   border-radius:0 0 8px 8px;
@@ -227,10 +320,10 @@ hr{
 .meter__track{
   width:min(30vw,180px);
   height:8px;
-  background:var(--rule-soft);
+  background:var(--panel);
   border-radius:99px;
   overflow:hidden;
-  border:1px solid var(--rule);
+  border:1px solid var(--rule-control);
 }
 .meter__fill{
   height:100%;
@@ -247,7 +340,7 @@ hr{
   font-weight:600;
   color:var(--ink);
   background:var(--panel);
-  border:1px solid var(--rule);
+  border:1px solid var(--rule-control);
   border-radius:10px;
   padding:.55rem 1rem;
   cursor:pointer;
@@ -264,23 +357,23 @@ hr{
 .btn--solid{
   background:var(--signal);
   border-color:transparent;
-  color:#fff;
-  box-shadow:0 1px 1px rgba(15,31,30,.02), 0 6px 14px -12px rgba(11,107,82,.9);
+  color:var(--on-signal);
+  box-shadow:var(--shadow-solid);
 }
 .btn--solid:hover{
-  background:#096b56;
+  background:var(--signal-strong);
   border-color:transparent;
-  color:#fff;
-  box-shadow:0 1px 1px rgba(15,31,30,.02), 0 10px 18px -12px rgba(11,107,82,.95);
+  color:var(--on-signal);
+  box-shadow:var(--shadow-solid-hover);
 }
 .btn--solid:focus-visible{
-  outline:3px solid rgba(11,107,82,.4);
+  outline:3px solid var(--focus-signal);
   outline-offset:2px;
 }
 .btn--solid:active{
   transform:translateY(1px);
   box-shadow:none;
-  background:#085641;
+  background:var(--signal-stronger);
 }
 .btn--quiet{border-color:transparent; color:var(--ink-2)}
 .btn--quiet:hover{color:var(--ink); background:transparent}
@@ -349,7 +442,7 @@ main{min-width:0}
   display:block;
   margin:0 0 .9rem;
   padding:.5rem .6rem;
-  border:1px solid var(--rule);
+  border:1px solid var(--rule-control);
   border-radius:8px;
   background:var(--panel);
   color:var(--ink);
@@ -362,10 +455,10 @@ main{min-width:0}
 .rail__home:hover{
   background:var(--signal-soft);
   border-color:var(--signal);
-  color:var(--signal);
+  color:var(--signal-ink);
 }
 .rail__home:focus-visible{
-  outline:3px solid rgba(11,107,82,.4);
+  outline:3px solid var(--focus-signal);
   outline-offset:2px;
 }
 .rail__home svg{margin-right:.35rem; vertical-align:-.15rem}
@@ -381,11 +474,11 @@ main{min-width:0}
   justify-content:center;
   width:44px;
   height:44px;
-  border:1px solid var(--rule);
+  border:1px solid var(--rule-control);
   border-radius:50%;
   background:var(--panel);
   color:var(--ink);
-  box-shadow:0 2px 8px rgba(15,31,30,.15);
+  box-shadow:var(--shadow-float);
   opacity:0;
   visibility:hidden;
   transform:translateY(1rem);
@@ -399,10 +492,10 @@ main{min-width:0}
 .back-to-top:hover{
   background:var(--signal-soft);
   border-color:var(--signal);
-  color:var(--signal);
+  color:var(--signal-ink);
 }
 .back-to-top:focus-visible{
-  outline:3px solid rgba(11,107,82,.4);
+  outline:3px solid var(--focus-signal);
   outline-offset:2px;
 }
 .back-to-top svg{width:20px; height:20px}
@@ -411,8 +504,8 @@ main{min-width:0}
   .back-to-top{
     right:.9rem;
     bottom:.9rem;
-    width:40px;
-    height:40px;
+    width:44px;
+    height:44px;
   }
 }
 .rail li{position:relative; margin:0}
@@ -425,7 +518,7 @@ main{min-width:0}
   text-decoration:none;
   border-radius:6px;
 }
-.rail a:hover{color:var(--ink); background:#fff}
+.rail a:hover{color:var(--ink); background:var(--panel)}
 .rail a::before{
   content:"";
   position:absolute;
@@ -435,7 +528,7 @@ main{min-width:0}
   height:.9rem;
   border-radius:50%;
   background:var(--ground);
-  border:2px solid var(--rule);
+  border:2px solid var(--rule-control);
   box-sizing:border-box;
 }
 .rail a.is-done::before{background:var(--signal); border-color:var(--signal)}
@@ -521,8 +614,8 @@ h1{
 }
 .notice svg{flex:none; margin-top:.15rem}
 .notice p{margin:0}
-.notice--warn{background:var(--warn-soft); border:1px solid #e6cf9e}
-.notice--info{background:var(--signal-soft); border:1px solid #b9d9cd}
+.notice--warn{background:var(--warn-soft); border:1px solid var(--warn-rule)}
+.notice--info{background:var(--signal-soft); border:1px solid var(--signal-rule)}
 
 /* ---------- pre-flight ---------- */
 .preflight{
@@ -602,21 +695,21 @@ h1{
 /* ---------- distinción visual entre partes ---------- */
 .part--sesion-0{
   border-left:4px solid var(--signal);
-  background:#fbfcfc;
+  background:var(--part-bg-s0);
 }
 .part--sesion-0 .part__k{color:var(--signal)}
 
 .part--xampp{
-  border-left:4px solid #1d4ed8;
-  background:#f8fafc;
+  border-left:4px solid var(--part-accent-xampp);
+  background:var(--part-bg-xampp);
 }
-.part--xampp .part__k{color:#1d4ed8}
+.part--xampp .part__k{color:var(--part-accent-xampp)}
 
 .part--gutenberg{
-  border-left:4px solid #d97706;
-  background:#fffbeb;
+  border-left:4px solid var(--part-accent-gutenberg);
+  background:var(--part-bg-gutenberg);
 }
-.part--gutenberg .part__k{color:#d97706}
+.part--gutenberg .part__k{color:var(--part-accent-gutenberg)}
 
 /* ---------- steps ---------- */
 .step{
@@ -631,8 +724,8 @@ h1{
   transition:border-color .25s, box-shadow .25s;
 }
 .step.is-done{
-  border-color:#b9d9cd;
-  box-shadow:0 0 0 1px #b9d9cd, var(--shadow);
+  border-color:var(--signal-rule);
+  box-shadow:0 0 0 1px var(--signal-rule), var(--shadow);
 }
 .step__head{
   display:flex;
@@ -650,11 +743,11 @@ h1{
   place-items:center;
   font-weight:750;
   font-size:1.15rem;
-  background:var(--ink);
-  color:#fff;
+  background:var(--ink-fill);
+  color:var(--on-ink-fill);
   font-variant-numeric:tabular-nums;
 }
-.step.is-done .step__num{background:var(--signal)}
+.step.is-done .step__num{background:var(--signal); color:var(--on-signal)}
 .step__title{
   font-size:1.2rem;
   letter-spacing:-.02em;
@@ -669,7 +762,7 @@ h1{
   gap:.45rem;
   font-size:.85rem;
   font-weight:650;
-  border:1px solid var(--rule);
+  border:1px solid var(--rule-control);
   border-radius:99px;
   padding:.32rem .7rem .32rem .5rem;
   cursor:pointer;
@@ -687,8 +780,8 @@ h1{
 }
 .step.is-done .tick{
   background:var(--signal-soft);
-  border-color:#b9d9cd;
-  color:var(--signal);
+  border-color:var(--signal-rule);
+  color:var(--signal-ink);
 }
 .step__grid{
   display:grid;
@@ -749,7 +842,7 @@ h1{
   align-items:flex-start;
   padding:.85rem 1rem;
   background:var(--signal-soft);
-  border:1px solid #b9d9cd;
+  border:1px solid var(--signal-rule);
   border-radius:10px;
   margin:1rem 0 0;
   -webkit-print-color-adjust:exact;
@@ -766,14 +859,14 @@ h1{
 }
 .check svg{flex:none; margin-top:.2rem}
 .check p{margin:0; font-size:.97rem}
-.check strong{color:var(--signal)}
+.check strong{color:var(--signal-ink)}
 
 /* ---------- trouble ---------- */
 .trouble{
   margin:1rem 0 0;
   border:1px solid var(--rule);
   border-radius:10px;
-  background:#fcfdfd;
+  background:var(--surface-soft);
 }
 .trouble summary{
   cursor:pointer;
@@ -825,7 +918,7 @@ figure.fig svg{
   padding:.75rem .9rem;
   border:1px solid var(--rule);
   border-radius:10px;
-  background:#fbfcfc;
+  background:var(--surface-soft);
   box-sizing:border-box;
   aspect-ratio:340/200;
 }
@@ -893,6 +986,24 @@ figure.fig.fig--poster--ergonomia{
 figure.fig.fig--poster .fig--poster__scroll{
   overflow-x:auto;
   -webkit-overflow-scrolling:touch;
+  /* El scroll lateral no se encadena con el de la pagina. */
+  overscroll-behavior-inline:contain;
+  /* Barra de desplazamiento visible y tematica: deja claro que el poster
+     continua a la derecha en lugar de cortarse en silencio. */
+  scrollbar-width:thin;
+  scrollbar-color:var(--rule-control) var(--surface-soft);
+}
+figure.fig.fig--poster .fig--poster__scroll::-webkit-scrollbar{
+  height:10px;
+}
+figure.fig.fig--poster .fig--poster__scroll::-webkit-scrollbar-track{
+  background:var(--surface-soft);
+  border-radius:99px;
+}
+figure.fig.fig--poster .fig--poster__scroll::-webkit-scrollbar-thumb{
+  background:var(--rule-control);
+  border:1px solid var(--surface-soft);
+  border-radius:99px;
 }
 figure.fig.fig--poster .fig--poster__scroll:focus-visible{
   outline:3px solid var(--signal);
@@ -907,7 +1018,7 @@ figure.fig.fig--poster img{
   height:auto;
   border:1px solid var(--rule);
   border-radius:10px;
-  background:#fbfcfc;
+  background:var(--surface-soft);
 }
 /* En movil el poster a tamano completo no cabe: se deja desplazable para que
    el texto pequeno se pueda leer sin salir de la pagina. */
@@ -924,15 +1035,15 @@ figure.fig.fig--poster img{
   gap:.45rem;
   font-family:var(--mono);
   font-size:.86rem;
-  background:#fff;
-  border:1px solid var(--rule);
+  background:var(--panel);
+  border:1px solid var(--rule-control);
   border-radius:8px;
   padding:.5rem .7rem;
   cursor:pointer;
   color:var(--ink);
   text-align:left;
   max-width:100%;
-  min-height:40px;
+  min-height:44px;
 }
 .chip:hover{border-color:var(--signal); background:var(--signal-soft)}
 .chip svg{flex:none; opacity:.6}
@@ -940,7 +1051,7 @@ figure.fig.fig--poster img{
 .chip.copied{
   border-color:var(--signal);
   background:var(--signal-soft);
-  color:var(--signal);
+  color:var(--signal-ink);
   font-weight:650;
 }
 .chiprow{
@@ -980,7 +1091,7 @@ figure.fig.fig--poster img{
   padding:1.1rem;
   border:1px dashed var(--rule);
   border-radius:10px;
-  background:#fbfcfc;
+  background:var(--surface-soft);
 }
 .quiz__q{
   margin:0 0 .8rem;
@@ -994,10 +1105,11 @@ figure.fig.fig--poster img{
   cursor:pointer;
   text-align:left;
   background:var(--panel);
-  border:1px solid var(--rule);
+  border:1px solid var(--rule-control);
   border-radius:8px;
   padding:.5rem .8rem;
   color:var(--ink);
+  min-height:44px;
 }
 .opt:hover:not(:disabled){
   border-color:var(--signal);
@@ -1033,9 +1145,9 @@ figure.fig.fig--poster img{
   font:inherit;
   font-size:1rem;
   padding:.5rem .6rem;
-  border:1px solid var(--rule);
+  border:1px solid var(--rule-control);
   border-radius:8px;
-  background:#fff;
+  background:var(--panel);
   width:100%;
 }
 .field input:focus{border-color:var(--signal)}
@@ -1066,19 +1178,20 @@ dl.dict dd{
   margin-top:2rem;
   border-radius:var(--radius);
   padding:1.5rem;
-  background:var(--ink);
-  color:#e9efed;
+  background:var(--final-bg);
+  color:var(--final-ink);
 }
-.final h2{color:#fff; margin-top:0}
-.final p{color:#c9d6d2}
+.final h2{color:var(--final-ink-strong); margin-top:0}
+.final p{color:var(--final-ink-soft)}
 .final .chip{
-  background:#1b302d;
-  border-color:#334d48;
-  color:#e9efed;
+  background:var(--final-chip-bg);
+  border-color:var(--final-chip-rule);
+  color:var(--final-ink);
 }
-.final .chip:hover{background:#22403a}
+.final .chip:hover{background:var(--final-chip-hover)}
 .all-done .final{background:var(--signal)}
-.all-done .final p{color:#dff0e9}
+.all-done .final h2,
+.all-done .final p{color:var(--on-signal)}
 
 footer.end{
   border-top:1px solid var(--rule);
@@ -1157,7 +1270,7 @@ footer.end{
   font-weight:700;
   padding:.8rem 1rem;
   background:var(--panel);
-  border:1px solid var(--rule);
+  border:1px solid var(--rule-control);
   border-radius:10px;
 }
 .toc-mobile ol{
@@ -1212,16 +1325,45 @@ footer.end{
 }
 
 /* ---------- accesibilidad: reducir movimiento ---------- */
+/* Se detienen las animaciones y el desplazamiento suave, pero NO se anula el
+   feedback de estado: el anillo de foco, la barra de progreso, el aviso de
+   "copiado" y los cambios de color siguen produciendose y son perceptibles.
+   Lo que se suprime es el desplazamiento, que es lo que provoca el rechazo. */
 @media (prefers-reduced-motion: reduce){
   *, *::before, *::after{
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+    animation-delay: 0s !important;
     scroll-behavior: auto !important;
+  }
+  /* El boton "Volver arriba" aparece y desaparece en su sitio, sin el
+     desplazamiento de 1 rem. */
+  .back-to-top,
+  .back-to-top.visible{
+    transform:none !important;
+  }
+  /* El enlace saltable y la barra de progreso cambian de estado al instante:
+     el resultado final se ve igual, solo se evita el recorrido. */
+  .skip{
+    transition:none !important;
   }
   .meter__fill,
   .rail__fill{
-    transition: none !important;
+    transition:none !important;
+  }
+  /* Las transiciones de estado (color, borde, sombra y opacidad) se conservan
+     durante 0.18 s: el usuario sigue viendo que algo ha cambiado, pero no hay
+     ningun movimiento. Solo se listan los elementos que ya tenian transicion
+     propia: con movimiento reducido no se anade ninguna transicion que antes
+     no existiera. */
+  .btn,
+  .step,
+  .rail a,
+  .rail__home,
+  .back-to-top{
+    transition-property:color, background-color, border-color, box-shadow, outline-color, opacity !important;
+    transition-duration:.18s !important;
+    transition-timing-function:linear !important;
   }
 }
 
