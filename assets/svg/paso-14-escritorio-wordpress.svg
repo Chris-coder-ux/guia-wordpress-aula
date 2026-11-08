@@ -1,40 +1,155 @@
 <svg xmlns="http://www.w3.org/2000/svg"
-     width="900" height="520"
-     viewBox="0 0 900 520"
-     role="img"
-     aria-labelledby="admin-view-title admin-view-desc">
-  <title id="admin-view-title">Escritorio de WordPress con el menú para visitar el sitio</title>
-  <desc id="admin-view-desc">
-    Vista del escritorio de administración de WordPress justo después de acceder.
-    En la barra superior está desplegado el menú del nombre del sitio y se ve la
-    opción Visitar sitio.
-  </desc>
+     width="900" height="520" viewBox="0 0 900 520"
+     role="img" aria-labelledby="admin-view-title admin-view-desc">
+  <title id="admin-view-title">Visitar el sitio desde el escritorio de WordPress</title>
+  <desc id="admin-view-desc">Escritorio de administración de WordPress. El menú del nombre del sitio está desplegado en la esquina superior izquierda y muestra la opción Visitar sitio.</desc>
+
+  <defs>
+    <filter id="menu-shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000" flood-opacity=".28"/>
+    </filter>
+    <style>
+      .ui { font-family: Arial, Helvetica, sans-serif; }
+      .side-label { font-family: Arial, Helvetica, sans-serif; font-size: 12px; }
+      .small { font-family: Arial, Helvetica, sans-serif; font-size: 11px; }
+    </style>
+  </defs>
+
+  <!-- Admin workspace -->
   <rect width="900" height="520" fill="#f0f0f1"/>
+  <rect x="0" y="32" width="180" height="488" fill="#1d2327"/>
+  <rect x="180" y="32" width="720" height="488" fill="#f0f0f1"/>
 
-  <rect width="900" height="36" fill="#1d2327"/>
-  <circle cx="18" cy="18" r="10" fill="#fff"/>
-  <text x="18" y="22" text-anchor="middle" font-family="Georgia, serif" font-size="13" font-weight="700" fill="#1d2327">W</text>
-  <rect x="30" width="151" height="36" fill="#2c3338"/>
-  <text x="43" y="23" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#fff">La web de Ana</text>
-  <path d="m166 16 4 4 4-4" fill="none" stroke="#c3c4c7" stroke-width="1.4"/>
-  <text x="195" y="23" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#c3c4c7">+ Nuevo</text>
-  <text x="758" y="23" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#f0f0f1">Hola, ana</text>
-  <circle cx="852" cy="18" r="9" fill="#8c8f94"/>
-  <path d="M848 21c0-4 8-4 8 0m-6-6a2 2 0 1 0 4 0 2 2 0 0 0-4 0" fill="#fff"/>
+  <!-- WordPress admin bar -->
+  <rect width="900" height="32" fill="#1d2327"/>
+  <g aria-label="WordPress">
+    <circle cx="16" cy="16" r="10" fill="#f0f0f1"/>
+    <text x="16" y="20" text-anchor="middle" font-family="Georgia, serif" font-size="13" font-weight="700" fill="#1d2327">W</text>
+  </g>
+  <g fill="#c3c4c7">
+    <path d="M207 11h11v10h-11zM210 8h5v3h-5z" fill="none" stroke="#c3c4c7" stroke-width="1.2"/>
+    <circle cx="240" cy="16" r="6" fill="none" stroke="#c3c4c7" stroke-width="1.2"/>
+    <path d="M240 12v4l3 2" fill="none" stroke="#c3c4c7" stroke-width="1.2"/>
+  </g>
+  <text x="263" y="20" class="ui" font-size="11" fill="#c3c4c7">0</text>
+  <text x="294" y="20" class="ui" font-size="11" fill="#c3c4c7">+ Nuevo</text>
+  <path d="M365 11l4 4 4-4m-4 4v7" fill="none" stroke="#c3c4c7" stroke-width="1.2"/>
+  <text x="763" y="20" class="ui" font-size="11" fill="#f0f0f1">Hola, ana</text>
+  <circle cx="850" cy="16" r="9" fill="#8c8f94"/>
+  <circle cx="850" cy="13" r="2.5" fill="#fff"/>
+  <path d="M845 21c.5-4 9.5-4 10 0" fill="#fff"/>
 
-  <rect y="36" width="181" height="484" fill="#1d2327"/>
-  <rect y="49" width="181" height="34" fill="#2271b1"/>
-  <text x="22" y="72" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#fff">Escritorio</text>
-  <text x="22" y="108" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#c3c4c7">Inicio</text>
-  <text x="22" y="136" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#c3c4c7">Actualizaciones</text>
-  <path d="M14 157h153" stroke="#3c434a"/>
-  <text x="22" y="184" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#f0f0f1">Entradas</text>
-  <text x="22" y="218" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#f0f0f1">Medios</text>
-  <text x="22" y="252" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#f0f0f1">Páginas</text>
-  <text x="22" y="286" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#f0f0f1">Comentarios</text>
-  <text x="22" y="320" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#f0f0f1">Apariencia</text>
-  <text x="22" y="354" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#f0f0f1">Complementos</text>
-  <text x="22" y="388" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#f0f0f1">Usuarios</text>
-  <text x="22" y="422" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#f0f0f1">Herramientas</text>
-  <text x="22" y="456" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#f0f0f1">Ajustes</text>
+  <!-- Left navigation -->
+  <rect x="0" y="32" width="180" height="39" fill="#2271b1"/>
+  <path d="M14 45h12v11H14zM16 42h8v3h-8zm2 6h4m-4 3h4" fill="none" stroke="#fff" stroke-width="1.2" stroke-linecap="round"/>
+  <text x="38" y="56" class="side-label" font-size="13" fill="#fff">Escritorio</text>
+
+  <text x="38" y="91" class="side-label" fill="#c3c4c7">Inicio</text>
+  <text x="38" y="118" class="side-label" fill="#c3c4c7">Actualizaciones</text>
+  <circle cx="20" cy="113" r="7" fill="none" stroke="#9ca3a8" stroke-width="1.2"/>
+  <path d="M20 109v4l3 2" fill="none" stroke="#9ca3a8" stroke-width="1.2"/>
+  <path d="M13 133h154" stroke="#3c434a" stroke-width="1"/>
+
+  <g fill="none" stroke="#9ca3a8" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14 151h12v11H14zM16 148h8v3h-8z"/>
+    <rect x="15" y="178" width="11" height="12" rx="1"/><path d="M18 181h5m-5 3h5m-5 3h4"/>
+    <path d="M14 206h12v12H14zM17 209h6m-6 3h6m-6 3h4"/>
+    <path d="M14 235h12v10H14zM14 238h12"/>
+    <path d="M14 264l6-5 6 5v9H14zM18 273v-5h4v5"/>
+    <path d="M15 293h10v12H15zM18 290h4v3"/>
+    <circle cx="20" cy="322" r="6"/><path d="M20 318v8m-4-4h8"/>
+    <path d="M14 349h12v10H14zM17 352h6m-6 3h6"/>
+    <path d="M14 379h12v11H14zM17 382h6m-6 3h6"/>
+    <path d="M20 408v12m-5-6h10m-8-4 3-3 3 3m-6 8 3 3 3-3"/>
+    <path d="M20 440a6 6 0 1 0 0 12 6 6 0 0 0 0-12zm0 3v3l2 1"/>
+  </g>
+  <g class="side-label" fill="#f0f0f1">
+    <text x="38" y="160">Entradas</text>
+    <text x="38" y="188">Medios</text>
+    <text x="38" y="216">Páginas</text>
+    <text x="38" y="244">Comentarios</text>
+    <text x="38" y="272">Apariencia</text>
+    <text x="38" y="300">Complementos</text>
+    <text x="38" y="328">Usuarios</text>
+    <text x="38" y="356">Herramientas</text>
+    <text x="38" y="384">Ajustes</text>
+  </g>
+  <path d="M14 400h154" stroke="#3c434a"/>
+
+  <!-- Dashboard content -->
+  <text x="201" y="70" class="ui" font-size="23" fill="#1d2327">Escritorio</text>
+  <text x="201" y="92" class="ui" font-size="12" fill="#646970">Bienvenida a WordPress</text>
+
+  <rect x="200" y="107" width="675" height="172" rx="2" fill="#fff" stroke="#c3c4c7"/>
+  <rect x="200" y="107" width="675" height="38" fill="#fff"/>
+  <text x="219" y="132" class="ui" font-size="14" font-weight="600" fill="#1d2327">Bienvenida a WordPress</text>
+  <path d="M844 122l7 7m0-7-7 7" stroke="#646970" stroke-width="1.4"/>
+  <path d="M200 145h675" stroke="#dcdcde"/>
+  <rect x="219" y="161" width="184" height="94" rx="2" fill="#f6f7f7"/>
+  <circle cx="247" cy="187" r="13" fill="#2271b1"/>
+  <path d="M241 187h12m-6-6v12" stroke="#fff" stroke-width="1.5"/>
+  <text x="269" y="185" class="ui" font-size="13" font-weight="600" fill="#1d2327">Personaliza tu sitio</text>
+  <text x="235" y="211" class="ui" font-size="11" fill="#50575e">Elige un tema y ajusta el</text>
+  <text x="235" y="227" class="ui" font-size="11" fill="#50575e">diseño de tu web.</text>
+  <text x="235" y="247" class="ui" font-size="11" fill="#2271b1">Personaliza tu sitio</text>
+
+  <g>
+    <text x="430" y="174" class="ui" font-size="14" font-weight="600" fill="#1d2327">Siguientes pasos</text>
+    <circle cx="438" cy="197" r="3" fill="#2271b1"/>
+    <text x="449" y="201" class="ui" font-size="11" fill="#2271b1">Escribe tu primera entrada</text>
+    <circle cx="438" cy="219" r="3" fill="#2271b1"/>
+    <text x="449" y="223" class="ui" font-size="11" fill="#2271b1">Añade una página «Acerca de»</text>
+    <circle cx="438" cy="241" r="3" fill="#2271b1"/>
+    <text x="449" y="245" class="ui" font-size="11" fill="#2271b1">Configura tu página de inicio</text>
+  </g>
+  <g>
+    <text x="664" y="174" class="ui" font-size="14" font-weight="600" fill="#1d2327">Más acciones</text>
+    <text x="664" y="201" class="ui" font-size="11" fill="#2271b1">Gestiona los menús</text>
+    <text x="664" y="223" class="ui" font-size="11" fill="#2271b1">Activa o desactiva comentarios</text>
+    <text x="664" y="245" class="ui" font-size="11" fill="#2271b1">Aprende más sobre WordPress</text>
+  </g>
+
+  <!-- Dashboard widgets -->
+  <rect x="200" y="295" width="328" height="191" rx="2" fill="#fff" stroke="#c3c4c7"/>
+  <text x="218" y="321" class="ui" font-size="14" font-weight="600" fill="#1d2327">De un vistazo</text>
+  <path d="M200 331h328" stroke="#dcdcde"/>
+  <g fill="none" stroke="#646970" stroke-width="1.2">
+    <path d="M220 348h14v12h-14zM223 345h8v3h-8z"/>
+    <path d="M220 378h14v12h-14zM223 375h8v3h-8z"/>
+  </g>
+  <text x="243" y="358" class="ui" font-size="12" fill="#2271b1">1 entrada</text>
+  <text x="300" y="358" class="ui" font-size="12" fill="#2271b1">1 página</text>
+  <text x="243" y="388" class="ui" font-size="12" fill="#2271b1">WordPress 6.7.2</text>
+  <text x="218" y="421" class="ui" font-size="11" fill="#50575e">El sitio funciona con el tema</text>
+  <text x="218" y="441" class="ui" font-size="11" fill="#2271b1">Twenty Twenty-Five</text>
+  <path d="M218 456h292" stroke="#dcdcde"/>
+  <text x="218" y="474" class="ui" font-size="10" fill="#646970">¡Gracias por crear con WordPress!</text>
+
+  <rect x="542" y="295" width="333" height="191" rx="2" fill="#fff" stroke="#c3c4c7"/>
+  <text x="560" y="321" class="ui" font-size="14" font-weight="600" fill="#1d2327">Actividad</text>
+  <path d="M542 331h333" stroke="#dcdcde"/>
+  <text x="560" y="353" class="ui" font-size="11" font-weight="600" fill="#50575e">Publicada recientemente</text>
+  <text x="560" y="373" class="ui" font-size="11" fill="#2271b1">¡Hola, mundo!</text>
+  <text x="653" y="373" class="ui" font-size="10" fill="#646970">— Ana · hace 1 día</text>
+  <path d="M560 386h297" stroke="#dcdcde"/>
+  <text x="560" y="408" class="ui" font-size="11" font-weight="600" fill="#50575e">Próximos comentarios</text>
+  <circle cx="571" cy="433" r="10" fill="#dcdcde"/>
+  <circle cx="571" cy="430" r="3" fill="#fff"/>
+  <path d="M566 438c1-5 9-5 10 0" fill="#fff"/>
+  <text x="589" y="431" class="ui" font-size="11" fill="#50575e">Aún no hay comentarios.</text>
+  <text x="589" y="447" class="ui" font-size="10" fill="#646970">Cuando los haya, aparecerán aquí.</text>
+
+  <!-- Hovered site name and open site menu -->
+  <rect x="32" y="0" width="151" height="32" fill="#2c3338"/>
+  <text x="44" y="20" class="ui" font-size="12" fill="#f0f0f1">La web de Ana</text>
+  <path d="m165 13 4 4 4-4" fill="none" stroke="#c3c4c7" stroke-width="1.3"/>
+  <g filter="url(#menu-shadow)">
+    <rect x="32" y="32" width="151" height="36" fill="#2c3338"/>
+    <rect x="32" y="32" width="151" height="36" fill="none" stroke="#3c434a"/>
+    <text x="44" y="55" class="ui" font-size="12" fill="#fff">Visitar sitio</text>
+  </g>
+
+  <!-- Mouse pointer hovering over the menu option -->
+  <path d="M150 49l12 11-6 .5 3.2 6.5-3.3 1.5-3.1-6.7-3.7 4.4z"
+        fill="#fff" stroke="#1d2327" stroke-width="1.2" stroke-linejoin="round"/>
 </svg>
