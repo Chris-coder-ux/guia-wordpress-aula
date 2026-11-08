@@ -1514,7 +1514,7 @@
           </details>
         </article>
 
-        <article class="step" id="paso-3" data-step="3">
+        <article class="step step--split" id="paso-3" data-step="3">
           <header class="step__head">
             <span class="step__num" aria-hidden="true">3</span>
             <h3 class="step__title">Instalar: casi todo es pulsar «Next»</h3>
@@ -1522,45 +1522,137 @@
               ><input type="checkbox" data-done="3" /><span>Hecho</span></label
             >
           </header>
-          <ol class="actions">
-            <li>Primera pantalla: <strong>Next</strong>.</li>
-            <li>
-              Pantalla de componentes: deja marcados
-              <strong>solo</strong> Apache, MySQL y phpMyAdmin. Desmarca lo
-              demás y pulsa <strong>Next</strong>.
-            </li>
-            <li>
-              Carpeta de instalación: déjala como viene (<code>C:\xampp</code>)
-              y pulsa <strong>Next</strong>.
-            </li>
-            <li>
-              Idioma: <strong>English</strong> o <strong>Español</strong>. Pulsa
-              <strong>Next</strong>.
-            </li>
-            <li>
-              Espera a que la barra llegue al final. Deja marcada la casilla de
-              abrir el panel y pulsa <strong>Finish</strong>.
-            </li>
-          </ol>
-          <div class="check">
-            <svg
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="#0b6b52"
-              stroke-width="2.4"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              aria-hidden="true"
-            >
-              <path d="M20 6 9 17l-5-5" />
-            </svg>
-            <p>
-              <strong>Comprueba:</strong> se abre la ventana
-              <strong>XAMPP Control Panel</strong>, con una lista de nombres y
-              botones <strong>Start</strong>.
-            </p>
+          <div class="step__grid">
+            <div>
+              <ol class="actions">
+                <li>Primera pantalla: <strong>Next</strong>.</li>
+                <li>
+                  Pantalla de componentes: deja marcados
+                  <strong>solo</strong> Apache, MySQL y phpMyAdmin. Desmarca lo
+                  demás y pulsa <strong>Next</strong>.
+                </li>
+                <li>
+                  Carpeta de instalación: déjala como viene (<code>C:\xampp</code>)
+                  y pulsa <strong>Next</strong>.
+                </li>
+                <li>
+                  Idioma: <strong>English</strong> o <strong>Español</strong>. Pulsa
+                  <strong>Next</strong>.
+                </li>
+                <li>
+                  Espera a que la barra llegue al final. Deja marcada la casilla de
+                  abrir el panel y pulsa <strong>Finish</strong>.
+                </li>
+              </ol>
+              <div class="check">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#0b6b52"
+                  stroke-width="2.4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>
+                <p>
+                  <strong>Comprueba:</strong> se abre la ventana
+                  <strong>XAMPP Control Panel</strong>, con una lista de nombres y
+                  botones <strong>Start</strong>.
+                </p>
+              </div>
+            </div>
+            <div>
+              <figure class="fig">
+                <div class="svgpad">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 560 340"
+                    role="img"
+                    aria-labelledby="inst-t inst-d"
+                  >
+                    <title id="inst-t">Instalador de XAMPP con botón Next destacado</title>
+                    <desc id="inst-d">
+                      Pantalla del instalador de XAMPP mostrando la selección de
+                      componentes y el botón Next en la parte inferior derecha.
+                    </desc>
+                    <rect width="560" height="340" fill="#eef2f1" />
+                    <rect
+                      x="20"
+                      y="20"
+                      width="520"
+                      height="300"
+                      rx="10"
+                      fill="#ffffff"
+                      stroke="#c7cdd2"
+                    />
+                    <rect x="30" y="32" width="500" height="30" fill="#1d2327" rx="6" />
+                    <text
+                      x="50"
+                      y="52"
+                      font-family="Segoe UI, Arial, sans-serif"
+                      font-size="13"
+                      font-weight="600"
+                      fill="#ffffff"
+                    >
+                      XAMPP Setup
+                    </text>
+                    <rect x="30" y="80" width="160" height="40" fill="#f8f9fa" stroke="#d7dce0" rx="6" />
+                    <text
+                      x="44"
+                      y="104"
+                      font-family="Segoe UI, Arial, sans-serif"
+                      font-size="12"
+                      fill="#1d2327"
+                    >
+                      Seleccionar componentes
+                    </text>
+                    <rect x="44" y="132" width="30" height="30" fill="#ffffff" stroke="#8c8f94" rx="4" />
+                    <text x="54" y="154" font-size="12" fill="#1d2327">Apache</text>
+                    <rect x="44" y="172" width="30" height="30" fill="#ffffff" stroke="#8c8f94" rx="4" />
+                    <text x="54" y="194" font-size="12" fill="#1d2327">MySQL</text>
+                    <rect x="44" y="212" width="30" height="30" fill="#ffffff" stroke="#8c8f94" rx="4" />
+                    <text x="54" y="234" font-size="12" fill="#1d2327">phpMyAdmin</text>
+                    <rect x="94" y="132" width="30" height="30" fill="#eef7f5" stroke="#0b6b52" rx="4" />
+                    <rect x="94" y="172" width="30" height="30" fill="#ffffff" stroke="#8c8f94" rx="4" />
+                    <text x="104" y="154" font-size="12" fill="#5c6b68">FileZilla</text>
+                    <rect x="94" y="172" width="30" height="30" fill="#ffffff" stroke="#8c8f94" rx="4" />
+                    <text x="104" y="194" font-size="12" fill="#5c6b68">Mercury</text>
+                    <rect x="94" y="212" width="30" height="30" fill="#ffffff" stroke="#8c8f94" rx="4" />
+                    <text x="104" y="234" font-size="12" fill="#5c6b68">Tomcat</text>
+                    <rect x="400" y="260" width="110" height="36" rx="6" fill="#0b6b52" />
+                    <text
+                      x="455"
+                      y="281"
+                      text-anchor="middle"
+                      font-family="Segoe UI, Arial, sans-serif"
+                      font-size="13"
+                      font-weight="600"
+                      fill="#ffffff"
+                    >
+                      Next >
+                    </text>
+                    <rect x="280" y="260" width="100" height="36" rx="6" fill="#f0f0f0" stroke="#8c8f94" />
+                    <text
+                      x="330"
+                      y="281"
+                      text-anchor="middle"
+                      font-family="Segoe UI, Arial, sans-serif"
+                      font-size="12"
+                      fill="#5c6b68"
+                    >
+                      Cancelar
+                    </text>
+                  </svg>
+                </div>
+                <figcaption>
+                  Deja marcados solo Apache, MySQL y phpMyAdmin; pulsa Next en cada pantalla.
+                </figcaption>
+              </figure>
+            </div>
           </div>
           <details class="trouble">
             <summary>Si algo no sale</summary>
@@ -2190,7 +2282,7 @@
           </details>
         </article>
 
-        <article class="step" id="paso-5" data-step="5">
+        <article class="step step--split" id="paso-5" data-step="5">
           <header class="step__head">
             <span class="step__num" aria-hidden="true">5</span>
             <h3 class="step__title">Comprobar que el servidor responde</h3>
@@ -2198,48 +2290,147 @@
               ><input type="checkbox" data-done="5" /><span>Hecho</span></label
             >
           </header>
-          <ol class="actions">
-            <li>Abre el navegador.</li>
-            <li>
-              Escribe <code>http://localhost/</code> en la barra de direcciones
-              y pulsa <strong>Enter</strong>.
-            </li>
-          </ol>
-          <div class="chiprow">
-            <button class="chip" type="button" data-copy="http://localhost/">
-              <svg
-                width="13"
-                height="13"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                aria-hidden="true"
-              >
-                <rect x="9" y="9" width="12" height="12" rx="2" />
-                <path d="M5 15V5a2 2 0 0 1 2-2h10" />
-              </svg>
-              <span>http://localhost/</span>
-            </button>
-          </div>
-          <div class="check">
-            <svg
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="#0b6b52"
-              stroke-width="2.4"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              aria-hidden="true"
-            >
-              <path d="M20 6 9 17l-5-5" />
-            </svg>
-            <p>
-              <strong>Comprueba:</strong> sale la página de bienvenida de XAMPP.
-              Si sale, <strong>ya tienes un servidor</strong>.
-            </p>
+          <div class="step__grid">
+            <div>
+              <ol class="actions">
+                <li>Abre el navegador.</li>
+                <li>
+                  Escribe <code>http://localhost/</code> en la barra de direcciones
+                  y pulsa <strong>Enter</strong>.
+                </li>
+              </ol>
+              <div class="chiprow">
+                <button class="chip" type="button" data-copy="http://localhost/">
+                  <svg
+                    width="13"
+                    height="13"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    aria-hidden="true"
+                  >
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15V5a2 2 0 0 1 2-2h10" />
+                  </svg>
+                  <span>http://localhost/</span>
+                </button>
+              </div>
+              <div class="check">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#0b6b52"
+                  stroke-width="2.4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>
+                <p>
+                  <strong>Comprueba:</strong> sale la página de bienvenida de XAMPP.
+                  Si sale, <strong>ya tienes un servidor</strong>.
+                </p>
+              </div>
+            </div>
+            <div>
+              <figure class="fig">
+                <div class="svgpad">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 560 340"
+                    role="img"
+                    aria-labelledby="localt-t localt-d"
+                  >
+                    <title id="localt-t">Página de bienvenida de XAMPP en localhost</title>
+                    <desc id="localt-d">
+                      Ventana del navegador mostrando la barra de direcciones con
+                      http://localhost/ y la página de bienvenida de XAMPP.
+                    </desc>
+                    <rect width="560" height="340" fill="#eef2f1" />
+                    <rect x="20" y="20" width="520" height="300" rx="10" fill="#ffffff" stroke="#c7cdd2" />
+                    <rect x="30" y="32" width="500" height="30" fill="#1d2327" rx="6" />
+                    <text
+                      x="50"
+                      y="52"
+                      font-family="Segoe UI, Arial, sans-serif"
+                      font-size="13"
+                      font-weight="600"
+                      fill="#ffffff"
+                    >
+                      Chrome
+                    </text>
+                    <rect x="40" y="78" width="480" height="34" fill="#f1f3f4" stroke="#dadce0" rx="6" />
+                    <text
+                      x="60"
+                      y="100"
+                      font-family="Segoe UI, Arial, sans-serif"
+                      font-size="12"
+                      fill="#3c4043"
+                    >
+                      http://localhost/
+                    </text>
+                    <text x="300" y="100" font-size="12" fill="#5f6368">Buscar con Google</text>
+                    <rect x="30" y="130" width="500" height="180" fill="#f8f9fa" stroke="#d7dce0" rx="8" />
+                    <circle cx="70" cy="160" r="24" fill="#4285f4" />
+                    <path
+                      d="M70 136 L70 160 L84 174"
+                      fill="none"
+                      stroke="#ffffff"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <text
+                      x="110"
+                      y="164"
+                      font-family="Georgia, serif"
+                      font-size="22"
+                      font-weight="700"
+                      fill="#1d2327"
+                    >
+                      XAMPP
+                    </text>
+                    <text
+                      x="110"
+                      y="190"
+                      font-family="Segoe UI, Arial, sans-serif"
+                      font-size="13"
+                      fill="#5f6368"
+                    >
+                      Bienvenido a XAMPP para Windows
+                    </text>
+                    <text
+                      x="110"
+                      y="214"
+                      font-family="Segoe UI, Arial, sans-serif"
+                      font-size="11"
+                      fill="#5f6368"
+                    >
+                      Tu servidor web local está funcionando. Apache y MySQL están activos.
+                    </text>
+                    <rect x="400" y="260" width="110" height="36" rx="6" fill="#0b6b52" />
+                    <text
+                      x="455"
+                      y="281"
+                      text-anchor="middle"
+                      font-family="Segoe UI, Arial, sans-serif"
+                      font-size="13"
+                      font-weight="600"
+                      fill="#ffffff"
+                    >
+                      Visitar sitio
+                    </text>
+                  </svg>
+                </div>
+                <figcaption>
+                  La página de bienvenida de XAMPP confirma que el servidor está activo.
+                </figcaption>
+              </figure>
+            </div>
           </div>
           <p style="margin-top: 1rem">
             <strong>«localhost» significa «mi propio ordenador»</strong>: es una
@@ -3199,63 +3390,149 @@
           </div>
         </article>
 
-        <article class="step" id="paso-7" data-step="7">
+        <article class="step step--split" id="paso-7" data-step="7">
           <header class="step__head">
             <span class="step__num" aria-hidden="true">7</span>
             <h3 class="step__title">Crear la carpeta de tu web</h3>
+            <span class="part__time">≈ 5 min</span>
             <label class="tick"
               ><input type="checkbox" data-done="7" /><span>Hecho</span></label
             >
           </header>
-          <ol class="actions">
-            <li>Abre <strong>Explorador de archivos</strong>.</li>
-            <li>
-              Entra en la unidad <strong>C:</strong> → carpeta
-              <strong>xampp</strong> → carpeta <strong>htdocs</strong>.
-            </li>
-            <li>
-              Dentro de <strong>htdocs</strong>, haz clic derecho en un espacio
-              vacío → <strong>Nuevo</strong> → <strong>Carpeta</strong>.
-            </li>
-            <li>
-              Escribe <code>miwordpress</code> y pulsa <strong>Enter</strong>.
-            </li>
-          </ol>
-          <div class="chiprow">
-            <button class="chip" type="button" data-copy="C:\xampp\htdocs">
-              <svg
-                width="13"
-                height="13"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                aria-hidden="true"
-              >
-                <rect x="9" y="9" width="12" height="12" rx="2" />
-                <path d="M5 15V5a2 2 0 0 1 2-2h10" />
-              </svg>
-              <span>C:\xampp\htdocs</span>
-            </button>
-          </div>
-          <div class="check">
-            <svg
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="#0b6b52"
-              stroke-width="2.4"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              aria-hidden="true"
-            >
-              <path d="M20 6 9 17l-5-5" />
-            </svg>
-            <p>
-              <strong>Comprueba:</strong> existe
-              <code>C:\xampp\htdocs\miwordpress</code> y está vacía.
-            </p>
+          <div class="step__grid">
+            <div>
+              <ol class="actions">
+                <li>Abre <strong>Explorador de archivos</strong>.</li>
+                <li>
+                  Entra en la unidad <strong>C:</strong> → carpeta
+                  <strong>xampp</strong> → carpeta <strong>htdocs</strong>.
+                </li>
+                <li>
+                  Dentro de <strong>htdocs</strong>, haz clic derecho en un espacio
+                  vacío → <strong>Nuevo</strong> → <strong>Carpeta</strong>.
+                </li>
+                <li>
+                  Escribe <code>miwordpress</code> y pulsa <strong>Enter</strong>.
+                </li>
+              </ol>
+              <div class="chiprow">
+                <button class="chip" type="button" data-copy="C:\xampp\htdocs">
+                  <svg
+                    width="13"
+                    height="13"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    aria-hidden="true"
+                  >
+                    <rect x="9" y="9" width="12" height="12" rx="2" />
+                    <path d="M5 15V5a2 2 0 0 1 2-2h10" />
+                  </svg>
+                  <span>C:\xampp\htdocs</span>
+                </button>
+              </div>
+              <div class="check">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#0b6b52"
+                  stroke-width="2.4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>
+                <p>
+                  <strong>Comprueba:</strong> existe
+                  <code>C:\xampp\htdocs\miwordpress</code> y está vacía.
+                </p>
+              </div>
+            </div>
+            <div>
+              <figure class="fig">
+                <div class="svgpad">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 560 340"
+                    role="img"
+                    aria-labelledby="carp-t carp-d"
+                  >
+                    <title id="carp-t">Explorador de archivos con carpeta miwordpress</title>
+                    <desc id="carp-d">
+                      Ventana del Explorador de archivos mostrando la ruta
+                      C:\xampp\htdocs con la nueva carpeta miwordpress seleccionada.
+                    </desc>
+                    <rect width="560" height="340" fill="#eef2f1" />
+                    <rect x="20" y="20" width="520" height="300" rx="10" fill="#ffffff" stroke="#c7cdd2" />
+                    <rect x="30" y="32" width="500" height="30" fill="#1d2327" rx="6" />
+                    <text
+                      x="50"
+                      y="52"
+                      font-family="Segoe UI, Arial, sans-serif"
+                      font-size="13"
+                      font-weight="600"
+                      fill="#ffffff"
+                    >
+                      Explorador de archivos
+                    </text>
+                    <rect x="30" y="80" width="500" height="34" fill="#f1f3f4" stroke="#dadce0" rx="6" />
+                    <text
+                      x="50"
+                      y="102"
+                      font-family="Segoe UI, Arial, sans-serif"
+                      font-size="12"
+                      fill="#3c4043"
+                    >
+                      C:\xampp\htdocs
+                    </text>
+                    <rect x="30" y="130" width="500" height="180" fill="#f8f9fa" stroke="#d7dce0" rx="8" />
+                    <rect x="50" y="150" width="90" height="90" fill="#fef7e0" stroke="#b06000" rx="10" />
+                    <path
+                      d="M60 160 L70 150 L80 160 Z"
+                      fill="#b06000"
+                    />
+                    <text
+                      x="95"
+                      y="185"
+                      font-family="Segoe UI, Arial, sans-serif"
+                      font-size="12"
+                      fill="#1d2327"
+                      font-weight="600"
+                    >
+                      miwordpress
+                    </text>
+                    <text
+                      x="50"
+                      y="210"
+                      font-family="Segoe UI, Arial, sans-serif"
+                      font-size="11"
+                      fill="#5f6368"
+                    >
+                      Carpeta de carpeta
+                    </text>
+                    <rect x="160" y="150" width="120" height="90" fill="#ffffff" stroke="#dadce0" rx="8" />
+                    <rect x="160" y="150" width="120" height="10" fill="#f1f3f4" rx="8" />
+                    <text
+                      x="170"
+                      y="164"
+                      font-family="Segoe UI, Arial, sans-serif"
+                      font-size="11"
+                      fill="#5f6368"
+                    >
+                      (vacía)
+                    </text>
+                    <text x="400" y="270" font-size="11" fill="#5c6b68">1 elemento</text>
+                  </svg>
+                </div>
+                <figcaption>
+                  Dentro de htdocs, crea la carpeta miwordpress. Ese es el hogar de tu web.
+                </figcaption>
+              </figure>
+            </div>
           </div>
           <p style="margin-top: 1rem">
             <code>htdocs</code> es la carpeta donde el servidor busca las webs.
@@ -3751,7 +4028,7 @@
           </div>
         </article>
 
-        <article class="step" id="paso-9" data-step="9">
+        <article class="step step--split" id="paso-9" data-step="9">
           <header class="step__head">
             <span class="step__num" aria-hidden="true">9</span>
             <h3 class="step__title">Crear la "despensa" (la base de datos)</h3>
@@ -3759,42 +4036,162 @@
               ><input type="checkbox" data-done="9" /><span>Hecho</span></label
             >
           </header>
-          <ol class="actions">
-            <li>
-              En el navegador, escribe:
-              <code>http://localhost/phpmyadmin/</code> y pulsa
-              <strong>Enter</strong>.
-            </li>
-            <li>Arriba, pulsa la pestaña <strong>Bases de datos</strong>.</li>
-            <li>
-              En la casilla <strong>Nombre de la base de datos</strong>,
-              escribe: <code>wordpress_db</code>.
-            </li>
-            <li>Pulsa el botón <strong>Crear</strong>.</li>
-            <li>
-              <strong>No toques nada más.</strong> No hay que crear tablas:
-              WordPress las crea solo.
-            </li>
-          </ol>
-          <div class="check">
-            <svg
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="#0b6b52"
-              stroke-width="2.4"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              aria-hidden="true"
-            >
-              <path d="M20 6 9 17l-5-5" />
-            </svg>
-            <p>
-              <strong>Comprueba:</strong> en la lista de la izquierda aparece
-              <strong>wordpress_db</strong>.
-            </p>
+          <div class="step__grid">
+            <div>
+              <ol class="actions">
+                <li>
+                  En el navegador, escribe:
+                  <code>http://localhost/phpmyadmin/</code> y pulsa
+                  <strong>Enter</strong>.
+                </li>
+                <li>Arriba, pulsa la pestaña <strong>Bases de datos</strong>.</li>
+                <li>
+                  En la casilla <strong>Nombre de la base de datos</strong>,
+                  escribe: <code>wordpress_db</code>.
+                </li>
+                <li>Pulsa el botón <strong>Crear</strong>.</li>
+                <li>
+                  <strong>No toques nada más.</strong> No hay que crear tablas:
+                  WordPress las crea solo.
+                </li>
+              </ol>
+              <div class="check">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#0b6b52"
+                  stroke-width="2.4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>
+                <p>
+                  <strong>Comprueba:</strong> en la lista de la izquierda aparece
+                  <strong>wordpress_db</strong>.
+                </p>
+              </div>
+            </div>
+            <div>
+              <figure class="fig">
+                <div class="svgpad">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 560 340"
+                    role="img"
+                    aria-labelledby="db-t db-d"
+                  >
+                    <title id="db-t">phpMyAdmin: pestaña Bases de datos</title>
+                    <desc id="db-d">
+                      Pantalla de phpMyAdmin mostrando la pestaña Bases de datos,
+                      el campo Nombre de la base de datos con wordpress_db y el botón Crear.
+                    </desc>
+                    <rect width="560" height="340" fill="#eef2f1" />
+                    <rect x="20" y="20" width="520" height="300" rx="10" fill="#ffffff" stroke="#c7cdd2" />
+                    <rect x="30" y="32" width="500" height="30" fill="#1d2327" rx="6" />
+                    <text
+                      x="50"
+                      y="52"
+                      font-family="Segoe UI, Arial, sans-serif"
+                      font-size="13"
+                      font-weight="600"
+                      fill="#ffffff"
+                    >
+                      phpMyAdmin
+                    </text>
+                    <rect x="30" y="80" width="500" height="34" fill="#f1f3f4" stroke="#dadce0" rx="6" />
+                    <text
+                      x="50"
+                      y="102"
+                      font-family="Segoe UI, Arial, sans-serif"
+                      font-size="12"
+                      fill="#3c4043"
+                    >
+                      http://localhost/phpmyadmin/
+                    </text>
+                    <rect x="30" y="130" width="500" height="180" fill="#f8f9fa" stroke="#d7dce0" rx="8" />
+                    <rect x="40" y="150" width="120" height="34" fill="#ffffff" stroke="#8c8f94" rx="4" />
+                    <text
+                      x="54"
+                      y="170"
+                      font-family="Segoe UI, Arial, sans-serif"
+                      font-size="11"
+                      font-weight="600"
+                      fill="#1d2327"
+                    >
+                      Bases de datos
+                    </text>
+                    <rect x="170" y="150" width="120" height="34" fill="#f0f0f0" stroke="#8c8f94" rx="4" />
+                    <text
+                      x="184"
+                      y="170"
+                      font-family="Segoe UI, Arial, sans-serif"
+                      font-size="11"
+                      fill="#5c6b68"
+                    >
+                      Usuarios
+                    </text>
+                    <rect x="40" y="200" width="300" height="36" fill="#ffffff" stroke="#8c8f94" rx="6" />
+                    <text
+                      x="54"
+                      y="218"
+                      font-family="Segoe UI, Arial, sans-serif"
+                      font-size="12"
+                      font-weight="600"
+                      fill="#1d2327"
+                    >
+                      Nombre de la base de datos:
+                    </text>
+                    <rect x="190" y="200" width="130" height="36" fill="#ffffff" stroke="#0b6b52" rx="6" />
+                    <text
+                      x="204"
+                      y="221"
+                      font-family="Segoe UI, Arial, sans-serif"
+                      font-size="13"
+                      font-weight="600"
+                      fill="#0b6b52"
+                    >
+                      wordpress_db
+                    </text>
+                    <rect x="340" y="200" width="130" height="36" rx="6" fill="#0b6b52" />
+                    <text
+                      x="405"
+                      y="221"
+                      text-anchor="middle"
+                      font-family="Segoe UI, Arial, sans-serif"
+                      font-size="13"
+                      font-weight="600"
+                      fill="#ffffff"
+                    >
+                      Crear
+                    </text>
+                    <text x="40" y="260" font-size="11" fill="#5c6b68">
+                      WordPress creará las tablas automáticamente.
+                    </text>
+                  </svg>
+                </div>
+                <figcaption>
+                  Escribe wordpress_db en Nombre de la base de datos y pulsa Crear.
+                </figcaption>
+              </figure>
+            </div>
           </div>
+          <details class="trouble">
+            <summary>Si algo no sale</summary>
+            <div class="trouble__body">
+              <p>
+                <strong>La página no carga:</strong> Apache o MySQL están apagados.
+                Vuelve al panel de XAMPP y pulsa Start en ambos.
+              </p>
+              <p>
+                <strong>Ya existe una base de datos con ese nombre:</strong> usa
+                otro nombre, por ejemplo <code>miwordpress_db</code>.
+              </p>
+            </div>
+          </details>
         </article>
 
         <article class="step step--split" id="paso-10" data-step="10">
