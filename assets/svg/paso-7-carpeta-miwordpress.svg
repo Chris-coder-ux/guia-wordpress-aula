@@ -2,24 +2,109 @@
      viewBox="0 0 560 340"
      role="img"
      aria-labelledby="carp-t carp-d">
-  <title id="carp-t">Explorador de archivos con carpeta miwordpress</title>
-  <desc id="carp-d">
-    Ventana del Explorador de archivos mostrando la ruta
-    C:\xampp\htdocs con la nueva carpeta miwordpress seleccionada.
-  </desc>
-  <rect width="560" height="340" fill="#eef2f1"/>
-  <rect x="20" y="20" width="520" height="300" rx="10" fill="#ffffff" stroke="#c7cdd2"/>
-  <rect x="30" y="32" width="500" height="30" fill="#1d2327" rx="6"/>
-  <text x="50" y="52" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#ffffff">Explorador de archivos</text>
-  <rect x="30" y="80" width="500" height="34" fill="#f1f3f4" stroke="#dadce0" rx="6"/>
-  <text x="50" y="102" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#3c4043">C:\xampp\htdocs</text>
-  <rect x="30" y="130" width="500" height="180" fill="#f8f9fa" stroke="#d7dce0" rx="8"/>
-  <rect x="50" y="150" width="90" height="90" fill="#fef7e0" stroke="#b06000" rx="10"/>
-  <path d="M60 160 L70 150 L80 160 Z" fill="#b06000"/>
-  <text x="95" y="185" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#1d2327" font-weight="600">miwordpress</text>
-  <text x="50" y="210" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#5f6368">Carpeta de carpeta</text>
-  <rect x="160" y="150" width="120" height="90" fill="#ffffff" stroke="#dadce0" rx="8"/>
-  <rect x="160" y="150" width="120" height="10" fill="#f1f3f4" rx="8"/>
-  <text x="170" y="164" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#5f6368">(vacía)</text>
-  <text x="400" y="270" font-size="11" fill="#5c6b68">1 elemento</text>
+  <title id="carp-t">Explorador de archivos: C:\xampp\htdocs</title>
+  <desc id="carp-d">Captura de una ventana del Explorador de archivos de Windows. La carpeta miwordpress aparece seleccionada dentro de C:\xampp\htdocs.</desc>
+
+  <defs>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#263238" flood-opacity=".16"/>
+    </filter>
+  </defs>
+
+  <rect width="560" height="340" fill="#edf0f2"/>
+  <rect x="12" y="10" width="536" height="320" rx="5" fill="#fff" stroke="#c7cdd2" filter="url(#shadow)"/>
+
+  <!-- Barra de título -->
+  <rect x="13" y="11" width="534" height="31" rx="5" fill="#fff"/>
+  <path d="M13 37h534v5H13z" fill="#fff"/>
+  <path d="M25 20h13v12H25z" fill="#e9f2fa" stroke="#8aa7bd"/>
+  <path d="M27 22h9v8h-9z" fill="#fff" stroke="#a4b7c5"/>
+  <path d="M29 24h5M29 26h5M29 28h3" stroke="#7993a5" stroke-width=".8"/>
+  <text x="45" y="29" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#252525">htdocs</text>
+  <path d="M477 22h12M483 16v12" stroke="#555" stroke-width="1"/>
+  <rect x="502" y="17" width="11" height="10" fill="none" stroke="#555"/>
+  <path d="M527 17l11 11M538 17l-11 11" stroke="#555" stroke-width="1"/>
+
+  <!-- Cinta de opciones -->
+  <rect x="13" y="42" width="534" height="34" fill="#f7f7f7"/>
+  <rect x="13" y="42" width="53" height="28" fill="#0078d4"/>
+  <text x="25" y="60" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#fff">Archivo</text>
+  <text x="77" y="60" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#333">Inicio</text>
+  <text x="124" y="60" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#333">Compartir</text>
+  <text x="194" y="60" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#333">Vista</text>
+  <path d="M13 75h534" stroke="#d6d6d6"/>
+  <path d="M513 54l6 6 6-6" fill="none" stroke="#777" stroke-width="1.2"/>
+
+  <!-- Navegación y dirección -->
+  <rect x="13" y="76" width="534" height="35" fill="#fff"/>
+  <path d="M28 88l-7 7 7 7M22 95h13" fill="none" stroke="#5f6368" stroke-width="1.4"/>
+  <path d="M48 88l7 7-7 7M54 95H41" fill="none" stroke="#a5a8aa" stroke-width="1.4"/>
+  <path d="M72 88v13m-5-5 5 5 5-5" fill="none" stroke="#5f6368" stroke-width="1.3"/>
+  <rect x="91" y="82" width="322" height="25" rx="2" fill="#fff" stroke="#c8cdd1"/>
+  <path d="M102 89h12l4 4h13v9h-29z" fill="#e8b84b" stroke="#c9972e" stroke-width=".8"/>
+  <text x="139" y="99" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#333">Este equipo</text>
+  <path d="M202 91l4 4-4 4" fill="none" stroke="#777" stroke-width="1"/>
+  <text x="214" y="99" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#333">xampp</text>
+  <path d="M254 91l4 4-4 4" fill="none" stroke="#777" stroke-width="1"/>
+  <text x="266" y="99" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#333">htdocs</text>
+  <path d="M392 89l10 10M402 89l-10 10" stroke="#777" stroke-width="1"/>
+  <rect x="420" y="82" width="117" height="25" rx="2" fill="#fff" stroke="#c8cdd1"/>
+  <text x="430" y="99" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#777">Buscar en htdocs</text>
+  <circle cx="524" cy="93" r="4" fill="none" stroke="#777" stroke-width="1"/>
+  <path d="M527 96l3 3" stroke="#777" stroke-width="1"/>
+
+  <!-- Panel de navegación -->
+  <rect x="13" y="111" width="137" height="194" fill="#fff"/>
+  <path d="M150 111v194" stroke="#e0e0e0"/>
+  <g font-family="Segoe UI, Arial, sans-serif" font-size="10.5" fill="#333">
+    <path d="M27 127l5 5-5 5-5-5z" fill="#72a9d5"/>
+    <text x="41" y="136">Acceso rápido</text>
+    <path d="M29 148h12v9H29z" fill="#f2c14e" stroke="#d4a63b" stroke-width=".6"/>
+    <text x="49" y="156">Escritorio</text>
+    <path d="M29 168h12v9H29z" fill="#f2c14e" stroke="#d4a63b" stroke-width=".6"/>
+    <text x="49" y="176">Descargas</text>
+    <path d="M29 188h12v9H29z" fill="#f2c14e" stroke="#d4a63b" stroke-width=".6"/>
+    <text x="49" y="196">Documentos</text>
+    <path d="M29 208h12v9H29z" fill="#f2c14e" stroke="#d4a63b" stroke-width=".6"/>
+    <text x="49" y="216">Imágenes</text>
+    <path d="M24 232l4 4-4 4" fill="none" stroke="#777" stroke-width="1"/>
+    <path d="M30 233h12v9H30z" fill="#d9e8f5" stroke="#8ba8bf" stroke-width=".7"/>
+    <text x="49" y="241">Este equipo</text>
+    <path d="M42 250l4 4-4 4" fill="none" stroke="#777" stroke-width="1"/>
+    <path d="M49 251h12v9H49z" fill="#d9e8f5" stroke="#8ba8bf" stroke-width=".7"/>
+    <text x="68" y="259">Disco local (C:)</text>
+    <path d="M61 268l4 4-4 4" fill="none" stroke="#777" stroke-width="1"/>
+    <path d="M68 269h12v9H68z" fill="#f2c14e" stroke="#d4a63b" stroke-width=".6"/>
+    <text x="87" y="277">xampp</text>
+    <rect x="79" y="282" width="68" height="19" fill="#e8f3fc"/>
+    <path d="M82 287h12v9H82z" fill="#f2c14e" stroke="#d4a63b" stroke-width=".6"/>
+    <text x="101" y="295" font-weight="600">htdocs</text>
+  </g>
+
+  <!-- Vista de detalles -->
+  <rect x="151" y="111" width="396" height="194" fill="#fff"/>
+  <rect x="151" y="111" width="396" height="25" fill="#fff"/>
+  <path d="M151 136h396" stroke="#e5e5e5"/>
+  <g font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#555">
+    <text x="165" y="128">Nombre</text>
+    <text x="333" y="128">Fecha de modificación</text>
+    <text x="456" y="128">Tipo</text>
+  </g>
+  <path d="M322 112v23M446 112v23" stroke="#e5e5e5"/>
+
+  <!-- Elemento seleccionado -->
+  <rect x="153" y="138" width="392" height="29" fill="#cce8ff" stroke="#99d1ff"/>
+  <path d="M166 146h15l4 4h14v12h-33z" fill="#f4c34f" stroke="#c99931" stroke-width=".8"/>
+  <path d="M166 146h15l4 4h-19z" fill="#ffda77"/>
+  <text x="205" y="157" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#222">miwordpress</text>
+  <text x="333" y="157" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#333">24/02/2025 10:42</text>
+  <text x="456" y="157" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#333">Carpeta de archivos</text>
+
+  <!-- Barra de estado -->
+  <path d="M13 305h534" stroke="#d7d7d7"/>
+  <rect x="13" y="306" width="534" height="23" fill="#f7f7f7"/>
+  <text x="25" y="321" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#555">1 elemento</text>
+  <path d="M81 312v10" stroke="#d0d0d0"/>
+  <text x="91" y="321" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#555">1 elemento seleccionado</text>
+  <path d="M502 313h10v8h-10zM516 313h10v8h-10z" fill="none" stroke="#888" stroke-width=".8"/>
 </svg>
