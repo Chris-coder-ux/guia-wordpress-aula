@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 480 260"
+     role="img"
+     aria-labelledby="title desc">
+  <title id="title">Explorador de archivos: estructura de WordPress en miwordpress</title>
+  <desc id="desc">
+    Captura de un explorador de archivos que muestra wp-admin, wp-content,
+    wp-includes, index.php y wp-config-sample.php directamente dentro de miwordpress.
+  </desc>
+
+  <defs>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#263b34" flood-opacity=".16"/>
+    </filter>
+    <g id="folder">
+      <path d="M1 4a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2z" fill="#e6b84b" stroke="#c99b32" stroke-width=".7"/>
+      <path d="M1 7h18v9a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2z" fill="#f3cc68"/>
+      <path d="M2 8h16" stroke="#ffe39a" stroke-width=".7"/>
+    </g>
+    <g id="phpfile">
+      <path d="M3 1h10l5 5v15H3a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2z" fill="#fff" stroke="#9aa7b2" stroke-width=".8"/>
+      <path d="M13 1v5h5" fill="#edf1f4" stroke="#9aa7b2" stroke-width=".8" stroke-linejoin="round"/>
+      <rect x="4" y="10" width="11" height="6" rx="1" fill="#6d7fa8"/>
+      <text x="5" y="14.5" font-family="Arial, sans-serif" font-size="3.8" font-weight="700" fill="#fff">PHP</text>
+    </g>
+    <g id="navfolder">
+      <path d="M1 4a1.5 1.5 0 0 1 1.5-1.5h4l1.5 1.5h7a1.5 1.5 0 0 1 1.5 1.5v7a1.5 1.5 0 0 1-1.5 1.5h-12A1.5 1.5 0 0 1 1 12z" fill="#e4b84f"/>
+    </g>
+  </defs>
+
+  <rect width="480" height="260" fill="#eef1f4"/>
+  <rect x="5" y="5" width="470" height="250" rx="7" fill="#fff" stroke="#c7cdd2" filter="url(#shadow)"/>
+
+  <path d="M12 5h456a7 7 0 0 1 7 7v23H5V12a7 7 0 0 1 7-7z" fill="#f7f8fa"/>
+  <rect x="14" y="10" width="119" height="24" rx="5" fill="#fff" stroke="#e2e5e8"/>
+  <use href="#navfolder" x="22" y="15" transform="scale(.72) translate(8 6)"/>
+  <text x="38" y="26" font-family="Segoe UI, Arial, sans-serif" font-size="10.5" fill="#252a2e">miwordpress</text>
+  <path d="m119 19 6 6m0-6-6 6" stroke="#737b82" stroke-width="1" stroke-linecap="round"/>
+  <text x="142" y="27" font-family="Segoe UI, Arial, sans-serif" font-size="17" fill="#68727a">+</text>
+  <path d="M389 18h9m-4.5-4.5v9" stroke="#596168" stroke-width="1.1"/>
+  <rect x="421" y="15" width="9" height="8" fill="none" stroke="#596168" stroke-width=".9"/>
+  <path d="m450 15 9 9m0-9-9 9" stroke="#596168" stroke-width="1"/>
+
+  <rect x="5" y="35" width="470" height="52" fill="#fff"/>
+  <path d="M5 86.5h470" stroke="#e2e5e8"/>
+  <path d="m23 53 7-6m-7 6 7 6m-6-6h13" fill="none" stroke="#5d666d" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="m61 47-7 6 7 6m-6-6h13" fill="none" stroke="#c0c6cb" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M83 47v12m-4-4 4 4 4-4" fill="none" stroke="#5d666d" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M104 52h15m-4-4 4 4-4 4" fill="none" stroke="#5d666d" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="130" y="42" width="331" height="29" rx="4" fill="#fff" stroke="#d7dce0"/>
+  <path d="M143 50h10l3 3h9a1.5 1.5 0 0 1 1.5 1.5v8a1.5 1.5 0 0 1-1.5 1.5h-21a1.5 1.5 0 0 1-1.5-1.5v-11a1.5 1.5 0 0 1 1.5-1.5z" fill="#e4b84f"/>
+  <text x="174" y="60.5" font-family="Segoe UI, Arial, sans-serif" font-size="10.5" fill="#30363a">public_html</text>
+  <path d="m238 54 3 3-3 3" fill="none" stroke="#90989e" stroke-width="1"/>
+  <text x="250" y="60.5" font-family="Segoe UI, Arial, sans-serif" font-size="10.5" fill="#30363a">miwordpress</text>
+  <circle cx="446" cy="56.5" r="6" fill="none" stroke="#818a91" stroke-width="1"/>
+  <path d="m450.5 61 4 4" stroke="#818a91" stroke-width="1.2" stroke-linecap="round"/>
+
+  <rect x="6" y="87" width="106" height="159" fill="#fafbfc"/>
+  <path d="M111.5 87v159" stroke="#e5e8eb"/>
+
+  <g font-family="Segoe UI, Arial, sans-serif" font-size="9.5" fill="#40474d">
+    <path d="M19 99h10l2 3 5 0v8H19z" fill="#dfb84f"/>
+    <text x="43" y="107">Acceso rápido</text>
+    <rect x="21" y="119" h="10" w="12" fill="#8db8dc"/>
+    <rect x="23" y="121" h="6" w="8" fill="#f5f8fa"/>
+    <text x="43" y="127">Escritorio</text>
+    <rect x="21" y="139" h="10" w="12" fill="#81b4df"/>
+    <path d="M24 141v6m-2-2 2 2 2-2" fill="none" stroke="#fff" stroke-width=".8"/>
+    <text x="43" y="147">Descargas</text>
+    <rect x="21" y="159" h="10" w="11" fill="#fff" stroke="#c6a85e" stroke-width=".7"/>
+    <path d="M21 162h11" stroke="#c6a85e" stroke-width=".7"/>
+    <text x="43" y="167">Documentos</text>
+    <path d="M19 179h10l2 3 5 0v8H19z" fill="#dfb84f"/>
+    <text x="43" y="187">Imágenes</text>
+    <rect x="17" y="198" w="91" h="21" rx="3" fill="#e8f1fb"/>
+    <use href="#navfolder" x="20" y="202"/>
+    <text x="43" y="213" font-weight="600" fill="#263b50">miwordpress</text>
+    <path d="m20 231 3 3 3-3" fill="none" stroke="#6e777e" stroke-width="1"/>
+    <text x="32" y="235">Este equipo</text>
+  </g>
+
+  <rect x="112" y="87" width="362" height="23" fill="#fff"/>
+  <text x="129" y="102" font-family="Segoe UI, Arial, sans-serif" font-size="9.5" fill="#51595f">Nombre</text>
+  <path d="m119 98 3-3 3 3" fill="#737b81"/>
+  <path d="M337 88v21" stroke="#edf0f2"/>
+  <text x="345" y="102" font-family="Segoe UI, Arial, sans-serif" font-size="8.4" fill="#687178">Tipo</text>
+  <path d="M112 109.5h362" stroke="#e7eaed"/>
+
+  <g font-family="Segoe UI, Arial, sans-serif" font-size="9.7" fill="#252a2e">
+    <rect x="113" y="110" width="360" height="23" fill="#fff"/>
+    <use href="#folder" x="124" y="114" transform="scale(.75) translate(41 38)"/>
+    <text x="146" y="125">wp-admin</text>
+    <text x="345" y="125" font-size="8.6" fill="#616a71">Carpeta de archivos</text>
+
+    <rect x="113" y="133" width="360" height="23" fill="#f3f7fb"/>
+    <path d="M113 133.5h360M113 155.5h360" stroke="#dce8f4"/>
+    <use href="#folder" x="124" y="137" transform="scale(.75) translate(41 45)"/>
+    <text x="146" y="148">wp-content</text>
+    <text x="345" y="148" font-size="8.6" fill="#616a71">Carpeta de archivos</text>
+
+    <rect x="113" y="156" width="360" height="23" fill="#fff"/>
+    <use href="#folder" x="124" y="160" transform="scale(.75) translate(41 68)"/>
+    <text x="146" y="171">wp-includes</text>
+    <text x="345" y="171" font-size="8.6" fill="#616a71">Carpeta de archivos</text>
+
+    <rect x="113" y="179" width="360" height="23" fill="#fff"/>
+    <use href="#phpfile" x="126" y="180" transform="scale(.65) translate(68 97)"/>
+    <text x="146" y="194">index.php</text>
+    <text x="345" y="194" font-size="8.6" fill="#616a71">Archivo PHP</text>
+
+    <rect x="113" y="202" width="360" height="23" fill="#fff"/>
+    <use href="#phpfile" x="126" y="203" transform="scale(.65) translate(68 109)"/>
+    <text x="146" y="217">wp-config-sample.php</text>
+    <text x="345" y="217" font-size="8.6" fill="#616a71">Archivo PHP</text>
+  </g>
+
+  <path d="M6 246h468" stroke="#e3e6e9"/>
+  <text x="17" y="253" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#687178">5 elementos</text>
+  <path d="M436 250h9m-4.5-4.5v9m14-9v9" stroke="#7b858c" stroke-width=".8"/>
+</svg>

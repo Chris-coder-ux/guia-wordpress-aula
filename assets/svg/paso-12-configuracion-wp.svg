@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="900" height="760"
+     viewBox="0 0 900 760"
+     role="img"
+     aria-labelledby="install-title install-desc">
+  <title id="install-title">Instalación de WordPress</title>
+  <desc id="install-desc">
+    Pantalla de configuración de WordPress con los campos para el título del sitio,
+    usuario, contraseña y correo electrónico.
+  </desc>
+  <rect width="900" height="760" fill="#f0f0f1"/>
+  <g transform="translate(426 38)">
+    <circle cx="24" cy="24" r="23" fill="#21759b"/>
+    <circle cx="24" cy="24" r="20" fill="none" stroke="#fff" stroke-width="1.4"/>
+    <path d="M11 15h5l5 16 5-13 4 13 5-16h3l-7 21h-3l-4-12-4 12h-3z" fill="#fff"/>
+  </g>
+  <text x="450" y="111" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="400" fill="#1d2327">¡Bienvenido a WordPress!</text>
+  <text x="450" y="143" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#50575e">Completa estos datos para configurar tu sitio.</text>
+
+  <rect x="240" y="171" width="420" height="480" rx="3" fill="#fff" stroke="#c3c4c7"/>
+  <text x="274" y="211" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="600" fill="#1d2327">Información necesaria</text>
+  <text x="274" y="236" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#50575e">Introduce los datos de tu nuevo sitio web.</text>
+
+  <text x="274" y="274" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="600" fill="#1d2327">Título del sitio</text>
+  <rect x="274" y="284" width="352" height="37" rx="2" fill="#fff" stroke="#8c8f94"/>
+  <text x="285" y="308" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#2c3338">La web de Ana</text>
+
+  <text x="274" y="350" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="600" fill="#1d2327">Nombre de usuario</text>
+  <rect x="274" y="360" width="352" height="37" rx="2" fill="#fff" stroke="#8c8f94"/>
+  <text x="285" y="384" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#2c3338">ana</text>
+  <text x="274" y="416" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#646970">Evita usar «admin» como nombre de usuario.</text>
+
+  <text x="274" y="451" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="600" fill="#1d2327">Contraseña</text>
+  <rect x="274" y="461" width="352" height="37" rx="2" fill="#fff" stroke="#8c8f94"/>
+  <text x="286" y="485" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#2c3338">••••••••••••••••••••</text>
+  <rect x="274" y="505" width="352" height="27" fill="#f0f6fc" stroke="#c3c4c7"/>
+  <text x="450" y="523" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#2c3338">Fuerte</text>
+  <text x="274" y="550" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#646970">Guárdala en un lugar seguro.</text>
+
+  <text x="274" y="581" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="600" fill="#1d2327">Correo electrónico</text>
+  <rect x="274" y="591" width="352" height="37" rx="2" fill="#fff" stroke="#8c8f94"/>
+  <text x="285" y="615" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#2c3338">ana&#64;example&#46;com</text>
+
+  <rect x="274" y="672" width="153" height="36" rx="3" fill="#2271b1"/>
+  <text x="350.5" y="695" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="600" fill="#fff">Instalar WordPress</text>
+  <text x="450" y="735" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#646970">Gracias por crear con WordPress.</text>
+  </g>
+</svg>

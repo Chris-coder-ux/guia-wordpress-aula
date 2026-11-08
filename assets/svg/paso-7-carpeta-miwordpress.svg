@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 560 340"
+     role="img"
+     aria-labelledby="carp-t carp-d">
+  <title id="carp-t">Explorador de archivos con carpeta miwordpress</title>
+  <desc id="carp-d">
+    Ventana del Explorador de archivos mostrando la ruta
+    C:\xampp\htdocs con la nueva carpeta miwordpress seleccionada.
+  </desc>
+  <rect width="560" height="340" fill="#eef2f1"/>
+  <rect x="20" y="20" width="520" height="300" rx="10" fill="#ffffff" stroke="#c7cdd2"/>
+  <rect x="30" y="32" width="500" height="30" fill="#1d2327" rx="6"/>
+  <text x="50" y="52" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#ffffff">Explorador de archivos</text>
+  <rect x="30" y="80" width="500" height="34" fill="#f1f3f4" stroke="#dadce0" rx="6"/>
+  <text x="50" y="102" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#3c4043">C:\xampp\htdocs</text>
+  <rect x="30" y="130" width="500" height="180" fill="#f8f9fa" stroke="#d7dce0" rx="8"/>
+  <rect x="50" y="150" width="90" height="90" fill="#fef7e0" stroke="#b06000" rx="10"/>
+  <path d="M60 160 L70 150 L80 160 Z" fill="#b06000"/>
+  <text x="95" y="185" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#1d2327" font-weight="600">miwordpress</text>
+  <text x="50" y="210" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#5f6368">Carpeta de carpeta</text>
+  <rect x="160" y="150" width="120" height="90" fill="#ffffff" stroke="#dadce0" rx="8"/>
+  <rect x="160" y="150" width="120" height="10" fill="#f1f3f4" rx="8"/>
+  <text x="170" y="164" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#5f6368">(vacía)</text>
+  <text x="400" y="270" font-size="11" fill="#5c6b68">1 elemento</text>
+</svg>

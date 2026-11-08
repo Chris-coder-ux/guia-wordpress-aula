@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="900" height="760"
+     viewBox="0 0 900 760"
+     role="img"
+     aria-labelledby="db-screen-title db-screen-desc">
+  <title id="db-screen-title">Pantalla de configuración de la base de datos de WordPress</title>
+  <desc id="db-screen-desc">
+    Formulario de conexión con wordpress_db como nombre de base de datos, root como usuario,
+    contraseña vacía, localhost como servidor y wp_ como prefijo de tabla.
+  </desc>
+  <rect width="900" height="760" fill="#f0f0f1"/>
+
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <circle cx="450" cy="76" r="34" fill="#21759b"/>
+    <circle cx="450" cy="76" r="28" fill="none" stroke="#fff" stroke-width="2.3"/>
+    <text x="450" y="88" text-anchor="middle" fill="#fff" font-family="Georgia, serif" font-size="38" font-weight="bold">W</text>
+
+    <text x="450" y="148" text-anchor="middle" fill="#1d2327" font-size="25" font-weight="400">¡Bienvenido a WordPress!</text>
+    <text x="450" y="179" text-anchor="middle" fill="#50575e" font-size="14">Antes de empezar, necesitamos algunos datos de la base de datos.</text>
+    <text x="450" y="200" text-anchor="middle" fill="#50575e" font-size="14">Puedes obtenerlos de tu proveedor de alojamiento web.</text>
+
+    <rect x="196" y="226" width="508" height="450" rx="2" fill="#fff" stroke="#dcdcde"/>
+
+    <text x="226" y="265" fill="#1d2327" font-size="14">Introduce los datos de conexión a tu base de datos.</text>
+    <text x="226" y="286" fill="#1d2327" font-size="14">Si no estás seguro, ponte en contacto con tu proveedor.</text>
+
+    <text x="226" y="330" fill="#1d2327" font-size="14" font-weight="600">Nombre de la base de datos</text>
+    <rect x="226" y="340" width="448" height="36" rx="2" fill="#fff" stroke="#8c8f94"/>
+    <text x="238" y="364" fill="#1d2327" font-size="15">wordpress_db</text>
+
+    <text x="226" y="405" fill="#1d2327" font-size="14" font-weight="600">Nombre de usuario</text>
+    <rect x="226" y="415" width="448" height="36" rx="2" fill="#fff" stroke="#8c8f94"/>
+    <text x="238" y="439" fill="#1d2327" font-size="15">root</text>
+
+    <text x="226" y="480" fill="#1d2327" font-size="14" font-weight="600">Contraseña</text>
+    <rect x="226" y="490" width="448" height="36" rx="2" fill="#fff" stroke="#8c8f94"/>
+    <text x="226" y="548" fill="#646970" font-size="13">Déjala vacía</text>
+
+    <text x="226" y="581" fill="#1d2327" font-size="14" font-weight="600">Servidor de la base de datos</text>
+    <rect x="226" y="591" width="213" height="36" rx="2" fill="#fff" stroke="#8c8f94"/>
+    <text x="238" y="615" fill="#1d2327" font-size="15">localhost</text>
+
+    <text x="460" y="581" fill="#1d2327" font-size="14" font-weight="600">Prefijo de tabla</text>
+    <rect x="460" y="591" width="214" height="36" rx="2" fill="#fff" stroke="#8c8f94"/>
+    <text x="472" y="615" fill="#1d2327" font-size="15">wp_</text>
+
+    <text x="226" y="648" fill="#646970" font-size="12">Déjalo como está si no necesitas varias instalaciones en una base de datos.</text>
+
+    <rect x="226" y="694" width="94" height="36" rx="2" fill="#2271b1"/>
+    <text x="273" y="717" text-anchor="middle" fill="#fff" font-size="14" font-weight="600">Enviar</text>
+    <path d="M300 706h8m-3-4 4 4-4 4" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

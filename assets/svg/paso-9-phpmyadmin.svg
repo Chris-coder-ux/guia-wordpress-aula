@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 560 340"
+     role="img"
+     aria-labelledby="db-t db-d">
+  <title id="db-t">phpMyAdmin: pestaña Bases de datos</title>
+  <desc id="db-d">
+    Pantalla de phpMyAdmin mostrando la pestaña Bases de datos,
+    el campo Nombre de la base de datos con wordpress_db y el botón Crear.
+  </desc>
+  <rect width="560" height="340" fill="#eef2f1"/>
+  <rect x="20" y="20" width="520" height="300" rx="10" fill="#ffffff" stroke="#c7cdd2"/>
+  <rect x="30" y="32" width="500" height="30" fill="#1d2327" rx="6"/>
+  <text x="50" y="52" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#ffffff">phpMyAdmin</text>
+  <rect x="30" y="80" width="500" height="34" fill="#f1f3f4" stroke="#dadce0" rx="6"/>
+  <text x="50" y="102" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#3c4043">http://localhost/phpmyadmin/</text>
+  <rect x="30" y="130" width="500" height="180" fill="#f8f9fa" stroke="#d7dce0" rx="8"/>
+  <rect x="40" y="150" width="120" height="34" fill="#ffffff" stroke="#8c8f94" rx="4"/>
+  <text x="54" y="170" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" fill="#1d2327">Bases de datos</text>
+  <rect x="170" y="150" width="120" height="34" fill="#f0f0f0" stroke="#8c8f94" rx="4"/>
+  <text x="184" y="170" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#5c6b68">Usuarios</text>
+  <rect x="40" y="200" width="300" height="36" fill="#ffffff" stroke="#8c8f94" rx="6"/>
+  <text x="54" y="218" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="600" fill="#1d2327">Nombre de la base de datos:</text>
+  <rect x="190" y="200" width="130" height="36" fill="#ffffff" stroke="#0b6b52" rx="6"/>
+  <text x="204" y="221" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#0b6b52">wordpress_db</text>
+  <rect x="340" y="200" width="130" height="36" rx="6" fill="#0b6b52"/>
+  <text x="405" y="221" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#ffffff">Crear</text>
+  <text x="40" y="260" font-size="11" fill="#5c6b68">WordPress creará las tablas automáticamente.</text>
+</svg>

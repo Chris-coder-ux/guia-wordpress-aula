@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="900" height="520"
+     viewBox="0 0 900 520"
+     role="img"
+     aria-labelledby="admin-view-title admin-view-desc">
+  <title id="admin-view-title">Escritorio de WordPress con el menú para visitar el sitio</title>
+  <desc id="admin-view-desc">
+    Vista del escritorio de administración de WordPress justo después de acceder.
+    En la barra superior está desplegado el menú del nombre del sitio y se ve la
+    opción Visitar sitio.
+  </desc>
+  <rect width="900" height="520" fill="#f0f0f1"/>
+
+  <rect width="900" height="36" fill="#1d2327"/>
+  <circle cx="18" cy="18" r="10" fill="#fff"/>
+  <text x="18" y="22" text-anchor="middle" font-family="Georgia, serif" font-size="13" font-weight="700" fill="#1d2327">W</text>
+  <rect x="30" width="151" height="36" fill="#2c3338"/>
+  <text x="43" y="23" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#fff">La web de Ana</text>
+  <path d="m166 16 4 4 4-4" fill="none" stroke="#c3c4c7" stroke-width="1.4"/>
+  <text x="195" y="23" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#c3c4c7">+ Nuevo</text>
+  <text x="758" y="23" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#f0f0f1">Hola, ana</text>
+  <circle cx="852" cy="18" r="9" fill="#8c8f94"/>
+  <path d="M848 21c0-4 8-4 8 0m-6-6a2 2 0 1 0 4 0 2 2 0 0 0-4 0" fill="#fff"/>
+
+  <rect y="36" width="181" height="484" fill="#1d2327"/>
+  <rect y="49" width="181" height="34" fill="#2271b1"/>
+  <text x="22" y="72" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#fff">Escritorio</text>
+  <text x="22" y="108" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#c3c4c7">Inicio</text>
+  <text x="22" y="136" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#c3c4c7">Actualizaciones</text>
+  <path d="M14 157h153" stroke="#3c434a"/>
+  <text x="22" y="184" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#f0f0f1">Entradas</text>
+  <text x="22" y="218" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#f0f0f1">Medios</text>
+  <text x="22" y="252" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#f0f0f1">Páginas</text>
+  <text x="22" y="286" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#f0f0f1">Comentarios</text>
+  <text x="22" y="320" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#f0f0f1">Apariencia</text>
+  <text x="22" y="354" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#f0f0f1">Complementos</text>
+  <text x="22" y="388" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#f0f0f1">Usuarios</text>
+  <text x="22" y="422" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#f0f0f1">Herramientas</text>
+  <text x="22" y="456" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#f0f0f1">Ajustes</text>
+</svg>

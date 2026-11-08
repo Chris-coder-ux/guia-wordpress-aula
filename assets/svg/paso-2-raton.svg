@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 340 220"
+     role="img"
+     aria-labelledby="ms-t ms-d"
+     xmlns="http://www.w3.org/2000/svg">
+  <title id="ms-t">El ratón: botón izquierdo y derecho</title>
+  <desc id="ms-d">
+    Ratón visto desde arriba. El botón izquierdo sirve para hacer clic y doble clic;
+    el derecho abre un menú de opciones. El doble clic son dos pulsaciones rápidas sin
+    mover el ratón.
+  </desc>
+
+  <defs>
+    <linearGradient id="mouse-shell" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8faf9"/>
+      <stop offset=".55" stop-color="#e5ece9"/>
+      <stop offset="1" stop-color="#cbd6d2"/>
+    </linearGradient>
+    <linearGradient id="mouse-button" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#e5ece9"/>
+    </linearGradient>
+    <linearGradient id="mouse-wheel" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#53615e"/>
+      <stop offset=".45" stop-color="#87938f"/>
+      <stop offset="1" stop-color="#495754"/>
+    </linearGradient>
+    <filter id="mouse-shadow" x="-20%" y="-15%" width="140%" height="145%">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+  </defs>
+
+  <rect width="340" height="220" rx="12" fill="#f8faf9"/>
+
+  <ellipse cx="171" cy="169" rx="45" ry="9" fill="#263a38" opacity=".12" filter="url(#mouse-shadow)"/>
+
+  <g id="mouse-body">
+    <path d="M170 21c25 0 42 18 43 43l2 64c1 29-17 49-45 56-28-7-46-27-45-56l2-64c1-25 18-43 43-43Z" fill="url(#mouse-shell)" stroke="#344846" stroke-width="2"/>
+    <path d="M169 25c-21 1-35 16-37 39l-2 17h39V25Z" fill="url(#mouse-button)"/>
+    <path d="M171 25c21 1 35 16 37 39l2 17h-39V25Z" fill="url(#mouse-button)"/>
+    <path d="M169 27c-19 1-32 15-34 37l-1 14h35V27Z" fill="#0b6b52" opacity=".08"/>
+    <path d="M171 27c19 1 32 15 34 37l1 14h-35V27Z" fill="#a8321f" opacity=".07"/>
+
+    <path d="M128 81c13-1 27-1 41 0m2 0c14-1 28-1 41 0" fill="none" stroke="#aab8b3" stroke-width="1.2"/>
+    <path d="M170 25v24m0 20v12" fill="none" stroke="#526665" stroke-width="1.2" stroke-linecap="round"/>
+
+    <rect x="165" y="49" width="10" height="20" rx="5" fill="url(#mouse-wheel)" stroke="#344846" stroke-width=".8"/>
+    <path d="M166.5 53h7m-7 3h7m-7 3h7m-7 3h7" stroke="#cbd6d2" stroke-width=".7" stroke-linecap="round" opacity=".8"/>
+
+    <path d="M170 83v70" fill="none" stroke="#aebbb7" stroke-width=".8" opacity=".7"/>
+    <path d="M132 133c3 19 16 32 38 38 22-6 35-19 38-38" fill="none" stroke="#879590" stroke-width="1" opacity=".55"/>
+    <path d="M129 88v39m82-39v39" fill="none" stroke="#ffffff" stroke-width="1" opacity=".65"/>
+  </g>
+
+  <g class="mouse-txt">
+    <text x="111" y="57" text-anchor="end" font-family="Segoe UI, -apple-system, sans-serif" font-size="12" font-weight="700" fill="#0b6b52">Izquierdo</text>
+    <text x="111" y="73" text-anchor="end" font-family="Segoe UI, -apple-system, sans-serif" font-size="10.5" fill="#47595a">clic · doble clic</text>
+    <path d="M117 64h10" fill="none" stroke="#0b6b52" stroke-width="1.5"/>
+    <circle cx="128" cy="64" r="2" fill="#0b6b52"/>
+
+    <text x="229" y="57" text-anchor="start" font-family="Segoe UI, -apple-system, sans-serif" font-size="12" font-weight="700" fill="#a8321f">Derecho</text>
+    <text x="229" y="73" text-anchor="start" font-family="Segoe UI, -apple-system, sans-serif" font-size="10.5" fill="#47595a">menú de opciones</text>
+    <path d="M213 64h10" fill="none" stroke="#a8321f" stroke-width="1.5"/>
+    <circle cx="212" cy="64" r="2" fill="#a8321f"/>
+
+    <rect x="20" y="185" width="300" height="28" rx="8" fill="#edf3f1"/>
+    <g font-family="Segoe UI, -apple-system, sans-serif" text-anchor="middle" fill="#47595a">
+      <text x="170" y="197" font-size="10.5" font-weight="600">Doble clic = dos pulsaciones rápidas,</text>
+      <text x="170" y="209" font-size="10.5">sin mover el ratón entre ellas.</text>
+    </g>
+  </g>
+</svg>

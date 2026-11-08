@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 560 340"
+     role="img"
+     aria-labelledby="localt-t localt-d">
+  <title id="localt-t">Página de bienvenida de XAMPP en localhost</title>
+  <desc id="localt-d">
+    Ventana del navegador mostrando la barra de direcciones con
+    http://localhost/ y la página de bienvenida de XAMPP.
+  </desc>
+  <rect width="560" height="340" fill="#eef2f1"/>
+  <rect x="20" y="20" width="520" height="300" rx="10" fill="#ffffff" stroke="#c7cdd2"/>
+  <rect x="30" y="32" width="500" height="30" fill="#1d2327" rx="6"/>
+  <text x="50" y="52" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#ffffff">Chrome</text>
+  <rect x="40" y="78" width="480" height="34" fill="#f1f3f4" stroke="#dadce0" rx="6"/>
+  <text x="60" y="100" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#3c4043">http://localhost/</text>
+  <text x="300" y="100" font-size="12" fill="#5f6368">Buscar con Google</text>
+  <rect x="30" y="130" width="500" height="180" fill="#f8f9fa" stroke="#d7dce0" rx="8"/>
+  <circle cx="70" cy="160" r="24" fill="#4285f4"/>
+  <path d="M70 136 L70 160 L84 174" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="110" y="164" font-family="Georgia, serif" font-size="22" font-weight="700" fill="#1d2327">XAMPP</text>
+  <text x="110" y="190" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#5f6368">Bienvenido a XAMPP para Windows</text>
+  <text x="110" y="214" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#5f6368">Tu servidor web local está funcionando. Apache y MySQL están activos.</text>
+  <rect x="400" y="260" width="110" height="36" rx="6" fill="#0b6b52"/>
+  <text x="455" y="281" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#ffffff">Visitar sitio</text>
+</svg>

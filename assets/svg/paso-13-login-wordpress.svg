@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="900" height="520"
+     viewBox="0 0 900 520"
+     role="img"
+     aria-labelledby="login-title login-desc">
+  <title id="login-title">Formulario de acceso a WordPress</title>
+  <desc id="login-desc">
+    Pantalla de inicio de sesión de WordPress para La web de Ana, con campos de
+    nombre de usuario y contraseña, opción Recuérdame y botón Acceder.
+  </desc>
+  <rect width="900" height="520" fill="#f0f0f1"/>
+
+  <g transform="translate(423 45)">
+    <circle cx="27" cy="27" r="26" fill="#21759b"/>
+    <circle cx="27" cy="27" r="22.5" fill="none" stroke="#fff" stroke-width="1.5"/>
+    <path d="M12 17h5l5 19 6-16 5 16 6-19h4l-8 25h-4l-5-14-5 14h-4z" fill="#fff"/>
+  </g>
+
+  <rect x="290" y="119" width="320" height="300" fill="#fff" stroke="#dcdcde"/>
+  <text x="318" y="153" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#1d2327">Acceder a La web de Ana</text>
+
+  <text x="318" y="187" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#1d2327">Nombre de usuario o correo electrónico</text>
+  <rect x="318" y="197" width="264" height="38" rx="2" fill="#fff" stroke="#8c8f94"/>
+  <text x="330" y="221" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#2c3338">ana</text>
+
+  <text x="318" y="266" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#1d2327">Contraseña</text>
+  <rect x="318" y="276" width="264" height="38" rx="2" fill="#fff" stroke="#8c8f94"/>
+  <text x="330" y="301" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#2c3338">••••••••••••</text>
+
+  <rect x="319" y="331" width="15" height="15" rx="2" fill="#fff" stroke="#8c8f94"/>
+  <path d="m322 338 3 3 6-7" fill="none" stroke="#2271b1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="341" y="343" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#1d2327">Recuérdame</text>
+
+  <rect x="500" y="328" width="82" height="34" rx="3" fill="#2271b1"/>
+  <text x="541" y="350" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="600" fill="#fff">Acceder</text>
+
+  <text x="290" y="452" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#2271b1">¿Has olvidado tu contraseña?</text>
+  <text x="290" y="477" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#2271b1">← Volver a La web de Ana</text>
+  <text x="450" y="505" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#646970">Gracias por crear con WordPress.</text>
+  </g>
+</svg>
