@@ -141,6 +141,7 @@ Carpeta despliegue     C:\xampp\htdocs\miwordpress\
 - Ilustración del paso 7 de `sesion-0/`: `assets/svg/carpetas.svg` — póster de 1200 × 880 con cuatro ventanas del Explorador (crear la carpeta en Documentos, nombrarla, cortar `gato.jpg` en Descargas y pegarlo dentro) y las cuatro marcas del proceso; se ve en miniatura y se abre a tamaño nativo con el enlace «Abrir la ilustración ampliada»
 - Ilustración del paso 8 de `sesion-0/`: `assets/svg/captura.svg` — póster de 1200 × 880 con cuatro escenas de la captura de pantalla (Windows + Shift + S, el recuadro de selección sobre la pantalla oscurecida, el aviso de captura copiada y el pegado en Word con Guardar como); se ve en miniatura y se abre a tamaño nativo con el enlace «Abrir la ilustración ampliada»
 - Ilustración del paso 9 de `sesion-0/`: `assets/svg/colgado.svg` — póster de 1200 × 880 con cuatro escenas cuando algo se cuelga (esperar 10 segundos, Ctrl + Alt + Supr y el Administrador de tareas, salir con Esc o con la X, y no desenchufar ni apagar el ordenador); se ve en miniatura y se abre a tamaño nativo con el enlace «Abrir la ilustración ampliada»
+- Ilustración del paso 11 de `sesion-0/`: `assets/svg/ergonomia.svg` — póster de 1200 × 880 con tres paneles de ergonomía (pantalla a la altura de los ojos, pies apoyados y espalda en el respaldo, descanso cada 45 minutos mirando lejos 20 segundos); se ve en miniatura y se abre a tamaño nativo con el enlace «Abrir la ilustración ampliada»
 
 ---
 

@@ -887,6 +887,9 @@ figure.fig.fig--poster--captura{
 figure.fig.fig--poster--colgado{
   --poster-min:1200px;
 }
+figure.fig.fig--poster--ergonomia{
+  --poster-min:1200px;
+}
 figure.fig.fig--poster .fig--poster__scroll{
   overflow-x:auto;
   -webkit-overflow-scrolling:touch;
