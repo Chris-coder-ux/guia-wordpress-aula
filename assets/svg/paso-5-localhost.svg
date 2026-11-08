@@ -1,25 +1,81 @@
 <svg xmlns="http://www.w3.org/2000/svg"
      viewBox="0 0 560 340"
+     width="560"
+     height="340"
      role="img"
      aria-labelledby="localt-t localt-d">
   <title id="localt-t">Página de bienvenida de XAMPP en localhost</title>
-  <desc id="localt-d">
-    Ventana del navegador mostrando la barra de direcciones con
-    http://localhost/ y la página de bienvenida de XAMPP.
-  </desc>
-  <rect width="560" height="340" fill="#eef2f1"/>
-  <rect x="20" y="20" width="520" height="300" rx="10" fill="#ffffff" stroke="#c7cdd2"/>
-  <rect x="30" y="32" width="500" height="30" fill="#1d2327" rx="6"/>
-  <text x="50" y="52" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#ffffff">Chrome</text>
-  <rect x="40" y="78" width="480" height="34" fill="#f1f3f4" stroke="#dadce0" rx="6"/>
-  <text x="60" y="100" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#3c4043">http://localhost/</text>
-  <text x="300" y="100" font-size="12" fill="#5f6368">Buscar con Google</text>
-  <rect x="30" y="130" width="500" height="180" fill="#f8f9fa" stroke="#d7dce0" rx="8"/>
-  <circle cx="70" cy="160" r="24" fill="#4285f4"/>
-  <path d="M70 136 L70 160 L84 174" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-  <text x="110" y="164" font-family="Georgia, serif" font-size="22" font-weight="700" fill="#1d2327">XAMPP</text>
-  <text x="110" y="190" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#5f6368">Bienvenido a XAMPP para Windows</text>
-  <text x="110" y="214" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#5f6368">Tu servidor web local está funcionando. Apache y MySQL están activos.</text>
-  <rect x="400" y="260" width="110" height="36" rx="6" fill="#0b6b52"/>
-  <text x="455" y="281" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#ffffff">Visitar sitio</text>
+  <desc id="localt-d">Captura de una ventana de Chrome abierta en http://localhost/, mostrando el panel de bienvenida de XAMPP para Windows.</desc>
+
+  <defs>
+    <linearGradient id="chrome" x2="0" y2="1">
+      <stop offset="0" stop-color="#f8f9fa"/>
+      <stop offset="1" stop-color="#e9ecef"/>
+    </linearGradient>
+    <linearGradient id="hero" x2="0" y2="1">
+      <stop offset="0" stop-color="#f28c28"/>
+      <stop offset="1" stop-color="#e66b16"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#17212b" flood-opacity=".18"/>
+    </filter>
+  </defs>
+
+  <rect width="560" height="340" fill="#dfe4e8"/>
+  <rect x="17" y="13" width="526" height="314" rx="9" fill="#fff" filter="url(#shadow)"/>
+
+  <!-- Chrome tab bar -->
+  <path d="M26 13h508a9 9 0 0 1 9 9v26H17V22a9 9 0 0 1 9-9z" fill="#dee2e6"/>
+  <path d="M28 14h190a7 7 0 0 1 7 7v27H23V21a7 7 0 0 1 5-7z" fill="#fff"/>
+  <circle cx="39" cy="29" r="5" fill="#e96d21"/>
+  <path d="M36 29h6M39 26v6" stroke="#fff" stroke-width="1.4" stroke-linecap="round"/>
+  <text x="51" y="33" font-family="Arial, sans-serif" font-size="11" fill="#333">localhost / XAMPP</text>
+  <path d="M204 26l8 8m0-8l-8 8" stroke="#737980" stroke-width="1.2" stroke-linecap="round"/>
+  <path d="M224 28h14" stroke="#687078" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M17 48h526v34H17z" fill="url(#chrome)"/>
+
+  <!-- Browser controls and address bar -->
+  <path d="M34 60l9-7v5h8v4h-8v5z" fill="#5f6368"/>
+  <path d="M63 53l-8 7 8 7v-5h7v-4h-7z" fill="#a5abb0"/>
+  <path d="M82 54a8 8 0 1 0 7 13" fill="none" stroke="#5f6368" stroke-width="2" stroke-linecap="round"/>
+  <path d="M84 51l5 3-5 3" fill="none" stroke="#5f6368" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="103" y="53" width="389" height="24" rx="12" fill="#fff" stroke="#d6dade"/>
+  <circle cx="118" cy="65" r="4" fill="none" stroke="#6e777f" stroke-width="1.2"/>
+  <path d="M118 61v4l3 2" fill="none" stroke="#6e777f" stroke-width="1"/>
+  <text x="130" y="69" font-family="Arial, sans-serif" font-size="11" fill="#343a40">http://localhost/</text>
+  <path d="M512 59a6 6 0 1 0 0 12 6 6 0 0 0 0-12zm0 3v4l3 2" fill="none" stroke="#687078" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="529" cy="65" r="1.5" fill="#687078"/>
+  <circle cx="529" cy="60" r="1.5" fill="#687078"/>
+  <circle cx="529" cy="70" r="1.5" fill="#687078"/>
+
+  <!-- XAMPP welcome page -->
+  <rect x="18" y="82" width="524" height="245" fill="#fff"/>
+  <rect x="18" y="82" width="524" height="43" fill="#263640"/>
+  <g transform="translate(35 92)">
+    <path d="M1 7l12-6 12 6v14l-12 6-12-6z" fill="none" stroke="#f28c28" stroke-width="2"/>
+    <path d="M7 8l12 11M19 8L7 19" stroke="#f28c28" stroke-width="2.3" stroke-linecap="round"/>
+  </g>
+  <text x="69" y="109" font-family="Arial, sans-serif" font-size="17" font-weight="700" fill="#fff">XAMPP</text>
+  <text x="142" y="108" font-family="Arial, sans-serif" font-size="10" fill="#cbd3d8">APACHE FRIENDS</text>
+  <text x="420" y="108" font-family="Arial, sans-serif" font-size="10" fill="#dce2e5">Documentación</text>
+
+  <rect x="18" y="125" width="524" height="112" fill="url(#hero)"/>
+  <text x="45" y="159" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#fff">¡Bienvenido a XAMPP!</text>
+  <text x="46" y="182" font-family="Arial, sans-serif" font-size="12" fill="#fff">Tu servidor web local está funcionando correctamente.</text>
+  <text x="46" y="204" font-family="Arial, sans-serif" font-size="11" fill="#fff">Apache y MySQL están listos para usar.</text>
+  <rect x="46" y="214" width="103" height="25" rx="3" fill="#fff"/>
+  <text x="97.5" y="230" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#d96617">Más información</text>
+
+  <text x="45" y="260" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#35434b">Primeros pasos</text>
+  <line x1="45" y1="267" x2="515" y2="267" stroke="#e4e8eb"/>
+  <rect x="45" y="278" width="224" height="35" rx="3" fill="#f7f8f9" stroke="#e1e5e8"/>
+  <circle cx="61" cy="295" r="8" fill="#e97922"/>
+  <text x="61" y="298" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#fff">1</text>
+  <text x="76" y="293" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#36434a">Panel de control</text>
+  <text x="76" y="305" font-family="Arial, sans-serif" font-size="9" fill="#6d777d">Administra los servicios de XAMPP</text>
+  <rect x="282" y="278" width="233" height="35" rx="3" fill="#f7f8f9" stroke="#e1e5e8"/>
+  <circle cx="298" cy="295" r="8" fill="#e97922"/>
+  <text x="298" y="298" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#fff">2</text>
+  <text x="313" y="293" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#36434a">phpMyAdmin</text>
+  <text x="313" y="305" font-family="Arial, sans-serif" font-size="9" fill="#6d777d">Gestiona tus bases de datos</text>
 </svg>

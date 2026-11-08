@@ -1055,7 +1055,7 @@
           <span class="part__time">≈ 15 min</span>
         </section>
 
-        <article class="step step--split" id="paso-4" data-step="4">
+        <article class="step" id="paso-4" data-step="4">
           <header class="step__head">
             <span class="step__num" aria-hidden="true">4</span>
             <h3 class="step__title">Encender Apache y MySQL</h3>
@@ -1063,73 +1063,47 @@
               ><input type="checkbox" data-done="4" /><span>Hecho</span></label
             >
           </header>
-          <div class="step__grid">
-            <div>
-              <ol class="actions">
-                <li>
-                  En la fila <strong>Apache</strong>, pulsa
-                  <strong>Start</strong>.
-                </li>
-                <li>
-                  En la fila <strong>MySQL</strong>, pulsa
-                  <strong>Start</strong>.
-                </li>
-                <li>Espera unos segundos.</li>
-              </ol>
-              <div class="check">
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#0b6b52"
-                  stroke-width="2.4"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M20 6 9 17l-5-5" />
-                </svg>
-                <p>
-                  <strong>Comprueba:</strong> los dos botones ahora dicen
-                  <strong>Stop</strong> y los nombres se ponen
-                  <strong>en verde</strong>. Aparecen los números
-                  <strong>80</strong> y <strong>3306</strong>.
-                </p>
-              </div>
-            </div>
-            <div>
-              <figure class="fig">
-                <div class="svgpad">
-                  <img src="../assets/svg/paso-4-panel-xampp.svg" width="560" height="320" role="img" aria-label="Panel de control real de XAMPP con servicios en ejecución" alt="" />
-                </div>
-                <figcaption>
-                  El verde es la única señal que importa. Si Apache se apaga
-                  solo, avisa al profesor.
-                </figcaption>
-              </figure>
-
-              <div
-                class="quiz"
-                data-quiz
-                data-okmsg="Con Stop se enciende; y al encenderse cambia a Stop."
-                data-errmsg="No. Start enciende el servicio. Stop lo apaga."
-              >
-                <p class="quiz__q">
-                  El botón de Apache dice «Stop». ¿Qué significa?
-                </p>
-                <div class="quiz__opts">
-                  <button class="opt" type="button" data-ok="true">
-                    Que ya está encendido
-                  </button>
-                  <button class="opt" type="button" data-ok="false">
-                    Que está apagado
-                  </button>
-                </div>
-                <p class="quiz__fb" role="status"></p>
-              </div>
-            </div>
+          <ol class="actions">
+            <li>
+              En la fila <strong>Apache</strong>, pulsa
+              <strong>Start</strong>.
+            </li>
+            <li>
+              En la fila <strong>MySQL</strong>, pulsa
+              <strong>Start</strong>.
+            </li>
+            <li>Espera unos segundos.</li>
+          </ol>
+          <div class="check">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#0b6b52"
+              stroke-width="2.4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M20 6 9 17l-5-5" />
+            </svg>
+            <p>
+              <strong>Comprueba:</strong> los dos botones ahora dicen
+              <strong>Stop</strong> y los nombres se ponen
+              <strong>en verde</strong>. Aparecen los números
+              <strong>80</strong> y <strong>3306</strong>.
+            </p>
           </div>
+          <figure class="fig fig--stacked">
+            <div class="svgpad">
+              <img src="../assets/svg/paso-4-panel-xampp.svg" width="560" height="320" role="img" aria-label="Panel de control real de XAMPP con servicios en ejecución" alt="" />
+            </div>
+            <figcaption>
+              El verde es la única señal que importa. Si Apache se apaga
+              solo, avisa al profesor.
+            </figcaption>
+          </figure>
           <details class="trouble">
             <summary>Si algo no sale</summary>
             <div class="trouble__body">
@@ -1146,7 +1120,7 @@
           </details>
         </article>
 
-        <article class="step step--split" id="paso-5" data-step="5">
+        <article class="step" id="paso-5" data-step="5">
           <header class="step__head">
             <span class="step__num" aria-hidden="true">5</span>
             <h3 class="step__title">Comprobar que el servidor responde</h3>
@@ -1154,63 +1128,57 @@
               ><input type="checkbox" data-done="5" /><span>Hecho</span></label
             >
           </header>
-          <div class="step__grid">
-            <div>
-              <ol class="actions">
-                <li>Abre el navegador.</li>
-                <li>
-                  Escribe <code>http://localhost/</code> en la barra de direcciones
-                  y pulsa <strong>Enter</strong>.
-                </li>
-              </ol>
-              <div class="chiprow">
-                <button class="chip" type="button" data-copy="http://localhost/">
-                  <svg
-                    width="13"
-                    height="13"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    aria-hidden="true"
-                  >
-                    <rect x="9" y="9" width="12" height="12" rx="2" />
-                    <path d="M5 15V5a2 2 0 0 1 2-2h10" />
-                  </svg>
-                  <span>http://localhost/</span>
-                </button>
-              </div>
-              <div class="check">
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#0b6b52"
-                  stroke-width="2.4"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M20 6 9 17l-5-5" />
-                </svg>
-                <p>
-                  <strong>Comprueba:</strong> sale la página de bienvenida de XAMPP.
-                  Si sale, <strong>ya tienes un servidor</strong>.
-                </p>
-              </div>
-            </div>
-            <div>
-              <figure class="fig">
-                <div class="svgpad">
-                  <img src="../assets/svg/paso-5-localhost.svg" width="560" height="340" role="img" aria-label="Página de bienvenida de XAMPP en localhost" alt="" />
-                </div>
-                <figcaption>
-                  La página de bienvenida de XAMPP confirma que el servidor está activo.
-                </figcaption>
-              </figure>
-            </div>
+          <ol class="actions">
+            <li>Abre el navegador.</li>
+            <li>
+              Escribe <code>http://localhost/</code> en la barra de direcciones
+              y pulsa <strong>Enter</strong>.
+            </li>
+          </ol>
+          <div class="chiprow">
+            <button class="chip" type="button" data-copy="http://localhost/">
+              <svg
+                width="13"
+                height="13"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                aria-hidden="true"
+              >
+                <rect x="9" y="9" width="12" height="12" rx="2" />
+                <path d="M5 15V5a2 2 0 0 1 2-2h10" />
+              </svg>
+              <span>http://localhost/</span>
+            </button>
           </div>
+          <div class="check">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#0b6b52"
+              stroke-width="2.4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M20 6 9 17l-5-5" />
+            </svg>
+            <p>
+              <strong>Comprueba:</strong> sale la página de bienvenida de XAMPP.
+              Si sale, <strong>ya tienes un servidor</strong>.
+            </p>
+          </div>
+          <figure class="fig fig--stacked">
+            <div class="svgpad">
+              <img src="../assets/svg/paso-5-localhost.svg" width="560" height="340" role="img" aria-label="Página de bienvenida de XAMPP en localhost" alt="" />
+            </div>
+            <figcaption>
+              La página de bienvenida de XAMPP confirma que el servidor está activo.
+            </figcaption>
+          </figure>
           <p style="margin-top: 1rem">
             <strong>«localhost» significa «mi propio ordenador»</strong>: es una
             dirección que solo funciona en tu equipo. No está en internet.
