@@ -811,12 +811,7 @@
           <span class="part__time">≈ 45 min</span>
         </section>
 
-        <article
-          class="step step--split"
-          id="paso-1"
-          data-step="1"
-          style="--fig-wide-span: 1 / -1"
-        >
+        <article class="step" id="paso-1" data-step="1">
           <header class="step__head">
             <span class="step__num" aria-hidden="true">1</span>
             <h3 class="step__title">Descargar XAMPP</h3>
@@ -824,96 +819,81 @@
               ><input type="checkbox" data-done="1" /><span>Hecho</span></label
             >
           </header>
-          <div class="step__grid">
-            <div>
-              <ol class="actions">
-                <li>Abre el navegador (Chrome, Edge o Firefox).</li>
-                <li>
-                  Haz <strong>un clic</strong> en la barra de direcciones, la
-                  franja blanca de arriba.
-                </li>
-                <li>
-                  Escribe la dirección de abajo y pulsa <strong>Enter</strong>.
-                </li>
-                <li>
-                  Baja un poco con la rueda hasta ver el botón
-                  <strong>XAMPP for Windows</strong> y púlsalo.
-                </li>
-                <li>Espera: la descarga empieza sola.</li>
-              </ol>
-              <div class="chiprow">
-                <button
-                  class="chip"
-                  type="button"
-                  data-copy="https://www.apachefriends.org/es/index.html"
-                >
-                  <svg
-                    width="13"
-                    height="13"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    aria-hidden="true"
-                  >
-                    <rect x="9" y="9" width="12" height="12" rx="2" />
-                    <path d="M5 15V5a2 2 0 0 1 2-2h10" />
-                  </svg>
-                  <span>https://www.apachefriends.org/es/index.html</span>
-                </button>
-              </div>
-              <div class="check">
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#0b6b52"
-                  stroke-width="2.4"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M20 6 9 17l-5-5" />
-                </svg>
-                <p>
-                  <strong>Comprueba:</strong> en la carpeta
-                  <strong>Descargas</strong> hay un archivo que empieza por
-                  <code>xampp-windows</code> y termina en <code>.exe</code>.
-                </p>
-              </div>
-            </div>
-            <div>
-              <figure class="fig fig--wide" style="max-width: 760px">
-                <div class="svgpad">
-                  <img src="../assets/svg/paso-1-barra-direcciones.svg" width="520" height="420" role="img" aria-label="Barra de direcciones del navegador frente a un buscador web" alt="" />
-                </div>
-                <figcaption>
-                  <b>Arriba:</b> barra de direcciones. <b>Abajo:</b> buscador.
-                  Si sabes la dirección, escríbela siempre arriba.
-                </figcaption>
-              </figure>
-
-              <div
-                class="quiz"
-                data-quiz
-                data-okmsg="La barra de direcciones lleva directo a la web."
-                data-errmsg="Casi. El buscador adivina y enseña anuncios; la barra de direcciones va directa."
+          <ol class="actions">
+            <li>Abre el navegador (Chrome, Edge o Firefox).</li>
+            <li>
+              Haz <strong>un clic</strong> en la barra de direcciones, la
+              franja blanca de arriba.
+            </li>
+            <li>
+              Escribe la dirección de abajo y pulsa <strong>Enter</strong>.
+            </li>
+            <li>
+              Baja un poco con la rueda hasta ver el botón
+              <strong>XAMPP for Windows</strong> y púlsalo.
+            </li>
+            <li>Espera: la descarga empieza sola.</li>
+          </ol>
+          <div class="chiprow">
+            <button
+              class="chip"
+              type="button"
+              data-copy="https://www.apachefriends.org/es/index.html"
+            >
+              <svg
+                width="13"
+                height="13"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                aria-hidden="true"
               >
-                <p class="quiz__q">
-                  ¿Dónde escribirías <code>apachefriends.org</code>?
-                </p>
-                <div class="quiz__opts">
-                  <button class="opt" type="button" data-ok="true">
-                    En la barra de direcciones
-                  </button>
-                  <button class="opt" type="button" data-ok="false">
-                    En el buscador
-                  </button>
-                </div>
-                <p class="quiz__fb" role="status"></p>
-              </div>
+                <rect x="9" y="9" width="12" height="12" rx="2" />
+                <path d="M5 15V5a2 2 0 0 1 2-2h10" />
+              </svg>
+              <span>https://www.apachefriends.org/es/index.html</span>
+            </button>
+          </div>
+          <div class="check">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#0b6b52"
+              stroke-width="2.4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M20 6 9 17l-5-5" />
+            </svg>
+            <p>
+              <strong>Comprueba:</strong> en la carpeta
+              <strong>Descargas</strong> hay un archivo que empieza por
+              <code>xampp-windows</code> y termina en <code>.exe</code>.
+            </p>
+          </div>
+          <figure class="fig fig--stacked">
+            <div class="svgpad">
+              <img src="../assets/svg/paso-1-barra-direcciones.svg" width="520" height="420" role="img" aria-label="Barra de direcciones del navegador frente a un buscador web" alt="" />
             </div>
+            <figcaption>
+              <b>Arriba:</b> barra de direcciones. <b>Abajo:</b> buscador. Si
+              sabes la dirección, escríbela siempre arriba.
+            </figcaption>
+          </figure>
+          <div
+            class="quiz"
+            data-quiz
+            data-okmsg="La barra de direcciones lleva directo a la web."
+            data-errmsg="Casi. El buscador adivina y enseña anuncios; la barra de direcciones va directa."
+          >
+            <p class="quiz__q">
+              ¿Dónde escribirías <code>apachefriends.org</code>?
+            </p>
+            <p class="quiz__fb" role="status"></p>
           </div>
           <details class="trouble">
             <summary>Si algo no sale</summary>

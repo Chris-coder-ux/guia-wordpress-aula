@@ -901,10 +901,11 @@ h1{
   .step--split[style*="--fig-wide-span"] .fig--wide{grid-column: var(--fig-wide-span);}
 }
 
-/* Ancho consistente para pasos sin grid (pasos 2, 3, 5, 7, 9, 11, 13, 14) */
+/* Ancho consistente para pasos sin grid (pasos 1, 2, 11, 12, 13 y 14) */
 .step:not(.step--split) > .actions,
 .step:not(.step--split) > .check,
 .step:not(.step--split) > .chiprow,
+.step:not(.step--split) > .quiz,
 .step:not(.step--split) > .trouble,
 .step:not(.step--split) > p,
 .step:not(.step--split) > table,
