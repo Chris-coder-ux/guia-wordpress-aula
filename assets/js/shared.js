@@ -1,6 +1,7 @@
 /* ============================================================
    IFCT0510 — JS compartido (SRP)
-   Progreso, tamaño de letra, botón copiar, impresión y rail activo.
+   Progreso, tamaño de letra, tema claro/oscuro, botón copiar,
+   impresión y rail activo.
    Cada módulo debe definir window.IFCT0510 ANTES de cargar este script:
      window.IFCT0510 = {
        key: 'ifct0510-<modulo>-progress.v1',
@@ -8,6 +9,8 @@
        total: <número de pasos>,
        sizes: ['100%','112.5%','125%','137.5%']
      };
+   El tema no forma parte de esa configuracion: es global del sitio y usa
+   siempre la clave 'ifct0510-theme.v1'.
    ============================================================ */
 (function(){
   'use strict';
@@ -196,6 +199,72 @@
       announce('Letra más pequeña.');
     });
   }
+
+  // ---------- tema claro/oscuro ----------
+  // El tema es una preferencia global del sitio: la paleta es la misma en las
+  // cuatro paginas, asi que se guarda bajo una clave comun y no por modulo.
+  // El script en linea del <head> lee la misma clave para aplicar el tema
+  // antes del primer pintado (evita el parpadeo); aqui se mantiene la logica
+  // y se actualiza el boton.
+  var THEME_KEY = 'ifct0510-theme.v1';
+  var root = document.documentElement;
+  var themeBtn = document.getElementById('theme-toggle');
+  var darkQuery = window.matchMedia
+    ? window.matchMedia('(prefers-color-scheme: dark)')
+    : null;
+  var themePref = null; // 'light' | 'dark' | null (null = seguir al sistema)
+
+  try{
+    var savedTheme = localStorage.getItem(THEME_KEY);
+    if(savedTheme === 'light' || savedTheme === 'dark') themePref = savedTheme;
+  }catch(e){}
+
+  function effectiveTheme(){
+    if(themePref) return themePref;
+    return (darkQuery && darkQuery.matches) ? 'dark' : 'light';
+  }
+
+  function applyTheme(){
+    // Sin eleccion propia se quita el atributo y manda la preferencia del
+    // sistema, que el CSS resuelve con prefers-color-scheme. Asi la pagina
+    // tambien funciona si el JavaScript no llega a cargarse.
+    if(themePref){
+      root.setAttribute('data-theme', themePref);
+    } else {
+      root.removeAttribute('data-theme');
+    }
+    if(themeBtn){
+      var label = effectiveTheme() === 'dark'
+        ? 'Cambiar a tema claro'
+        : 'Cambiar a tema oscuro';
+      themeBtn.setAttribute('aria-label', label);
+      themeBtn.setAttribute('title', label);
+    }
+  }
+
+  if(themeBtn){
+    themeBtn.addEventListener('click', function(){
+      themePref = effectiveTheme() === 'dark' ? 'light' : 'dark';
+      try{
+        localStorage.setItem(THEME_KEY, themePref);
+      }catch(e){
+        // En file:// algunos navegadores bloquean localStorage. El tema
+        // cambia igualmente en esta sesion; solo no se recuerda al recargar.
+      }
+      applyTheme();
+      announce(themePref === 'dark' ? 'Tema oscuro activado.' : 'Tema claro activado.');
+    });
+  }
+
+  // Mientras el usuario no elija tema, la pagina sigue en vivo los cambios de
+  // preferencia del sistema (por ejemplo, el cambio automatico de la noche).
+  if(darkQuery){
+    var onSystemTheme = function(){ applyTheme(); };
+    if(darkQuery.addEventListener) darkQuery.addEventListener('change', onSystemTheme);
+    else if(darkQuery.addListener) darkQuery.addListener(onSystemTheme);
+  }
+
+  applyTheme();
 
   // ---------- botón copiar ----------
   function legacyCopy(text){

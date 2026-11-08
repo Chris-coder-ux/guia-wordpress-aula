@@ -116,7 +116,7 @@ Si ves **cualquiera** de estas señales, **para y refuerza ese bloque** antes de
 
 | Recurso | Qué contiene | Cuándo usar |
 |---------|--------------|-------------|
-| `sesion-0/index.html` | Versión interactiva con progreso, toggle fuente, rail navegación | Pantalla grande del profesor / alumnado en sus puestos |
+| `sesion-0/index.html` | Versión interactiva con progreso, toggle fuente, rail navegación y toggle claro/oscuro | Pantalla grande del profesor / alumnado en sus puestos |
 | `sesion-0-primeros-pasos.md` | Versión alumno para imprimir (esta ficha sin notas profesor) | Repartir al inicio o tener en mesa |
 | Diagramas SVG en `sesion-0/index.html` | Escritorio, teclas, ratón, barra vs buscador | Proyectar durante explicación de cada bloque |
 

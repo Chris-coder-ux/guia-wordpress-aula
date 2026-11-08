@@ -209,6 +209,6 @@ Repasa la tabla de arriba. Señala cada zona y di para qué sirve.
 
 ---
 
-**Versión interactiva offline:** `sesion-0/index.html` (progreso guardado en navegador, imprimible A4, toggle tamaño fuente)  
+**Versión interactiva offline:** `sesion-0/index.html` (progreso guardado en navegador, imprimible A4, toggle tamaño fuente, toggle claro/oscuro)  
 **Versión técnica:** `guia-docente-sesion-0.md`  
 **Práctica siguiente:** `practica-xampp/index.html` → *Instalar XAMPP y WordPress en local*

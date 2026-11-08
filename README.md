@@ -79,6 +79,7 @@ Los archivos en `material/*.md` están listos para:
 - ✅ **Contraste AA**: Tokens `--ink`/`--panel`/`--signal` validados
 - ✅ **Navegación teclado**: `Skip link`, `:focus-visible`, `tabindex` correctos
 - ✅ **Redimensionable**: Toggle tamaño fuente (100 % → 137.5 %) persistido
+- ✅ **Tema claro/oscuro**: toggle manual en la barra superior con preferencia del sistema por defecto, persistencia en `localStorage` y anuncio para lectores de pantalla; la impresión siempre sale en claro
 - ✅ **Preferencias sistema**: `prefers-reduced-motion`, `prefers-contrast`, `forced-colors`
 - ✅ **Áreas táctiles ≥ 44 px**: Botones, chips, checkboxes
 - ✅ **Offline total**: Abre con doble clic, funciona en red aislada del aula
@@ -89,8 +90,8 @@ Los archivos en `material/*.md` están listos para:
 
 - **HTML5 semántico** + **CSS custom properties** (tokens en `:root`)
 - **Vanilla JS** (ES2020) — `localStorage` por módulo (`ifct0510-portada-*`, `ifct0510-s0-*`, `ifct0510-xampp-*`, `ifct0510-gutenberg-*`)
-- **Claves de progreso** — `ifct0510-portada-progress.v1`, `ifct0510-s0-progress.v1`, `ifct0510-xampp-progress.v1`, `ifct0510-gutenberg-progress.v3` (más las `*-font.v1` para el tamaño de letra)
-- **Gate estático de UI** — `scripts/check-ui.ps1` valida el rail, el índice móvil, el foco del salto al contenido y las claves de progreso (`-Fail` devuelve error de salida)
+- **Claves de progreso** — `ifct0510-portada-progress.v1`, `ifct0510-s0-progress.v1`, `ifct0510-xampp-progress.v1`, `ifct0510-gutenberg-progress.v3` (más las `*-font.v1` para el tamaño de letra) y la clave global `ifct0510-theme.v1` para el tema claro/oscuro
+- **Gate estático de UI** — `scripts/check-ui.ps1` valida el rail, el índice móvil, el foco del salto al contenido, las claves de progreso/tema y que los dos bloques de tema oscuro del CSS declaren los mismos tokens (`-Fail` devuelve error de salida)
 - **SVG inline/externo** — diagramas esquemáticos a mano (estilo manual de taller)
 - **Arquitectura SRP**: cada módulo = su HTML; `assets/css/shared.css` + `assets/js/shared.js` compartidos
 - **Git** — histórico en `master`, commits atómicos por fase

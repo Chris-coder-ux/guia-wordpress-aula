@@ -151,6 +151,67 @@ function Test-CssRule {
   return [regex]::IsMatch($Css, '\.' + [regex]::Escape($Class) + '(?![a-zA-Z0-9_-])')
 }
 
+# Devuelve el cuerpo de la primera regla que empieza por el selector dado,
+# equilibando las llaves. Se usa para comparar los dos bloques del tema oscuro.
+function Get-CssBlockBody {
+  param([string]$Css, [string]$Selector)
+  if ([string]::IsNullOrEmpty($Css)) { return $null }
+  $idx = $Css.IndexOf($Selector)
+  if ($idx -lt 0) { return $null }
+  $open = $Css.IndexOf('{', $idx)
+  if ($open -lt 0) { return $null }
+  $depth = 0
+  for ($i = $open; $i -lt $Css.Length; $i++) {
+    $c = $Css[$i]
+    if ($c -eq '{') { $depth++ }
+    elseif ($c -eq '}') {
+      $depth--
+      if ($depth -eq 0) { return $Css.Substring($open + 1, $i - $open - 1) }
+    }
+  }
+  return $null
+}
+
+# Normaliza un cuerpo de regla para comparar solo los valores declarados, no
+# el formato (comentarios, saltos de linea y espacios).
+function Get-CssDeclarations {
+  param([string]$Body)
+  if ($null -eq $Body) { return $null }
+  $t = [regex]::Replace($Body, '/\*[\s\S]*?\*/', '')
+  $t = [regex]::Replace($t, '\s+', '')
+  return $t
+}
+
+# --- E114: los dos bloques del tema oscuro deben declarar lo mismo ------------
+# El tema oscuro se declara dos veces en shared.css: una para la preferencia
+# del sistema y otra para la eleccion manual (data-theme="dark"). Si las dos
+# listas se desincronizan, el boton de tema y la pagina se ven distintos
+# segun como se haya llegado al tema oscuro.
+$darkSystem = Get-CssDeclarations (Get-CssBlockBody $css ':root:not([data-theme="light"])')
+$darkManual = Get-CssDeclarations (Get-CssBlockBody $css ':root[data-theme="dark"]')
+if ($null -eq $darkSystem) {
+  Add-Finding -Severity 'ERROR' -Code 'E114' -File 'assets/css/shared.css' -Line 1 `
+    -Message 'no se encuentra el bloque de tema oscuro por preferencia del sistema (:root:not([data-theme="light"]))'
+} elseif ($null -eq $darkManual) {
+  Add-Finding -Severity 'ERROR' -Code 'E114' -File 'assets/css/shared.css' -Line 1 `
+    -Message 'no se encuentra el bloque de tema oscuro manual (:root[data-theme="dark"])'
+} elseif ($darkSystem -ne $darkManual) {
+  Add-Finding -Severity 'ERROR' -Code 'E114' -File 'assets/css/shared.css' -Line 1 `
+    -Message 'los dos bloques de tema oscuro no declaran los mismos tokens: el tema manual se veria distinto del tema del sistema'
+}
+
+# --- E115: la clave de tema debe ser la misma en el <head> y en shared.js -----
+# El <head> lleva un script en linea que aplica el tema guardado antes del
+# primer pintado. Si su clave no coincide con la de shared.js, el boton
+# guardaria la preferencia en un sitio y el <head> leeria otro.
+$jsPath = Join-Path $Root 'assets\js\shared.js'
+$js = ''
+if (Test-Path -LiteralPath $jsPath) {
+  $js = Get-Content -LiteralPath $jsPath -Raw -Encoding UTF8
+}
+$jsThemeKey = ''
+if ($js -match "THEME_KEY\s*=\s*'([^']+)'") { $jsThemeKey = $Matches[1] }
+
 # --- recorrido de las paginas ----------------------------------------------
 
 foreach ($target in $Targets) {
@@ -190,6 +251,44 @@ foreach ($target in $Targets) {
   if ($cfgKey -and $cfgKey -notmatch '^ifct0510-[a-z0-9]+-progress\.v[0-9]+$') {
     Add-Finding -Severity 'ERROR' -Code 'E110' -File $relative -Line 1 `
       -Message "clave de progreso '$cfgKey' fuera del formato 'ifct0510-<modulo>-progress.vN'"
+  }
+
+  # --- E115: clave de tema coherente entre el <head> y shared.js --------------
+  # El <head> lleva un script en linea que aplica el tema guardado antes del
+  # primer pintado. Si su clave no coincide con la de shared.js, el boton
+  # guardaria la preferencia en un sitio y el <head> leeria otro.
+  $pageThemeKey = ''
+  foreach ($m in [regex]::Matches($text, 'localStorage\.getItem\(\s*[''"]([^''"]+)[''"]\s*\)')) {
+    if ($m.Groups[1].Value -match '^ifct0510-theme') { $pageThemeKey = $m.Groups[1].Value }
+  }
+  if (-not $pageThemeKey) {
+    Add-Finding -Severity 'ERROR' -Code 'E115' -File $relative -Line 1 `
+      -Message 'no se encuentra el script del <head> que aplica el tema guardado antes del primer pintado'
+  } elseif ($pageThemeKey -notmatch '^ifct0510-theme\.v[0-9]+$') {
+    Add-Finding -Severity 'ERROR' -Code 'E115' -File $relative -Line 1 `
+      -Message "clave de tema '$pageThemeKey' fuera del formato 'ifct0510-theme.vN'"
+  } elseif ($jsThemeKey -and $pageThemeKey -ne $jsThemeKey) {
+    Add-Finding -Severity 'ERROR' -Code 'E115' -File $relative -Line 1 `
+      -Message "el <head> usa la clave de tema '$pageThemeKey' y shared.js usa '$jsThemeKey': el tema guardado no se aplicaria al abrir la pagina"
+  }
+
+  # --- E116: boton de tema presente y con nombre accesible -------------------
+  $toggleMatch = [regex]::Match($text, '<button\b[^>]*\bid="theme-toggle"[^>]*>')
+  if (-not $toggleMatch.Success) {
+    Add-Finding -Severity 'ERROR' -Code 'E116' -File $relative -Line 1 `
+      -Message 'no hay boton #theme-toggle en la barra superior'
+  } else {
+    $toggleLine = Get-LineNumber $text $toggleMatch.Index
+    if ($toggleMatch.Value -notmatch 'aria-label=') {
+      Add-Finding -Severity 'ERROR' -Code 'E116' -File $relative -Line $toggleLine `
+        -Message 'el boton #theme-toggle no tiene aria-label: un lector de pantalla no sabria que hace' `
+        -Snippet $toggleMatch.Value
+    }
+    if ($toggleMatch.Value -notmatch 'title=') {
+      Add-Finding -Severity 'WARN' -Code 'W116' -File $relative -Line $toggleLine `
+        -Message 'el boton #theme-toggle no tiene title: el icono no explica su funcion a quien no lo distingue' `
+        -Snippet $toggleMatch.Value
+    }
   }
 
   # --- E111: el numero de pasos que anuncia el hero frente a los reales ------
