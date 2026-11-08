@@ -13,7 +13,7 @@ Material didáctico **imprimible, interactivo y offline** para el certificado **
 | Carpeta / Archivo | Qué es | Para quién |
 |-------------------|--------|------------|
 | `index.html` | Portada con enlaces a los 3 módulos | Alumnado / Profesorado |
-| `sesion-0/` | **Sesión 0** · Primeros pasos (ratón, teclado, carpetas, capturas) — 12 pasos, ~90 min | Alumnado sin experiencia |
+| `sesion-0/` | **Sesión 0** · Primeros pasos (ratón, teclado, carpetas, capturas) — 11 pasos, ~90 min | Alumnado sin experiencia |
 | `practica-xampp/` | **Práctica principal** · Instalar XAMPP + WordPress en local — 14 pasos, 3 sesiones de 60 min | Alumnado |
 | `practica-gutenberg/` | **Primera sesión de Gutenberg** · Crear una página con bloques básicos — 12 pasos, 60 min | Alumnado (tras XAMPP) |
 | `assets/` | CSS/JS/SVGs compartidos (SRP) | — (infraestructura) |

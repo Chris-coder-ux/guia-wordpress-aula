@@ -1,6 +1,6 @@
 # Sesión 0 · Primeros pasos con el ordenador
 
-**Certificado:** IFCT0510 · **Tiempo:** ~90 minutos (12 pasos)  
+**Certificado:** IFCT0510 · **Tiempo:** ~90 minutos (11 pasos)
 **Nivel:** Desde cero — *no hace falta haber usado un ordenador nunca*  
 **Objetivo:** Llegar a saber encender, usar ratón/teclado, navegar, descargar, carpetas y capturas.  
 **Después de esto:** estarás listo para la práctica de **XAMPP + WordPress**.
@@ -189,31 +189,6 @@ Repasa la tabla de arriba. Señala cada zona y di para qué sirve.
 
 ---
 
-### 12. Notas para el profesorado (organización)
-<details>
-<summary>Ver organización de la sesión (90 min)</summary>
-
-| Minutos | Bloque |
-|---------|--------|
-| 0-10 | Encendido, escritorio, presentación |
-| 10-30 | Ratón: 4 movimientos + ejercicios |
-| 30-45 | Teclado: teclas y símbolos (`:`, `/`, `.`, `@`) |
-| 45-50 | **Descanso** |
-| 50-65 | Navegador: barra vs buscador, pestañas |
-| 65-80 | Descargas y carpetas |
-| 80-90 | Captura + lista de comprobación |
-
-**Señales de que el grupo no está listo:** confunden barra/buscador, no encuentran archivo descargado, no saben doble clic, escriben `;` donde va `:`, no saben captura.
-
-**Adaptaciones:** puntero grande/color, pegatinas en teclado (`Enter`, `Shift`, `Ctrl`, punto), parejas (uno maneja, otro dicta), imprimir ficha, repetir ejercicios de puntería.
-
-**Evaluación:** observación directa con lista del paso 10. Un ítem sin marcar = repetir ese bloque.
-</details>
-
-☐ **Hecho** — *Has revisado las notas (si eres profesor) o las has leído (si eres alumno curioso)*
-
----
-
 ## 🎯 CHULETA FINAL — Direcciones y atajos
 
 | Copia y pega en el navegador |
@@ -228,7 +203,7 @@ Repasa la tabla de arriba. Señala cada zona y di para qué sirve.
 ---
 
 ## 📎 Entregables de esta sesión (si el profesor lo pide)
-- Hoja de progreso (esta tabla de 12 pasos) marcada
+- Hoja de progreso (esta tabla de 11 pasos) marcada
 - Captura de pantalla del escritorio con tu carpeta creada
 - Captura de la Calculadora abierta
 
