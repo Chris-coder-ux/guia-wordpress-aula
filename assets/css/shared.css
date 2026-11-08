@@ -641,6 +641,21 @@ main{min-width:0}
   color:var(--ink-2);
 }
 
+/* Intro del rail: texto orientativo bajo la lista de módulos. Usa tokens del
+   sistema en vez de estilo en línea, para mantener la consistencia del
+   sistema de diseño. */
+.rail__intro{
+  margin-top:1.2rem;
+  font-size:.8rem;
+  color:var(--ink-2);
+}
+
+/* Botón "Borrar mi progreso" dentro del índice móvil del rail. */
+.rail__reset{
+  font-size:.8rem;
+  padding:.25rem .5rem;
+}
+
 /* ---------- hero ---------- */
 .hero{margin-bottom:3rem}
 h1{
