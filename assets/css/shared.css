@@ -901,7 +901,7 @@ h1{
   .step--split[style*="--fig-wide-span"] .fig--wide{grid-column: var(--fig-wide-span);}
 }
 
-/* Ancho consistente para pasos sin grid (pasos 3, 5, 7, 9, 11, 13, 14) */
+/* Ancho consistente para pasos sin grid (pasos 2, 3, 5, 7, 9, 11, 13, 14) */
 .step:not(.step--split) > .actions,
 .step:not(.step--split) > .check,
 .step:not(.step--split) > .chiprow,
@@ -1036,6 +1036,28 @@ figure.fig svg{
   height:100%;
   object-fit:contain;
 }
+
+/* Figura apilada bajo el texto: más ancho útil y proporción de la imagen */
+figure.fig--stacked{
+  max-width:680px;
+  margin:1.6rem auto 0;
+}
+figure.fig--stacked .svgpad{
+  aspect-ratio:auto;
+  padding:1rem;
+}
+figure.fig--stacked .svgpad img{
+  display:block;
+  width:100%;
+  height:auto;
+}
+figure.fig--stacked figcaption{
+  max-width:560px;
+  margin:.5rem auto 0;
+  /* Dos líneas equilibradas: evita una palabra suelta en la última línea */
+  text-wrap:balance;
+}
+
 .step--split .fig--wide{
   justify-self:center;
   width:100%;
