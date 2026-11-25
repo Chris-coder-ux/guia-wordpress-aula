@@ -47,6 +47,12 @@ __pycache__/
 *.bak
 *.restored
 
+# --- No parte de la guía docente (se conservan en disco, no se suben a GitHub) ---
+scripts/
+AGENTS.md
+kahoot_import.xlsx
+kahoot_quiz.pdf
+
 # --- Archivos del sistema operativo ---
 .DS_Store
 Thumbs.db
