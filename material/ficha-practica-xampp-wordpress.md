@@ -2,7 +2,7 @@
 
 **Con XAMPP y WordPress, paso a paso y sin prisa**
 
-> **Certificado:** IFCT0510 · ⟨nombre según tu centro⟩
+> **Certificado:** IFCD0110 · ⟨nombre según tu centro⟩
 > **Módulo / Unidad:** ⟨…⟩ · **Sesión:** ⟨…⟩
 > **Tiempo:** 3 sesiones de 60 minutos (no hace falta correr)
 > **Nivel de la práctica:** desde cero.

@@ -224,8 +224,8 @@ foreach ($target in $Targets) {
   $text     = Get-Content -LiteralPath $full -Raw -Encoding UTF8
   $relative = $target.Path.Replace('\','/')
 
-  # --- configuracion de IFCT0510 -------------------------------------------
-  $cfgMatch = [regex]::Match($text, 'window\.IFCT0510\s*=\s*\{([\s\S]*?)\}')
+  # --- configuracion de IFCD0110 -------------------------------------------
+  $cfgMatch = [regex]::Match($text, 'window\.IFCD0110\s*=\s*\{([\s\S]*?)\}')
   $cfgKey = ''; $cfgFontKey = ''; $cfgTotal = $null
   if ($cfgMatch.Success) {
     $cfg = $cfgMatch.Groups[1].Value
@@ -497,7 +497,7 @@ foreach ($kind in @('Key', 'FontKey')) {
 
 # --- informe -----------------------------------------------------------------
 Write-Host ''
-Write-Host '== IFCT0510 · validacion de UI (rail / indice / progreso) ==' -ForegroundColor Cyan
+Write-Host '== IFCD0110 · validacion de UI (rail / indice / progreso) ==' -ForegroundColor Cyan
 Write-Host "Paginas comprobadas: $($Targets.Count)   Modulos: $($storage.Count)"
 Write-Host ''
 

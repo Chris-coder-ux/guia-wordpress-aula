@@ -1,6 +1,6 @@
 # Guía docente · Práctica de extensión: Crear una web con WordPress y Gutenberg
 
-**Certificado:** IFCT0510 · **Módulo:** Publicación web con CMS  
+**Certificado:** IFCD0110 · **Módulo:** Publicación web con CMS  
 **Duración:** 60 minutos (10 pasos) · **Requiere:** haber superado `practica-xampp` (WordPress instalado y accesible)  
 **Alumnado:** Adultos con alfabetización digital básica (ya saben ratón, teclado, navegador, carpetas)  
 **Modalidad:** Individual en puesto propio · WordPress ya instalado en local (`http://localhost/miwordpress/`)  

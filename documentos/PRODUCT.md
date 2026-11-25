@@ -6,7 +6,7 @@ Material didáctico imprimible e interactivo para una práctica de aula: instala
 
 ## Para quién
 
-- **Alumnado** de un certificado de profesionalidad de la familia Informática y Comunicaciones (código de carpeta IFCT0510), muchas veces **sin experiencia previa con ordenadores**. Adultos, en aula, con equipo Windows del centro, luz fluorescente, material impreso en A4 y proyección en pantalla.
+- **Alumnado** de un certificado de profesionalidad de la familia Informática y Comunicaciones (código de carpeta IFCD0110), muchas veces **sin experiencia previa con ordenadores**. Adultos, en aula, con equipo Windows del centro, luz fluorescente, material impreso en A4 y proyección en pantalla.
 - **Profesorado**, que necesita el mismo contenido con criterios de evaluación.
 
 ## Trabajo a resolver
@@ -22,7 +22,7 @@ Que una persona que nunca ha usado un ordenador llegue sola, sin perder el hilo,
 
 ## Suposiciones (declaradas, no verificadas)
 
-- El grupo es de nivel 1 aunque el código IFCT0510 corresponda a nivel 3 en el catálogo estatal; pendiente de confirmar con el centro.
+- El grupo es de nivel 1 aunque el código IFCD0110 corresponda a nivel 3 en el catálogo estatal; pendiente de confirmar con el centro.
 - Sistema operativo mayoritario: Windows 10/11. Las variantes de macOS se mencionan, no se ilustran.
 - El alumnado dispone de permisos de administrador en el equipo de aula.
 

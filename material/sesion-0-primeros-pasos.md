@@ -1,6 +1,6 @@
 # Sesión 0 · Primeros pasos con el ordenador
 
-**Certificado:** IFCT0510 · **Tiempo:** ~90 minutos (11 pasos)
+**Certificado:** IFCD0110 · **Tiempo:** ~90 minutos (11 pasos)
 **Nivel:** Desde cero — *no hace falta haber usado un ordenador nunca*  
 **Objetivo:** Llegar a saber encender, usar ratón/teclado, navegar, descargar, carpetas y capturas.  
 **Después de esto:** estarás listo para la práctica de **XAMPP + WordPress**.

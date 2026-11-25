@@ -1,6 +1,6 @@
 # Guía docente · Sesión 0: Primeros pasos con el ordenador
 
-**Certificado:** IFCT0510 · **Módulo:** Alfabetización digital / Iniciación a la informática  
+**Certificado:** IFCD0110 · **Módulo:** Alfabetización digital / Iniciación a la informática  
 **Duración:** 90 minutos (1 descanso de 5 min a los 45 min)  
 **Alumnado:** Adultos, muchas veces sin experiencia previa con ordenadores  
 **Modalidad:** Individual en puesto propio · Windows 10/11 (macOS: mencionar diferencias, no ilustrar)  
@@ -159,7 +159,7 @@ Si ves **cualquiera** de estas señales, **para y refuerza ese bloque** antes de
 ## 11. Notas de versión
 
 - **v1.0** (octubre 2026): Primera versión estructurada a partir de `sesion-0/index.html` y `guia-docente-xampp-wordpress.md`
-- **Fuentes:** Certificado IFCT0510, experiencia docente en alfabetización digital adultos
+- **Fuentes:** Certificado IFCD0110, experiencia docente en alfabetización digital adultos
 - **Mantenimiento:** Revisar cada curso — actualizar capturas si cambia Windows, añadir adaptaciones nuevas
 
 ---

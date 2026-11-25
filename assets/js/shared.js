@@ -1,9 +1,9 @@
 /* ============================================================
-   IFCT0510 — JS compartido (SRP)
+   IFCD0110 — JS compartido (SRP)
    Progreso, tamaño de letra, tema claro/oscuro, botón copiar,
    impresión y rail activo.
-   Cada módulo debe definir window.IFCT0510 ANTES de cargar este script:
-     window.IFCT0510 = {
+   Cada módulo debe definir window.IFCD0110 ANTES de cargar este script:
+     window.IFCD0110 = {
        key: 'ifct0510-<modulo>-progress.v1',
        fontKey: 'ifct0510-<modulo>-font.v1',
        total: <número de pasos>,
@@ -15,7 +15,7 @@
 (function(){
   'use strict';
 
-  var cfg = window.IFCT0510 || {};
+  var cfg = window.IFCD0110 || {};
   var KEY = cfg.key || 'ifct0510-progress.v1';
   var FONTKEY = cfg.fontKey || 'ifct0510-font.v1';
   var SIZES = cfg.sizes || ['100%','112.5%','125%','137.5%'];
@@ -116,6 +116,14 @@
     }
 
     document.body.classList.toggle('all-done', n === total && total > 0);
+
+    // Actualizar aria-pressed en labels .tick
+    Array.prototype.forEach.call(document.querySelectorAll('.tick'), function(label){
+      var cb = label.querySelector('input[type="checkbox"]');
+      if(cb){
+        label.setAttribute('aria-pressed', cb.checked ? 'true' : 'false');
+      }
+    });
   }
 
   loadDone();
@@ -133,6 +141,24 @@
       save();
       render();
     });
+  });
+
+  // ---------- atajo teclado en checkboxes .tick (Space/Enter) ----------
+  Array.prototype.forEach.call(document.querySelectorAll('.tick'), function(label){
+    label.addEventListener('keydown', function(ev){
+      if(ev.key === ' ' || ev.key === 'Enter'){
+        ev.preventDefault();
+        var cb = label.querySelector('input[type="checkbox"]');
+        if(cb){
+          cb.checked = !cb.checked;
+          cb.dispatchEvent(new Event('change', { bubbles: true }));
+        }
+      }
+    });
+    // Hacer focusable para accesibilidad
+    label.setAttribute('tabindex', '0');
+    label.setAttribute('role', 'button');
+    label.setAttribute('aria-pressed', 'false');
   });
 
   var countEl = document.getElementById('total');

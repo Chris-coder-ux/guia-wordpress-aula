@@ -1,10 +1,10 @@
 # Ficha de prácticas · Instalación de XAMPP y WordPress en local
 
-> **Certificado / Módulo:** IFCT0510 · *Gestión de sistemas informáticos*
+> **Certificado / Módulo:** IFCD0110 · *Gestión de sistemas informáticos*
 > **Unidad:** ⟨UD / RA⟩ · **Sesión:** ⟨nº⟩
 
 > 🛈 **Nota de verificación (leer antes de imprimir)**
-> El catálogo estatal asigna al código **IFCT0510** la denominación *«Gestión de sistemas informáticos»* con **nivel de cualificación 3** (500-510 h): Junta de Andalucía, Xunta de Galicia y Gobierno de Navarra coinciden. El nivel 1 de la misma familia es **IFCT0108** *«Operaciones auxiliares de montaje y mantenimiento de sistemas microinformáticos»*.
+> El catálogo estatal asigna al código **IFCD0110** la denominación *«Gestión de sistemas informáticos»* con **nivel de cualificación 3** (500-510 h): Junta de Andalucía, Xunta de Galicia y Gobierno de Navarra coinciden. El nivel 1 de la misma familia es **IFCT0108** *«Operaciones auxiliares de montaje y mantenimiento de sistemas microinformáticos»*.
 > Si el grupo es realmente de nivel 1, conviene **confirmar con el centro** el código correcto antes de imprimir esta cabecera. El contenido de la práctica no cambia; el documento para el alumnado (`ficha-practica-xampp-wordpress.md`) ya no menciona ningún nivel.
 > **Duración estimada:** 120 min (2 sesiones de 60 min)
 > **Dificultad:** Inicial · **Modalidad:** Individual en puesto propio
@@ -184,7 +184,7 @@ Marca cada casilla y adjunta la **evidencia** indicada. La práctica se consider
 2. **Tabla de incidencias** (sección 6): al menos **una** incidencia real o simulada y su resolución.
 3. **Ficha técnica del entorno:** versión de XAMPP, versión de PHP y MySQL (visibles en `http://localhost/dashboard/`), y ruta final del proyecto.
 
-**Nomenclatura del archivo:** `IFCT0510_practica_xampp_⟨apellidos⟩.pdf`
+**Nomenclatura del archivo:** `IFCD0110_practica_xampp_⟨apellidos⟩.pdf`
 
 ---
 

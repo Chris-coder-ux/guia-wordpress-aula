@@ -24,8 +24,8 @@ Local markdown: issues live as files under `.scratch/<feature>/`. See `docs/agen
 
 ### Triage labels
 
-Default vocabulary: `needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`. See `docs/agents/triage-labels.md`.
+Default vocabulary for trackers that support labels: the canonical triage roles; in this repo's markdown tracker the role goes in an implementation issue's `Status:` line. See `docs/agents/triage-labels.md` for the strings and `docs/agents/issue-tracker.md` for the tracker format.
 
 ### Domain docs
 
-Single-context: one `GLOSSARY.md` + `docs/adr/` at the repo root. See `docs/agents/domain.md`.
+Before exploring the codebase: read `GLOSSARY.md` and the ADRs under `docs/adr/` that touch the area you're about to work in; skip any that are absent and proceed silently. See `docs/agents/domain.md`.

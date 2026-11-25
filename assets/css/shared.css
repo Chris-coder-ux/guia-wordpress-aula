@@ -1,5 +1,5 @@
 /* ============================================================
-   IFCT0510 — SVG: tokens, escala y utilidades
+   IFCD0110 — SVG: tokens, escala y utilidades
    Sistema comun para los diagramas e iconos SVG del proyecto.
    Los diagramas son inline en cada HTML; esta hoja define la
    escala (radios, grosores, tipografia) y las utilidades que
@@ -90,7 +90,7 @@
 
 
 /* ============================================================
-   IFCT0510 — CSS compartido (SRP)
+   IFCD0110 — CSS compartido (SRP)
    Tokens, reset, layout, componentes y impresión.
    Se carga en todos los módulos: sesion-0, practica-gutenberg,
    practica-xampp. Cada módulo solo aporta su propio contenido.

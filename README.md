@@ -1,6 +1,6 @@
-# IFCT0510 · Prácticas de aula — XAMPP + WordPress + Gutenberg
+# IFCD0110 · Prácticas de aula — XAMPP + WordPress + Gutenberg
 
-Material didáctico **imprimible, interactivo y offline** para el certificado **IFCT0510** (Gestión de sistemas informáticos).
+Material didáctico **imprimible, interactivo y offline** para el certificado **IFCD0110** (Gestión de sistemas informáticos).
 
 > **Público:** Alumnado desde cero (nunca ha usado un ordenador) · Adultos en aula · Equipos Windows 10/11 del centro  
 > **Formato:** HTML autónomo (sin internet, sin CDN, sin build) + Markdown para imprimir/entregar  
@@ -156,4 +156,4 @@ Si algo no funciona en el aula:
 
 ---
 
-*Generado y mantenido para el certificado IFCT0510. Última actualización: octubre 2026.*
+*Generado y mantenido para el certificado IFCD0110. Última actualización: octubre 2026.*

@@ -4,13 +4,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="light dark" />
-    <title>IFCT0510 · Prácticas de aula · XAMPP y WordPress</title>
+    <meta name="wordpress-version" content="6.6+" />
+    <meta name="gutenberg-version" content="18.10+" />
+    <title>IFCD0110 · Prácticas de aula · XAMPP y WordPress</title>
     <link rel="stylesheet" href="assets/css/shared.css" />
     <link rel="icon" type="image/svg+xml" href="assets/svg/favicon.svg" />
     <script>
-      /* Aplica el tema guardado antes del primer pintado, para que la pagina
-         no parpadee al abrirla. Si no hay tema guardado, el CSS usa la
-         preferencia del sistema: esta pagina tambien funciona sin JavaScript. */
       try {
         var t = localStorage.getItem("ifct0510-theme.v1");
         if (t === "light" || t === "dark") {
@@ -24,56 +23,16 @@
     <header class="topbar">
       <div class="topbar__in">
         <div class="brand">
-          <img
-            src="assets/svg/logo.svg"
-            width="26"
-            height="26"
-            alt=""
-            aria-hidden="true"
-          />
-          <span>IFCT0510 · Prácticas de aula</span>
+          <img src="assets/svg/logo.svg" width="26" height="26" alt="" aria-hidden="true" />
+          <span>IFCD0110 · Prácticas de aula</span>
         </div>
         <div class="tools">
-          <button
-            class="btn btn--quiet noprint"
-            type="button"
-            id="font-minus"
-            aria-label="Reducir el tamaño de la letra"
-          >
-            A−
-          </button>
-          <button
-            class="btn btn--quiet noprint"
-            type="button"
-            id="font-plus"
-            aria-label="Aumentar el tamaño de la letra"
-          >
-            A+
-          </button>
-          <button class="btn" type="button" id="print-btn">
-            <img
-              src="assets/svg/print.svg"
-              width="15"
-              height="15"
-              alt=""
-              aria-hidden="true"
-            />
-            Imprimir
-          </button>
-          <button
-            class="btn theme-toggle noprint"
-            type="button"
-            id="theme-toggle"
-            aria-label="Cambiar a tema oscuro"
-            title="Cambiar a tema oscuro"
-          >
-            <svg class="theme-toggle__moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-            </svg>
-            <svg class="theme-toggle__sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <circle cx="12" cy="12" r="4" />
-              <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M6.3 17.7l-1.4 1.4M19.1 4.9l-1.4 1.4" />
-            </svg>
+          <button class="btn btn--quiet noprint" type="button" id="font-minus" aria-label="Reducir el tamaño de la letra">A−</button>
+          <button class="btn btn--quiet noprint" type="button" id="font-plus" aria-label="Aumentar el tamaño de la letra">A+</button>
+          <button class="btn" type="button" id="print-btn"><img src="assets/svg/print.svg" width="15" height="15" alt="" aria-hidden="true" /> Imprimir</button>
+          <button class="btn theme-toggle noprint" type="button" id="theme-toggle" aria-label="Cambiar a tema oscuro" title="Cambiar a tema oscuro">
+            <svg class="theme-toggle__moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" /></svg>
+            <svg class="theme-toggle__sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M6.3 17.7l-1.4 1.4M19.1 4.9l-1.4 1.4" /></svg>
           </button>
         </div>
       </div>
@@ -82,122 +41,96 @@
       <nav class="rail noprint" aria-label="Módulos del curso">
         <h2>Módulos</h2>
         <ol>
-          <li>
-            <a href="index.html" aria-current="page"
-              >Inicio · Resumen del curso</a
-            >
-          </li>
-          <li>
-            <a href="sesion-0/index.html"
-              >Primeros pasos con el ordenador</a
-            >
-          </li>
-          <li>
-            <a href="practica-xampp/index.html">Práctica · XAMPP y WordPress</a>
-          </li>
-          <li>
-            <a href="practica-gutenberg/index.html"
-              >Práctica · WordPress y Gutenberg</a
-            >
-          </li>
+          <li><a href="index.html" aria-current="page">Inicio · Resumen del curso</a></li>
+          <li><a href="sesion-0/index.html">Primeros pasos con el ordenador</a></li>
+          <li><a href="practica-xampp/index.html">Práctica · XAMPP y WordPress</a></li>
+          <li><a href="practica-gutenberg/index.html">Práctica · WordPress y Gutenberg</a></li>
         </ol>
-        <p class="rail__intro">
-          Orden recomendado: Sesión 0 → XAMPP/WordPress → Gutenberg.
-        </p>
+        <p class="rail__intro">Orden recomendado: Sesión 0 → XAMPP/WordPress → Gutenberg.</p>
       </nav>
       <main id="contenido" tabindex="-1">
         <section class="hero">
-          <h1>IFCT0510 · Prácticas de aula · XAMPP y WordPress</h1>
-          <p class="lead">
-            Material didáctico para aprender a instalar XAMPP y WordPress en tu
-            ordenador, desde cero, sin internet y sin saber programar.
-          </p>
+          <h1>IFCD0110 · Prácticas de aula · XAMPP y WordPress</h1>
+          <p class="lead">Material didáctico para aprender a instalar XAMPP y WordPress en tu ordenador, desde cero, sin internet y sin saber programar.</p>
           <ul class="meta">
-            <li>Certificado IFCT0510</li>
+            <li>Certificado IFCD0110</li>
             <li>Formato: HTML sin dependencias externas</li>
             <li>Imprimible en A4</li>
             <li>Funciona con doble clic</li>
+            <li>Basado en <strong>WordPress 6.6+</strong> (tema Twenty Twenty-Five) y <strong>Gutenberg 18.10+</strong></li>
           </ul>
+          <div class="chiprow" style="margin-top:1rem">
+            <button class="chip" data-copy="http://localhost/miwordpress/"><span>Web local</span></button>
+            <button class="chip" data-copy="http://localhost/miwordpress/wp-admin/"><span>wp-admin</span></button>
+            <button class="chip" data-copy="http://localhost/phpmyadmin/"><span>phpMyAdmin</span></button>
+          </div>
         </section>
         <div class="block">
           <h2>¿Por dónde empezar?</h2>
-          <p>
-            Si nunca has usado un ordenador, empieza por la
-            <strong>Sesión 0</strong> (ratón, teclado, carpetas, capturas).
-            Luego sigue con la práctica de <strong>XAMPP y WordPress</strong> y,
-            por último, con la de <strong>Gutenberg</strong>.
-          </p>
+          <p>Si nunca has usado un ordenador, empieza por la <strong>Sesión 0</strong> (ratón, teclado, carpetas, capturas). Luego sigue con la práctica de <strong>XAMPP y WordPress</strong> y, por último, con la de <strong>Gutenberg</strong>.</p>
         </div>
+        <details class="preflight" style="margin:2rem 0">
+          <summary>✅ Qué necesitas antes de empezar</summary>
+          <ul style="margin:1rem 0 0 1.4em; padding:0; list-style:disc">
+            <li>Windows 10/11, macOS 12+, o Linux (probado en Ubuntu 22.04)</li>
+            <li>2 GB RAM libres · 1 GB disco · Pantalla 1366×768 mínimo</li>
+            <li>Navegador actual (Chrome/Edge/Firefox/Safari) · <strong>Sin internet necesario</strong></li>
+            <li>Permisos de administrador (para instalar XAMPP)</li>
+          </ul>
+        </details>
         <section class="part part--sesion-0">
           <span class="part__k">Sesión 0</span>
           <div class="part__content">
             <h2>Primeros pasos con el ordenador</h2>
             <span class="part__time">12 pasos · ≈ 90 min</span>
-            <p>
-              Encender, escritorio, ratón, teclado, navegador, descargas,
-              carpetas, capturas y ergonomía.
-            </p>
+            <p>Encender, escritorio, ratón, teclado, navegador, descargas, carpetas, capturas y ergonomía.</p>
+            <span class="part__progress" aria-live="polite" style="font-size:.85rem; color:var(--ink-2); margin-top:.4rem;"><span id="prog-sesion0">0/12</span> pasos completados</span>
           </div>
-          <a class="btn btn--solid" href="sesion-0/index.html">Ir a Sesión 0</a>
+          <div class="part__actions">
+            <a class="btn btn--solid" href="sesion-0/index.html" id="cta-sesion0">Ir a Sesión 0</a>
+            <a class="btn btn--quiet" href="" id="continue-sesion0" style="display:none" aria-label="Continuar donde lo dejaste"></a>
+          </div>
         </section>
         <section class="part part--xampp">
           <span class="part__k">Práctica principal</span>
           <div class="part__content">
             <h2>Instalar XAMPP y WordPress en local</h2>
             <span class="part__time">14 pasos · 3 sesiones de 60 min</span>
-            <p>
-              Descarga, instalación, base de datos, despliegue y acceso al panel
-              de WordPress.
-            </p>
+            <p>Descarga, instalación, base de datos, despliegue y acceso al panel de WordPress.</p>
+            <span class="part__progress" aria-live="polite" style="font-size:.85rem; color:var(--ink-2); margin-top:.4rem;"><span id="prog-xampp">0/14</span> pasos completados</span>
           </div>
-          <a class="btn btn--solid" href="practica-xampp/index.html"
-            >Ir a la práctica de XAMPP y WordPress</a
-          >
+          <div class="part__actions">
+            <a class="btn btn--solid" href="practica-xampp/index.html" id="cta-xampp">Ir a la práctica de XAMPP y WordPress</a>
+            <a class="btn btn--quiet" href="" id="continue-xampp" style="display:none" aria-label="Continuar donde lo dejaste"></a>
+          </div>
         </section>
         <section class="part part--gutenberg">
           <span class="part__k">Práctica de extensión</span>
           <div class="part__content">
             <h2>Crear una web con WordPress y Gutenberg</h2>
             <span class="part__time">Primera sesión · 60 min</span>
-            <p>
-              Entrar al panel, crear una página con encabezado, párrafo e imagen
-              y guardar como borrador. Menú, estilos y publicación quedan para
-              ampliación.
-            </p>
+            <p>Entrar al panel, crear una página con encabezado, párrafo e imagen y guardar como borrador. Menú, estilos y publicación quedan para ampliación.</p>
+            <span class="part__progress" aria-live="polite" style="font-size:.85rem; color:var(--ink-2); margin-top:.4rem;"><span id="prog-gutenberg">0/12</span> pasos completados</span>
           </div>
-          <a class="btn btn--solid" href="practica-gutenberg/index.html"
-            >Ir a la práctica de Gutenberg</a
-          >
+          <div class="part__actions">
+            <a class="btn btn--solid" href="practica-gutenberg/index.html" id="cta-gutenberg">Ir a la práctica de Gutenberg</a>
+            <a class="btn btn--quiet" href="" id="continue-gutenberg" style="display:none" aria-label="Continuar donde lo dejaste"></a>
+          </div>
         </section>
         <footer class="end">
-          <p>
-            Material didáctico del certificado <strong>IFCT0510</strong>.
-            Funciona sin internet y no envía datos a ningún sitio.
-          </p>
+          <p>Material didáctico del certificado <strong>IFCD0110</strong>. Funciona sin internet y no envía datos a ningún sitio.</p>
+          <p style="margin-top:.5rem; font-size:.8rem; color:var(--ink-2);">Licencia: <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license">CC BY-SA 4.0</a> · Versión: 2026.11 · Contacto: <a href="mailto:csg.prodev@gmail.com">csg.prodev@gmail.com</a></p>
         </footer>
       </main>
     </div>
-    <button class="back-to-top" aria-label="Volver arriba" hidden>
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        aria-hidden="true"
-      >
-        <path d="M18 15l-6-6-6 6" />
-      </svg>
-    </button>
-    <script>
-      window.IFCT0510 = {
-        key: "ifct0510-portada-progress.v1",
-        fontKey: "ifct0510-portada-font.v1",
-        total: 0,
-        sizes: ["100%", "112.5%", "125%", "137.5%"],
-      };
-    </script>
+    <button class="back-to-top" aria-label="Volver arriba" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6" /></svg></button>
+    <script>window.IFCD0110={key:"ifct0510-portada-progress.v1",fontKey:"ifct0510-portada-font.v1",total:0,sizes:["100%","112.5%","125%","137.5%"]};</script>
     <script src="assets/js/shared.js"></script>
+    <script>
+      (function(){
+        var modules=[{key:'ifct0510-sesion-0-progress.v3',total:12,badgeId:'prog-sesion0',continueId:'continue-sesion0',baseHref:'sesion-0/index.html'},{key:'ifct0510-xampp-progress.v3',total:14,badgeId:'prog-xampp',continueId:'continue-xampp',baseHref:'practica-xampp/index.html'},{key:'ifct0510-gutenberg-progress.v3',total:12,badgeId:'prog-gutenberg',continueId:'continue-gutenberg',baseHref:'practica-gutenberg/index.html'}];
+        modules.forEach(function(m){var raw=null;try{raw=localStorage.getItem(m.key);}catch(e){}if(!raw)return;var parsed=null;try{parsed=JSON.parse(raw);}catch(e){}if(!Array.isArray(parsed))return;var done=parsed.length;var badge=document.getElementById(m.badgeId);if(badge)badge.textContent=done+'/'+m.total;if(done>0&&done<m.total){var nextStep=done+1;var continueBtn=document.getElementById(m.continueId);if(continueBtn){continueBtn.href=m.baseHref+'#paso-'+nextStep;continueBtn.textContent='Continuar en Paso '+nextStep+' →';continueBtn.style.display='inline-flex';continueBtn.setAttribute('aria-label','Continuar en Paso '+nextStep+' de '+m.baseHref);}}});
+      })();
+    </script>
   </body>
 </html>

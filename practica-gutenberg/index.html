@@ -30,7 +30,7 @@
     </div>
     <div class="meter" role="group" aria-label="Progreso de la sesión">
       <div class="meter__track" aria-hidden="true"><div class="meter__fill" id="bar"></div></div>
-      <span><b id="count">0</b> de <span id="total">12</span> pasos</span>
+      <span><b id="count">0</b> de <span id="total">20</span> pasos</span>
     </div>
     <div class="tools">
       <button class="btn btn--quiet noprint" type="button" id="font-minus" aria-label="Reducir el tamaño de la letra">A−</button>
@@ -53,7 +53,7 @@
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
       Inicio
     </a>
-    <h2>Los 12 pasos</h2>
+    <h2>Los 20 pasos</h2>
     <div class="rail__progress">
       <ol id="rail-list">
         <li><a href="#paso-1" data-target="1"><span class="n">1</span> Entrar al panel</a></li>
@@ -68,6 +68,14 @@
         <li><a href="#paso-10" data-target="10"><span class="n">10</span> Inicio (ampliación)</a></li>
         <li><a href="#paso-11" data-target="11"><span class="n">11</span> Colores y letra</a></li>
         <li><a href="#paso-12" data-target="12"><span class="n">12</span> Publicar</a></li>
+        <li><a href="#paso-13" data-target="13"><span class="n">13</span> Patrones</a></li>
+        <li><a href="#paso-14" data-target="14"><span class="n">14</span> Bloques avanzados</a></li>
+        <li><a href="#paso-15" data-target="15"><span class="n">15</span> Query Loop</a></li>
+        <li><a href="#paso-16" data-target="16"><span class="n">16</span> Editor del sitio (FSE)</a></li>
+        <li><a href="#paso-17" data-target="17"><span class="n">17</span> Estilos globales</a></li>
+        <li><a href="#paso-18" data-target="18"><span class="n">18</span> Plantillas de página</a></li>
+        <li><a href="#paso-19" data-target="19"><span class="n">19</span> Patrones sincronizados</a></li>
+        <li><a href="#paso-20" data-target="20"><span class="n">20</span> Atajos y productividad</a></li>
       </ol>
       <div class="rail__fill" id="rail-fill" aria-hidden="true"></div>
     </div>
@@ -79,17 +87,18 @@
   <main id="contenido" tabindex="-1">
 
     <section class="hero">
-      <h1>Primera sesión · Crear una página con Gutenberg</h1>
+      <h1>Crear una web con WordPress y Gutenberg · Paso a paso</h1>
       <p class="lead">WordPress ya está instalado. En esta primera sesión el objetivo es muy concreto: <strong>crear y guardar una página sencilla con un encabezado, un párrafo y una imagen</strong>. <strong>No hace falta saber programar</strong>, pero sí necesitas saber usar el ratón, el teclado y el navegador (ver <a href="../sesion-0/index.html">Sesión 0</a>).</p>
       <ul class="meta">
-        <li data-state>12 pasos</li>
-        <li>60 minutos</li>
+        <li data-state>20 pasos</li>
+        <li>60-90 minutos</li>
         <li>WordPress ya preparado</li>
         <li>Funciona en local</li>
+        <li>Basado en <strong>WordPress 6.6+</strong> / <strong>Gutenberg 18.10+</strong></li>
       </ul>
 
       <details class="toc-mobile noprint">
-        <summary>Ver el índice de los 12 pasos</summary>
+        <summary>Ver el índice de los 20 pasos</summary>
         <ol>
           <li><a href="#paso-1">Entrar al panel</a></li>
           <li><a href="#paso-2">Elegir tema</a></li>
@@ -103,12 +112,20 @@
           <li><a href="#paso-10">Inicio (ampliación)</a></li>
           <li><a href="#paso-11">Colores y letra</a></li>
           <li><a href="#paso-12">Publicar</a></li>
+          <li><a href="#paso-13">Patrones</a></li>
+          <li><a href="#paso-14">Bloques avanzados</a></li>
+          <li><a href="#paso-15">Query Loop</a></li>
+          <li><a href="#paso-16">Editor del sitio (FSE)</a></li>
+          <li><a href="#paso-17">Estilos globales</a></li>
+          <li><a href="#paso-18">Plantillas de página</a></li>
+          <li><a href="#paso-19">Patrones sincronizados</a></li>
+          <li><a href="#paso-20">Atajos y productividad</a></li>
         </ol>
       </details>
 
       <div class="notice notice--info">
         <img src="../assets/svg/info.svg" width="22" height="22" alt="" aria-hidden="true">
-        <p><strong>Objetivo de la sesión:</strong> cada alumno crea y guarda una página con un encabezado, un texto corto y una imagen. Menú, colores, tipografía y publicación se dejan para más adelante.</p>
+        <p><strong>Objetivo de la sesión:</strong> cada alumno crea y publica una web completa con páginas, bloques, menú, estilos y patrones. Los pasos 1-12 son la base; los pasos 13-20 añaden potencia profesional (patrones, Query Loop, FSE, plantillas, sincronización, atajos).</p>
       </div>
 
       <div class="block">
@@ -117,8 +134,8 @@
         <ul class="preflight">
           <li><input type="checkbox" id="gwpf1"><label for="gwpf1">Tengo WordPress instalado <small>y puedo entrar al panel.</small></label></li>
           <li><input type="checkbox" id="gwpf2"><label for="gwpf2">Puedo entrar al panel de administración <small>con mi usuario y contraseña.</small></label></li>
-          <li><input type="checkbox" id="gwpf3"><label for="gwpf3">Sé usar el navegador y el ratón <small>sin miedo a equivocarme.</small></label></li>
-          <li><input type="checkbox" id="gwpf4"><label for="gwpf4">Tengo 60 minutos <small>y la tarea es muy concreta.</small></label></li>
+          <li><input type="checkbox" id="gwpf3"><label for="gwpf3">Sé usar el navegador, ratón y teclado <small>sin miedo a equivocarme.</small></label></li>
+          <li><input type="checkbox" id="gwpf4"><label for="gwpf4">Tengo 60-90 minutos <small>y la tarea es concreta: crear web completa.</small></label></li>
         </ul>
       </div>
 
@@ -126,19 +143,28 @@
         <h2>Resultado esperado de esta sesión</h2>
         <ol class="outcomes">
           <li>Entrar al panel de administración de WordPress.</li>
-          <li>Crear una página nueva y ponerle un título.</li>
-          <li>Usar bloques básicos para añadir encabezado, texto e imagen.</li>
-          <li>Guardar la página como borrador y revisarla.</li>
+          <li>Crear páginas (Inicio, Sobre nosotros) con bloques: encabezado, texto, imagen.</li>
+          <li>Usar <strong>Patrones</strong> para insertar layouts pre-diseñados (Hero, Testimonios, etc.).</li>
+          <li>Combinar bloques de diseño: <strong>Columns, Group, Cover, Media & Text</strong>.</li>
+          <li>Insertar un <strong>Query Loop</strong> para listar entradas dinámicamente.</li>
+          <li>Usar el <strong>Editor del sitio (FSE)</strong> con Zoom Out para ver la estructura completa.</li>
+          <li>Configurar <strong>Estilos globales</strong> (Style Book: tipografía, colores, sombras, espaciado).</li>
+          <li>Asignar <strong>Plantillas de página</strong> personalizadas (ancho completo, landing).</li>
+          <li>Crear <strong>Patrones sincronizados</strong> (antes "Bloques reutilizables") para contenido repetido.</li>
+          <li>Dominar <strong>atajos</strong> (/bloque, ##, >, ---, Esc, Ctrl+Shift+Alt+M).</li>
+          <li>Configurar página de inicio estática, menú de navegación y publicar.</li>
         </ol>
       </div>
 
       <div class="block">
-        <h2>Qué dejamos para más adelante</h2>
+        <h2>Qué dejamos para más adelante (opcional)</h2>
         <ul class="outcomes">
-          <li>Instalar plugins y cambiar el tema.</li>
-          <li>Crear el menú de navegación.</li>
-          <li>Configurar la página de inicio y cambiar estilos.</li>
-          <li>Publicar la web y revisar el resultado final.</li>
+          <li>Instalar y configurar plugins avanzados (WooCommerce, SEO, formularios).</li>
+          <li>Crear temas hijo (child themes) y personalizar PHP/CSS.</li>
+          <li>Desarrollo de bloques custom con <code>@wordpress/create-block</code>.</li>
+          <li>Multisitio (WordPress Multisite) y redes de sitios.</li>
+          <li>Optimización de rendimiento (caché, CDN, Core Web Vitals).</li>
+          <li>Seguridad avanzada (2FA, hardening, WAF, backups automáticos).</li>
         </ul>
       </div>
     </section>
@@ -1679,15 +1705,608 @@
       </figure>
     </article>
 
+    <section class="part" id="parte-c">
+      <span class="part__k">Bloque C</span>
+      <h2>Potenciar tu web: patrones, diseño avanzado y FSE</h2>
+      <span class="part__time">≈ 30 min</span>
+    </section>
+
+    <article class="step step--split" id="paso-13" data-step="13">
+      <header class="step__head">
+        <span class="step__num" aria-hidden="true">13</span>
+        <h3 class="step__title">Patrones (Patterns): layouts listos para usar</h3>
+        <label class="tick"><input type="checkbox" data-done="13"><span>Hecho</span></label>
+      </header>
+      <p>Los <strong>Patrones</strong> son grupos de bloques pre-diseñados que insertas de una vez: Hero, Testimonios, Precios, Llamadas a la acción, Galerías, etc. Ahorran mucho tiempo.</p>
+      <ol class="actions">
+        <li>En el editor, pulsa el botón <strong>+</strong> → pestaña <strong>Patrones</strong>.</li>
+        <li>Explora las categorías: <strong>Destacados, Entradas, Texto, Galería, Llamadas a la acción, Testimonios</strong>.</li>
+        <li>Haz clic en un patrón (ej. <strong>Hero con llamada a la acción</strong>) para insertarlo.</li>
+        <li>Personaliza el contenido: cambia textos, imágenes, colores, enlaces.</li>
+      </ol>
+      <div class="check">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        <p><strong>Comprueba:</strong> has insertado y personalizado al menos un patrón en tu página Inicio.</p>
+      </div>
+      <figure class="fig">
+        <div class="svgpad">
+          <svg viewBox="0 0 680 400" role="img" aria-labelledby="pat13-t pat13-d" xmlns="http://www.w3.org/2000/svg">
+            <title id="pat13-t">Inserto de patrones abierto en Gutenberg</title>
+            <desc id="pat13-d">Recreación del panel de patrones con categorías y ejemplos visuales.</desc>
+            <defs>
+              <filter id="pat13-shadow" x="-10%" y="-10%" width="120%" height="130%">
+                <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#1d2327" flood-opacity=".16"/>
+              </filter>
+            </defs>
+            <rect x="5" y="5" width="670" height="390" rx="5" fill="#fff" stroke="#c3c4c7" filter="url(#pat13-shadow)"/>
+            <rect x="6" y="6" width="668" height="38" fill="#fff"/>
+            <line x1="6" y1="44" x2="674" y2="44" stroke="#dcdcde"/>
+            <circle cx="24" cy="25" r="11" fill="#1d2327"/>
+            <text x="24" y="30" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#fff">W</text>
+            <rect x="44" y="11" width="28" height="28" rx="2" fill="#2271b1"/>
+            <path d="M58 17v16M50 25h16" stroke="#fff" stroke-width="2"/>
+            <text x="398" y="27" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#1d2327">Inicio · Página</text>
+            <rect x="494" y="12" width="67" height="24" rx="2" fill="#f6f7f7" stroke="#c3c4c7"/>
+            <text x="527.5" y="28" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#1d2327">Vista previa</text>
+            <rect x="568" y="12" width="91" height="24" rx="2" fill="#2271b1"/>
+            <text x="613.5" y="28" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" font-weight="600" fill="#fff">Guardar</text>
+            <rect x="6" y="45" width="248" height="349" fill="#fff"/>
+            <line x1="254" y1="45" x2="254" y2="394" stroke="#dcdcde"/>
+            <text x="21" y="69" font-family="Arial,sans-serif" font-size="13" font-weight="600" fill="#1d2327">Patrones</text>
+            <path d="M226 59l12 12M238 59l-12 12" stroke="#50575e" stroke-width="1.5"/>
+            <rect x="18" y="82" width="222" height="30" rx="2" fill="#fff" stroke="#8c8f94"/>
+            <circle cx="31" cy="95" r="5" fill="none" stroke="#646970" stroke-width="1.2"/>
+            <path d="M35 99l4 4" stroke="#646970" stroke-width="1.2"/>
+            <text x="46" y="99" font-family="Arial,sans-serif" font-size="10" fill="#646970">Buscar patrones</text>
+            <line x1="18" y1="125" x2="240" y2="125" stroke="#dcdcde"/>
+            <text x="19" y="145" font-family="Arial,sans-serif" font-size="9" font-weight="600" fill="#1d2327">DESTACADOS</text>
+            <rect x="16" y="155" width="108" height="80" fill="#f6f7f7"/>
+            <rect x="24" y="165" width="92" height="50" fill="#e8ecec"/>
+            <text x="28" y="205" font-family="Arial,sans-serif" font-size="9" fill="#1d2327">Hero con CTA</text>
+            <rect x="132" y="155" width="108" height="80" fill="#fff"/>
+            <rect x="140" y="165" width="92" height="50" fill="#e8ecec"/>
+            <text x="144" y="205" font-family="Arial,sans-serif" font-size="9" fill="#1d2327">Testimonios</text>
+            <line x1="18" y1="248" x2="240" y2="248" stroke="#dcdcde"/>
+            <text x="19" y="268" font-family="Arial,sans-serif" font-size="9" font-weight="600" fill="#1d2327">LLAMADAS A LA ACCIÓN</text>
+            <rect x="16" y="278" width="108" height="80" fill="#fff"/>
+            <rect x="24" y="288" width="92" height="50" fill="#e8ecec"/>
+            <text x="28" y="328" font-family="Arial,sans-serif" font-size="9" fill="#1d2327">Registro boletín</text>
+            <rect x="132" y="278" width="108" height="80" fill="#fff"/>
+            <rect x="140" y="288" width="92" height="50" fill="#e8ecec"/>
+            <text x="144" y="328" font-family="Arial,sans-serif" font-size="9" fill="#1d2327">Contacto</text>
+            <rect x="254" y="45" width="420" height="349" fill="#f0f0f1"/>
+            <rect x="279" y="60" width="346" height="319" fill="#fff"/>
+            <text x="318" y="116" font-family="Arial,sans-serif" font-size="26" font-weight="600" fill="#1d2327">Bienvenido a mi web</text>
+            <line x1="318" y1="157" x2="590" y2="157" stroke="#dcdcde"/>
+            <rect x="318" y="170" width="300" height="120" fill="#f1ede5" stroke="#dcdcde" stroke-width="2" stroke-dasharray="5,5"/>
+            <text x="468" y="220" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#2271b1">[Patrón Hero insertado]</text>
+            <text x="318" y="310" font-family="Arial,sans-serif" font-size="11" fill="#646970">Personaliza textos, imágenes y botones</text>
+            <rect x="307" y="200" width="22" height="22" rx="2" fill="#fff" stroke="#2271b1" stroke-width="1.5"/>
+            <path d="M318 205v12M312 211h12" stroke="#2271b1" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <figcaption>Pestaña Patrones: elige una categoría, haz clic en un patrón y personalízalo.</figcaption>
+      </figure>
+    </article>
+
+    <article class="step" id="paso-14" data-step="14">
+      <header class="step__head">
+        <span class="step__num" aria-hidden="true">14</span>
+        <h3 class="step__title">Bloques de diseño avanzado: Columns, Group, Cover, Media & Text</h3>
+        <label class="tick"><input type="checkbox" data-done="14"><span>Hecho</span></label>
+      </header>
+      <p>Más allá de los bloques básicos, estos bloques de <strong>diseño</strong> te permiten crear layouts profesionales:</p>
+      <table class="tbl">
+        <thead><tr><th>Bloque</th><th>Para qué sirve</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Columnas</strong></td><td>Divide el ancho en 2-6 columnas (ej. 50/50, 33/33/33, 70/30).</td></tr>
+          <tr><td><strong>Grupo</strong></td><td>Contenedor que agrupa varios bloques; permite fondo, padding, ancho completo.</td></tr>
+          <tr><td><strong>Cubierta (Cover)</strong></td><td>Imagen o vídeo a pantalla completa con overlay de color y texto encima.</td></tr>
+          <tr><td><strong>Multimedia y texto</strong></td><td>Imagen/video a la izquierda, texto a la derecha (o viceversa).</td></tr>
+          <tr><td><strong>Separador</strong></td><td>Línea horizontal con estilos: gruesa, puntos, ancho personalizado.</td></tr>
+          <tr><td><strong>Espaciador</strong></td><td>Espacio vertical ajustable en px entre bloques.</td></tr>
+        </tbody>
+      </table>
+      <ol class="actions">
+        <li>Pulsa <strong>+</strong> → busca <strong>Columnas</strong> → elige layout 50/50.</li>
+        <li>Dentro de cada columna, añade bloques (ej. Encabezado + Párrafo + Botón).</li>
+        <li>Prueba <strong>Cubierta</strong>: sube una foto, pon overlay oscuro, escribe un título grande centrado.</li>
+        <li>Usa <strong>Grupo</strong> para envolver varias secciones y darles fondo común.</li>
+      </ol>
+      <div class="check">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        <p><strong>Comprueba:</strong> has usado al menos Columnas y Cubierta en tu página.</p>
+      </div>
+      <figure class="fig">
+        <div class="svgpad">
+          <svg viewBox="0 0 680 400" role="img" aria-labelledby="adv14-t adv14-d" xmlns="http://www.w3.org/2000/svg">
+            <title id="adv14-t">Bloques de diseño: Columnas, Cubierta, Grupo</title>
+            <desc id="adv14-d">Ejemplos visuales de bloques de diseño avanzado en el editor.</desc>
+            <defs>
+              <filter id="adv14-shadow" x="-10%" y="-10%" width="120%" height="130%">
+                <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#1d2327" flood-opacity=".16"/>
+              </filter>
+            </defs>
+            <rect x="5" y="5" width="670" height="390" rx="5" fill="#fff" stroke="#c3c4c7" filter="url(#adv14-shadow)"/>
+            <rect x="6" y="6" width="668" height="38" fill="#fff"/>
+            <line x1="6" y1="44" x2="674" y2="44" stroke="#dcdcde"/>
+            <circle cx="24" cy="25" r="11" fill="#1d2327"/>
+            <text x="24" y="30" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#fff">W</text>
+            <text x="398" y="27" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#1d2327">Inicio · Página</text>
+            <rect x="254" y="45" width="420" height="349" fill="#f0f0f1"/>
+            <rect x="279" y="60" width="346" height="319" fill="#fff"/>
+            <text x="318" y="116" font-family="Arial,sans-serif" font-size="26" font-weight="600" fill="#1d2327">Diseño con bloques avanzados</text>
+            <line x1="318" y1="157" x2="590" y2="157" stroke="#dcdcde"/>
+            <rect x="318" y="170" width="150" height="130" fill="#fff" stroke="#dcdcde"/>
+            <text x="330" y="205" font-family="Arial,sans-serif" font-size="9" fill="#1d2327">Columna 1</text>
+            <text x="330" y="225" font-family="Arial,sans-serif" font-size="8" fill="#646970">Encabezado + Texto + Botón</text>
+            <rect x="478" y="170" width="150" height="130" fill="#fff" stroke="#dcdcde"/>
+            <text x="490" y="205" font-family="Arial,sans-serif" font-size="9" fill="#1d2327">Columna 2</text>
+            <text x="490" y="225" font-family="Arial,sans-serif" font-size="8" fill="#646970">Imagen + Texto</text>
+            <rect x="318" y="315" width="310" height="60" fill="#d9e7ed" stroke="#2271b1" stroke-width="2"/>
+            <text x="473" y="352" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#1d2327">Grupo: fondo común + padding</text>
+            <rect x="6" y="45" width="248" height="349" fill="#fff"/>
+            <line x1="254" y1="45" x2="254" y2="394" stroke="#dcdcde"/>
+            <text x="21" y="69" font-family="Arial,sans-serif" font-size="13" font-weight="600" fill="#1d2327">Bloques</text>
+            <text x="19" y="100" font-family="Arial,sans-serif" font-size="9" font-weight="600" fill="#1d2327">DISEÑO</text>
+            <rect x="16" y="110" width="108" height="54" fill="#f6f7f7"/>
+            <text x="28" y="150" font-family="Arial,sans-serif" font-size="9" fill="#1d2327">Columnas</text>
+            <rect x="132" y="110" width="108" height="54" fill="#fff"/>
+            <text x="145" y="150" font-family="Arial,sans-serif" font-size="9" fill="#1d2327">Grupo</text>
+            <rect x="16" y="174" width="108" height="54" fill="#fff"/>
+            <rect x="28" y="186" width="18" height="15" fill="none" stroke="#50575e" stroke-width="1.2"/>
+            <circle cx="33" cy="191" r="2" fill="#50575e"/>
+            <text x="28" y="216" font-family="Arial,sans-serif" font-size="9" fill="#1d2327">Cubierta</text>
+            <rect x="132" y="174" width="108" height="54" fill="#fff"/>
+            <circle cx="146" cy="189" r="1.5" fill="#50575e"/>
+            <circle cx="146" cy="196" r="1.5" fill="#50575e"/>
+            <circle cx="146" cy="203" r="1.5" fill="#50575e"/>
+            <text x="145" y="216" font-family="Arial,sans-serif" font-size="9" fill="#1d2327">Multim. y texto</text>
+          </svg>
+        </div>
+        <figcaption>Bloques de diseño: Columnas (layouts), Grupo (contenedores), Cubierta (hero full-screen).</figcaption>
+      </figure>
+    </article>
+
+    <article class="step step--split" id="paso-15" data-step="15">
+      <header class="step__head">
+        <span class="step__num" aria-hidden="true">15</span>
+        <h3 class="step__title">Query Loop: listados dinámicos de entradas</h3>
+        <label class="tick"><input type="checkbox" data-done="15"><span>Hecho</span></label>
+      </header>
+      <p>El bloque <strong>Bucle de consultas (Query Loop)</strong> muestra entradas automáticamente: últimas noticias, posts de una categoría, portfolio, etc. Se actualiza solo cuando publicas contenido nuevo.</p>
+      <ol class="actions">
+        <li>Pulsa <strong>+</strong> → busca <strong>Bucle de consultas</strong> → elige <strong>Iniciar en blanco</strong>.</li>
+        <li>Selecciona el patrón de visualización: <strong>Título y fecha</strong>, <strong>Título, extracto e imagen</strong>, <strong>Cuadrícula</strong>.</li>
+        <li>En la barra lateral (Bloque), configura: <strong>Tipo de entrada</strong> (Entrada/Página), <strong>Orden</strong> (Fecha, Título), <strong>Filtros</strong> (Categoría, Etiqueta, Autor).</li>
+        <li>Ajusta <strong>Paginación</strong> (número por página, navegación anterior/siguiente).</li>
+        <li>Personaliza el diseño de cada tarjeta: imagen destacada, categorías, leer más.</li>
+      </ol>
+      <div class="check">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        <p><strong>Comprueba:</strong> has insertado un Query Loop que muestra tus últimas 3 entradas en la página Inicio.</p>
+      </div>
+      <figure class="fig">
+        <div class="svgpad">
+          <svg viewBox="0 0 680 400" role="img" aria-labelledby="ql15-t ql15-d" xmlns="http://www.w3.org/2000/svg">
+            <title id="ql15-t">Query Loop mostrando 3 entradas en cuadrícula</title>
+            <desc id="ql15-d">Recreación del bloque Query Loop con 3 tarjetas de entrada: imagen, título, fecha, extracto y botón Leer más.</desc>
+            <defs>
+              <filter id="ql15-shadow" x="-10%" y="-10%" width="120%" height="130%">
+                <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#1d2327" flood-opacity=".16"/>
+              </filter>
+            </defs>
+            <rect x="5" y="5" width="670" height="390" rx="5" fill="#fff" stroke="#c3c4c7" filter="url(#ql15-shadow)"/>
+            <rect x="6" y="6" width="668" height="38" fill="#fff"/>
+            <line x1="6" y1="44" x2="674" y2="44" stroke="#dcdcde"/>
+            <circle cx="24" cy="25" r="11" fill="#1d2327"/>
+            <text x="24" y="30" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#fff">W</text>
+            <text x="398" y="27" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#1d2327">Inicio · Página</text>
+            <rect x="254" y="45" width="420" height="349" fill="#f0f0f1"/>
+            <rect x="279" y="60" width="346" height="319" fill="#fff"/>
+            <text x="318" y="116" font-family="Arial,sans-serif" font-size="26" font-weight="600" fill="#1d2327">Últimas entradas</text>
+            <line x1="318" y1="157" x2="590" y2="157" stroke="#dcdcde"/>
+            <rect x="318" y="170" width="150" height="180" fill="#fff" stroke="#dcdcde"/>
+            <rect x="328" y="178" width="132" height="80" fill="#e8ecec"/>
+            <text x="330" y="275" font-family="Arial,sans-serif" font-size="9" fill="#1d2327">Título entrada 1</text>
+            <text x="330" y="290" font-family="Arial,sans-serif" font-size="8" fill="#646970">Extracto breve del contenido...</text>
+            <rect x="328" y="300" width="132" height="28" rx="2" fill="#c45b3e"/>
+            <text x="394" y="318" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" font-weight="600" fill="#fff">Leer más</text>
+            <rect x="478" y="170" width="150" height="180" fill="#fff" stroke="#dcdcde"/>
+            <rect x="488" y="178" width="132" height="80" fill="#e8ecec"/>
+            <text x="490" y="275" font-family="Arial,sans-serif" font-size="9" fill="#1d2327">Título entrada 2</text>
+            <text x="490" y="290" font-family="Arial,sans-serif" font-size="8" fill="#646970">Extracto breve del contenido...</text>
+            <rect x="488" y="300" width="132" height="28" rx="2" fill="#c45b3e"/>
+            <text x="554" y="318" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" font-weight="600" fill="#fff">Leer más</text>
+            <rect x="318" y="270" width="310" height="28" rx="2" fill="#c45b3e"/>
+            <text x="473" y="288" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" font-weight="600" fill="#fff">Cargar más entradas</text>
+            <rect x="6" y="45" width="248" height="349" fill="#fff"/>
+            <line x1="254" y1="45" x2="254" y2="394" stroke="#dcdcde"/>
+            <text x="21" y="69" font-family="Arial,sans-serif" font-size="13" font-weight="600" fill="#1d2327">Bloque: Bucle de consultas</text>
+            <line x1="18" y1="100" x2="240" y2="100" stroke="#dcdcde"/>
+            <text x="19" y="120" font-family="Arial,sans-serif" font-size="9" fill="#646970">Tipo: Entrada</text>
+            <text x="19" y="140" font-family="Arial,sans-serif" font-size="9" fill="#646970">Orden: Fecha ↓</text>
+            <text x="19" y="160" font-family="Arial,sans-serif" font-size="9" fill="#646970">Por página: 3</text>
+            <text x="19" y="180" font-family="Arial,sans-serif" font-size="9" fill="#646970">Paginación: Sí</text>
+            <text x="19" y="200" font-family="Arial,sans-serif" font-size="9" fill="#646970">Filtro: Categoría «Blog»</text>
+          </svg>
+        </div>
+        <figcaption>Query Loop: configura tipo, orden, filtros y paginación; se actualiza solo.</figcaption>
+      </figure>
+    </article>
+
+    <article class="step" id="paso-16" data-step="16">
+      <header class="step__head">
+        <span class="step__num" aria-hidden="true">16</span>
+        <h3 class="step__title">Editor del sitio (FSE): Zoom Out y estructura completa</h3>
+        <label class="tick"><input type="checkbox" data-done="16"><span>Hecho</span></label>
+      </header>
+      <p>En temas de bloques (Twenty Twenty-Five, Twenty Twenty-Four) el <strong>Editor del sitio</strong> reemplaza al Personalizador. Permite editar <strong>toda la web</strong>: cabecera, pie, plantillas, partes de plantilla.</p>
+      <ol class="actions">
+        <li>Ve a <strong>Apariencia</strong> → <strong>Editor</strong>.</li>
+        <li>Verás la <strong>vista previa de tu web</strong> y a la izquierda el panel de navegación.</li>
+        <li>Pulsa el icono <strong>Zoom Out</strong> (esquinas diagonales, arriba a la izquierda de la vista previa).</li>
+        <li>Verás la <strong>estructura completa</strong>: <strong>Plantilla: Página</strong>, <strong>Cabecera</strong>, <strong>Pie de página</strong>, <strong>Navegación</strong>.</li>
+        <li>Haz clic en <strong>Plantillas</strong> (icono de documento) para ver/editar: <strong>Página</strong>, <strong>Entrada individual</strong>, <strong>Archivo</strong>, <strong>Búsqueda</strong>, <strong>404</strong>.</li>
+        <li>Haz clic en <strong>Partes de plantilla</strong> para editar <strong>Cabecera</strong> y <strong>Pie</strong> por separado.</li>
+      </ol>
+      <div class="check">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        <p><strong>Comprueba:</strong> has abierto el Editor del sitio, usado Zoom Out y navegado entre Plantillas y Partes de plantilla.</p>
+      </div>
+      <figure class="fig">
+        <div class="svgpad">
+          <svg viewBox="0 0 680 400" role="img" aria-labelledby="fse16-t fse16-d" xmlns="http://www.w3.org/2000/svg">
+            <title id="fse16-t">Editor del sitio con Zoom Out abierto</title>
+            <desc id="fse16-d">Recreación del Editor del sitio de WordPress. A la izquierda el panel con Plantillas y Partes de plantilla; en el centro la vista previa con Zoom Out mostrando la estructura jerárquica.</desc>
+            <defs>
+              <filter id="fse16-shadow" x="-10%" y="-10%" width="120%" height="130%">
+                <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#1d2327" flood-opacity=".16"/>
+              </filter>
+            </defs>
+            <rect x="5" y="5" width="670" height="390" rx="5" fill="#fff" stroke="#c3c4c7" filter="url(#fse16-shadow)"/>
+            <rect x="6" y="6" width="668" height="38" fill="#fff"/>
+            <line x1="6" y1="44" x2="674" y2="44" stroke="#dcdcde"/>
+            <circle cx="24" cy="25" r="11" fill="#1d2327"/>
+            <text x="24" y="30" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#fff">W</text>
+            <path d="M56 19l7 6-7 6" fill="none" stroke="#50575e" stroke-width="1.6"/>
+            <text x="78" y="27" font-family="Arial,sans-serif" font-size="11" fill="#1d2327">Editor del sitio</text>
+            <rect x="561" y="12" width="98" height="24" rx="2" fill="#2271b1"/>
+            <text x="610" y="28" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" font-weight="600" fill="#fff">Guardar</text>
+            <rect x="6" y="45" width="250" height="349" fill="#fff"/>
+            <line x1="256" y1="45" x2="256" y2="394" stroke="#dcdcde"/>
+            <text x="22" y="71" font-family="Arial,sans-serif" font-size="13" font-weight="600" fill="#1d2327">Navegación</text>
+            <path d="M226 59l12 12M238 59l-12 12" stroke="#50575e" stroke-width="1.5"/>
+            <rect x="17" y="85" width="224" height="36" fill="#f6f7f7"/>
+            <text x="28" y="108" font-family="Arial,sans-serif" font-size="10" fill="#1d2327">Plantilla: Página</text>
+            <rect x="17" y="125" width="224" height="36" fill="#fff"/>
+            <text x="28" y="148" font-family="Arial,sans-serif" font-size="10" fill="#1d2327">Plantilla: Entrada individual</text>
+            <rect x="17" y="165" width="224" height="36" fill="#fff"/>
+            <text x="28" y="188" font-family="Arial,sans-serif" font-size="10" fill="#1d2327">Plantilla: Archivo</text>
+            <rect x="17" y="205" width="224" height="36" fill="#fff"/>
+            <text x="28" y="228" font-family="Arial,sans-serif" font-size="10" fill="#1d2327">Plantilla: Búsqueda</text>
+            <rect x="17" y="245" width="224" height="36" fill="#fff"/>
+            <text x="28" y="268" font-family="Arial,sans-serif" font-size="10" fill="#1d2327">Plantilla: 404</text>
+            <line x1="18" y1="295" x2="240" y2="295" stroke="#dcdcde"/>
+            <text x="22" y="318" font-family="Arial,sans-serif" font-size="9" font-weight="600" fill="#1d2327">PARTES DE PLANTILLA</text>
+            <rect x="17" y="325" width="224" height="36" fill="#fff"/>
+            <text x="28" y="348" font-family="Arial,sans-serif" font-size="10" fill="#1d2327">Cabecera</text>
+            <rect x="17" y="365" width="224" height="36" fill="#fff"/>
+            <text x="28" y="388" font-family="Arial,sans-serif" font-size="10" fill="#1d2327">Pie de página</text>
+            <rect x="256" y="45" width="418" height="349" fill="#f0f0f1"/>
+            <rect x="278" y="62" width="374" height="315" fill="#fff"/>
+            <rect x="278" y="62" width="374" height="39" fill="#fff"/>
+            <line x1="278" y1="101" x2="652" y2="101" stroke="#e0e0e0"/>
+            <text x="298" y="87" font-family="Georgia,serif" font-size="14" font-weight="700" fill="#1d2327">Mi sitio</text>
+            <text x="484" y="86" font-family="Arial,sans-serif" font-size="9" fill="#1d2327">Inicio</text>
+            <text x="530" y="86" font-family="Arial,sans-serif" font-size="9" fill="#1d2327">Sobre nosotros</text>
+            <line x1="482" y1="92" x2="513" y2="92" stroke="#2271b1" stroke-width="2"/>
+            <rect x="278" y="101" width="374" height="250" fill="#f8f8f8" stroke="#dcdcde" stroke-dasharray="5,5"/>
+            <text x="465" y="210" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#2271b1">[Zoom Out: estructura completa visible]</text>
+            <text x="310" y="380" font-family="Arial,sans-serif" font-size="8" fill="#646970">Cabecera → Navegación → Contenido → Pie</text>
+          </svg>
+        </div>
+        <figcaption>Zoom Out (icono esquinas): ve Plantillas, Partes de plantilla y estructura jerárquica.</figcaption>
+      </figure>
+    </article>
+
+    <article class="step step--split" id="paso-17" data-step="17">
+      <header class="step__head">
+        <span class="step__num" aria-hidden="true">17</span>
+        <h3 class="step__title">Estilos globales: Style Book, tipografía, colores, sombras</h3>
+        <label class="tick"><input type="checkbox" data-done="17"><span>Hecho</span></label>
+      </header>
+      <p>En el Editor del sitio, el icono <strong>Estilos</strong> (media luna) abre los <strong>Estilos globales</strong>. Desde WordPress 6.6 incluye el <strong>Style Book</strong>: una vista previa de <strong>todos los bloques</strong> con tus estilos aplicados.</p>
+      <ol class="actions">
+        <li>En el Editor del sitio, haz clic en <strong>Estilos</strong> (icono media luna, arriba a la derecha).</li>
+        <li>Pulsa <strong>Ver libro de estilos</strong> (icono libro abierto) para ver el <strong>Style Book</strong>.</li>
+        <li>Explora pestañas: <strong>Tipografía</strong> (fuentes, tamaños, pesos, altura de línea), <strong>Colores</strong> (paleta, gradientes, duotono), <strong>Bloques</strong> (estilos por bloque: Botón, Encabezado, Imagen, etc.), <strong>Sombras</strong>, <strong>Espaciado</strong>.</li>
+        <li>En <strong>Tipografía</strong>: elige familia (serif/sans-serif/mono), tamaños (clamp fluido), peso, altura de línea.</li>
+        <li>En <strong>Colores</strong>: paleta del tema, gradientes predefinidos, duotono para imágenes.</li>
+        <li>En <strong>Bloques</strong>: personaliza Botón (radio, padding, hover), Imagen (borde, radio), Encabezado, etc.</li>
+        <li>Los cambios se aplican <strong>globalmente</strong> a toda la web al pulsar <strong>Guardar</strong>.</li>
+      </ol>
+      <div class="check">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        <p><strong>Comprueba:</strong> has abierto el Style Book, cambiado la tipografía base y el color principal, y ves los cambios en la vista previa.</p>
+      </div>
+      <figure class="fig">
+        <div class="svgpad">
+          <svg viewBox="0 0 680 400" role="img" aria-labelledby="sty17-t sty17-d" xmlns="http://www.w3.org/2000/svg">
+            <title id="sty17-t">Style Book: vista previa de todos los bloques con estilos globales</title>
+            <desc id="sty17-d">Recreación del Style Book de WordPress 6.6+. Muestra tarjetas de bloques (Botón, Encabezado, Imagen, Cita, etc.) con la tipografía, colores y sombras actuales.</desc>
+            <defs>
+              <filter id="sty17-shadow" x="-10%" y="-10%" width="120%" height="130%">
+                <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#1d2327" flood-opacity=".16"/>
+              </filter>
+            </defs>
+            <rect x="5" y="5" width="670" height="390" rx="5" fill="#fff" stroke="#c3c4c7" filter="url(#sty17-shadow)"/>
+            <rect x="6" y="6" width="668" height="38" fill="#fff"/>
+            <line x1="6" y1="44" x2="674" y2="44" stroke="#dcdcde"/>
+            <circle cx="24" cy="25" r="11" fill="#1d2327"/>
+            <text x="24" y="30" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#fff">W</text>
+            <path d="M56 19l7 6-7 6" fill="none" stroke="#50575e" stroke-width="1.6"/>
+            <text x="78" y="27" font-family="Arial,sans-serif" font-size="11" fill="#1d2327">Editor del sitio</text>
+            <rect x="560" y="12" width="99" height="24" rx="2" fill="#2271b1"/>
+            <text x="609.5" y="28" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" font-weight="600" fill="#fff">Guardar</text>
+            <rect x="6" y="45" width="245" height="349" fill="#fff"/>
+            <line x1="251" y1="45" x2="251" y2="394" stroke="#dcdcde"/>
+            <path d="M23 63l-6 6 6 6M17 69h15" fill="none" stroke="#50575e" stroke-width="1.4"/>
+            <text x="42" y="73" font-family="Arial,sans-serif" font-size="12" font-weight="600" fill="#1d2327">Estilos</text>
+            <rect x="17" y="90" width="222" height="48" fill="#f6f7f7"/>
+            <circle cx="41" cy="114" r="10" fill="none" stroke="#50575e" stroke-width="1.3"/>
+            <path d="M41 104a10 10 0 0 0 0 20z" fill="#50575e"/>
+            <text x="63" y="111" font-family="Arial,sans-serif" font-size="10" font-weight="600" fill="#1d2327">Tipografía</text>
+            <rect x="17" y="145" width="222" height="48" fill="#fff"/>
+            <circle cx="41" cy="169" r="10" fill="#2271b1"/>
+            <text x="63" y="166" font-family="Arial,sans-serif" font-size="10" font-weight="600" fill="#1d2327">Colores</text>
+            <rect x="17" y="200" width="222" height="48" fill="#fff"/>
+            <rect x="31" cy="224" rx="10" ry="10" width="20" height="20" fill="#2271b1"/>
+            <text x="63" y="221" font-family="Arial,sans-serif" font-size="10" font-weight="600" fill="#1d2327">Bloques</text>
+            <rect x="17" y="255" width="222" height="48" fill="#fff"/>
+            <circle cx="41" cy="279" r="10" fill="none" stroke="#50575e"/>
+            <text x="63" y="276" font-family="Arial,sans-serif" font-size="10" font-weight="600" fill="#1d2327">Sombras</text>
+            <rect x="17" y="310" width="222" height="48" fill="#fff"/>
+            <text x="63" y="327" font-family="Arial,sans-serif" font-size="10" font-weight="600" fill="#1d2327">Espaciado</text>
+            <rect x="251" y="45" width="423" height="349" fill="#f0f0f1"/>
+            <rect x="273" y="62" width="379" height="315" fill="#fff"/>
+            <rect x="273" y="62" width="379" height="45" fill="#f1ede5"/>
+            <text x="294" y="90" font-family="Georgia,serif" font-size="14" font-weight="700" fill="#1d2327">Mi sitio</text>
+            <rect x="273" y="120" width="379" height="120" fill="#f1ede5"/>
+            <text x="290" y="175" font-family="Georgia,serif" font-size="20" font-weight="700" fill="#1d2327">Título H1 — Tipografía global</text>
+            <text x="290" y="205" font-family="Arial,sans-serif" font-size="11" fill="#50575e">Párrafo con la fuente base, tamaño fluido y altura de línea global.</text>
+            <rect x="290" y="225" width="140" height="36" rx="4" fill="#c45b3e"/>
+            <text x="360" y="247" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" font-weight="600" fill="#fff">Botón primario</text>
+            <rect x="290" y="275" width="310" height="80" fill="#fff" stroke="#dcdcde"/>
+            <text x="300" y="315" font-family="Arial,sans-serif" font-size="11" fill="#1d2327">Cita — estilo global con color de acento</text>
+            <line x1="300" y1="300" x2="308" y2="300" stroke="#c45b3e" stroke-width="4"/>
+          </svg>
+        </div>
+        <figcaption>Style Book: una sola vista para comprobar tipografía, colores, botones, citas, sombras...</figcaption>
+      </figure>
+    </article>
+
+    <article class="step" id="paso-18" data-step="18">
+      <header class="step__head">
+        <span class="step__num" aria-hidden="true">18</span>
+        <h3 class="step__title">Plantillas de página: ancho completo, landing, sin barra lateral</h3>
+        <label class="tick"><input type="checkbox" data-done="18"><span>Hecho</span></label>
+      </header>
+      <p>Las <strong>Plantillas de página</strong> definien el layout de una página concreta. En temas de bloques se crean desde el Editor del sitio o se asignan desde el editor de la página.</p>
+      <ol class="actions">
+        <li>En el editor de una página (ej. Inicio), abre la barra lateral <strong>Página</strong> → <strong>Plantilla</strong>.</li>
+        <li>Verás opciones: <strong>Predeterminada</strong>, <strong>Ancho completo</strong> (sin sidebar), <strong>Landing page</strong> (sin cabecera/pie).</li>
+        <li>Elige <strong>Ancho completo</strong> para que el contenido use todo el ancho del viewport.</li>
+        <li>Para crear una plantilla personalizada: Editor del sitio → <strong>Plantillas</strong> → <strong>Añadir nueva plantilla</strong> → elige <strong>Página</strong> → nómbrala (ej. "Portada sin cabecera").</li>
+        <li>Edita la plantilla: quita la cabecera, añade una Cubierta a pantalla completa, configura el contenido.</li>
+        <li>Vuelve a la página Inicio → Plantilla → elige tu "Portada sin cabecera".</li>
+      </ol>
+      <div class="check">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        <p><strong>Comprueba:</strong> has asignado "Ancho completo" a la página Inicio y creado una plantilla "Landing page" sin cabecera/pie.</p>
+      </div>
+      <figure class="fig">
+        <div class="svgpad">
+          <svg viewBox="0 0 680 400" role="img" aria-labelledby="tpl18-t tpl18-d" xmlns="http://www.w3.org/2000/svg">
+            <title id="tpl18-t">Selector de plantilla de página en el editor</title>
+            <desc id="tpl18-d">Barra lateral del editor mostrando el desplegable Plantilla con opciones: Predeterminada, Ancho completo, Landing page, y plantillas personalizadas.</desc>
+            <defs>
+              <filter id="tpl18-shadow" x="-10%" y="-10%" width="120%" height="130%">
+                <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#1d2327" flood-opacity=".16"/>
+              </filter>
+            </defs>
+            <rect x="5" y="5" width="670" height="390" rx="5" fill="#fff" stroke="#c3c4c7" filter="url(#tpl18-shadow)"/>
+            <rect x="6" y="6" width="668" height="38" fill="#fff"/>
+            <line x1="6" y1="44" x2="674" y2="44" stroke="#dcdcde"/>
+            <circle cx="24" cy="25" r="11" fill="#1d2327"/>
+            <text x="24" y="30" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#fff">W</text>
+            <text x="398" y="27" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#1d2327">Inicio · Página</text>
+            <rect x="254" y="45" width="420" height="349" fill="#f0f0f1"/>
+            <rect x="279" y="60" width="346" height="319" fill="#fff"/>
+            <text x="318" y="116" font-family="Arial,sans-serif" font-size="26" font-weight="600" fill="#1d2327">Inicio</text>
+            <line x1="318" y1="157" x2="590" y2="157" stroke="#dcdcde"/>
+            <text x="318" y="187" font-family="Arial,sans-serif" font-size="11" fill="#646970">Escribe / para elegir un bloque</text>
+            <rect x="307" y="200" width="22" height="22" rx="2" fill="#fff" stroke="#2271b1" stroke-width="1.5"/>
+            <path d="M318 205v12M312 211h12" stroke="#2271b1" stroke-width="1.5"/>
+            <rect x="507" y="45" width="167" height="349" fill="#fff"/>
+            <line x1="507" y1="45" x2="507" y2="394" stroke="#dcdcde"/>
+            <text x="548" y="70" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" font-weight="600" fill="#1d2327">Página</text>
+            <text x="632" y="70" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#646970">Bloque</text>
+            <line x1="507" y1="82" x2="674" y2="82" stroke="#dcdcde"/>
+            <rect x="507" y="80" width="83" height="2" fill="#2271b1"/>
+            <text x="520" y="108" font-family="Arial,sans-serif" font-size="11" font-weight="600" fill="#1d2327">Plantilla</text>
+            <rect x="520" y="118" width="140" height="36" rx="2" fill="#fff" stroke="#8c8f94"/>
+            <text x="528" y="140" font-family="Arial,sans-serif" font-size="9" fill="#1d2327">Ancho completo ▼</text>
+            <path d="M647 130l4 4 4-4" fill="none" stroke="#646970" stroke-width="1.2"/>
+            <text x="520" y="170" font-family="Arial,sans-serif" font-size="10" fill="#646970">Opciones:</text>
+            <rect x="520" y="185" width="140" height="28" rx="2" fill="#f6f7f7"/>
+            <text x="528" y="203" font-family="Arial,sans-serif" font-size="9" fill="#1d2327">Predeterminada</text>
+            <rect x="520" y="220" width="140" height="28" rx="2" fill="#fff"/>
+            <text x="528" y="238" font-family="Arial,sans-serif" font-size="9" fill="#1d2327">Ancho completo</text>
+            <rect x="520" y="255" width="140" height="28" rx="2" fill="#fff"/>
+            <text x="528" y="273" font-family="Arial,sans-serif" font-size="9" fill="#1d2327">Landing page</text>
+            <rect x="520" y="290" width="140" height="28" rx="2" fill="#fff"/>
+            <text x="528" y="308" font-family="Arial,sans-serif" font-size="9" fill="#1d2327">Portada sin cabecera</text>
+          </svg>
+        </div>
+        <figcaption>Selector Plantilla: elige layout por página. Crea plantillas propias en el Editor del sitio.</figcaption>
+      </figure>
+    </article>
+
+    <article class="step step--split" id="paso-19" data-step="19">
+      <header class="step__head">
+        <span class="step__num" aria-hidden="true">19</span>
+        <h3 class="step__title">Patrones sincronizados (antes Bloques reutilizables)</h3>
+        <label class="tick"><input type="checkbox" data-done="19"><span>Hecho</span></label>
+      </header>
+      <p>Los <strong>Patrones sincronizados</strong> (WordPress 6.3+: antes "Bloques reutilizables") permiten crear un bloque/grupo <strong>una vez</strong> y usarlo en múltiples páginas. Si lo editas en un sitio, <strong>se actualiza en todos</strong>.</p>
+      <ol class="actions">
+        <li>Crea un grupo con tu contenido repetido (ej. "Llamada a la acción: Suscríbete al boletín" con Encabezado + Párrafo + Botón).</li>
+        <li>Selecciona el grupo → 3 puntos (⋮) → <strong>Crear patrón sincronizado</strong>.</li>
+        <li>Ponle nombre: <strong>CTA Boletín</strong> → <strong>Crear</strong>.</li>
+        <li>En cualquier página, pulsa <strong>+</strong> → <strong>Patrones</strong> → <strong>Mis patrones sincronizados</strong> → elige <strong>CTA Boletín</strong>.</li>
+        <li>Edita el patrón original: Apariencia → Editor → Patrones → <strong>CTA Boletín</strong> → cambia el texto del botón → <strong>Guardar</strong>.</li>
+        <li>Verifica: <strong>todas las páginas</strong> donde lo usaste muestran el cambio automáticamente.</li>
+      </ol>
+      <div class="check">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        <p><strong>Comprueba:</strong> has creado un patrón sincronizado, lo has insertado en Inicio y Sobre nosotros, y al editarlo se actualiza en ambas.</p>
+      </div>
+      <figure class="fig">
+        <div class="svgpad">
+          <svg viewBox="0 0 680 400" role="img" aria-labelledby="syn19-t syn19-d" xmlns="http://www.w3.org/2000/svg">
+            <title id="syn19-t">Crear y usar un patrón sincronizado</title>
+            <desc id="syn19-d">Flujo: crear grupo → 3 puntos → Crear patrón sincronizado → insertar en páginas → editar original → ver cambios en todas.</desc>
+            <defs>
+              <filter id="syn19-shadow" x="-10%" y="-10%" width="120%" height="130%">
+                <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#1d2327" flood-opacity=".16"/>
+              </filter>
+            </defs>
+            <rect x="5" y="5" width="670" height="390" rx="5" fill="#fff" stroke="#c3c4c7" filter="url(#syn19-shadow)"/>
+            <rect x="6" y="6" width="668" height="38" fill="#fff"/>
+            <line x1="6" y1="44" x2="674" y2="44" stroke="#dcdcde"/>
+            <circle cx="24" cy="25" r="11" fill="#1d2327"/>
+            <text x="24" y="30" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#fff">W</text>
+            <text x="398" y="27" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#1d2327">Inicio · Página</text>
+            <rect x="254" y="45" width="420" height="349" fill="#f0f0f1"/>
+            <rect x="279" y="60" width="346" height="319" fill="#fff"/>
+            <rect x="279" y="60" width="346" height="140" fill="#f1ede5"/>
+            <text x="318" y="116" font-family="Arial,sans-serif" font-size="26" font-weight="600" fill="#1d2327">Inicio</text>
+            <line x1="318" y1="157" x2="590" y2="157" stroke="#dcdcde"/>
+            <rect x="318" y="170" width="310" height="80" fill="#fff" stroke="#dcdcde" stroke-dasharray="5,5"/>
+            <text x="473" y="205" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#2271b1">[Patrón sincronizado: CTA Boletín]</text>
+            <rect x="318" y="260" width="310" height="80" fill="#fff" stroke="#dcdcde" stroke-dasharray="5,5"/>
+            <text x="473" y="295" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#2271b1">[Patrón sincronizado: CTA Boletín]</text>
+            <rect x="6" y="45" width="248" height="349" fill="#fff"/>
+            <line x1="254" y1="45" x2="254" y2="394" stroke="#dcdcde"/>
+            <text x="21" y="69" font-family="Arial,sans-serif" font-size="13" font-weight="600" fill="#1d2327">Patrones</text>
+            <line x1="18" y1="100" x2="240" y2="100" stroke="#dcdcde"/>
+            <text x="19" y="120" font-family="Arial,sans-serif" font-size="9" font-weight="600" fill="#1d2327">MIS PATRONES SINCRONIZADOS</text>
+            <rect x="16" y="130" width="108" height="54" fill="#f6f7f7"/>
+            <text x="28" y="150" font-family="Arial,sans-serif" font-size="9" fill="#1d2327">CTA Boletín</text>
+            <text x="28" y="170" font-family="Arial,sans-serif" font-size="8" fill="#2271b1">Sincronizado</text>
+            <rect x="132" y="130" width="108" height="54" fill="#fff"/>
+            <text x="145" y="150" font-family="Arial,sans-serif" font-size="9" fill="#1d2327">Footer Legal</text>
+            <text x="145" y="170" font-family="Arial,sans-serif" font-size="8" fill="#2271b1">Sincronizado</text>
+            <line x1="18" y1="200" x2="240" y2="200" stroke="#dcdcde"/>
+            <text x="19" y="220" font-family="Arial,sans-serif" font-size="9" font-weight="600" fill="#1d2327">CREAR PATRÓN SINCRONIZADO</text>
+            <rect x="16" y="230" width="222" height="34" fill="#fff" stroke="#2271b1" stroke-dasharray="5,5"/>
+            <circle cx="28" cy="247" r="8" fill="none" stroke="#2271b1" stroke-width="1.3"/>
+            <path d="M28 243v8M24 247h8" stroke="#2271b1" stroke-width="1.3"/>
+            <text x="44" y="251" font-family="Arial,sans-serif" font-size="9" fill="#2271b1">Nuevo patrón sincronizado</text>
+          </svg>
+        </div>
+        <figcaption>Patrón sincronizado: edita una vez, actualiza en todas las páginas. Ideal para CTA, avisos legales, footers.</figcaption>
+      </figure>
+    </article>
+
+    <article class="step" id="paso-20" data-step="20">
+      <header class="step__head">
+        <span class="step__num" aria-hidden="true">20</span>
+        <h3 class="step__title">Atajos y productividad: /bloque, ##, >, ---, Esc, modo foco</h3>
+      <label class="tick"><input type="checkbox" data-done="20"><span>Hecho</span></label>
+      </header>
+      <p>Gutenberg tiene atajos que aceleran mucho la edición. No necesitas el ratón para todo.</p>
+      <table class="tbl">
+        <thead><tr><th>Atajo</th><th>Acción</th></tr></thead>
+        <tbody>
+          <tr><td><kbd>/</kbd> + nombre</td><td>Insertar bloque rápido (ej. <kbd>/ima</kbd> → Imagen, <kbd>/col</kbd> → Columnas).</td></tr>
+          <tr><td><kbd>##</kbd> + Espacio</td><td>Crear Encabezado H2 (<kbd>###</kbd> = H3, <kbd>####</kbd> = H4).</td></tr>
+          <tr><td><kbd>></kbd> + Espacio</td><td>Crear Cita (blockquote).</td></tr>
+          <tr><td><kbd>---</kbd></td><td>Crear Separador (línea horizontal).</td></tr>
+          <tr><td><kbd>1.</kbd> + Espacio</td><td>Crear Lista ordenada (números).</td></tr>
+          <tr><td><kbd>-</kbd> + Espacio</td><td>Crear Lista desordenada (viñetas).</td></tr>
+          <tr><td><kbd>Esc</kbd></td><td>Salir del bloque actual / cerrar paneles / cancelar.</td></tr>
+          <tr><td><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Alt</kbd> + <kbd>M</kbd></td><td>Alternar <strong>Modo distracción libre</strong> (oculta barras laterales).</td></tr>
+          <tr><td><kbd>Ctrl</kbd> + <kbd>K</kbd></td><td>Abrir <strong>Paleta de comandos</strong> (buscar acciones: "Publicar", "Vista previa", "Copiar todo").</td></tr>
+          <tr><td><kbd>Ctrl</kbd> + <kbd>S</kbd></td><td>Guardar / Publicar.</td></tr>
+          <tr><td><kbd>Ctrl</kbd> + <kbd>Z</kbd> / <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Z</kbd></td><td>Deshacer / Rehacer.</td></tr>
+          <tr><td><kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>O</kbd></td><td>Abrir <strong>Navegación del documento</strong> (lista de bloques, saltar a cualquiera).</td></tr>
+        </tbody>
+      </table>
+      <div class="check">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b6b52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        <p><strong>Comprueba:</strong> has probado <kbd>/ima</kbd>, <kbd>##</kbd>, <kbd>></kbd>, <kbd>---</kbd>, <kbd>Esc</kbd> y el modo distracción libre (<kbd>Ctrl+Shift+Alt+M</kbd>).</p>
+      </div>
+      <figure class="fig">
+        <div class="svgpad">
+          <svg viewBox="0 0 680 400" role="img" aria-labelledby="sht20-t sht20-d" xmlns="http://www.w3.org/2000/svg">
+            <title id="sht20-t">Atajos de productividad en Gutenberg</title>
+            <desc id="sht20-d">Chuleta visual de los atajos más útiles: /bloque, ##, >, ---, Esc, modo foco, paleta de comandos.</desc>
+            <defs>
+              <filter id="sht20-shadow" x="-10%" y="-10%" width="120%" height="130%">
+                <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#1d2327" flood-opacity=".16"/>
+              </filter>
+            </defs>
+            <rect x="5" y="5" width="670" height="390" rx="5" fill="#fff" stroke="#c3c4c7" filter="url(#sht20-shadow)"/>
+            <rect x="6" y="6" width="668" height="38" fill="#fff"/>
+            <line x1="6" y1="44" x2="674" y2="44" stroke="#dcdcde"/>
+            <circle cx="24" cy="25" r="11" fill="#1d2327"/>
+            <text x="24" y="30" text-anchor="middle" font-family="Georgia,serif" font-size="15" font-weight="700" fill="#fff">W</text>
+            <text x="398" y="27" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#1d2327">Inicio · Página</text>
+            <rect x="254" y="45" width="420" height="349" fill="#f0f0f1"/>
+            <rect x="279" y="60" width="346" height="319" fill="#fff"/>
+            <text x="318" y="116" font-family="Arial,sans-serif" font-size="26" font-weight="600" fill="#1d2327">Atajos Gutenberg</text>
+            <line x1="318" y1="157" x2="590" y2="157" stroke="#dcdcde"/>
+            <text x="318" y="180" font-family="Arial,sans-serif" font-size="11" fill="#646970">Escribe en el editor para probar:</text>
+            <rect x="318" y="195" width="150" height="28" rx="2" fill="#f6f7f7" stroke="#8c8f94"/>
+            <text x="328" y="212" font-family="Arial,sans-serif" font-size="10" fill="#1d2327"><kbd>/ima</kbd> → Imagen</text>
+            <rect x="318" y="230" width="180" height="28" rx="2" fill="#f6f7f7" stroke="#8c8f94"/>
+            <text x="328" y="247" font-family="Arial,sans-serif" font-size="10" fill="#1d2327"><kbd>##</kbd> + Espacio → H2</text>
+            <rect x="318" y="265" width="180" height="28" rx="2" fill="#f6f7f7" stroke="#8c8f94"/>
+            <text x="328" y="282" font-family="Arial,sans-serif" font-size="10" fill="#1d2327"><kbd>></kbd> + Espacio → Cita</text>
+            <rect x="318" y="300" width="200" height="28" rx="2" fill="#f6f7f7" stroke="#8c8f94"/>
+            <text x="328" y="317" font-family="Arial,sans-serif" font-size="10" fill="#1d2327"><kbd>---</kbd> → Separador</text>
+            <rect x="318" y="335" width="250" height="28" rx="2" fill="#e5f1ec" stroke="#0b6b52"/>
+            <text x="328" y="352" font-family="Arial,sans-serif" font-size="10" fill="#1d2327"><kbd>Esc</kbd> → Salir bloque / Cerrar panel</text>
+            <rect x="507" y="45" width="167" height="349" fill="#fff"/>
+            <line x1="507" y1="45" x2="507" y2="394" stroke="#dcdcde"/>
+            <text x="548" y="70" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" font-weight="600" fill="#1d2327">Modo foco</text>
+            <text x="548" y="95" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" fill="#646970"><kbd>Ctrl+Shift+Alt+M</kbd></text>
+            <rect x="515" y="120" width="151" height="80" fill="#f1ede5" stroke="#0b6b52" stroke-width="2" stroke-dasharray="5,5"/>
+            <text x="590" y="145" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#0b6b52">Solo el contenido</text>
+            <text x="590" y="165" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#0b6b52">Sin barras laterales</text>
+            <text x="590" y="185" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#0b6b52">Máximo foco</text>
+          </svg>
+        </div>
+        <figcaption>Atajos clave: / para bloques, ## para encabezados, Esc para salir, Ctrl+Shift+Alt+M para modo foco.</figcaption>
+      </figure>
+    </article>
+
     <div class="final">
       <h2 id="final-title">Chuleta: Gutenberg</h2>
-      <p id="final-msg" hidden><strong>¡12 de 12!</strong> Ya tienes tu web creada con WordPress y Gutenberg.</p>
+      <p id="final-msg" hidden><strong>¡20 de 20!</strong> Ya tienes tu web completa con WordPress y Gutenberg.</p>
       <div class="chiprow">
-        <button class="chip" type="button" data-copy="http://localhost/miwordpress/"><span>http://localhost/miwordpress/</span></button>
-        <button class="chip" type="button" data-copy="http://localhost/miwordpress/wp-admin/"><span>http://localhost/miwordpress/wp-admin/</span></button>
+        <button class="chip" type="button" data-copy="http://localhost/miwordpress/"><span>Web local</span></button>
+        <button class="chip" type="button" data-copy="http://localhost/miwordpress/wp-admin/"><span>wp-admin</span></button>
+        <button class="chip" type="button" data-copy="http://localhost/phpmyadmin/"><span>phpMyAdmin</span></button>
         <button class="chip" type="button" data-copy="Párrafo"><span>Bloque Párrafo</span></button>
         <button class="chip" type="button" data-copy="Encabezado"><span>Bloque Encabezado</span></button>
         <button class="chip" type="button" data-copy="Imagen"><span>Bloque Imagen</span></button>
+        <button class="chip" type="button" data-copy="Columnas"><span>Bloque Columnas</span></button>
+        <button class="chip" type="button" data-copy="Cubierta"><span>Bloque Cubierta</span></button>
+        <button class="chip" type="button" data-copy="Query Loop"><span>Query Loop</span></button>
+        <button class="chip" type="button" data-copy="Patrón sincronizado"><span>Patrón sincronizado</span></button>
       </div>
     </div>
 
@@ -1767,10 +2386,10 @@
   }catch(e){}
 })();
 
-window.IFCT0510 = {
+window.IFCD0110 = {
   key: 'ifct0510-gutenberg-progress.v3',
   fontKey: 'ifct0510-gutenberg-font.v1',
-  total: 12,
+  total: 20,
   sizes: ['100%','112.5%','125%','137.5%']
 };
 </script>

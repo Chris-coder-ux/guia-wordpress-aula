@@ -1,6 +1,6 @@
 # Plantilla de evidencias — Práctica XAMPP + WordPress + Gutenberg
 
-**Certificado:** IFCT0510 · **Alumno:** ___________________________________  
+**Certificado:** IFCD0110 · **Alumno:** ___________________________________  
 **Grupo:** ______ · **Fecha de entrega:** _______________ · **Firma profesor:** _______________
 
 ---
@@ -117,9 +117,9 @@ ________________________________________________________________________________
 
 **Entrega un solo archivo** (Word `.docx`, PDF `.pdf`, o carpeta comprimida `.zip`) con nombre:
 
-> **`IFCT0510_practica_xampp_APELLIDOS_NOMBRE.docx`**  
-> (ej: `IFCT0510_practica_xampp_GARCIA_ANA.docx`)
+> **`IFCD0110_practica_xampp_APELLIDOS_NOMBRE.docx`**  
+> (ej: `IFCD0110_practica_xampp_GARCIA_ANA.docx`)
 
 ---
 
-*Plantilla v1.0 — octubre 2026 — Certificado IFCT0510*
+*Plantilla v1.0 — octubre 2026 — Certificado IFCD0110*

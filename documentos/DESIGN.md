@@ -42,4 +42,4 @@ Sistema: Segoe UI y pila del sistema (sin fuentes externas, funciona offline). C
 
 ## Nivel del certificado
 
-No se declara ningún nivel en los documentos del alumnado. La posible discrepancia (IFCT0510 = nivel 3 en catálogo; usuario informado de nivel 1) se deja como nota de verificación solo en `guia-docente-xampp-wordpress.md`.
+No se declara ningún nivel en los documentos del alumnado. La posible discrepancia (IFCD0110 = nivel 3 en catálogo; usuario informado de nivel 1) se deja como nota de verificación solo en `guia-docente-xampp-wordpress.md`.
