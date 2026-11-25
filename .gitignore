@@ -52,6 +52,8 @@ scripts/
 AGENTS.md
 kahoot_import.xlsx
 kahoot_quiz.pdf
+documentos/
+portada_final.png
 
 # --- Archivos del sistema operativo ---
 .DS_Store
