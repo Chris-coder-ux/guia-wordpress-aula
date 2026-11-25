@@ -18,7 +18,6 @@ Material didáctico **imprimible, interactivo y offline** para el certificado **
 | `practica-gutenberg/` | **Primera sesión de Gutenberg** · Crear una página con bloques básicos — 12 pasos, 60 min | Alumnado (tras XAMPP) |
 | `assets/` | CSS/JS/SVGs compartidos (SRP) | — (infraestructura) |
 | `material/` | **Documentos para imprimir/entregar** (Markdown) | Alumnado + Profesorado |
-| `documentos/` | `DESIGN.md` + `PRODUCT.md` (contexto de diseño/producto) | Equipo docente / Mantenedores |
 
 ---
 
@@ -90,8 +89,7 @@ Los archivos en `material/*.md` están listos para:
 
 - **HTML5 semántico** + **CSS custom properties** (tokens en `:root`)
 - **Vanilla JS** (ES2020) — `localStorage` por módulo (`ifct0510-portada-*`, `ifct0510-s0-*`, `ifct0510-xampp-*`, `ifct0510-gutenberg-*`)
-- **Claves de progreso** — `ifct0510-portada-progress.v1`, `ifct0510-s0-progress.v1`, `ifct0510-xampp-progress.v1`, `ifct0510-gutenberg-progress.v3` (más las `*-font.v1` para el tamaño de letra) y la clave global `ifct0510-theme.v1` para el tema claro/oscuro
-- **Gate estático de UI** — `scripts/check-ui.ps1` valida el rail, el índice móvil, el foco del salto al contenido, las claves de progreso/tema y que los dos bloques de tema oscuro del CSS declaren los mismos tokens (`-Fail` devuelve error de salida)
+- **Claves de progreso** — `ifct0510-portada-progress.v1`, `ifct0510-s0-progress.v1`, `ifct0510-xampp-progress.v1`, `ifct0510-gutenberg-progress.v3` (más las `*-font.v1` para el tamaño de letra) y la clave global `ifct0510-theme.v1` para el tema claro/oscuro. *(Las claves de `localStorage` conservan el prefijo original `ifct0510-*` por compatibilidad con progreso ya guardado; el identificador visible del certificado es `IFCD0110`.)*
 - **SVG inline/externo** — diagramas esquemáticos a mano (estilo manual de taller)
 - **Arquitectura SRP**: cada módulo = su HTML; `assets/css/shared.css` + `assets/js/shared.js` compartidos
 - **Git** — histórico en `master`, commits atómicos por fase
@@ -156,4 +154,4 @@ Si algo no funciona en el aula:
 
 ---
 
-*Generado y mantenido para el certificado IFCD0110. Última actualización: octubre 2026.*
+*Generado y mantenido para el certificado IFCD0110. Última actualización: noviembre 2026.*
