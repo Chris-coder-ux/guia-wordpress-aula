@@ -15,7 +15,7 @@ Material didáctico **imprimible, interactivo y offline** para el certificado **
 | `index.html` | Portada con enlaces a los 3 módulos | Alumnado / Profesorado |
 | `sesion-0/` | **Sesión 0** · Primeros pasos (ratón, teclado, carpetas, capturas) — 11 pasos, ~90 min | Alumnado sin experiencia |
 | `practica-xampp/` | **Práctica principal** · Instalar XAMPP + WordPress en local — 14 pasos, 3 sesiones de 60 min | Alumnado |
-| `practica-gutenberg/` | **Primera sesión de Gutenberg** · Crear una página con bloques básicos — 12 pasos, 60 min | Alumnado (tras XAMPP) |
+| `practica-gutenberg/` | **Primera sesión de Gutenberg** · Crear una página con bloques básicos — 20 pasos, 60 min | Alumnado (tras XAMPP) |
 | `assets/` | CSS/JS/SVGs compartidos (SRP) | — (infraestructura) |
 | `material/` | **Documentos para imprimir/entregar** (Markdown) | Alumnado + Profesorado |
 
@@ -50,9 +50,9 @@ Los archivos en `material/*.md` están listos para:
 
 | Orden | Módulo | Pasos | Tiempo | Qué aprenden |
 |-------|--------|-------|--------|--------------|
-| 1 | **Sesión 0** | 12 | ~90 min | Encender, escritorio, ratón (clic/doble/clic derecho/arrastrar), teclado (8 teclas clave), navegador (barra vs buscador), descargas, carpetas, capturas, ergonomía |
+| 1 | **Sesión 0** | 11 | ~90 min | Encender, escritorio, ratón (clic/doble/clic derecho/arrastrar), teclado (8 teclas clave), navegador (barra vs buscador), descargas, carpetas, capturas, ergonomía |
 | 2 | **XAMPP + WordPress** | 14 | 3×60 min | Instalar XAMPP (solo Apache/MySQL/phpMyAdmin), arrancar servicios, verificar puertos, descargar WP, desplegar en `htdocs/miwordpress`, crear BD en phpMyAdmin, instalar WP, acceder a `wp-admin`, ver web publicada |
-| 3 | **Gutenberg (primera sesión)** | 12 | 60 min | Entrar al panel, elegir el aspecto de la web, comprobar Gutenberg, crear las páginas Inicio y Sobre nosotros, abrir el editor, usar bloques básicos (encabezado, texto e imagen), menú, página de inicio estática, colores y letra, y publicar |
+| 3 | **Gutenberg (primera sesión)** | 20 | 60 min | Entrar al panel, elegir el aspecto de la web, comprobar Gutenberg, crear las páginas Inicio y Sobre nosotros, abrir el editor, usar bloques básicos (encabezado, texto e imagen), menú, página de inicio estática, colores y letra, y publicar |
 
 > **Regla de oro:** Si el alumnado no supera la **lista de comprobación del paso 10 (Sesión 0)** o la del **paso 14 (XAMPP)**, **no pasa al siguiente módulo**. Repetir el bloque correspondiente.
 
